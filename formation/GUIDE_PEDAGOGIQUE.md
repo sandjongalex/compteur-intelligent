@@ -1,5 +1,11 @@
 # Guide pédagogique — AlexTech Academy, compteur intelligent
 
+## Principe non négociable : progression du même projet
+
+Lire le [**contrat de progression continue**](../docs/formation/REGLE_EVOLUTION_CONTINUE.md) avant toute production. **Le code final d'un module est la base du module suivant** : montrer le résultat précédent, introduire la nouveauté, préserver ou justifier les changements et vérifier la non-régression. Les exercices isolés enseignent une notion puis l'intègrent au **projet principal unique**.
+
+Les modules Python/web et KiCad doivent eux aussi prolonger le même système sans ajouter de faux changements au firmware. Voir le [modèle de module évolutif](../docs/formation/MODELE_MODULE_EVOLUTIF.md) et les [instructions des agents](../AGENTS.md).
+
 ## Contrat de formation
 
 - **4 heures maximum de vidéo**, réparties sur 16 modules et 32 vidéos techniques, plus accueil et conclusion.

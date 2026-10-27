@@ -44,4 +44,4 @@
 - Limites connues :
 - Décision : brouillon / à tester / prêt à filmer.
 
-[Lire la règle de référence](../../../../../docs/formation/REGLE_EVOLUTION_CONTINUE.md)
+[Lire la règle de référence](REGLE_EVOLUTION_CONTINUE.md)

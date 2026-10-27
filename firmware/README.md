@@ -2,6 +2,8 @@
 
 Ce dossier contient le **même projet Arduino qui gagne des fonctions à chaque module**. Il complète, mais ne remplace pas, les petits sketches d'apprentissage des modules M03 à M08.
 
+**Règle obligatoire :** [contrat de progression continue](../docs/formation/REGLE_EVOLUTION_CONTINUE.md). Chaque nouvel ajout firmware part du courant, conserve ou explique les transformations des fonctions, synchronise le snapshot et le courant, actualise le [manifeste](manifest.json), puis passe les tests. Les exercices séparés ne remplacent pas le programme principal.
+
 ## Parcours de construction (code conservé d'une étape à l'autre)
 
 | Étape | Programme autonome à ouvrir dans Arduino IDE | Acquisition | Acquisition date / écran | Calcul de période |

@@ -1,10 +1,13 @@
 # Vérifications du fil rouge
 
+**Critères de validation :** [contrat de progression continue](../../docs/formation/REGLE_EVOLUTION_CONTINUE.md).
+
 ## Tests de régression disponibles
 
-1. **Statique** : `python3 firmware/tests/test_progression.py`. Vérifie l'existence des six versions, les nouvelles capacités à chaque étape, le maintien de l'UART et du bouton, le mode sans secteur par défaut et l'identité du snapshot M08 avec le firmware courant.
-2. **Algorithme énergie** : `g++ -std=c++11 -Wall -Wextra -pedantic firmware/tests/test_m08.cpp -o /tmp/test_m08 && /tmp/test_m08`. Copie des assertions de M08 : delta d'énergie, date, changement de mois, reprise RAM fictive, doublons et index descendu.
-3. **Arduino Uno (à valider)** : les six projets doivent être compilés avec le cœur `arduino:avr:uno`. On peut les compiler par Arduino IDE 2 ou Arduino CLI.
+1. **Contrat évolutif** : `python3 firmware/tests/test_contrat_evolution.py`. Vérifie le manifeste, les versions publiées, les fichiers sources du courant et du dernier snapshot et les liens du guide.
+2. **Statique** : `python3 firmware/tests/test_progression.py`. Vérifie l'existence des six versions, les nouvelles capacités à chaque étape, le maintien de l'UART et du bouton, le mode sans secteur par défaut et l'identité du snapshot M08 avec le firmware courant.
+3. **Algorithme énergie** : `g++ -std=c++11 -Wall -Wextra -pedantic firmware/tests/test_m08.cpp -o /tmp/test_m08 && /tmp/test_m08`. Copie des assertions de M08 : delta d'énergie, date, changement de mois, reprise RAM fictive, doublons et index descendu.
+4. **Arduino Uno (à valider)** : les six projets doivent être compilés avec le cœur `arduino:avr:uno`. On peut les compiler par Arduino IDE 2 ou Arduino CLI.
 
 ```bash
 arduino-cli core install arduino:avr

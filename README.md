@@ -77,3 +77,8 @@ L'ensemble des **16 dossiers pédagogiques** est organisé dans [`formation/`](f
 Pour construire **un seul compteur qui évolue d'une vidéo à l'autre**, utiliser le [firmware évolutif M03 → M08](firmware/README.md) : snapshots M03/M04/M05/M06/M07/M08, [programme Arduino actuel](firmware/courant/CompteurIntelligent/CompteurIntelligent.ino), [journal de progression](firmware/PROGRESSION.md) et [tests](firmware/tests/README.md).
 
 Les petits sketches pédagogiques **restent disponibles** ; le firmware fil rouge les complète. Par défaut, le code fonctionne en simulation sur Uno USB sans secteur. **Les versions futures M09–M16 ne sont pas encore implémentées dans ce programme.**
+
+
+## Principe obligatoire de progression continue
+
+**Chaque module réutilise le même compteur intelligent : le code précédent est la base, et la nouvelle fonctionnalité s'y ajoute sans perte silencieuse des acquis.** Les exemples isolés sont pédagogiques ; la solution finale reste un projet unique. L'obligation couvre également Python, Flask, l'interface web et KiCad. [Règle officielle et critères de validation](docs/formation/REGLE_EVOLUTION_CONTINUE.md).

@@ -57,10 +57,14 @@ for token in ("SuiviEnergieM08 suivi", '#include "EnergieM08.h"',
               "jourComplet", "moisComplet"):
     assert token in stages[8], f"M08 : moteur absent : {token}"
 
-courant = lire("courant/CompteurIntelligent/CompteurIntelligent.ino")
-assert courant == stages[8], "Firmware courant et snapshot M08 divergents"
-h = lire("courant/CompteurIntelligent/EnergieM08.h")
-assert h == lire("etapes/M08/Compteur_M08/EnergieM08.h"), "Moteurs non identiques"
-assert h == lire("tests/EnergieM08.h"), "Moteur tests different"
+# Acquis historiques M03-M08; le contrat dynamique controle les versions futures.
+import json
+manifest = json.loads(lire("manifest.json"))
+h = lire("etapes/M08/Compteur_M08/EnergieM08.h")
+assert h == lire("tests/EnergieM08.h"), "Moteur historique M08 modifie"
+if manifest["latest_firmware_stage"] == 8:
+    courant = lire("courant/CompteurIntelligent/CompteurIntelligent.ino")
+    assert courant == stages[8], "Firmware courant et snapshot M08 divergents"
+    assert h == lire("courant/CompteurIntelligent/EnergieM08.h"), "Moteurs non identiques"
 assert lire("tests/test_m08.cpp").count("assert(") >= 20, "Suite C++ incomplete"
 print("PASS : 6 etapes M03-M08, transitions verifiees, M08 courant synchronise")

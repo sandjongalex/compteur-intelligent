@@ -1,5 +1,7 @@
 # Journal de progression du firmware fil rouge
 
+**Règle obligatoire :** [REGLE_EVOLUTION_CONTINUE.md](../docs/formation/REGLE_EVOLUTION_CONTINUE.md). Toute nouvelle étape firmware met à jour le [manifeste](manifest.json), les snapshots, le courant et ses tests.
+
 Le but est de montrer **pourquoi et où le programme grandit**, plutôt que d'empiler des sketches sans liens.
 
 | Passage | Code conservé | Nouveauté à expliquer à l'apprenant | Test concret |
