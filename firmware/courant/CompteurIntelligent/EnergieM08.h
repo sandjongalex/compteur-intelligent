@@ -9,7 +9,8 @@ struct DateM08 { uint16_t annee; uint8_t mois, jour, heure, minute, seconde; };
 struct ReleveM08 { DateM08 date; uint32_t indexWh; bool valide; };
 enum ResultatM08 {
   M08_INVALIDE, M08_INITIALISE, M08_AJOUT, M08_NOUVEAU_JOUR,
-  M08_NOUVEAU_MOIS, M08_DOUBLON, M08_TEMPS_INCOHERENT, M08_INDEX_REINITIALISE
+  M08_NOUVEAU_MOIS, M08_DOUBLON, M08_TEMPS_INCOHERENT, M08_INDEX_REINITIALISE,
+  M08_CUMUL_SATURE
 };
 struct EtatM08 {
   bool initialise;
@@ -79,7 +80,14 @@ public:
     bool changeJour=apres!=avant;
     bool changeMois=r.date.annee!=e_.derniereDate.annee ||
                     r.date.mois!=e_.derniereDate.mois;
+    // Aucun retour silencieux a zero des totaux uint32_t.
+    if((!changeJour && deltaWh > UINT32_MAX-e_.jourWh) ||
+       (!changeMois && deltaWh > UINT32_MAX-e_.moisWh)) {
+      ancrer(r,false);
+      return M08_CUMUL_SATURE;
+    }
     if(changeJour) {
+      // Sans releve precis a 00:00:00, nouveau jour PARTIEL.
       e_.jourWh=0; e_.jourComplet=minuit(r.date);
     } else e_.jourWh+=deltaWh;
     if(changeMois) {
