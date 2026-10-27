@@ -1,20 +1,44 @@
-# Programmes et fichiers techniques — M08
+# M08 — Code Arduino : du relevé cumulatif au jour/mois
 
-**STATUT : espace réservé. Aucun programme ou schéma de ce module n'est validé à ce stade.**
+**Sans PowerPoint. Première moitié entièrement en simulation : aucune prise secteur, aucun PZEM, aucune RTC requise.**
 
-À placer ici lorsqu'ils auront été produits : exemples Arduino IDE (.ino), scripts Python (.py), fichiers SQL (.sql), HTML/Jinja2, CSS, JavaScript, fichiers KiCad, données de simulation ou autres fichiers réellement requis dans les vidéos.
+## Quatre étapes de programmation
 
-La nature exacte des livrables dépend du module : certains sont théoriques et n'exigent pas de code.
+1. [V01-01 — calculer les deltas Wh](V01_01_index_delta/V01_01_index_delta.ino) : `120650 - 120400 = 250 Wh`.
+2. [V01-02 — cumul de la journée](V01_02_cumul_jour/V01_02_cumul_jour.ino) : éviter d'ajouter l'index total ou de compter deux fois une ligne identique.
+3. [V02-01 — passer de janvier à février](V02_01_passer_au_mois/V02_01_passer_au_mois.ino) : date fictive + état journalier/mensuel + base prise à minuit.
+4. [V02-02 — simuler un redémarrage et des erreurs](V02_02_reprise_et_erreurs/V02_02_reprise_et_erreurs.ino) : copier/restaurer **un état conservé uniquement en RAM pendant la démonstration**, ignorer doublons, détecter retour du compteur ou date incohérente.
 
-## Qualité attendue
+Chaque projet `.ino` est dans son dossier **homonyme**, compilable sur **Arduino Uno Rev3**. Les deux programmes avancés contiennent **leur propre copie du moteur `EnergieM08.h`** afin d'éviter les chemins de compilation ambigus dans Arduino IDE. Les deux copies sont identiques ; les changements au moteur doivent être reportés dans les deux et dans la suite de tests.
 
-- [ ] Versions des outils et bibliothèques précisées.
-- [ ] Code correspondant exactement à la vidéo.
-- [ ] Instructions de mise en route sans dépendance implicite.
-- [ ] Démonstration possible sans alimentation secteur pour un novice.
-- [ ] Données d'exemple explicitement signalées comme fictives.
-- [ ] Vérification mémoire/performance sur ATmega328P si concerné.
-- [ ] Test de fonctionnement ou simulation documenté.
+## En-tête `EnergieM08.h` : règles de base
 
-- **M08-V01** : consulter les supports et démonstrations indiqués dans [le plan vidéo](../videos/V01-plan.md).
-- **M08-V02** : consulter les supports et démonstrations indiqués dans [le plan vidéo](../videos/V02-plan.md).
+- Index PZEM = **Wh entiers cumulés**, pas puissance en W ni énergie du jour.
+- Si un relevé est valide et arrive **dans le même jour**, on ajoute `delta = indexNouveau - indexAncien` à la journée et au mois.
+- Si le jour change mais **pas** le mois, on démarre un nouveau compteur du jour. Le delta qui traverse minuit n'est **pas** attribué à l'un des deux jours faute d'heure exacte de consommation ; on peut l'ajouter au mois puisque les deux relevés sont dans **le même mois**, tant que l'index est continu.
+- Si le mois change, on démarre jour et mois sur une nouvelle base. Sans relevé à **00:00:00**, les consommations affichées sont **partielles** et non de vrais totaux depuis minuit.
+- Si la RTC recule, le relevé est rejeté. Si l'index descend, on **ré-ancre à la nouvelle valeur, en marquant la période incomplète**, sans inventer la consommation perdue.
+- Un doublon avec même horodatage et même index est **ignoré**.
+- Au tout premier relevé de la période à **00:00:00** : le compteur peut être marqué complet (si les index suivent correctement ensuite). Sinon, **partiel**.
+- L'absence de lecture est distincte d'une consommation nulle.
+- Ce module **ne réalise pas de sauvegarde durable** ; la persistance avec FRAM et sécurité contre double comptage sera développée au **M11**.
+
+## Tests hors Arduino
+
+Le moteur est écrit en C++11 sans dépendances Arduino. Un test reproductible est disponible :
+
+```bash
+cd formation/modules/M08-consommation-jour-mois/code/tests
+g++ -std=c++11 -Wall -Wextra -pedantic test_m08.cpp -o test_m08
+./test_m08
+```
+
+Ces tests vérifient janvier/février, redémarrage simulé en RAM, doublon, diminution d'index, février bissextile, date invalide et traversée de minuit. **Ils ne prouvent pas un test matériel Uno ni une reprise après coupure d'alimentation réelle.**
+
+## Précision et intégration
+
+Le code pédagogique stocke les index dans un **entier `uint32_t` en Wh**, pour éviter les erreurs d'arrondi répétées avec les `float` de l'Uno AVR. La bibliothèque PZEM004Tv30 utilisée au M06 retourne un **`float` d'énergie cumulée en kWh** ; la reconversion en Wh peut perdre une partie de sa précision sur un grand index. L'intégration de production devra tenir compte de cette limite et, si nécessaire, décoder directement les registres d'énergie 32 bits ou adopter une méthode d'acquisition adaptée. Ne pas prétendre à une précision de 1 Wh en utilisant aveuglément un grand index `float`.
+
+**Ne jamais appeler `pzem.resetEnergy()` pour remettre à zéro la journée ou le mois.**
+
+[Scripts](../scripts/V01-script.md) · [Plan de tests](../ressources/PLAN_TESTS.md)
