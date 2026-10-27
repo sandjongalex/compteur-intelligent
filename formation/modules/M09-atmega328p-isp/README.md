@@ -2,6 +2,12 @@
 
 **Durée vidéo : 16 minutes** · **2 leçons** · **État : organisation prête, production à réaliser**
 
+## Règle obligatoire : évolution du même projet
+
+Le résultat du module précédent est **le point de départ** : le code et le système ne sont pas recommencés de zéro. Le firmware `firmware/courant/CompteurIntelligent/` doit évoluer depuis la version précédente ; publier un snapshot Mxx et actualiser le manifeste lorsque le firmware change. Les petits programmes de cours restent des exercices, et les nouveautés doivent être intégrées au projet commun et testées sans régression.
+
+[Contrat officiel de progression continue](../../../docs/formation/REGLE_EVOLUTION_CONTINUE.md) · [Modèle d'acceptation du module](../../../docs/formation/MODELE_MODULE_EVOLUTIF.md)
+
 ## Objectif et prérequis
 
 Objectif : comprendre le passage de l'Arduino Uno au microcontrôleur autonome. Prérequis : M03-M08. Durée : 16 minutes.

@@ -2,6 +2,12 @@
 
 **Durée vidéo : 14 minutes** · **2 leçons** · **État : organisation prête, production à réaliser**
 
+## Règle obligatoire : évolution du même projet
+
+Le résultat du module précédent est **le point de départ** : le code et le système ne sont pas recommencés de zéro. Intégrer et tester **le même système complet** : firmware, stockage, transmission, API Flask, interface et électronique. Les petits programmes de cours restent des exercices, et les nouveautés doivent être intégrées au projet commun et testées sans régression.
+
+[Contrat officiel de progression continue](../../../docs/formation/REGLE_EVOLUTION_CONTINUE.md) · [Modèle d'acceptation du module](../../../docs/formation/MODELE_MODULE_EVOLUTIF.md)
+
 ## Objectif et prérequis
 
 Objectif : valider le fonctionnement de bout en bout. Prérequis : modules précédents. Durée : 14 minutes.

@@ -2,6 +2,12 @@
 
 **Durée vidéo : 16 minutes** · **2 leçons** · **État : organisation prête, production à réaliser**
 
+## Règle obligatoire : évolution du même projet
+
+Le résultat du module précédent est **le point de départ** : le code et le système ne sont pas recommencés de zéro. Faire évoluer la **même application Python/Flask** et préserver le format des données et les échanges avec le compteur ; ne pas créer un faux changement Arduino. Les petits programmes de cours restent des exercices, et les nouveautés doivent être intégrées au projet commun et testées sans régression.
+
+[Contrat officiel de progression continue](../../../docs/formation/REGLE_EVOLUTION_CONTINUE.md) · [Modèle d'acceptation du module](../../../docs/formation/MODELE_MODULE_EVOLUTIF.md)
+
 ## Objectif et prérequis
 
 Objectif : créer une API de réception et enregistrer les mesures. Prérequis : M12. Durée : 16 minutes.
