@@ -1,33 +1,6 @@
-# Exercices et travaux pratiques — M08
+# M08 — TP et corrigés
 
-**STATUT : consignes de référence identifiées ; fiches de TP détaillées et corrigés à finaliser.**
+- [TP01 — calculer les deltas et éviter les doublons ; TP02 — janvier/février et reprise](TP_M08_APPRENANT.md).
+- [Corrections commentées pour le formateur](CORRIGE_M08_FORMATEUR.md).
 
-## Exercices prévus dans les vidéos
-
-### M08-V01 — Calculer l'énergie et comprendre les index (8 min)
-
-- Démonstration : calcul sur des relevés fictifs.
-
-- Exercice : calculer les deltas sur cinq relevés.
-
-**Livrable à fournir :** consigne détaillée, résultat attendu, correction et critère de réussite.
-
-### M08-V02 — Gérer minuit, les mois, les années et les redémarrages (8 min)
-
-- Démonstration : simulation du passage du 31 janvier au 1er février.
-
-- Exercice : compléter une table de consommation quotidienne.
-
-**Livrable à fournir :** consigne détaillée, résultat attendu, correction et critère de réussite.
-
-
-## Fiche obligatoire pour chaque TP
-
-1. Objectif vérifiable et prérequis.
-2. Matériel ou simulation requis.
-3. Préparation et précautions de sécurité.
-4. Étapes numérotées, reproductibles.
-5. Résultat attendu et preuve (capture, photo, valeur).
-6. Dépannage guidé et correction commentée.
-
-> Les manipulations 230 V ne sont pas des TP autonomes pour les débutants ; utiliser simulation, montage basse tension et démonstration qualifiée.
+**Durée hors des 16 minutes vidéo : 40–60 minutes.** Les exercices utilisent **uniquement des données simulées**, sans PZEM branché au secteur.
