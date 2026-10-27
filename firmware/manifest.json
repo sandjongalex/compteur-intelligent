@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "latest_firmware_stage": 8,
+  "latest_firmware_stage": 9,
   "stages": [
     {
       "module": "M03",
@@ -31,6 +31,11 @@
       "module": "M08",
       "sketch": "etapes/M08/Compteur_M08/Compteur_M08.ino",
       "label": "Cumul energie par date"
+    },
+    {
+      "module": "M09",
+      "sketch": "etapes/M09/Compteur_M09/Compteur_M09.ino",
+      "label": "ATmega328P autonome 16 MHz, diagnostic cible, programmation ISP"
     }
   ],
   "current_sketch": "courant/CompteurIntelligent/CompteurIntelligent.ino",

@@ -11,7 +11,7 @@ Le but est de montrer **pourquoi et où le programme grandit**, plutôt que d'em
 | M05 → M06 | LED, bouton avec anti-rebond, `Serial.read`, timer `millis()` | Fonction `lireMesures(Mesures &m)`, six grandeurs et contrôle de validité | `1` et `0` fonctionnent toujours ; les six grandeurs s'affichent |
 | M06 → M07 | Toutes les commandes et les six grandeurs | `Wire`, `RTC_DS3231`, `hd44780_I2Cexp`, date fiable et quatre lignes | Console inchangée ; écran optionnel et « JOUR/MOIS NON CALCULE » |
 | M07 → M08 | Bouton, LED, UART, source de mesure, RTC/LCD optionnels | Index Wh, relevé horodaté, deltas, date changeante, doublons, `~` pour partiel | Jour/mois cohérents avec date et index simulés, pas de faux total complet |
-| M08 → M09 (à réaliser) | Tous les modules précédents | Compilation et programmation d'un ATmega328P autonome, mapping des broches, alimentation | Comparaison des fonctions avant/après migration |
+| M08 → M09 | Bouton, LED, UART, six mesures, date/RTC, écran LCD, cumuls et alertes inchangés | `ALEXTECH_ATMEGA_AUTONOME`, profil 16 MHz, diagnostic broches DIP28, câblage ISP pour exécuter le même code sur puce autonome | Compiler snapshot et courant ; mêmes commandes série et cumuls en simulation ; tester ISP sur cible physique séparément |
 | M09 → M10 (à réaliser) | Firmware autonome | Modem GSM/GPRS et machine à états AT | Envoi simulé puis validé sans bloquer les mesures |
 | M10 → M11 (à réaliser) | Acquisition, calendrier et modem | Sauvegarde en FRAM avec écriture sûre, reprise et renvoi idempotent | Vérification d'une vraie coupure sans perte ni double comptage |
 

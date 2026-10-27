@@ -1,9 +1,12 @@
 /*
- * AlexTech Academy - FIL ROUGE M08 (etend M07, sans regression).
+ * AlexTech Academy - FIL ROUGE M09 (reprend M08, pour ATmega328P autonome).
  * Conserve : bouton D2-GND, LED integree, commandes UART USB, millis().
  * AJOUT M06 : 6 grandeurs et erreur de lecture.
  * AJOUT M07 : DS3231 + LCD I2C 20x4 sur bus partage.
  * AJOUT M08 : energie jour/mois en Wh entiers, marqueur PARTIEL.
+ * AJOUT M09 : cible ATmega328P PDIP 28 autonome, 16 MHz via ISP,
+ * diagnostic du brochage, configuration explicite de l'horloge.
+ * ATTENTION : circuit externe 5 V stable et quartz selon les fuses.
  * Default : source ET date SIMULEES ; AUCUN PZEM SECTEUR.
  *
  * 0 = SIMULATION : Uno USB SEULE, aucun secteur ou module PZEM.
@@ -12,6 +15,17 @@
 #include <Arduino.h>
 #include <math.h>
 #include "EnergieM08.h"
+// 0 = Uno USB ; 1 = ATmega328P DIP-28 autonome 16 MHz / ISP.
+// Le mode autonome ne change PAS les fonctions de comptage M08.
+#define ALEXTECH_ATMEGA_AUTONOME 0
+#if ALEXTECH_ATMEGA_AUTONOME
+  #if !defined(__AVR_ATmega328P__)
+    #error "Selectionner une cible ATmega328P compatible avec le firmware M09"
+  #endif
+  #if F_CPU != 16000000UL
+    #error "M09 autonome : choisir le profil 16 MHz ET fournir une horloge compatible"
+  #endif
+#endif
 #define ALEXTECH_PZEM_REEL 0
 // 0 : comportement demonstration Arduino Uno USB seule.
 // 1 : DS3231 et LCD compatible, en BASSE TENSION et apres validation.
@@ -47,6 +61,20 @@ uint32_t dernierIndexSimuleWh = 12345UL; // source fictive seulement
 struct Mesures {
   float tensionV, courantA, puissanceW, energieKWh, frequenceHz, facteurPuissance;
 };
+
+void afficherBrochageCible() {
+#if ALEXTECH_ATMEGA_AUTONOME
+  Serial.println(F("CIBLE: ATmega328P PDIP 28 / 16 MHz / ISP"));
+  Serial.println(F("LED D13=PB5 broche 19, LED+resistance externe"));
+  Serial.println(F("BOUTON D2=PD2 broche 4 vers GND"));
+  Serial.println(F("UART RX=D0 pin2, TX=D1 pin3, USB-TTL 5V compatible"));
+  Serial.println(F("ISP: RESET1, MOSI17, MISO18, SCK19, GND commun"));
+#else
+  Serial.println(F("CIBLE: Arduino Uno Rev3 / USB, simulation"));
+#endif
+  Serial.print(F("F_CPU (MHz)="));
+  Serial.println((unsigned long)(F_CPU / 1000000UL));
+}
 
 void appliquerLED() { digitalWrite(LED_BUILTIN, ledAllumee ? HIGH : LOW); }
 
@@ -198,6 +226,7 @@ void setup() {
   pinMode(LED_BUILTIN, OUTPUT);
   appliquerLED();
   Serial.begin(9600);
+  afficherBrochageCible();
   dernierAffichage = millis();
 #if ALEXTECH_RTC_LCD_REELS
   Wire.begin();
