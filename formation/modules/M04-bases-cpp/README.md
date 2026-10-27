@@ -1,34 +1,37 @@
 # M04 — Comprendre les bases du C/C++ embarqué
 
-**Durée vidéo : 14 minutes** · **2 leçons** · **État : organisation prête, production à réaliser**
+**AlexTech Academy : 14 minutes de vidéo** (deux leçons de 7 min) · Public débutant ayant terminé **M03**.
 
-## Objectif et prérequis
+## Objectifs pédagogiques
 
-Objectif : lire et modifier un programme simple. Prérequis : M03. Durée : 14 minutes.
+À la fin du module, l'apprenant sait :
+1. Déclarer et modifier `int`, `float`, `bool`, `const`.
+2. Convertir des puissances fictives et calculer une énergie à puissance active constante.
+3. Distinguer affectation `=` et comparaison `==`.
+4. Comprendre `if / else`, `for` et une boucle `while` limitée.
+5. Créer une fonction avec paramètre et `return`.
+6. Observer les résultats dans le **moniteur série à 9600 bauds**.
 
-## Vidéos du module
+## Cours, scripts et slides
 
-- [M04-V01 — Variables, types et calculs en C++ (7 min)](videos/V01-plan.md) · [Script](scripts/V01-script.md) · [Diapositives](slides/V01-storyboard.md)
-- [M04-V02 — Conditions, boucles et fonctions (7 min)](videos/V02-plan.md) · [Script](scripts/V02-script.md) · [Diapositives](slides/V02-storyboard.md)
+| Vidéo | Durée | Script complet | Présentation |
+|---|---:|---|---|
+| [M04-V01 — Variables, types et calculs](videos/V01-plan.md) | 7 min | [Script](scripts/V01-script.md) | [Storyboard](slides/V01-storyboard.md) |
+| [M04-V02 — Conditions, boucles et fonctions](videos/V02-plan.md) | 7 min | [Script](scripts/V02-script.md) | [Storyboard](slides/V02-storyboard.md) |
 
-## Préparer et évaluer
+## Travaux pratiques et évaluation
 
-- [Travaux pratiques et exercices](tp/README.md)
-- [Banque de quiz et objectifs de validation](quiz/README.md)
-- [Supports et ressources téléchargeables](ressources/README.md)
-- [Code et fichiers techniques](code/README.md)
+- [Cinq projets Arduino C/C++ commentés](code/README.md)
+- [Mémo pédagogique des notions C/C++](ressources/MEMO_CPP.md)
+- [Énoncés TP](tp/TP_M04_APPRENANT.md)
+- [Corrigés TP](tp/CORRIGE_M04_FORMATEUR.md)
+- [Quiz apprenant : 10 QCM](quiz/QUIZ_M04_APPRENANT.md)
+- [Corrigé formateur](quiz/CORRIGE_M04_FORMATEUR.md)
+- [Banque structurée JSON](quiz/quiz_m04.json)
 - [Suivi de production](production/README.md)
 
-## Indications du plan initial
+**Quiz :** au moins 8/10 ; TP et évaluations **hors durée vidéo**.
 
-**Ressources :** mémo C++, exercices corrigés et code commenté.
+**Statut :** scripts, code, activités et quiz rédigés ; les tests matériels, l'enregistrement et la publication relèvent du formateur. Les valeurs de tension, de puissance et d'énergie présentées sont fictives.
 
-**Quiz M04 :** types, variables, conditions, boucles, fonctions et lecture de code.
-
-**Validation :** modifier un programme fourni et expliquer son fonctionnement.
-
-## Documents de référence
-
-[Plan complet de la formation 4 h](../../../docs/formation/PLAN_FORMATION_4H.md) · [Guide pédagogique](../../GUIDE_PEDAGOGIQUE.md)
-
-> Les fiches vidéo reprennent le plan validé. Les scripts, slides, quiz corrigés et programmes ne sont pas présentés comme terminés tant qu'ils n'ont pas été effectivement produits et vérifiés.
+[Plan général](../../../docs/formation/PLAN_FORMATION_4H.md)

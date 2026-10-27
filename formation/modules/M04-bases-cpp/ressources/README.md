@@ -1,24 +1,12 @@
-# Ressources pédagogiques — M04
+# M04 — Ressources pour les leçons
 
-**STATUT : inventaire des livrables, à produire et à contrôler.**
+- [Mémo C/C++](MEMO_CPP.md)
+- [Cinq sketches commentés](../code/README.md)
+- [TP apprenant](../tp/TP_M04_APPRENANT.md)
+- [Corrigés des TP](../tp/CORRIGE_M04_FORMATEUR.md)
+- [Quiz apprenant](../quiz/QUIZ_M04_APPRENANT.md)
+- [Corrigé du quiz](../quiz/CORRIGE_M04_FORMATEUR.md)
+- [Scripts V01](../scripts/V01-script.md) et [V02](../scripts/V02-script.md)
+- [Storyboards V01](../slides/V01-storyboard.md) et [V02](../slides/V02-storyboard.md)
 
-## Livrables prévus par le plan
-
-**Ressources :** mémo C++, exercices corrigés et code commenté.
-
-## Organisation
-
-- Les diapositives et storyboards sont dans [slides](../slides/).
-- Les scripts sont dans [scripts](../scripts/).
-- Les programmes et fichiers techniques sont dans [code](../code/).
-- Les fiches d'exercices sont dans [tp](../tp/).
-- Les quiz sont dans [quiz](../quiz/).
-
-## Contrôle des ressources
-
-- [ ] Version des composants et des bibliothèques documentée.
-- [ ] Schémas et captures lisibles sur téléphone.
-- [ ] Fichiers ouverts/testés dans le logiciel annoncé.
-- [ ] Aucun secret, numéro de téléphone ou identifiant réel publié.
-- [ ] Licences des images et ressources respectées.
-- [ ] Fichiers validés avant publication auprès des apprenants.
+**Matériel :** ordinateur, Arduino IDE 2, carte Arduino Uno Rev3, câble USB de données. Aucun composant secteur requis.

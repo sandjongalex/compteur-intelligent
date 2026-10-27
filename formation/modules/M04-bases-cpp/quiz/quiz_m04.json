@@ -1,0 +1,327 @@
+{
+  "module": "M04",
+  "format_version": 1,
+  "pass_score": 8,
+  "questions": [
+    {
+      "id": "Q01",
+      "topic": "Types",
+      "difficulty": "Facile",
+      "objective": "Reconnaître un entier",
+      "question": "Quel type de variable utiliser pour compter un petit nombre entier de tentatives sur notre Arduino Uno ?",
+      "options": [
+        {
+          "value": "A",
+          "label": "float",
+          "feedback": "float sert ici aux valeurs décimales approximatives."
+        },
+        {
+          "value": "B",
+          "label": "bool",
+          "feedback": "bool ne peut représenter que vrai ou faux."
+        },
+        {
+          "value": "C",
+          "label": "int",
+          "feedback": "int est un type entier, adapté à un petit compteur."
+        },
+        {
+          "value": "D",
+          "label": "char",
+          "feedback": "char sert notamment à un caractère, pas à un compteur entier en priorité."
+        }
+      ],
+      "correctValues": [
+        "C"
+      ]
+    },
+    {
+      "id": "Q02",
+      "topic": "Types",
+      "difficulty": "Facile",
+      "objective": "Reconnaître un booléen",
+      "question": "Que représente la valeur false dans « bool alarme = false; » ?",
+      "options": [
+        {
+          "value": "A",
+          "label": "L'alarme est dans l'état faux/inactif.",
+          "feedback": "bool peut prendre true ou false : ici l'état est faux."
+        },
+        {
+          "value": "B",
+          "label": "Une erreur de compilation.",
+          "feedback": "L'instruction est une déclaration valide."
+        },
+        {
+          "value": "C",
+          "label": "Un nombre flottant.",
+          "feedback": "false n'est pas un nombre flottant."
+        },
+        {
+          "value": "D",
+          "label": "Un message à imprimer.",
+          "feedback": "Aucun texte n'est envoyé par cette instruction."
+        }
+      ],
+      "correctValues": [
+        "A"
+      ]
+    },
+    {
+      "id": "Q03",
+      "topic": "Types",
+      "difficulty": "Facile",
+      "objective": "Comprendre les constantes",
+      "question": "Que signifie « const » dans « const float FACTEUR = 1000.0f; » ?",
+      "options": [
+        {
+          "value": "A",
+          "label": "Le programme attend 1 000 secondes.",
+          "feedback": "Une constante n'impose pas d'attente."
+        },
+        {
+          "value": "B",
+          "label": "La variable deviendra entière.",
+          "feedback": "La déclaration reste de type float."
+        },
+        {
+          "value": "C",
+          "label": "La valeur sera affichée en série.",
+          "feedback": "const n'affiche rien par lui-même."
+        },
+        {
+          "value": "D",
+          "label": "Le code n'est pas censé modifier FACTEUR après sa déclaration.",
+          "feedback": "const empêche de modifier la valeur par une nouvelle affectation ordinaire."
+        }
+      ],
+      "correctValues": [
+        "D"
+      ]
+    },
+    {
+      "id": "Q04",
+      "topic": "Opérateurs",
+      "difficulty": "Facile",
+      "objective": "Distinguer affectation et comparaison",
+      "question": "Dans une condition C++, quel opérateur teste si deux valeurs sont égales ?",
+      "options": [
+        {
+          "value": "A",
+          "label": "=",
+          "feedback": "= affecte une valeur et ne sert pas à tester directement l'égalité."
+        },
+        {
+          "value": "B",
+          "label": "==",
+          "feedback": "== compare les deux opérandes pour vérifier l'égalité."
+        },
+        {
+          "value": "C",
+          "label": "++",
+          "feedback": "++ augmente une variable d'une unité."
+        },
+        {
+          "value": "D",
+          "label": "!=",
+          "feedback": "!= teste la différence et non l'égalité."
+        }
+      ],
+      "correctValues": [
+        "B"
+      ]
+    },
+    {
+      "id": "Q05",
+      "topic": "Opérateurs",
+      "difficulty": "Intermédiaire",
+      "objective": "Identifier une division entière",
+      "question": "Dans un sketch Uno Rev3, quelle valeur reçoit « int resultat = 5 / 2; » ?",
+      "options": [
+        {
+          "value": "A",
+          "label": "2.5",
+          "feedback": "Une division entre deux entiers supprime la partie fractionnaire."
+        },
+        {
+          "value": "B",
+          "label": "3",
+          "feedback": "La division entière C++ tronque vers zéro : ce n'est pas un arrondi au plus proche."
+        },
+        {
+          "value": "C",
+          "label": "2",
+          "feedback": "5 / 2 entre entiers vaut 2."
+        },
+        {
+          "value": "D",
+          "label": "0",
+          "feedback": "Le résultat n'est pas zéro."
+        }
+      ],
+      "correctValues": [
+        "C"
+      ]
+    },
+    {
+      "id": "Q06",
+      "topic": "Logique",
+      "difficulty": "Intermédiaire",
+      "objective": "Comprendre if/else",
+      "question": "On définit tensionV = 245.0f et seuil fictif = 240.0f. Quelle branche est exécutée par « if (tensionV > seuil) ... else ... » ?",
+      "options": [
+        {
+          "value": "A",
+          "label": "La branche if.",
+          "feedback": "245 est supérieur à 240, donc la condition est vraie et la branche if s'exécute."
+        },
+        {
+          "value": "B",
+          "label": "Toujours la branche else.",
+          "feedback": "else s'exécute si la condition if est fausse."
+        },
+        {
+          "value": "C",
+          "label": "Aucune branche.",
+          "feedback": "Une condition if/else valide exécute l'une des branches."
+        },
+        {
+          "value": "D",
+          "label": "Les deux branches.",
+          "feedback": "if/else choisit une branche, pas les deux."
+        }
+      ],
+      "correctValues": [
+        "A"
+      ]
+    },
+    {
+      "id": "Q07",
+      "topic": "Logique",
+      "difficulty": "Intermédiaire",
+      "objective": "Lire une boucle for",
+      "question": "Que va afficher « for (int i = 1; i <= 3; i++) Serial.println(i); » ?",
+      "options": [
+        {
+          "value": "A",
+          "label": "0, 1, 2",
+          "feedback": "L'initialisation commence à 1, et non 0."
+        },
+        {
+          "value": "B",
+          "label": "1, 2",
+          "feedback": "La condition i <= 3 autorise aussi la valeur 3."
+        },
+        {
+          "value": "C",
+          "label": "1, 2, 3",
+          "feedback": "La boucle affiche 1, puis 2, puis 3."
+        },
+        {
+          "value": "D",
+          "label": "3 seulement",
+          "feedback": "Elle n'affiche pas uniquement la dernière valeur."
+        }
+      ],
+      "correctValues": [
+        "C"
+      ]
+    },
+    {
+      "id": "Q08",
+      "topic": "Logique",
+      "difficulty": "Intermédiaire",
+      "objective": "Éviter les boucles infinies",
+      "question": "Comment assurer l'arrêt de « int essais = 0; while (essais < 3) { ... } » ?",
+      "options": [
+        {
+          "value": "A",
+          "label": "Retirer les accolades.",
+          "feedback": "Les accolades regroupent le corps de la boucle."
+        },
+        {
+          "value": "B",
+          "label": "Ne jamais modifier essais.",
+          "feedback": "La condition resterait toujours vraie si essais restait 0."
+        },
+        {
+          "value": "C",
+          "label": "Mettre une instruction delay(1000) sans changement de condition.",
+          "feedback": "Attendre 1 seconde ne modifie pas automatiquement essais."
+        },
+        {
+          "value": "D",
+          "label": "Augmenter essais dans la boucle pour que la condition devienne fausse.",
+          "feedback": "Avec essais++ à chaque itération, la boucle se termine lorsque essais vaut 3."
+        }
+      ],
+      "correctValues": [
+        "D"
+      ]
+    },
+    {
+      "id": "Q09",
+      "topic": "Lecture de code",
+      "difficulty": "Difficile",
+      "objective": "Lire une fonction et son résultat",
+      "question": "Que renvoie la fonction « float wattsVersKilowatts(float w) { return w / 1000.0f; } » si elle reçoit 1250.0f ?",
+      "options": [
+        {
+          "value": "A",
+          "label": "1250.0",
+          "feedback": "Il faut diviser par 1 000 pour convertir les watts en kilowatts."
+        },
+        {
+          "value": "B",
+          "label": "1.25",
+          "feedback": "1250 / 1000 = 1.25 kW."
+        },
+        {
+          "value": "C",
+          "label": "0.125",
+          "feedback": "0.125 serait obtenu par une division par 10 000."
+        },
+        {
+          "value": "D",
+          "label": "125.0",
+          "feedback": "125 ne correspond pas à cette division."
+        }
+      ],
+      "correctValues": [
+        "B"
+      ]
+    },
+    {
+      "id": "Q10",
+      "topic": "Lecture de code",
+      "difficulty": "Difficile",
+      "objective": "Calculer une énergie et vérifier les unités",
+      "question": "Pour une puissance active constante de 200 W pendant 5 heures, quelle valeur affiche le calcul « (200.0f / 1000.0f) * 5.0f » ?",
+      "options": [
+        {
+          "value": "A",
+          "label": "1000.0 kWh",
+          "feedback": "Il faut diviser 200 W par 1000 avant de multiplier par 5 h."
+        },
+        {
+          "value": "B",
+          "label": "0.2 kWh",
+          "feedback": "0.2 représente ici la puissance en kW, pas l'énergie totale."
+        },
+        {
+          "value": "C",
+          "label": "5.0 kWh",
+          "feedback": "5 h est une durée et non l'énergie."
+        },
+        {
+          "value": "D",
+          "label": "1.0 kWh",
+          "feedback": "200/1000 = 0.2 kW, puis 0.2 × 5 h = 1 kWh."
+        }
+      ],
+      "correctValues": [
+        "D"
+      ]
+    }
+  ]
+}
