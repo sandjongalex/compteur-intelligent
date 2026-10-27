@@ -1,24 +1,17 @@
-# Ressources pédagogiques — M07
+# Ressources M07 — RTC DS3231 + LCD I2C 20×4
 
-**STATUT : inventaire des livrables, à produire et à contrôler.**
+- [Câblage I2C Uno/DS3231/LCD et sécurité de la pile](BUS_I2C_SECURITE.md).
+- [Mémo des fonctions RTC et LCD pour débutants](MEMO_RTC_LCD.md).
+- [Dépannage guidé](DEPANNAGE.md).
+- [Plan de tests et feuille de validation](PLAN_TESTS.md).
+- [Huit sketches Arduino](../code/README.md).
+- [TP apprenant](../tp/TP_M07_APPRENANT.md).
+- [Corrigés des TP](../tp/CORRIGE_M07_FORMATEUR.md).
+- [Quiz apprenant de dix QCM](../quiz/QUIZ_M07_APPRENANT.md).
+- [Quiz corrigé formateur](../quiz/CORRIGE_M07_FORMATEUR.md).
 
-## Livrables prévus par le plan
+**Références constructeurs et bibliothèques :**
+- RTClib DS3231 : https://github.com/adafruit/RTClib/blob/master/examples/ds3231/ds3231.ino
+- hd44780 : https://github.com/duinoWitchery/hd44780
 
-**Ressources :** schéma I2C, code DS3231, code LCD et maquette des écrans.
-
-## Organisation
-
-- Les diapositives et storyboards sont dans [slides](../slides/).
-- Les scripts sont dans [scripts](../scripts/).
-- Les programmes et fichiers techniques sont dans [code](../code/).
-- Les fiches d'exercices sont dans [tp](../tp/).
-- Les quiz sont dans [quiz](../quiz/).
-
-## Contrôle des ressources
-
-- [ ] Version des composants et des bibliothèques documentée.
-- [ ] Schémas et captures lisibles sur téléphone.
-- [ ] Fichiers ouverts/testés dans le logiciel annoncé.
-- [ ] Aucun secret, numéro de téléphone ou identifiant réel publié.
-- [ ] Licences des images et ressources respectées.
-- [ ] Fichiers validés avant publication auprès des apprenants.
+Aucun PowerPoint ; la formation repose sur le **matériel basse tension, Arduino IDE, le code et les tests réels**.
