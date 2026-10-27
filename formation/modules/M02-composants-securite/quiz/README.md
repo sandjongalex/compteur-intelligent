@@ -1,37 +1,21 @@
-# Évaluation — M02
+# M02 — Quiz de validation
 
-**STATUT : plan de 10 questions défini ; banque QCM corrigée à rédiger et vérifier.**
+**Contenu : rédigé (10 questions + corrections expliquées + JSON).**  
+**Non encore intégré dans la plateforme AlexTech Academy.**
 
-## Périmètre extrait du plan pédagogique
+- [Quiz pour les apprenants — sans solutions](QUIZ_M02_APPRENANT.md).
+- [Corrigé réservé au formateur](CORRIGE_M02_FORMATEUR.md).
+- [Données QCM structurées en JSON](quiz_m02.json).
 
-3 composants, 2 alimentation, 3 sécurité, 2 diagnostic
+## Distribution
 
-## Règles d'évaluation
+- 3 questions : composants.
+- 2 questions : alimentation.
+- 3 questions : sécurité.
+- 2 questions : diagnostic.
 
-- **10 questions** par module : 4 faciles, 4 intermédiaires, 2 difficiles.
-- **Seuil de validation : 80 %**, soit au moins 8/10.
-- QCM à quatre options, calculs, lecture de schémas/code ou vrai/faux lorsque pertinent.
-- Chaque proposition aura une justification pédagogique ; éviter les questions ambiguës.
-- Prévoir au moins une mise en situation et une question sur les erreurs fréquentes.
-- Les fautes critiques de sécurité doivent être corrigées obligatoirement.
+Difficulté : 4 faciles, 4 intermédiaires, 2 difficiles.
 
-## Modèle d'une question (à compléter et valider)
+Réussite : **8/10 minimum** et correction des erreurs critiques **Q05, Q06, Q07 et Q08** avant toute activité pratique. L'évaluation et les TP ne sont pas comptés dans les 4 heures de vidéo.
 
-**Question Q01 — [notion exacte]**
-
-- Objectif : [compétence mesurée]
-- Difficulté : facile / intermédiaire / difficile
-- Énoncé : [question précise avec toutes les données]
-- A. [proposition]
-- B. [proposition]
-- C. [proposition]
-- D. [proposition]
-- Réponse correcte : [une option ou toutes les options valides]
-- Explication : [raison exacte et correction des distracteurs]
-
-## Critères de validation
-
-- [ ] 10 questions rédigées avec les réponses et corrigés.
-- [ ] Les objectifs du module sont effectivement couverts.
-- [ ] Le score et le corrigé sont testés.
-- [ ] Les questions sont compréhensibles sans connaissances ultérieures.
+[Exercices du module](../tp/TP_M02_APPRENANT.md)

@@ -1,0 +1,344 @@
+{
+  "format_version": 1,
+  "module": "M02",
+  "title": "Identifier les composants et travailler en sécurité",
+  "pass_score": 8,
+  "needs_remediation_question_ids": [
+    "Q05",
+    "Q06",
+    "Q07",
+    "Q08"
+  ],
+  "questions": [
+    {
+      "id": "Q01",
+      "difficulty": "Facile",
+      "topic": "Composants",
+      "objective": "Identifier le microcontrôleur",
+      "type": "single_select",
+      "question": "Quel composant exécute le programme du compteur intelligent ?",
+      "options": [
+        {
+          "value": "A",
+          "label": "Le DS3231",
+          "feedback": "Le DS3231 gère la date et l'heure, pas le firmware du compteur."
+        },
+        {
+          "value": "B",
+          "label": "L'ATmega328P",
+          "feedback": "L'ATmega328P est le microcontrôleur qui exécute le firmware."
+        },
+        {
+          "value": "C",
+          "label": "Le PZEM-004T",
+          "feedback": "Le PZEM-004T fournit des mesures électriques ; il n'exécute pas notre firmware."
+        },
+        {
+          "value": "D",
+          "label": "Le LCD 20×4",
+          "feedback": "Le LCD sert à afficher des caractères."
+        }
+      ],
+      "correctValues": [
+        "B"
+      ]
+    },
+    {
+      "id": "Q02",
+      "difficulty": "Facile",
+      "topic": "Composants",
+      "objective": "Identifier le module de mesure",
+      "type": "single_select",
+      "question": "Quel module fournit au microcontrôleur la tension, le courant et l'énergie mesurés ?",
+      "options": [
+        {
+          "value": "A",
+          "label": "Le SIM800L",
+          "feedback": "Le SIM800L transmet des relevés par réseau mobile."
+        },
+        {
+          "value": "B",
+          "label": "La FRAM",
+          "feedback": "La FRAM mémorise des données."
+        },
+        {
+          "value": "C",
+          "label": "Le PZEM-004T V3.0",
+          "feedback": "Le PZEM-004T fournit les grandeurs électriques mesurées."
+        },
+        {
+          "value": "D",
+          "label": "Le buzzer",
+          "feedback": "Le buzzer émet des signaux sonores."
+        }
+      ],
+      "correctValues": [
+        "C"
+      ]
+    },
+    {
+      "id": "Q03",
+      "difficulty": "Facile",
+      "topic": "Composants",
+      "objective": "Expliquer le rôle du DS3231",
+      "type": "single_select",
+      "question": "Pourquoi ajoutons-nous un DS3231 au compteur ?",
+      "options": [
+        {
+          "value": "A",
+          "label": "Pour fournir la date et l'heure",
+          "feedback": "Le DS3231 est une horloge temps réel qui fournit date et heure."
+        },
+        {
+          "value": "B",
+          "label": "Pour transformer le 230 V en 5 V",
+          "feedback": "La conversion d'alimentation relève d'un dispositif AC/DC adapté."
+        },
+        {
+          "value": "C",
+          "label": "Pour envoyer les données GSM",
+          "feedback": "L'envoi GSM est le rôle du SIM800L."
+        },
+        {
+          "value": "D",
+          "label": "Pour produire une alarme sonore",
+          "feedback": "Le buzzer sert à fournir une alarme sonore."
+        }
+      ],
+      "correctValues": [
+        "A"
+      ]
+    },
+    {
+      "id": "Q04",
+      "difficulty": "Facile",
+      "topic": "Alimentation",
+      "objective": "Identifier la tension logique",
+      "type": "single_select",
+      "question": "À quelle tension prévoit-on de faire fonctionner notre ATmega328P dans sa configuration de cours à 16 MHz ?",
+      "options": [
+        {
+          "value": "A",
+          "label": "230 V alternatif",
+          "feedback": "Le secteur 230 V ne doit jamais être appliqué directement au microcontrôleur."
+        },
+        {
+          "value": "B",
+          "label": "12 V continu",
+          "feedback": "12 V direct dépasse la tension admissible de la puce."
+        },
+        {
+          "value": "C",
+          "label": "4,0 V continu",
+          "feedback": "4 V est la consigne retenue pour le SIM800L nu, pas l'alimentation logique prévue du cours."
+        },
+        {
+          "value": "D",
+          "label": "5 V continu",
+          "feedback": "La configuration du cours utilise un ATmega328P sous une alimentation régulée de 5 V."
+        }
+      ],
+      "correctValues": [
+        "D"
+      ]
+    },
+    {
+      "id": "Q05",
+      "difficulty": "Intermédiaire",
+      "topic": "Alimentation",
+      "objective": "Reconnaître les contraintes du SIM800L",
+      "type": "single_select",
+      "question": "Quelle alimentation faut-il prévoir pour l'entrée VBAT d'un SIM800L nu, selon sa documentation ?",
+      "options": [
+        {
+          "value": "A",
+          "label": "5 V direct depuis l'Arduino Uno",
+          "feedback": "5 V direct sur VBAT du modem nu est hors de la plage donnée dans la documentation."
+        },
+        {
+          "value": "B",
+          "label": "Environ 4,0 V, capable de fournir des pointes proches de 2 A",
+          "feedback": "Une alimentation régulée autour de 4,0 V avec capacité de fournir les pointes de transmission est adaptée à la spécification du modem nu."
+        },
+        {
+          "value": "C",
+          "label": "230 V alternatif directement",
+          "feedback": "Le SIM800L est un modem électronique basse tension, pas un récepteur du secteur."
+        },
+        {
+          "value": "D",
+          "label": "Une simple sortie GPIO de l'ATmega328P",
+          "feedback": "Une sortie GPIO n'est pas une alimentation de modem GSM."
+        }
+      ],
+      "correctValues": [
+        "B"
+      ]
+    },
+    {
+      "id": "Q06",
+      "difficulty": "Intermédiaire",
+      "topic": "Sécurité",
+      "objective": "Choisir une pratique sûre",
+      "type": "single_select",
+      "question": "Quel exercice peut être confié sans intervention secteur à un apprenant débutant ?",
+      "options": [
+        {
+          "value": "A",
+          "label": "Relier le PZEM directement au secteur en gardant les fils nus",
+          "feedback": "Le raccordement au secteur par un novice avec des conducteurs accessibles n'est pas acceptable."
+        },
+        {
+          "value": "B",
+          "label": "Mesurer la phase secteur avec une breadboard",
+          "feedback": "Une breadboard n'est pas un support adapté aux circuits secteur."
+        },
+        {
+          "value": "C",
+          "label": "Faire clignoter une LED sur Arduino Uno alimentée de manière adaptée par USB",
+          "feedback": "Une LED sur Arduino Uno correctement alimentée est un exercice basse tension approprié."
+        },
+        {
+          "value": "D",
+          "label": "Remplacer un fusible secteur sous tension",
+          "feedback": "La manipulation de protections secteur sous tension est dangereuse."
+        }
+      ],
+      "correctValues": [
+        "C"
+      ]
+    },
+    {
+      "id": "Q07",
+      "difficulty": "Intermédiaire",
+      "topic": "Sécurité",
+      "objective": "Distinguer schéma fonctionnel et câblage",
+      "type": "single_select",
+      "question": "Quel énoncé est correct à propos du synoptique d'alimentation de notre formation ?",
+      "options": [
+        {
+          "value": "A",
+          "label": "Il montre les fonctions, mais ne remplace pas un schéma secteur professionnel validé",
+          "feedback": "Un synoptique explique l'architecture et ne sert pas de notice de raccordement secteur."
+        },
+        {
+          "value": "B",
+          "label": "Il suffit pour brancher directement le 230 V sur une carte Arduino",
+          "feedback": "Il est dangereux de raccorder le secteur à une carte logique sans conception validée."
+        },
+        {
+          "value": "C",
+          "label": "Il autorise l'usage d'une breadboard pour le 230 V",
+          "feedback": "La breadboard ne convient pas à des essais secteur."
+        },
+        {
+          "value": "D",
+          "label": "Il dispense des protections et de l'isolation",
+          "feedback": "Les protections et l'isolation restent nécessaires."
+        }
+      ],
+      "correctValues": [
+        "A"
+      ]
+    },
+    {
+      "id": "Q08",
+      "difficulty": "Intermédiaire",
+      "topic": "Sécurité",
+      "objective": "Reconnaître l'intérêt de l'isolation",
+      "type": "single_select",
+      "question": "Pourquoi notre architecture prévoit-elle une alimentation AC/DC isolée et un boîtier adapté ?",
+      "options": [
+        {
+          "value": "A",
+          "label": "Pour accélérer le code C++",
+          "feedback": "Le traitement logiciel est indépendant de la protection électrique."
+        },
+        {
+          "value": "B",
+          "label": "Pour remplacer la FRAM",
+          "feedback": "La FRAM garde les données, pas les protections secteur."
+        },
+        {
+          "value": "C",
+          "label": "Pour assurer le réseau GSM",
+          "feedback": "La couverture GSM ne dépend pas de l'isolation secteur."
+        },
+        {
+          "value": "D",
+          "label": "Pour séparer et protéger les parties électroniques accessibles de la zone secteur dangereuse",
+          "feedback": "L'isolation et le boîtier contribuent à réduire les risques d'accès à une tension dangereuse."
+        }
+      ],
+      "correctValues": [
+        "D"
+      ]
+    },
+    {
+      "id": "Q09",
+      "difficulty": "Difficile",
+      "topic": "Diagnostic",
+      "objective": "Diagnostiquer une défaillance de communication liée à l'alimentation",
+      "type": "single_select",
+      "question": "Le SIM800L nu redémarre dès qu'il tente d'émettre, alors que la carte ATmega fonctionne. Quelle vérification est la plus pertinente avant tout autre essai ?",
+      "options": [
+        {
+          "value": "A",
+          "label": "Remplacer immédiatement le LCD",
+          "feedback": "Le LCD n'explique pas directement un redémarrage radio du modem."
+        },
+        {
+          "value": "B",
+          "label": "Augmenter arbitrairement VBAT à 5 V",
+          "feedback": "5 V dépasse la plage VBAT du SIM800L nu."
+        },
+        {
+          "value": "C",
+          "label": "Vérifier une alimentation 4 V stable, ses pointes de courant et son découplage",
+          "feedback": "Les pointes proches de 2 A peuvent provoquer une chute de tension et des redémarrages si l'alimentation est inadéquate."
+        },
+        {
+          "value": "D",
+          "label": "Relier le modem au 230 V",
+          "feedback": "Relier un modem GSM au secteur est dangereux et destructeur."
+        }
+      ],
+      "correctValues": [
+        "C"
+      ]
+    },
+    {
+      "id": "Q10",
+      "difficulty": "Difficile",
+      "topic": "Diagnostic",
+      "objective": "Diagnostiquer un risque d'interface logique",
+      "type": "single_select",
+      "question": "Un ATmega328P fonctionne en logique 5 V et un SIM800L nu utilise des niveaux UART plus bas. Avant de connecter les lignes série, quelle action est correcte ?",
+      "options": [
+        {
+          "value": "A",
+          "label": "Vérifier les niveaux de tension et utiliser une adaptation logique adaptée",
+          "feedback": "La compatibilité des niveaux UART doit être vérifiée et une adaptation mise en place si nécessaire."
+        },
+        {
+          "value": "B",
+          "label": "Connecter directement toutes les broches sans vérifier",
+          "feedback": "Un niveau logique 5 V peut être incompatible avec l'entrée du modem nu."
+        },
+        {
+          "value": "C",
+          "label": "Supprimer les masses et les protections au hasard",
+          "feedback": "On ne corrige pas un problème de niveaux de tension en improvisant les retours et les protections."
+        },
+        {
+          "value": "D",
+          "label": "Changer la pile du DS3231",
+          "feedback": "La pile du DS3231 n'a aucun rapport avec l'interface UART du modem."
+        }
+      ],
+      "correctValues": [
+        "A"
+      ]
+    }
+  ]
+}
