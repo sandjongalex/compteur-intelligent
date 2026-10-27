@@ -28,3 +28,22 @@ Le but est de montrer **pourquoi et où le programme grandit**, plutôt que d'em
 ## Ce qui manque encore
 
 Les sketches et scripts des modules M03–M08 étaient déjà produits séparément. La **continuité M03–M08 est maintenant matérialisée en code**, mais l'API d'acquisition brute précise du PZEM, la certification des comportements sur une Uno réelle, la persistance FRAM et l'envoi GSM sont encore hors périmètre de la présente phase.
+
+## Correctifs de fiabilité M09 (P1/P2, avant M10)
+
+Maintenance corrective de la **dernière étape M09 non encore validée sur matériel** :
+- source simulée 92,2 W : index Wh calculé en entier et testé sur rollover de `millis()` ;
+- origine explicite de l'heure (DS3231 / simulation / indisponible), impossibilité de
+  compiler le PZEM réel sans activer une RTC réelle ;
+- passages de minuit et de mois : aucun découpage fictif d'un delta entre jours ;
+  période marquée PARTIELLE si la base exacte de minuit manque ;
+- calcul défensif contre les cumuls `uint32_t` saturés et les index réinitialisés ;
+- vérifications de compilation des branches réelles PZEM/RTC/LCD et des modes
+  simulateur ; `test_m09.cpp` et `test_m09_safety.py` ajoutés.
+
+**Exception tracée :** le correctif synchronise le snapshot M09 et le firmware courant
+parce que M09 était encore non validé physiquement, sans toucher à M03–M08.
+Si des copies de M09 antérieures sont distribuées, fournir cet erratum.
+
+**UART :** ne pas attribuer `Serial` au GSM dans M09 ; la migration de la console vers
+le pilote SIM800L sur D0/D1 a lieu en M10, comme établi dans les règles permanentes.
