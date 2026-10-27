@@ -1,24 +1,27 @@
-# Modèle — Script oral
+# Modèle — Script oral général
 
-**Vidéo :** Mxx-Vxx · **Durée :** __ minutes · **Statut :** À produire
+**Vidéo :** Mxx-Vxx · **Durée cible :** __ minutes · **Statut :** à rédiger
 
-## 00:00 — Accroche / problème concret
-[TEXTE À PRONONCER, en français oral]
+## Accroche, résultat et problème pratique
+[TEXTE INTÉGRAL À PRONONCER, français accessible]
 
-## Introduction du concept
-[Définition de tous les mots nouveaux et analogie]
+## Démonstration commentée / manipulation
+[Gestes précis, fichiers ouverts, instructions expliquées ligne par ligne]
 
-## Démonstration illustrée
-[Action à l'écran / caméra et paroles synchronisées]
+## Validation réelle ou simulation identifiée
+[Commande ou action, résultat attendu, puis observation constatée]
 
-## Résultat et dépannage
-[Montrer le résultat, une erreur courante, puis sa correction]
+## Erreur et dépannage
+[Symptôme, cause, correction]
 
-## Mini-exercice et conclusion
-[Question pratique et lien avec la vidéo suivante]
+## Défi et conclusion
+[Modification proposée, renvoi à un TP et à son corrigé séparé]
 
 ## Vérification
-- [ ] Chronométré.
-- [ ] Sans notion inexpliquée.
-- [ ] Conforme au matériel et au code testés.
-- [ ] Sans risque secteur pour le public débutant.
+- [ ] Durée répétée à voix haute.
+- [ ] Chaque notion expliquée avant emploi.
+- [ ] Code source et exemple observé cohérents.
+- [ ] Résultat attendu ≠ fausse preuve d'essai.
+- [ ] Sécurité et environnement vérifiés.
+
+**Pour une vidéo de programmation, utiliser de préférence [le modèle spécialisé](SCRIPT_DEMONSTRATION_CODE.md). Ne plus demander de PPTX pour les futurs modules.**

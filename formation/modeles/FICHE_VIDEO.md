@@ -2,18 +2,22 @@
 
 - Identifiant : Mxx-Vxx
 - Intitulé :
-- Durée maximum :
-- Public : débutant / notions requises :
-- Objectif observable : « À la fin, l'apprenant sait... »
-- Référence vers la vidéo précédente :
-- Définitions préalables :
+- Durée maximale :
+- Type : compréhension / programmation embarquée / programmation web / intégration
+- Niveau et prérequis :
+- Objectif observable unique :
+- Résultat final montré au début :
+- Matériel et versions :
+- Fichiers source et emplacement :
+- Schéma fonctionnel ou montage basse tension :
 - Déroulé minuté :
-- Analogie ou exemple concret :
-- Visuels et captures :
-- Démonstration, matériel, précautions :
-- Résultat attendu :
-- Erreurs courantes et dépannage :
-- Mini-exercice :
-- Transition :
-- Code/ressources jointes :
-- Statut de vérification technique :
+- **Construction progressive du code et gestes à l'écran** (si leçon de programmation) :
+- Compilation ou commande d'exécution :
+- Sortie attendue :
+- Erreur fréquente montrée et correction :
+- Mini-défi hors vidéo :
+- Corrigé associé :
+- Test réellement effectué ? :
+- Sécurité et transition :
+
+**Pour M05 et suivants : pas de diaporama à produire par défaut.** Montrer le terminal, Arduino IDE, les composants ou l'application réelle.
