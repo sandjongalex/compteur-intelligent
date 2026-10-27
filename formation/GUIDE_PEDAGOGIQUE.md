@@ -62,3 +62,36 @@ Un schéma court en Markdown, Mermaid ou KiCad peut suffire : **aucun PPTX ni st
 ## Références, structure et statuts
 
 Le [plan complet 4 h](../docs/formation/PLAN_FORMATION_4H.md) fixe les objectifs et durées, **pas l'obligation d'utiliser un PowerPoint**. Les contenus de M01 à M04 ne sont pas réécrits. Le formateur est responsable des prises de vue, du montage, de la publication. Ne pas placer des clés/API ou vidéos payantes dans ce dépôt public.
+
+
+---
+
+## Nouvelle règle de conception — à partir du Module 05
+
+**Décision pédagogique : ne plus produire de PowerPoint pour les modules suivants.** Les supports des Modules 01 à 04 restent conservés. L'enregistrement et la publication des vidéos sont assurés par le formateur.
+
+### Modules conceptuels : expliquer et illustrer
+
+1. Formuler un objectif observable.
+2. Expliquer un concept avec une analogie limitée et un schéma.
+3. Montrer un exemple concret.
+4. Faire reformuler l'idée.
+5. Faire un petit quiz ou exercice de compréhension.
+
+### Modules de programmation : observer, coder, tester, modifier, expliquer
+
+1. **Problème concret** : montrer ce que l'on cherche à réaliser.
+2. **Résultat attendu** : afficher le comportement final avant le code.
+3. **Préparation** : expliquer prérequis, matériels, câblage basse tension et fichiers.
+4. **Codage progressif** : avancer par étapes exécutables et expliquer les nouvelles instructions.
+5. **Exécution** : compiler/lancer et comparer avec le résultat attendu ; ne jamais présenter une simulation comme un test réel.
+6. **Diagnostic** : montrer une erreur courante, son symptôme, puis sa correction.
+7. **Variation** : demander à l'apprenant de modifier un paramètre et prédire le comportement.
+8. **Travail autonome** : proposer un TP hors durée vidéo et fournir un corrigé distinct.
+9. **Validation** : questions de lecture de code, sorties prédites, sécurité et pratique réelle.
+
+### Organisation des ressources
+
+Chaque module technique doit comporter un script oral minuté, du **code de départ**, les **étapes de construction**, le **code final**, des **résultats attendus**, des **tests reproductibles**, un **guide de dépannage**, des **TP corrigés** et un **quiz de dix questions** avec explications. Les sections `slides/` préexistantes peuvent rester en archives ; aucun nouveau PPTX n'est exigé.
+
+**Priorité : pédagogie et reproductibilité plutôt que quantité de diapositives.** Préserver le plafond global de **4 heures de vidéo** et mettre les longues pratiques à part. Pour les parties secteur, réserver tout essai sur 230 V à du personnel qualifié ; les novices travaillent en simulation ou basse tension.
