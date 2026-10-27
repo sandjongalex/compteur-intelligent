@@ -1,0 +1,339 @@
+{
+  "module": "M08",
+  "title": "Calculer les consommations journalières et mensuelles",
+  "format_version": 1,
+  "total": 10,
+  "pass_score": 8,
+  "questions": [
+    {
+      "id": "Q01",
+      "topic": "Index et delta",
+      "difficulty": "Facile",
+      "type": "single_select",
+      "objective": "Index et delta",
+      "question": "Quelle formule calcule l'énergie consommée entre deux relevés valides d'un même compteur ?",
+      "options": [
+        {
+          "value": "A",
+          "label": "Index précédent + index nouveau",
+          "feedback": "Additionner les index revient à compter l'énergie passée plusieurs fois."
+        },
+        {
+          "value": "B",
+          "label": "Index nouveau - index précédent",
+          "feedback": "La différence des index continus fournit l'énergie supplémentaire."
+        },
+        {
+          "value": "C",
+          "label": "Puissance instantanée × index total",
+          "feedback": "La puissance et l'index cumulé ne peuvent pas être multipliés ainsi."
+        },
+        {
+          "value": "D",
+          "label": "Index du mois × 24",
+          "feedback": "Multipliez un index par 24 ne donne pas la consommation d'une période."
+        }
+      ],
+      "correctValues": [
+        "B"
+      ]
+    },
+    {
+      "id": "Q02",
+      "topic": "Unités",
+      "difficulty": "Facile",
+      "type": "single_select",
+      "objective": "Unités",
+      "question": "L'index passe de 120400 Wh à 120650 Wh. Quelle énergie supplémentaire a été mesurée ?",
+      "options": [
+        {
+          "value": "A",
+          "label": "250 Wh, soit 0,250 kWh",
+          "feedback": "La différence est 250 Wh, que l'on divise par 1000 pour obtenir 0,250 kWh."
+        },
+        {
+          "value": "B",
+          "label": "250 kWh",
+          "feedback": "Ce serait oublier la conversion Wh/kWh."
+        },
+        {
+          "value": "C",
+          "label": "120650 Wh de la seule période",
+          "feedback": "120650 Wh est l'index cumulatif, pas le seul delta."
+        },
+        {
+          "value": "D",
+          "label": "0 Wh",
+          "feedback": "Les deux index sont différents : l'énergie a augmenté."
+        }
+      ],
+      "correctValues": [
+        "A"
+      ]
+    },
+    {
+      "id": "Q03",
+      "topic": "Doublon",
+      "difficulty": "Facile",
+      "type": "single_select",
+      "objective": "Doublon",
+      "question": "Deux relevés consécutifs identiques ont le même index. Que faut-il ajouter au cumul ?",
+      "options": [
+        {
+          "value": "A",
+          "label": "Deux fois l'index",
+          "feedback": "Cela produirait un double comptage."
+        },
+        {
+          "value": "B",
+          "label": "La moitié de l'index",
+          "feedback": "Aucun principe ne justifie de diviser l'index par deux."
+        },
+        {
+          "value": "C",
+          "label": "Le dernier index",
+          "feedback": "L'index est le total historique, pas une variation."
+        },
+        {
+          "value": "D",
+          "label": "0 Wh",
+          "feedback": "La différence entre deux index identiques vaut zéro."
+        }
+      ],
+      "correctValues": [
+        "D"
+      ]
+    },
+    {
+      "id": "Q04",
+      "topic": "Calendrier",
+      "difficulty": "Facile",
+      "type": "single_select",
+      "objective": "Calendrier",
+      "question": "Quel composant fournit la date permettant de distinguer les journées dans notre projet ?",
+      "options": [
+        {
+          "value": "A",
+          "label": "SIM800L",
+          "feedback": "Le SIM800L n'est pas notre référence de calendrier pour ce module."
+        },
+        {
+          "value": "B",
+          "label": "PZEM-004T",
+          "feedback": "Le PZEM fournit les mesures électriques et un index, pas la date du jour."
+        },
+        {
+          "value": "C",
+          "label": "DS3231",
+          "feedback": "Le DS3231 est notre horloge temps réel."
+        },
+        {
+          "value": "D",
+          "label": "LCD 20×4",
+          "feedback": "Le LCD affiche des valeurs mais ne fournit pas lui-même le calendrier."
+        }
+      ],
+      "correctValues": [
+        "C"
+      ]
+    },
+    {
+      "id": "Q05",
+      "topic": "Périodes",
+      "difficulty": "Intermédiaire",
+      "type": "single_select",
+      "objective": "Périodes",
+      "question": "Que fait le logiciel lorsque la date passe du 31 janvier au 1er février ?",
+      "options": [
+        {
+          "value": "A",
+          "label": "Il remet l'index interne du PZEM à zéro",
+          "feedback": "Réinitialiser l'index PZEM détruirait le repère historique."
+        },
+        {
+          "value": "B",
+          "label": "Il démarre de nouvelles bases jour/mois en conservant l'index PZEM cumulatif",
+          "feedback": "Les cumuls logiciels changent de période ; l'index physique continue."
+        },
+        {
+          "value": "C",
+          "label": "Il multiplie le dernier index par 2",
+          "feedback": "Cette opération n'a pas de sens énergétique."
+        },
+        {
+          "value": "D",
+          "label": "Il efface la date RTC",
+          "feedback": "La RTC doit fournir la date correcte, pas être effacée."
+        }
+      ],
+      "correctValues": [
+        "B"
+      ]
+    },
+    {
+      "id": "Q06",
+      "topic": "Périodes",
+      "difficulty": "Intermédiaire",
+      "type": "single_select",
+      "objective": "Périodes",
+      "question": "Dernier relevé le 31/01 à 23:59, suivant le 01/02 à 00:05. Peut-on attribuer exactement le delta à janvier ou février ?",
+      "options": [
+        {
+          "value": "A",
+          "label": "Oui, tout à janvier",
+          "feedback": "Une partie peut avoir été consommée après minuit."
+        },
+        {
+          "value": "B",
+          "label": "Oui, tout à février",
+          "feedback": "Une partie peut avoir été consommée avant minuit."
+        },
+        {
+          "value": "C",
+          "label": "Oui, moitié-moitié de façon certaine",
+          "feedback": "Une répartition égale serait une estimation non justifiée."
+        },
+        {
+          "value": "D",
+          "label": "Non, pas sans relevé de frontière ou information supplémentaire",
+          "feedback": "Le delta traverse le changement de mois ; le détail de consommation à minuit n'est pas connu."
+        }
+      ],
+      "correctValues": [
+        "D"
+      ]
+    },
+    {
+      "id": "Q07",
+      "topic": "Validité",
+      "difficulty": "Intermédiaire",
+      "type": "single_select",
+      "objective": "Validité",
+      "question": "Après la mise en route du compteur le 27 octobre à midi sans état sauvegardé, que signifie le cumul jour calculé ?",
+      "options": [
+        {
+          "value": "A",
+          "label": "La consommation calculée depuis le premier relevé de midi, pas forcément depuis 00:00",
+          "feedback": "L'absence de base à minuit impose de marquer la période incomplète."
+        },
+        {
+          "value": "B",
+          "label": "La consommation exacte depuis minuit",
+          "feedback": "Le compteur ne connaît pas les heures précédant la première base."
+        },
+        {
+          "value": "C",
+          "label": "Une preuve que personne n'a consommé le matin",
+          "feedback": "Ne rien observer ne signifie pas qu'il n'y a pas eu consommation."
+        },
+        {
+          "value": "D",
+          "label": "Un index à effacer dans le PZEM",
+          "feedback": "On ne remet pas le PZEM à zéro pour reconstruire le passé."
+        }
+      ],
+      "correctValues": [
+        "A"
+      ]
+    },
+    {
+      "id": "Q08",
+      "topic": "Fiabilité",
+      "difficulty": "Intermédiaire",
+      "type": "single_select",
+      "objective": "Fiabilité",
+      "question": "L'index passe de 120740 Wh à 20 Wh. Quelle stratégie pédagogique est correcte ?",
+      "options": [
+        {
+          "value": "A",
+          "label": "Calculer 20 - 120740 en uint32_t sans contrôle",
+          "feedback": "Une soustraction non signée peut donner un énorme faux résultat."
+        },
+        {
+          "value": "B",
+          "label": "Afficher une consommation négative comme normale",
+          "feedback": "Un compteur cumulatif n'a normalement pas cette diminution sans événement particulier."
+        },
+        {
+          "value": "C",
+          "label": "Signaler une réinitialisation/anomalie, réancrer et marquer les périodes incomplètes",
+          "feedback": "La nouvelle base évite de fabriquer un delta et la période doit être signalée comme partielle."
+        },
+        {
+          "value": "D",
+          "label": "Ajouter immédiatement 120740 Wh à la journée",
+          "feedback": "Ajouter l'ancienne valeur serait injustifié et compterait le passé."
+        }
+      ],
+      "correctValues": [
+        "C"
+      ]
+    },
+    {
+      "id": "Q09",
+      "topic": "Reprise",
+      "difficulty": "Difficile",
+      "type": "single_select",
+      "objective": "Reprise",
+      "question": "Le programme restaure une copie de l'état depuis une variable en RAM, puis reçoit à nouveau le dernier relevé sauvegardé. Que peut-on conclure ?",
+      "options": [
+        {
+          "value": "A",
+          "label": "La FRAM est déjà implémentée et résiste à toutes les coupures",
+          "feedback": "Aucune FRAM n'a été écrite dans cette démonstration."
+        },
+        {
+          "value": "B",
+          "label": "La RTC a automatiquement sauvegardé les cumuls",
+          "feedback": "La RTC garde l'heure, pas l'état des cumuls de cette classe."
+        },
+        {
+          "value": "C",
+          "label": "Une copie en RAM est durable après débranchement de l'alimentation",
+          "feedback": "La RAM volatile perd les données lors d'une vraie coupure."
+        },
+        {
+          "value": "D",
+          "label": "Le doublon peut être évité, mais la vraie persistance après coupure nécessite une mémoire non volatile",
+          "feedback": "La démonstration teste la logique de reprise mais pas la durabilité, traitée au M11."
+        }
+      ],
+      "correctValues": [
+        "D"
+      ]
+    },
+    {
+      "id": "Q10",
+      "topic": "Précision",
+      "difficulty": "Difficile",
+      "type": "single_select",
+      "objective": "Précision",
+      "question": "Sur ATmega328P, pourquoi utiliser des Wh entiers dans notre moteur, plutôt que d'accumuler naïvement des grands index float de la bibliothèque ?",
+      "options": [
+        {
+          "value": "A",
+          "label": "Parce qu'un int 16 bits peut stocker une infinité de Wh",
+          "feedback": "Un int signé AVR 16 bits est insuffisant pour un grand index."
+        },
+        {
+          "value": "B",
+          "label": "Parce qu'un float AVR a une précision limitée ; les Wh entiers évitent les arrondis répétés, sous réserve d'une acquisition et d'une plage valides",
+          "feedback": "Les flottants AVR n'ont qu'une précision limitée. Un uint32_t en Wh donne des soustractions exactes dans sa plage ; la conversion initiale doit aussi préserver la précision."
+        },
+        {
+          "value": "C",
+          "label": "Parce que le PZEM mesure directement les kWh du jour",
+          "feedback": "Le PZEM fournit un index cumulatif, pas le découpage calendrier."
+        },
+        {
+          "value": "D",
+          "label": "Parce qu'un entier n'a jamais de limite de capacité",
+          "feedback": "Un uint32_t est limité à 0..4294967295, il faut gérer plage et retour éventuel."
+        }
+      ],
+      "correctValues": [
+        "B"
+      ]
+    }
+  ]
+}
