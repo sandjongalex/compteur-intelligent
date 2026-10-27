@@ -8,7 +8,7 @@ Ce dossier est l'espace de production pédagogique du cours. Chaque module poss�
 
 | Module | Durée | Vidéos | Statut |
 |---|---:|---:|---|
-| [M01 — Découvrir le compteur et comprendre l'électricité](modules/M01-decouverte-electricite/) | 10 min | 2 | Plans présents, production à faire |
+| [M01 — Découvrir le compteur et comprendre l'électricité](modules/M01-decouverte-electricite/) | 10 min | 2 | Scripts + storyboards + quiz + TP rédigés, tournage à faire |
 | [M02 — Identifier les composants et travailler en sécurité](modules/M02-composants-securite/) | 10 min | 2 | Plans présents, production à faire |
 | [M03 — Installer Arduino IDE et programmer sa première LED](modules/M03-arduino-ide-premier-programme/) | 14 min | 2 | Plans présents, production à faire |
 | [M04 — Comprendre les bases du C/C++ embarqué](modules/M04-bases-cpp/) | 14 min | 2 | Plans présents, production à faire |

@@ -1,6 +1,6 @@
 # M01-V02 — Comprendre volts, ampères, watts et kilowattheures (5 min)
 
-> **État : plan pédagogique détaillé disponible**. Script intégral et ressources de tournage à finaliser.
+> **État : fiche pédagogique validée comme référence ; script intégral et contenu des diapositives rédigés.** Il reste à chronométrer, produire les PPTX et filmer.
 
 
 - Objectif : distinguer tension, courant, puissance et énergie.

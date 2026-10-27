@@ -1,6 +1,6 @@
 # M01-V01 — Du réseau électrique au tableau de bord IoT (5 min)
 
-> **État : plan pédagogique détaillé disponible**. Script intégral et ressources de tournage à finaliser.
+> **État : fiche pédagogique validée comme référence ; script intégral et contenu des diapositives rédigés.** Il reste à chronométrer, produire les PPTX et filmer.
 
 
 - Objectif pédagogique : comprendre le trajet d'une mesure depuis le circuit électrique jusqu'au navigateur.

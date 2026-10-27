@@ -14,6 +14,11 @@
 - La conversion et le calcul d'énergie à puissance active constante.
 - Le trajet d'une mesure vers le tableau de bord IoT.
 
+## Documents séparés
+
+- [Quiz sans réponses — apprenant](QUIZ_M01_APPRENANT.md).
+- [Corrigé — formateur](CORRIGE_M01_FORMATEUR.md).
+
 ## Barème
 
 Une bonne réponse vaut 1 point. Le score minimal de validation est de **8 bonnes réponses sur 10**. Les exercices complémentaires sont détaillés dans [TP M01](../tp/README.md).

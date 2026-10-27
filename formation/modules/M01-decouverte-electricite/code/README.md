@@ -18,3 +18,8 @@ La nature exacte des livrables dépend du module : certains sont théoriques et 
 
 - **M01-V01** : consulter les supports et démonstrations indiqués dans [le plan vidéo](../videos/V01-plan.md).
 - **M01-V02** : consulter les supports et démonstrations indiqués dans [le plan vidéo](../videos/V02-plan.md).
+
+
+## Démonstration du M01
+
+Ce module d'initiation ne demande pas de programme embarqué. La [maquette web statique et fictive](../ressources/demo_dashboard_fictif.html) peut être ouverte hors ligne pour montrer le résultat cible ; elle n'est pas une application Flask connectée.
