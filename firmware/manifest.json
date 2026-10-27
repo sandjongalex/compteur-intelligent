@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "latest_firmware_stage": 8,
+  "stages": [
+    {
+      "module": "M03",
+      "sketch": "etapes/M03/Compteur_M03/Compteur_M03.ino",
+      "label": "Premier programme LED"
+    },
+    {
+      "module": "M04",
+      "sketch": "etapes/M04/Compteur_M04/Compteur_M04.ino",
+      "label": "Variables et fonctions"
+    },
+    {
+      "module": "M05",
+      "sketch": "etapes/M05/Compteur_M05/Compteur_M05.ino",
+      "label": "Bouton UART millis"
+    },
+    {
+      "module": "M06",
+      "sketch": "etapes/M06/Compteur_M06/Compteur_M06.ino",
+      "label": "PZEM six grandeurs"
+    },
+    {
+      "module": "M07",
+      "sketch": "etapes/M07/Compteur_M07/Compteur_M07.ino",
+      "label": "DS3231 LCD"
+    },
+    {
+      "module": "M08",
+      "sketch": "etapes/M08/Compteur_M08/Compteur_M08.ino",
+      "label": "Cumul energie par date"
+    }
+  ],
+  "current_sketch": "courant/CompteurIntelligent/CompteurIntelligent.ino",
+  "policy": "../docs/formation/REGLE_EVOLUTION_CONTINUE.md",
+  "note": "Quand un nouveau module modifie le firmware, ajouter un snapshot ici, actualiser latest_firmware_stage et synchroniser tous les fichiers sources du dossier courant. Les modules Python/PCB peuvent enrichir le système sans changement Arduino artificiel."
+}
