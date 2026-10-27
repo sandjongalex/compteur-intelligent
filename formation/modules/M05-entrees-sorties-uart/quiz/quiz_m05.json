@@ -1,0 +1,339 @@
+{
+  "module": "M05",
+  "title": "Entrées, sorties et communications série",
+  "format_version": 1,
+  "pass_score": 8,
+  "total": 10,
+  "questions": [
+    {
+      "id": "Q01",
+      "topic": "GPIO",
+      "difficulty": "Facile",
+      "objective": "Identifier une entrée",
+      "question": "Quel rôle donne cette instruction : pinMode(2, INPUT_PULLUP); ?",
+      "type": "single_select",
+      "options": [
+        {
+          "value": "A",
+          "label": "La broche D2 devient une sortie analogique",
+          "feedback": "Cette instruction ne configure pas une sortie."
+        },
+        {
+          "value": "B",
+          "label": "La broche D2 est une entrée avec résistance de rappel interne vers HIGH",
+          "feedback": "INPUT_PULLUP active l'entrée et sa résistance de rappel interne."
+        },
+        {
+          "value": "C",
+          "label": "La LED intégrée clignote automatiquement",
+          "feedback": "Elle ne commande pas automatiquement la LED."
+        },
+        {
+          "value": "D",
+          "label": "La broche D2 est alimentée directement par le secteur",
+          "feedback": "Le secteur n'a aucune place sur une broche numérique Arduino."
+        }
+      ],
+      "correctValues": [
+        "B"
+      ]
+    },
+    {
+      "id": "Q02",
+      "topic": "GPIO",
+      "difficulty": "Facile",
+      "objective": "Lire la logique inversée",
+      "question": "Avec un bouton correctement connecté entre D2 et GND, que renvoie digitalRead(2) quand le bouton est pressé avec INPUT_PULLUP ?",
+      "type": "single_select",
+      "options": [
+        {
+          "value": "A",
+          "label": "LOW",
+          "feedback": "L'appui relie l'entrée à GND : elle est lue LOW."
+        },
+        {
+          "value": "B",
+          "label": "HIGH",
+          "feedback": "HIGH correspond à l'état relâché dans ce montage."
+        },
+        {
+          "value": "C",
+          "label": "Toujours 5 V comme valeur flottante",
+          "feedback": "L'entrée est polarisée par la résistance de rappel, donc elle n'est pas flottante."
+        },
+        {
+          "value": "D",
+          "label": "Un nombre en kWh",
+          "feedback": "Une entrée numérique lit un niveau HIGH/LOW, pas une énergie."
+        }
+      ],
+      "correctValues": [
+        "A"
+      ]
+    },
+    {
+      "id": "Q03",
+      "topic": "GPIO",
+      "difficulty": "Facile",
+      "objective": "Distinguer action maintenue et bascule",
+      "question": "Que fait la version V01-01 du programme bouton/LED ?",
+      "type": "single_select",
+      "options": [
+        {
+          "value": "A",
+          "label": "Elle lit une tension secteur réelle",
+          "feedback": "Le secteur n'est pas raccordé dans ce TP."
+        },
+        {
+          "value": "B",
+          "label": "Elle conserve la LED allumée après un seul appui",
+          "feedback": "La bascule est enseignée après cette première version."
+        },
+        {
+          "value": "C",
+          "label": "Elle allume la LED seulement tant que le bouton est maintenu",
+          "feedback": "La LED suit directement l'état instantané du bouton."
+        },
+        {
+          "value": "D",
+          "label": "Elle transmet les mesures par GSM",
+          "feedback": "Aucun modem GSM n'est utilisé."
+        }
+      ],
+      "correctValues": [
+        "C"
+      ]
+    },
+    {
+      "id": "Q04",
+      "topic": "UART",
+      "difficulty": "Facile",
+      "objective": "Reconnaître Serial.begin",
+      "question": "Quel est le rôle de Serial.begin(9600) sur notre Uno Rev3 ?",
+      "type": "single_select",
+      "options": [
+        {
+          "value": "A",
+          "label": "Définir l'anti-rebond à 9 600 ms",
+          "feedback": "L'anti-rebond est une autre partie du code."
+        },
+        {
+          "value": "B",
+          "label": "Redémarrer la carte toutes les secondes",
+          "feedback": "Serial.begin ne programme pas de redémarrage."
+        },
+        {
+          "value": "C",
+          "label": "Choisir la broche D2 comme sortie",
+          "feedback": "Le réglage D2 est fait par pinMode."
+        },
+        {
+          "value": "D",
+          "label": "Initialiser la liaison série à 9 600 bauds",
+          "feedback": "Serial.begin règle la vitesse série au débit indiqué."
+        }
+      ],
+      "correctValues": [
+        "D"
+      ]
+    },
+    {
+      "id": "Q05",
+      "topic": "Anti-rebond",
+      "difficulty": "Intermédiaire",
+      "objective": "Identifier le rebond mécanique",
+      "question": "Pourquoi la bascule de la LED sans anti-rebond peut-elle changer plusieurs fois lors d'un appui physique ?",
+      "type": "single_select",
+      "options": [
+        {
+          "value": "A",
+          "label": "Parce que la LED intégrée se connecte au 230 V",
+          "feedback": "Aucun secteur n'est raccordé."
+        },
+        {
+          "value": "B",
+          "label": "Parce que le contact mécanique peut produire plusieurs transitions rapides",
+          "feedback": "Le rebond crée de brefs changements HIGH/LOW pouvant être pris pour plusieurs appuis."
+        },
+        {
+          "value": "C",
+          "label": "Parce que Serial.begin n'est pas appelé",
+          "feedback": "Serial.begin n'est pas requis pour faire basculer une LED."
+        },
+        {
+          "value": "D",
+          "label": "Parce que la broche D2 est toujours une sortie",
+          "feedback": "D2 est une entrée configurée avec INPUT_PULLUP."
+        }
+      ],
+      "correctValues": [
+        "B"
+      ]
+    },
+    {
+      "id": "Q06",
+      "topic": "Anti-rebond",
+      "difficulty": "Intermédiaire",
+      "objective": "Comprendre une pression validée",
+      "question": "Dans la version anti-rebond, à quel moment doit-on inverser l'état de la LED ?",
+      "type": "single_select",
+      "options": [
+        {
+          "value": "A",
+          "label": "Dès que la lecture brute passe très brièvement à LOW",
+          "feedback": "Une brève impulsion peut être un rebond."
+        },
+        {
+          "value": "B",
+          "label": "Chaque tour de loop pendant LOW",
+          "feedback": "Changer à chaque tour de loop ferait clignoter ou basculer trop vite."
+        },
+        {
+          "value": "C",
+          "label": "Lorsque le niveau est stabilisé à LOW après la période d'anti-rebond",
+          "feedback": "Le front d'appui stable LOW déclenche une seule bascule."
+        },
+        {
+          "value": "D",
+          "label": "À chaque relâchement et chaque appui",
+          "feedback": "On doit choisir un seul événement par appui : pas les deux transitions."
+        }
+      ],
+      "correctValues": [
+        "C"
+      ]
+    },
+    {
+      "id": "Q07",
+      "topic": "UART",
+      "difficulty": "Intermédiaire",
+      "objective": "Lire un caractère sans blocage",
+      "question": "Quelle séquence lit correctement un caractère seulement s'il est disponible ?",
+      "type": "single_select",
+      "options": [
+        {
+          "value": "A",
+          "label": "if (Serial.available() > 0) { char c = (char)Serial.read(); }",
+          "feedback": "Le test available vérifie qu'une donnée est prête avant de la lire."
+        },
+        {
+          "value": "B",
+          "label": "while (Serial.available() == 0) { } sans autre traitement",
+          "feedback": "Une attente vide tant qu'il n'y a rien bloque le reste du programme."
+        },
+        {
+          "value": "C",
+          "label": "delay(5000); puis lire systématiquement",
+          "feedback": "Une pause fixe ne garantit pas l'arrivée d'un caractère."
+        },
+        {
+          "value": "D",
+          "label": "digitalRead(13) pour recevoir un caractère USB",
+          "feedback": "digitalRead lit une entrée numérique, pas un octet du port série."
+        }
+      ],
+      "correctValues": [
+        "A"
+      ]
+    },
+    {
+      "id": "Q08",
+      "topic": "UART",
+      "difficulty": "Intermédiaire",
+      "objective": "Interpréter les commandes",
+      "question": "Dans notre exemple, quel caractère envoyé depuis le moniteur série éteint la LED intégrée ?",
+      "type": "single_select",
+      "options": [
+        {
+          "value": "A",
+          "label": "1",
+          "feedback": "1 allume la LED."
+        },
+        {
+          "value": "B",
+          "label": "?",
+          "feedback": "? affiche l'aide."
+        },
+        {
+          "value": "C",
+          "label": "L",
+          "feedback": "L n'est pas une commande reconnue par cet exemple."
+        },
+        {
+          "value": "D",
+          "label": "0",
+          "feedback": "0 éteint la LED."
+        }
+      ],
+      "correctValues": [
+        "D"
+      ]
+    },
+    {
+      "id": "Q09",
+      "topic": "Temporisation",
+      "difficulty": "Difficile",
+      "objective": "Comprendre le calcul du temps écoulé",
+      "question": "Pourquoi utiliser (unsigned long)(maintenant - precedentMs) >= 1000UL avec millis() ?",
+      "type": "single_select",
+      "options": [
+        {
+          "value": "A",
+          "label": "Pour forcer le programme à attendre bloqué une seconde",
+          "feedback": "La comparaison s'effectue sans delay et laisse tourner loop."
+        },
+        {
+          "value": "B",
+          "label": "Pour supprimer définitivement l'overflow de toutes les variables",
+          "feedback": "Le débordement existe toujours ; la soustraction en arithmétique non signée en gère le retour pour des intervalles adaptés."
+        },
+        {
+          "value": "C",
+          "label": "Pour déclencher une tâche environ chaque seconde sans bloquer et gérer correctement le retour de millis à zéro",
+          "feedback": "La soustraction non signée fonctionne au retour de millis à zéro, pour une période bien inférieure à sa plage."
+        },
+        {
+          "value": "D",
+          "label": "Pour transformer 9600 bauds en 1 kWh",
+          "feedback": "Il n'existe aucune conversion directe entre des bauds et de l'énergie."
+        }
+      ],
+      "correctValues": [
+        "C"
+      ]
+    },
+    {
+      "id": "Q10",
+      "topic": "Temporisation",
+      "difficulty": "Difficile",
+      "objective": "Prédire la réactivité",
+      "question": "La carte doit afficher une donnée fictive toutes les secondes et répondre à la commande « 1 » entre deux affichages. Quelle approche répond le mieux au besoin ?",
+      "type": "single_select",
+      "options": [
+        {
+          "value": "A",
+          "label": "Appeler delay(1000) avant de lire le port série",
+          "feedback": "delay(1000) retarde la prise en compte des commandes dans loop."
+        },
+        {
+          "value": "B",
+          "label": "Lire les commandes dans chaque loop puis vérifier le temps écoulé avec millis()",
+          "feedback": "Lire les caractères disponibles puis comparer millis permet d'accomplir les deux tâches sans attente bloquante."
+        },
+        {
+          "value": "C",
+          "label": "Attendre dans while (Serial.available() == 0) avant chaque relevé",
+          "feedback": "Une boucle d'attente bloque les relevés en l'absence de commandes."
+        },
+        {
+          "value": "D",
+          "label": "Raccorder D0/RX au secteur pour accélérer l'UART",
+          "feedback": "Raccorder D0 au secteur est dangereux et ne résout aucun problème de temporisation."
+        }
+      ],
+      "correctValues": [
+        "B"
+      ]
+    }
+  ]
+}

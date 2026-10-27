@@ -1,37 +1,9 @@
-# Évaluation — M05
+# Quiz M05 — 10 questions
 
-**STATUT : plan de 10 questions défini ; banque QCM corrigée à rédiger et vérifier.**
+- [Version apprenant, sans corrigé](QUIZ_M05_APPRENANT.md).
+- [Correction détaillée et explications des mauvaises réponses](CORRIGE_M05_FORMATEUR.md).
+- [Format de données JSON (intégration ultérieure)](quiz_m05.json).
 
-## Périmètre extrait du plan pédagogique
+**3 GPIO, 2 anti-rebond, 3 UART, 2 temporisations ; 4 faciles, 4 intermédiaires, 2 difficiles.** Réussite : **8/10** et correction des erreurs de sécurité.
 
-3 GPIO, 2 anti-rebond, 3 UART, 2 temporisations
-
-## Règles d'évaluation
-
-- **10 questions** par module : 4 faciles, 4 intermédiaires, 2 difficiles.
-- **Seuil de validation : 80 %**, soit au moins 8/10.
-- QCM à quatre options, calculs, lecture de schémas/code ou vrai/faux lorsque pertinent.
-- Chaque proposition aura une justification pédagogique ; éviter les questions ambiguës.
-- Prévoir au moins une mise en situation et une question sur les erreurs fréquentes.
-- Les fautes critiques de sécurité doivent être corrigées obligatoirement.
-
-## Modèle d'une question (à compléter et valider)
-
-**Question Q01 — [notion exacte]**
-
-- Objectif : [compétence mesurée]
-- Difficulté : facile / intermédiaire / difficile
-- Énoncé : [question précise avec toutes les données]
-- A. [proposition]
-- B. [proposition]
-- C. [proposition]
-- D. [proposition]
-- Réponse correcte : [une option ou toutes les options valides]
-- Explication : [raison exacte et correction des distracteurs]
-
-## Critères de validation
-
-- [ ] 10 questions rédigées avec les réponses et corrigés.
-- [ ] Les objectifs du module sont effectivement couverts.
-- [ ] Le score et le corrigé sont testés.
-- [ ] Les questions sont compréhensibles sans connaissances ultérieures.
+Les QCM vérifient les résultats du code, l'analyse d'erreurs et les principes, pas uniquement des définitions apprises par cœur. Les travaux pratiques sont effectués en dehors des 18 minutes vidéo.
