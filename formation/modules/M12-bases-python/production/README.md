@@ -7,6 +7,16 @@
 - [ ] M12-V01 — Variables, types, conditions et fonctions Python (7 min) : script, slides, tournage, montage, vérification
 - [ ] M12-V02 — JSON, dates, erreurs et fichiers Python (7 min) : script, slides, tournage, montage, vérification
 
+## Vérifications obligatoires du projet fil rouge
+
+- [ ] J'ai consulté la [règle de progression continue](../../../../docs/formation/REGLE_EVOLUTION_CONTINUE.md).
+- [ ] Je repars du code, du matériel ou de l'application du module précédent.
+- [ ] Je documente les fonctionnalités conservées, les ajouts et les transformations intentionnelles.
+- [ ] Le mini-exercice pédagogique est ensuite **intégré au même projet principal**.
+- [ ] Les tests couvrent les nouvelles capacités **et** les acquis antérieurs ; les validations physiques non réalisées restent indiquées comme telles.
+- [ ] Si le firmware change : snapshot Mxx, dossier courant, manifeste et progression sont mis à jour, puis les tests passent.
+- [ ] Si le code Python/web ou le schéma KiCad change : l'intégration avec les éléments déjà créés est vérifiée.
+
 ## Checklist avant publication
 
 - [ ] Script clair pour débutant et conforme au plan.
