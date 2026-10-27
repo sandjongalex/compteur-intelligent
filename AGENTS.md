@@ -36,6 +36,8 @@ Règles obligatoires pour M10–M16, y compris scripts, schéma KiCad et PCB :
 
 Référence normative et tableau de câblage : [règle de progression continue](docs/formation/REGLE_EVOLUTION_CONTINUE.md#attribution-des-interfaces-matérielles-à-partir-de-m10).
 
+**Tableau de brochage officiel M10–M16 (ATmega328P-PU DIP-28) :** [docs/hardware/TABLEAU_AFFECTATION_ATMEGA328P_PDIP28.md](docs/hardware/TABLEAU_AFFECTATION_ATMEGA328P_PDIP28.md). Consulter la carte complète des 28 broches **avant toute modification** des pilotes, connecteurs ou schémas KiCad. D3 (buzzer), D4 (PWRKEY) et D5 (STATUS) ne sont que des **réservations proposées**, non des connexions définitivement approuvées.
+
 ### Invariants
 
 - Simulation sans secteur disponible par défaut ; secteur 230 V réservé au personnel qualifié.
