@@ -23,6 +23,8 @@
 | M01-V01 — Du réseau électrique au tableau de bord IoT | 5 min | [Plan](videos/V01-plan.md) | [Script](scripts/V01-script.md) | [Storyboard](slides/V01-storyboard.md) |
 | M01-V02 — Comprendre volts, ampères, watts et kWh | 5 min | [Plan](videos/V02-plan.md) | [Script](scripts/V02-script.md) | [Storyboard](slides/V02-storyboard.md) |
 
+[Présentation des fichiers PowerPoint et statut d'import](slides/PRESENTATIONS_MODULE01.md).
+
 Les scripts comptent environ **643** et **660 mots parlés** : ils sont ciblés pour cinq minutes chacun mais devront être **répétés et chronométrés** avant tournage.
 
 ## Documents pour les apprenants
