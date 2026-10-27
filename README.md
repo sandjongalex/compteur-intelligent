@@ -59,3 +59,14 @@ Le projet est un **système de suivi énergétique**, pas un compteur certifié 
 ## Statut
 
 La documentation et le plan de formation constituent le point de départ du dépôt. Les scripts vidéo, quiz complets, programmes Arduino, fichiers KiCad et application Flask seront ajoutés progressivement, après validation technique.
+
+
+---
+
+## Espace de production par module
+
+L'ensemble des **16 dossiers pédagogiques** est organisé dans [`formation/`](formation/README.md). Chaque module contient les plans de ses deux vidéos et des espaces dédiés aux scripts oraux, slides, TP, quiz, ressources, code et suivi de tournage.
+
+**[Ouvrir l'index des 16 modules](formation/README.md)** · [Lire le guide pédagogique](formation/GUIDE_PEDAGOGIQUE.md)
+
+> Les plans vidéo sont renseignés ; les scripts, PowerPoint, quiz corrigés et programmes finalisés restent à produire et tester. Le programme général original reste conservé sans modification.
