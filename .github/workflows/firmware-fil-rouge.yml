@@ -25,6 +25,12 @@ jobs:
           g++ -std=c++11 -Wall -Wextra -pedantic \
             firmware/tests/test_m08.cpp -o /tmp/test_m08
           /tmp/test_m08
+      - name: Tests M09 - simulation et chronologie
+        run: |
+          python3 firmware/tests/test_m09_safety.py
+          g++ -std=c++11 -Wall -Wextra -pedantic \
+            firmware/tests/test_m09.cpp -o /tmp/test_m09
+          /tmp/test_m09
 
   compilation-uno-simulation:
     runs-on: ubuntu-latest
@@ -50,3 +56,34 @@ jobs:
           arduino-cli compile --fqbn arduino:avr:uno \
             --build-property compiler.cpp.extra_flags="-DALEXTECH_ATMEGA_AUTONOME=1" \
             firmware/etapes/M09/Compteur_M09
+
+  compilation-uno-materiel:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: arduino/setup-arduino-cli@v2
+      - name: Installer coeur AVR et bibliotheques materielles
+        run: |
+          arduino-cli core update-index
+          arduino-cli core install arduino:avr
+          arduino-cli lib update-index
+          arduino-cli lib install PZEM004Tv30@1.2.1 RTClib hd44780
+      - name: RTC et LCD reels avec PZEM simule
+        run: |
+          arduino-cli compile --fqbn arduino:avr:uno \
+            --build-property compiler.cpp.extra_flags="-DALEXTECH_RTC_LCD_REELS=1" \
+            firmware/courant/CompteurIntelligent
+      - name: RTC, LCD et PZEM reels (compilation uniquement)
+        run: |
+          arduino-cli compile --fqbn arduino:avr:uno \
+            --build-property compiler.cpp.extra_flags="-DALEXTECH_RTC_LCD_REELS=1 -DALEXTECH_PZEM_REEL=1" \
+            firmware/courant/CompteurIntelligent
+      - name: Interdire PZEM reel sans RTC reel
+        run: |
+          if arduino-cli compile --fqbn arduino:avr:uno \
+            --build-property compiler.cpp.extra_flags="-DALEXTECH_PZEM_REEL=1 -DALEXTECH_RTC_LCD_REELS=0" \
+            firmware/courant/CompteurIntelligent; then
+            echo "ERREUR : melange horloge simulee / PZEM reel accepte"
+            exit 1
+          fi
+          echo "PASS : mode PZEM reel sans RTC interdit"
