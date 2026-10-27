@@ -49,6 +49,6 @@ Le mode PZEM de notre code existant utilise par défaut **D10/D11** en `Software
 
 ## Références
 
-- <https://content.arduino.cc/assets/ATmega328P_Datasheet.pdf> — données constructeur et brochages, **sélectionner la figure PDIP28 et non la TQFP32**.
+- <https://docs.arduino.cc/resources/datasheets/Atmel-42735-8-bit-AVR-Microcontroller-ATmega328-328P_Datasheet.pdf> — données constructeur et brochages, **sélectionner la figure PDIP28 et non la TQFP32**.
 - <https://docs.arduino.cc/built-in-examples/arduino-isp/ArduinoISP/> — programmation ArduinoISP (la disponibilité du chemin peut évoluer).
 - <https://support.arduino.cc/hc/en-us/articles/6125080065820-Select-programmer-in-Arduino-IDE> — sélection du programmeur.

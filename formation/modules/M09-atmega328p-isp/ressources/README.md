@@ -9,6 +9,6 @@
 - [TP apprenant](../tp/TP_M09_APPRENANT.md) · [Corrigés formateur](../tp/CORRIGE_M09_FORMATEUR.md).
 - [Quiz de 10 QCM](../quiz/QUIZ_M09_APPRENANT.md) · [Corrigé quiz](../quiz/CORRIGE_M09_FORMATEUR.md).
 
-**Sources de référence :** [guide officiel ArduinoISP](https://docs.arduino.cc/retired/getting-started-guides/ArduinoISP), [documentation du programmeur Arduino IDE](https://support.arduino.cc/hc/en-us/articles/6125080065820-Select-programmer-in-Arduino-IDE), [fiche ATmega328P](https://content.arduino.cc/assets/ATmega328P_Datasheet.pdf).
+**Sources de référence :** [guide officiel ArduinoISP](https://docs.arduino.cc/retired/getting-started-guides/ArduinoISP), [documentation du programmeur Arduino IDE](https://support.arduino.cc/hc/en-us/articles/6125080065820-Select-programmer-in-Arduino-IDE), [fiche ATmega328P](https://docs.arduino.cc/resources/datasheets/Atmel-42735-8-bit-AVR-Microcontroller-ATmega328-328P_Datasheet.pdf).
 
 Aucun PowerPoint. Aucun transfert ISP physique prétendument confirmé.

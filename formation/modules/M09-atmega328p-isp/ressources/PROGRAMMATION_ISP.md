@@ -42,4 +42,4 @@
 
 - <https://docs.arduino.cc/retired/getting-started-guides/ArduinoISP>
 - <https://support.arduino.cc/hc/en-us/articles/6125080065820-Select-programmer-in-Arduino-IDE>
-- <https://content.arduino.cc/assets/ATmega328P_Datasheet.pdf>
+- <https://docs.arduino.cc/resources/datasheets/Atmel-42735-8-bit-AVR-Microcontroller-ATmega328-328P_Datasheet.pdf>
