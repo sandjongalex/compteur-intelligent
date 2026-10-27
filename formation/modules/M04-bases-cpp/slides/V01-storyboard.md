@@ -1,23 +1,18 @@
-# Slides et storyboard M04-V01
+# M04-V01 — Storyboard PowerPoint : Variables, types et calculs
 
-**STATUT : Brief prêt, PowerPoint et illustrations à produire.**
+**8 diapositives 16:9** · **7 minutes visées** · Plan de montage pour le PowerPoint modifiable.
 
-## Contenu visuel prescrit par le plan
+| Diapo | Temps | Titre | À afficher / montrer |
+|---|---|---|---|
+| 1 | 00:00–00:50 | « Donner une mémoire à notre compteur » | Mesures fictives à conserver : V, W, kWh |
+| 2 | 00:50–01:20 | « Une variable, c'est une boîte » | Boîtes `compteur = 3`, `tensionV = 230.5` |
+| 3 | 01:20–02:00 | « int • float • bool » | Types et exemples compréhensibles |
+| 4 | 02:00–03:00 | « const, limites et mémoire » | `const`, `int` 16 bits / `float` 32 bits **sur AVR Uno** |
+| 5 | 03:00–04:05 | « 500 W pendant 2 h » | Calcul 500/1000 × 2 = **1 kWh** |
+| 6 | 04:05–04:30 | « Le moniteur série » | `Serial.begin(9600)`, `Serial.print`, sortie attendue |
+| 7 | 04:30–05:40 | « Le piège 5 / 2 » | Division entière 2 / division décimale 2.5 |
+| 8 | 05:40–07:00 | « À vous : 200 W pendant 5 h » | Consigne, révélation 1 kWh, synthèse |
 
-- Analogie : une variable est une boîte étiquetée qui contient une valeur.
-- Démonstration : calculer une puissance fictive et afficher le résultat sur le moniteur série.
+**Important :** toute sortie d'IDE affichée dans des diapositives est une **illustration attendue**, pas une capture d'un test réel. Le formateur doit produire ses propres captures de compilation/téléversement.
 
-## Séquence conseillée
-
-| Support | Fonction pédagogique | Statut |
-|---|---|---|
-| Diapo titre + objectif | Dire ce que l'apprenant va réussir | À créer |
-| Schéma/illustration | Visualiser le concept principal | À créer |
-| Exemple concret | Montrer la démarche pas à pas | À créer |
-| Démonstration vidéo ou capture | Vérifier le résultat | À filmer |
-| Diapo rappel + exercice | Renforcer et évaluer | À créer |
-
-- [Fiche vidéo de référence](../videos/V01-plan.md)
-- [Script oral](../scripts/V01-script.md)
-
-Ne pas utiliser d'illustration supposant une manipulation du 230 V par un débutant.
+[Script oral](../scripts/V01-script.md) · [Code et instructions](../code/README.md)

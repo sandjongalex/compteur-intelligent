@@ -1,22 +1,18 @@
-# Slides et storyboard M04-V02
+# M04-V02 — Storyboard PowerPoint : Conditions, boucles et fonctions
 
-**STATUT : Brief prêt, PowerPoint et illustrations à produire.**
+**8 diapositives 16:9** · **7 minutes visées** · Plan de montage pour le PowerPoint modifiable.
 
-## Contenu visuel prescrit par le plan
+| Diapo | Temps | Titre | À afficher / montrer |
+|---|---|---|---|
+| 1 | 00:00–00:55 | « Un programme qui décide » | Une mesure fictive et un choix |
+| 2 | 00:55–01:50 | « if / else » | `tensionV > 240.0f` puis messages |
+| 3 | 01:50–02:20 | « = n'est pas == » | Affectation et comparaison, syntaxe |
+| 4 | 02:20–03:25 | « for : 1, 2, 3 » | Compteur de boucle et affichages |
+| 5 | 03:25–04:20 | « while : attention à l'arrêt » | `essais < 3` et incrémentation |
+| 6 | 04:20–05:15 | « Une fonction, un travail » | Définition de `wattsVersKilowatts` |
+| 7 | 05:15–05:45 | « Paramètre et return » | `500 W → 0.5 kW` |
+| 8 | 05:45–07:00 | « À vous : 1 250 W » | Exercice 1.25 kW + transition M05 |
 
-- Démonstration : afficher un avertissement si une valeur simulée dépasse une limite.
+**Sécurité :** le seuil de 240 V est **fictif** et ne définit pas une protection secteur.
 
-## Séquence conseillée
-
-| Support | Fonction pédagogique | Statut |
-|---|---|---|
-| Diapo titre + objectif | Dire ce que l'apprenant va réussir | À créer |
-| Schéma/illustration | Visualiser le concept principal | À créer |
-| Exemple concret | Montrer la démarche pas à pas | À créer |
-| Démonstration vidéo ou capture | Vérifier le résultat | À filmer |
-| Diapo rappel + exercice | Renforcer et évaluer | À créer |
-
-- [Fiche vidéo de référence](../videos/V02-plan.md)
-- [Script oral](../scripts/V02-script.md)
-
-Ne pas utiliser d'illustration supposant une manipulation du 230 V par un débutant.
+[Script oral](../scripts/V02-script.md) · [Sketches Arduino](../code/README.md)
