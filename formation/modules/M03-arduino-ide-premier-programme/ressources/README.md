@@ -1,24 +1,13 @@
-# Ressources pédagogiques — M03
+# M03 — Évaluations et ressources
 
-**STATUT : inventaire des livrables, à produire et à contrôler.**
+**Contenus rédigés pour les apprenants et le formateur.**
 
-## Livrables prévus par le plan
-
-**Ressources :** installation Arduino IDE, code LED, schéma et guide de dépannage.
-
-## Organisation
-
-- Les diapositives et storyboards sont dans [slides](../slides/).
-- Les scripts sont dans [scripts](../scripts/).
-- Les programmes et fichiers techniques sont dans [code](../code/).
-- Les fiches d'exercices sont dans [tp](../tp/).
-- Les quiz sont dans [quiz](../quiz/).
-
-## Contrôle des ressources
-
-- [ ] Version des composants et des bibliothèques documentée.
-- [ ] Schémas et captures lisibles sur téléphone.
-- [ ] Fichiers ouverts/testés dans le logiciel annoncé.
-- [ ] Aucun secret, numéro de téléphone ou identifiant réel publié.
-- [ ] Licences des images et ressources respectées.
-- [ ] Fichiers validés avant publication auprès des apprenants.
+- [TP M03 apprenant](tp/TP_M03_APPRENANT.md).
+- [Correction des TP](tp/CORRIGE_M03_FORMATEUR.md).
+- [Quiz apprenant 10 questions](quiz/QUIZ_M03_APPRENANT.md).
+- [Correction expliquée du quiz](quiz/CORRIGE_M03_FORMATEUR.md).
+- [Banque JSON](quiz/quiz_m03.json).
+- [Sketches Arduino](code/README.md).
+- [Installation Arduino IDE](ressources/INSTALLATION_ARDUINO_IDE.md).
+- [Câblage LED](ressources/SCHEMA_LED.md).
+- [Dépannage](ressources/DEPANNAGE.md).

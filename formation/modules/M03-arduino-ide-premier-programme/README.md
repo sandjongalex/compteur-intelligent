@@ -1,34 +1,38 @@
 # M03 — Installer Arduino IDE et programmer sa première LED
 
-**Durée vidéo : 14 minutes** · **2 leçons** · **État : organisation prête, production à réaliser**
+**AlexTech Academy : 14 minutes de vidéo (2 × 7 minutes)** · **Arduino Uno Rev3** · **Débutant après M01 et M02**.
 
-## Objectif et prérequis
+## Objectif
 
-Objectif : compiler et téléverser un premier programme. Prérequis : M01-M02. Durée : 14 minutes.
+À la fin du module, l'apprenant peut installer Arduino IDE 2, choisir une Uno/son port, vérifier et téléverser un programme, comprendre `setup()` et `loop()`, faire clignoter une LED interne et externe, puis modifier les durées ON/OFF.
 
-## Vidéos du module
+## Leçons et préparation
 
-- [M03-V01 — Installer Arduino IDE et comprendre la compilation (7 min)](videos/V01-plan.md) · [Script](scripts/V01-script.md) · [Diapositives](slides/V01-storyboard.md)
-- [M03-V02 — Faire clignoter une LED avec Arduino Uno (7 min)](videos/V02-plan.md) · [Script](scripts/V02-script.md) · [Diapositives](slides/V02-storyboard.md)
+| Leçon | Vidéo cible | Script oral | Storyboard |
+|---|---:|---|---|
+| M03-V01 — Installer Arduino IDE et comprendre la compilation | 7 min | [Script](scripts/V01-script.md) | [Slides](slides/V01-storyboard.md) |
+| M03-V02 — Faire clignoter une LED avec Arduino Uno | 7 min | [Script](scripts/V02-script.md) | [Slides](slides/V02-storyboard.md) |
 
-## Préparer et évaluer
+## Ressources pour débutants
 
-- [Travaux pratiques et exercices](tp/README.md)
-- [Banque de quiz et objectifs de validation](quiz/README.md)
-- [Supports et ressources téléchargeables](ressources/README.md)
-- [Code et fichiers techniques](code/README.md)
-- [Suivi de production](production/README.md)
+- [Guide installation Arduino IDE 2](ressources/INSTALLATION_ARDUINO_IDE.md).
+- [Schéma LED sur D8 avec résistance](ressources/SCHEMA_LED.md).
+- [Guide de dépannage](ressources/DEPANNAGE.md).
+- [Quatre sketches Arduino de démonstration](code/README.md).
+- [Énoncés des deux TP](tp/TP_M03_APPRENANT.md).
+- [Quiz apprenant de 10 questions](quiz/QUIZ_M03_APPRENANT.md).
 
-## Indications du plan initial
+## Documents formateur
 
-**Ressources :** installation Arduino IDE, code LED, schéma et guide de dépannage.
+- [Corrigés et barèmes des TP](tp/CORRIGE_M03_FORMATEUR.md).
+- [Corrigé expliqué du quiz](quiz/CORRIGE_M03_FORMATEUR.md).
+- [QCM JSON](quiz/quiz_m03.json).
+- [Suivi de production](production/README.md).
 
-**Quiz M03 :** environnement, compilation, téléversement, LED et fonctions principales.
+## Statut réel
 
-**Validation :** compiler et modifier un programme sans erreur.
+Scripts, exercices, quiz et code pédagogique **rédigés** ; les programmes et les présentations devront être vérifiés sur une vraie carte et lors d'un test de rendu. **Tu assures l'enregistrement et la publication**.
 
-## Documents de référence
+La LED externe est un montage **basse tension uniquement**, sans secteur, PZEM ni SIM800L.
 
-[Plan complet de la formation 4 h](../../../docs/formation/PLAN_FORMATION_4H.md) · [Guide pédagogique](../../GUIDE_PEDAGOGIQUE.md)
-
-> Les fiches vidéo reprennent le plan validé. Les scripts, slides, quiz corrigés et programmes ne sont pas présentés comme terminés tant qu'ils n'ont pas été effectivement produits et vérifiés.
+[Retour à la formation](../../README.md) · [Plan global](../../../docs/formation/PLAN_FORMATION_4H.md)

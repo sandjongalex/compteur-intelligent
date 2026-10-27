@@ -1,27 +1,30 @@
-# Suivi de production — M03
+# M03 — Suivi de production
 
-**Durée maximale des vidéos du module : 14 min.**
+**14 min : deux vidéos de 7 min.** L'enregistrement et la publication sont réservés au formateur.
 
-## Fiches vidéo
+## Production des contenus
 
-- [ ] M03-V01 — Installer Arduino IDE et comprendre la compilation (7 min) : script, slides, tournage, montage, vérification
-- [ ] M03-V02 — Faire clignoter une LED avec Arduino Uno (7 min) : script, slides, tournage, montage, vérification
+- [x] Scripts oraux M03-V01 et M03-V02 rédigés.
+- [x] Storyboards 16:9 préparés.
+- [x] Sketches minimal, LED interne, LED externe et correction rédigés.
+- [x] Guide d'installation, schéma LED, dépannage.
+- [x] TP apprenant et corrigés formateur.
+- [x] Quiz 10 questions avec feedback complet et JSON.
 
-## Checklist avant publication
+## Tests à valider
 
-- [ ] Script clair pour débutant et conforme au plan.
-- [ ] Slides, images et captures préparées.
-- [ ] Matériel et montage basse tension testés.
-- [ ] Exemples de code et fichiers réellement reproductibles.
-- [ ] Exercices et solutions disponibles.
-- [ ] 10 questions de quiz corrigées et validées.
-- [ ] Durée cumulée vidéo dans les 14 minutes.
-- [ ] Audio, titres et sous-titres vérifiés.
-- [ ] Sécurité, niveau de tension et brochages contrôlés.
-- [ ] Vidéos et ressources intégrées dans la plateforme.
+- [ ] Vérifier une compilation réelle des quatre `.ino` dans Arduino IDE 2 avec cible Uno.
+- [ ] Vérifier un vrai téléversement sur Uno Rev3.
+- [ ] Filmer une vraie LED intégrée puis externe clignotant.
+- [ ] Vérifier le schéma D8 → résistance 330 Ω → LED → GND.
+- [ ] Répéter et chronométrer les scripts avant vidéo, 7 minutes chacun.
+- [ ] Vérifier la lisibilité du rendu PowerPoint sur smartphone.
 
-## Statuts de production
+## À faire par le formateur
 
-Utiliser **À produire → En rédaction → À tester → Prêt à filmer → Monté → Validé → Publié**.
+- [ ] Enregistrer les deux leçons.
+- [ ] Monter les captures d'écran et les gros plans des composants.
+- [ ] Ajouter les sous-titres et vérifier les durées finales.
+- [ ] Publier sur AlexTech Academy.
 
-Ne pas cocher un statut avant d'avoir effectivement réalisé le travail.
+**Note :** ne jamais marquer les essais matériels comme terminés sans véritable test.

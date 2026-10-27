@@ -1,0 +1,337 @@
+{
+  "module": "M03",
+  "format_version": 1,
+  "pass_score": 8,
+  "questions": [
+    {
+      "id": "Q01",
+      "type": "single_select",
+      "difficulty": "Facile",
+      "topic": "Environnement",
+      "objective": "Reconnaître le logiciel",
+      "question": "À quoi sert principalement Arduino IDE ?",
+      "options": [
+        {
+          "value": "A",
+          "label": "Calculer des factures d'énergie",
+          "feedback": "Arduino IDE n'est pas un logiciel de facturation."
+        },
+        {
+          "value": "B",
+          "label": "Écrire, vérifier et téléverser des sketches",
+          "feedback": "L'IDE fournit l'éditeur, les outils de compilation et de téléversement."
+        },
+        {
+          "value": "C",
+          "label": "Alimenter la LED sans carte",
+          "feedback": "Le logiciel n'alimente aucun composant à lui seul."
+        },
+        {
+          "value": "D",
+          "label": "Remplacer le microcontrôleur",
+          "feedback": "Le code préparé est exécuté par le microcontrôleur, pas par le logiciel IDE seul."
+        }
+      ],
+      "correctValues": [
+        "B"
+      ]
+    },
+    {
+      "id": "Q02",
+      "type": "single_select",
+      "difficulty": "Facile",
+      "topic": "Environnement",
+      "objective": "Identifier le matériel du cours",
+      "question": "Quelle carte utilisons-nous pour les démonstrations du Module 03 ?",
+      "options": [
+        {
+          "value": "A",
+          "label": "Arduino Mega",
+          "feedback": "Une Mega a un microcontrôleur et des broches différents de la cible."
+        },
+        {
+          "value": "B",
+          "label": "ESP32",
+          "feedback": "L'ESP32 n'est pas la carte du cours à ce stade."
+        },
+        {
+          "value": "C",
+          "label": "Raspberry Pi",
+          "feedback": "Un Raspberry Pi est un autre type d'ordinateur."
+        },
+        {
+          "value": "D",
+          "label": "Arduino Uno Rev3",
+          "feedback": "La Uno Rev3 est la carte retenue pour l'apprentissage de l'ATmega328P."
+        }
+      ],
+      "correctValues": [
+        "D"
+      ]
+    },
+    {
+      "id": "Q03",
+      "type": "single_select",
+      "difficulty": "Facile",
+      "topic": "Environnement",
+      "objective": "Choisir le port",
+      "question": "Avant le téléversement, quel réglage faut-il vérifier avec la carte ?",
+      "options": [
+        {
+          "value": "A",
+          "label": "La carte sélectionnée et son port USB série",
+          "feedback": "La sélection de la bonne carte et du bon port est indispensable pour l'envoi."
+        },
+        {
+          "value": "B",
+          "label": "La couleur de l'éditeur",
+          "feedback": "La couleur de l'interface n'affecte pas le téléversement."
+        },
+        {
+          "value": "C",
+          "label": "Le navigateur par défaut",
+          "feedback": "Le navigateur n'envoie pas le sketch dans la Uno."
+        },
+        {
+          "value": "D",
+          "label": "La date de création du fichier",
+          "feedback": "La date du fichier ne sélectionne pas le périphérique."
+        }
+      ],
+      "correctValues": [
+        "A"
+      ]
+    },
+    {
+      "id": "Q04",
+      "type": "single_select",
+      "difficulty": "Facile",
+      "topic": "Compilation",
+      "objective": "Distinguer setup et loop",
+      "question": "Quelle fonction d'un sketch Arduino s'exécute de façon répétée après setup() ?",
+      "options": [
+        {
+          "value": "A",
+          "label": "install()",
+          "feedback": "Cette fonction n'est pas une fonction standard du sketch."
+        },
+        {
+          "value": "B",
+          "label": "compile()",
+          "feedback": "Compiler est une étape de l'IDE, pas une fonction de sketch appelée automatiquement."
+        },
+        {
+          "value": "C",
+          "label": "loop()",
+          "feedback": "loop() est rappelée continuellement tant que la carte fonctionne."
+        },
+        {
+          "value": "D",
+          "label": "resetBoard()",
+          "feedback": "Ce n'est pas la fonction répétitive du programme Arduino."
+        }
+      ],
+      "correctValues": [
+        "C"
+      ]
+    },
+    {
+      "id": "Q05",
+      "type": "single_select",
+      "difficulty": "Intermédiaire",
+      "topic": "Compilation",
+      "objective": "Comprendre Vérifier",
+      "question": "Que fait le bouton Vérifier (✓) dans Arduino IDE 2 ?",
+      "options": [
+        {
+          "value": "A",
+          "label": "Il charge toujours le sketch sur la carte",
+          "feedback": "Le bouton de téléversement réalise l'envoi du programme."
+        },
+        {
+          "value": "B",
+          "label": "Il contrôle et compile le sketch sans devoir le téléverser",
+          "feedback": "Vérifier contrôle et compile, sans imposer un transfert vers la carte."
+        },
+        {
+          "value": "C",
+          "label": "Il déclenche le modem GSM",
+          "feedback": "Le GSM ne fait pas partie du Module 03."
+        },
+        {
+          "value": "D",
+          "label": "Il mesure le courant de la LED",
+          "feedback": "L'IDE n'est pas un ampèremètre."
+        }
+      ],
+      "correctValues": [
+        "B"
+      ]
+    },
+    {
+      "id": "Q06",
+      "type": "single_select",
+      "difficulty": "Intermédiaire",
+      "topic": "Compilation",
+      "objective": "Comprendre les erreurs de syntaxe",
+      "question": "Quel problème peut arrêter une compilation, même sans carte connectée ?",
+      "options": [
+        {
+          "value": "A",
+          "label": "Une accolade manquante dans le code",
+          "feedback": "La syntaxe doit être correcte pour compiler : une accolade oubliée peut provoquer une erreur."
+        },
+        {
+          "value": "B",
+          "label": "Une LED externe inversée",
+          "feedback": "Une LED inversée peut gêner le montage réel mais n'est pas une erreur de compilation."
+        },
+        {
+          "value": "C",
+          "label": "Une prise GND libre",
+          "feedback": "Une broche GND libre n'est pas analysée par le compilateur."
+        },
+        {
+          "value": "D",
+          "label": "L'absence de résistor connecté à D8",
+          "feedback": "L'IDE compile du code, sans inspecter physiquement la résistance."
+        }
+      ],
+      "correctValues": [
+        "A"
+      ]
+    },
+    {
+      "id": "Q07",
+      "type": "single_select",
+      "difficulty": "Intermédiaire",
+      "topic": "Téléversement",
+      "objective": "Comprendre la différence compilation/téléversement",
+      "question": "Le programme compile sans erreur, mais ne peut pas être envoyé sur la Uno. Que vérifier en priorité ?",
+      "options": [
+        {
+          "value": "A",
+          "label": "Le nombre de prises du tableau électrique",
+          "feedback": "Le tableau électrique n'a aucun rôle pour la liaison USB de test."
+        },
+        {
+          "value": "B",
+          "label": "Le facteur de puissance",
+          "feedback": "Le facteur de puissance ne détermine pas la liaison USB."
+        },
+        {
+          "value": "C",
+          "label": "La valeur kWh du PZEM",
+          "feedback": "Le PZEM n'est pas impliqué dans ce module."
+        },
+        {
+          "value": "D",
+          "label": "Le câble USB de données, la carte et le port sélectionnés",
+          "feedback": "Le câble USB, la sélection de carte et de port sont les premières vérifications."
+        }
+      ],
+      "correctValues": [
+        "D"
+      ]
+    },
+    {
+      "id": "Q08",
+      "type": "single_select",
+      "difficulty": "Intermédiaire",
+      "topic": "Téléversement",
+      "objective": "Différencier les programmes",
+      "question": "Pourquoi le sketch minimal de V01 ne fait-il rien de visible après un téléversement réussi ?",
+      "options": [
+        {
+          "value": "A",
+          "label": "Parce que tous les téléversements échouent sans LED externe",
+          "feedback": "Le programme minimal peut se téléverser sans LED externe."
+        },
+        {
+          "value": "B",
+          "label": "Parce que loop() est interdite",
+          "feedback": "loop() est une fonction normale et requise du sketch Arduino."
+        },
+        {
+          "value": "C",
+          "label": "Parce que setup() et loop() sont volontairement vides",
+          "feedback": "Les deux fonctions vides ne commandent aucun voyant : c'est attendu."
+        },
+        {
+          "value": "D",
+          "label": "Parce que la carte doit être reliée au 230 V",
+          "feedback": "L'Arduino fonctionne sur alimentation basse tension, pas sur le secteur direct."
+        }
+      ],
+      "correctValues": [
+        "C"
+      ]
+    },
+    {
+      "id": "Q09",
+      "type": "single_select",
+      "difficulty": "Difficile",
+      "topic": "Erreurs et montage",
+      "objective": "Comprendre l'utilité de la résistance",
+      "question": "Dans le montage LED externe sur D8, pourquoi utilise-t-on une résistance en série ?",
+      "options": [
+        {
+          "value": "A",
+          "label": "Pour convertir l'USB en GSM",
+          "feedback": "Une résistance seule ne crée pas de liaison GSM."
+        },
+        {
+          "value": "B",
+          "label": "Pour limiter le courant et protéger la LED et la sortie",
+          "feedback": "La résistance limite le courant dans la LED ; une valeur appropriée protège le montage."
+        },
+        {
+          "value": "C",
+          "label": "Pour empêcher toute compilation",
+          "feedback": "La présence d'une résistance physique n'empêche pas de compiler."
+        },
+        {
+          "value": "D",
+          "label": "Pour transformer la carte en PZEM",
+          "feedback": "Le PZEM est un module de mesure distinct."
+        }
+      ],
+      "correctValues": [
+        "B"
+      ]
+    },
+    {
+      "id": "Q10",
+      "type": "single_select",
+      "difficulty": "Difficile",
+      "topic": "Erreurs et montage",
+      "objective": "Diagnostiquer la cadence et la sécurité",
+      "question": "Une LED externe reliée correctement sur D8 doit rester allumée 250 ms puis éteinte 750 ms. Quelle modification est la bonne ?",
+      "options": [
+        {
+          "value": "A",
+          "label": "Utiliser delay(250) après HIGH, puis delay(750) après LOW",
+          "feedback": "La durée de HIGH est 250 ms, puis celle de LOW 750 ms."
+        },
+        {
+          "value": "B",
+          "label": "Supprimer la résistance",
+          "feedback": "Supprimer la résistance risque d'endommager le circuit."
+        },
+        {
+          "value": "C",
+          "label": "Connecter D8 à la phase 230 V",
+          "feedback": "Le secteur ne doit jamais être relié à une sortie numérique."
+        },
+        {
+          "value": "D",
+          "label": "Laisser delay(1000) après chaque état",
+          "feedback": "Deux pauses de 1 000 ms donneraient 1 s allumée et 1 s éteinte."
+        }
+      ],
+      "correctValues": [
+        "A"
+      ]
+    }
+  ]
+}
