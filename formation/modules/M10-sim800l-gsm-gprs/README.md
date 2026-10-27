@@ -8,6 +8,25 @@ Le résultat du module précédent est **le point de départ** : le code et le s
 
 [Contrat officiel de progression continue](../../../docs/formation/REGLE_EVOLUTION_CONTINUE.md) · [Modèle d'acceptation du module](../../../docs/formation/MODELE_MODULE_EVOLUTIF.md)
 
+## Affectation matérielle M10 — décision obligatoire
+
+Le **SIM800L sera piloté par l'UART matériel** (`Serial`) de l'ATmega328P autonome ; **aucun deuxième `SoftwareSerial` ne sera utilisé pour le GSM**. Le firmware devra partir du dossier courant M09, intégrer la communication modem et préserver les acquis mesurables.
+
+| Périphérique | Bus | Connexion retenue |
+|---|---|---|
+| SIM800L | UART matériel | Modem TXD → ATmega D0/RX (PD0, pin 2) ; ATmega D1/TX (PD1, pin 3) → modem RXD, avec adaptation de niveaux validée dans les deux sens |
+| PZEM-004T | SoftwareSerial | D10/RX (PB2, pin 16), D11/TX (PB3, pin 17) |
+| DS3231, LCD 20×4, FRAM I2C (M11) | I2C | SDA=A4 (PC4, pin 27), SCL=A5 (PC5, pin 28) ; adresses, alimentation et pull-ups compatibles |
+| Bouton et LED | GPIO | D2 bouton, D13 LED (avec résistance) |
+
+**Contraintes d'intégration :** l'UART `Serial` n'est plus une console de débogage en mode GSM réel. Les diagnostics et anciennes commandes `1/0/?` du M09 doivent être transférés vers un mode de simulation/maintenance clairement séparé ou remplacés par un mécanisme documenté et testé. Éviter tout octet parasite transmis au modem. Prévoir une isolation du GSM pendant les essais/programmation UART et du PZEM sur D11/MOSI pendant ISP.
+
+**Sécurité :** alimentation SIM800L adaptée à la carte exacte (module nu : typiquement ~4,0 V et pointes proches de 2 A, jamais 5 V direct sur VBAT), masse commune, découplage, adaptation de niveau logique **dans les deux sens** entre modem et ATmega 5 V. Maintenir le mode simulation par défaut, sans modem ni secteur. Vérifier la compatibilité des cartes avant réalisation du PCB.
+
+**Recette attendue :** commandes AT et réponses interprétées sans bloquer les relevés ; gestion des délais, absence de réseau et réessais bornés ; tests de non-régression M09, compilation en simulation, puis essais physiques consignés. La présente règle ne signifie pas que M10 est déjà implémenté.
+
+[Décision permanente — attribution des interfaces](../../../docs/formation/REGLE_EVOLUTION_CONTINUE.md#attribution-des-interfaces-matérielles-à-partir-de-m10)
+
 ## Objectif et prérequis
 
 Objectif : comprendre le modem et les commandes AT. Prérequis : M05 et M09. Durée : 14 minutes.

@@ -22,6 +22,20 @@ Chaque module fait évoluer **le même projet** en partant du résultat du modul
 
 Faire évoluer les **mêmes composants du système** et conserver la compatibilité des échanges d'informations. Une nouvelle étape backend ou de PCB ne nécessite pas un changement Arduino artificiel.
 
+### Architecture matérielle imposée à partir de M10
+
+**Décision du projet : le SIM800L utilise l'UART matériel de l'ATmega328P (D0/RX et D1/TX), et non une seconde liaison `SoftwareSerial`.** Le PZEM-004T conserve `SoftwareSerial` sur D10/RX et D11/TX ; l'horloge RTC DS3231, le LCD I2C 20×4 et la future FRAM I2C partagent SDA=A4 et SCL=A5, avec adresses et niveaux électriques compatibles. Bouton D2 et LED D13 sont conservés.
+
+Règles obligatoires pour M10–M16, y compris scripts, schéma KiCad et PCB :
+
+- `Serial` (UART0) appartient **exclusivement au SIM800L en mode GSM réel** : aucun diagnostic `Serial.print`, commandes console `1/0/?` ou adaptateur USB–TTL partagé pendant les échanges modem. Prévoir un mode de simulation/débogage séparé, et documenter/tester la migration des commandes existantes.
+- Câblage croisé via **adaptation bidirectionnelle de niveaux logiques validée** : SIM800L TXD vers ATmega D0/RX, ATmega D1/TX vers SIM800L RXD. Vérifier les seuils électriques de la variante exacte ; ne pas supposer qu'une liaison directe 2,8 V ↔ 5 V est sûre ou fiable.
+- SIM800L : alimentation dédiée conforme à la variante (module nu typiquement autour de 4,0 V, pointes proches de 2 A), découplage local et masse commune ; **jamais le 5 V direct sur le VBAT d'un SIM800L nu**.
+- D11 est aussi MOSI/ISP : assurer l'isolation du PZEM pendant programmation/maintenance ISP. D0/D1 doivent pouvoir être isolées du modem pour le diagnostic et toute programmation qui les utilise.
+- Ne pas changer silencieusement ce brochage ; toute nécessité de réaffectation exige une décision documentée, une mise à jour simultanée du firmware, des tests et du schéma/PCB.
+
+Référence normative et tableau de câblage : [règle de progression continue](docs/formation/REGLE_EVOLUTION_CONTINUE.md#attribution-des-interfaces-matérielles-à-partir-de-m10).
+
 ### Invariants
 
 - Simulation sans secteur disponible par défaut ; secteur 230 V réservé au personnel qualifié.
