@@ -1,34 +1,61 @@
-# M07 — Ajouter l'heure et l'écran LCD I2C
+# M07 — Ajouter l'horloge DS3231 et l'écran LCD I2C 20×4
 
-**Durée vidéo : 14 minutes** · **2 leçons** · **État : organisation prête, production à réaliser**
+**AlexTech Academy · 14 minutes (2 vidéos de 7 min) · Prérequis M05 et M06.**
 
-## Objectif et prérequis
+**État : supports pédagogiques, code et évaluations rédigés, encore à vérifier sur matériel.** Le formateur conserve l'enregistrement et la publication. **Aucun PowerPoint.**
 
-Objectif : afficher des données lisibles et datées. Prérequis : M05-M06. Durée : 14 minutes.
+## Objectifs observables
 
-## Vidéos du module
+Au terme du module, l'apprenant pourra :
+1. Identifier un périphérique sur un bus I2C avec le scanner Arduino et expliquer les lignes SDA/SCL.
+2. Lire le DS3231 avec RTClib, reconnaître l'état `lostPower`, et régler l'horloge **une seule fois volontairement**.
+3. Afficher quatre lignes sur un LCD 20×4 avec `hd44780_I2Cexp` et éviter les textes résiduels ou le scintillement excessif.
+4. Partager un bus I2C entre la RTC et le LCD lorsque les cartes sont électriquement compatibles.
+5. Présenter **la date réelle** de la RTC lorsqu'elle est fiable et des **mesures encore simulées**, en attendant le calcul des kWh jour/mois au M08.
+6. Modifier un sketch et expliquer les comportements observés.
 
-- [M07-V01 — Comprendre et utiliser le DS3231 (7 min)](videos/V01-plan.md) · [Script](scripts/V01-script.md) · [Diapositives](slides/V01-storyboard.md)
-- [M07-V02 — Afficher les mesures sur un LCD 20×4 I2C (7 min)](videos/V02-plan.md) · [Script](scripts/V02-script.md) · [Diapositives](slides/V02-storyboard.md)
+## Deux vidéos pratiques
 
-## Préparer et évaluer
+| Vidéo | Durée cible | Script intégral | Ordre des sketches |
+|---|---:|---|---|
+| [M07-V01 — Comprendre et utiliser le DS3231](videos/V01-plan.md) | 7 min | [Script V01](scripts/V01-script.md) | [Scanner I2C](code/V01_01_scanner_i2c/V01_01_scanner_i2c.ino) → [Lecture RTC](code/V01_02_lire_ds3231/V01_02_lire_ds3231.ino) → [Réglage ponctuel](code/V01_03_regler_ds3231_une_fois/V01_03_regler_ds3231_une_fois.ino) |
+| [M07-V02 — Afficher le compteur sur LCD I2C 20×4](videos/V02-plan.md) | 7 min | [Script V02](scripts/V02-script.md) | [Bonjour LCD](code/V02_01_lcd_bonjour/V02_01_lcd_bonjour.ino) → [4 lignes fictives](code/V02_02_lcd_4_lignes_simulees/V02_02_lcd_4_lignes_simulees.ino) → [LCD + RTC](code/V02_03_rtc_lcd_integres/V02_03_rtc_lcd_integres.ino) |
 
-- [Travaux pratiques et exercices](tp/README.md)
-- [Banque de quiz et objectifs de validation](quiz/README.md)
-- [Supports et ressources téléchargeables](ressources/README.md)
-- [Code et fichiers techniques](code/README.md)
-- [Suivi de production](production/README.md)
+## Documents destinés aux apprenants
 
-## Indications du plan initial
+- [Guide des huit programmes Arduino et des dépendances](code/README.md).
+- [Fiche des broches I2C, de l'alimentation et de la sauvegarde RTC](ressources/BUS_I2C_SECURITE.md).
+- [Mémo des fonctions RTC/LCD](ressources/MEMO_RTC_LCD.md).
+- [Guide de diagnostic](ressources/DEPANNAGE.md).
+- [Travaux pratiques TP01 et TP02, sans corrigés](tp/TP_M07_APPRENANT.md).
+- [Quiz M07, dix questions sans réponses](quiz/QUIZ_M07_APPRENANT.md).
 
-**Ressources :** schéma I2C, code DS3231, code LCD et maquette des écrans.
+## Documents réservés au formateur
 
-**Quiz M07 :** I2C, DS3231, LCD, adresses et formatage.
+- [Corrigés et barèmes des deux TP](tp/CORRIGE_M07_FORMATEUR.md).
+- [Corrigé argumenté des dix QCM](quiz/CORRIGE_M07_FORMATEUR.md).
+- [Banque JSON du quiz](quiz/quiz_m07.json).
+- [Plan de tests réels T01–T10](ressources/PLAN_TESTS.md).
+- [Checklist de préparation et de tournage](production/README.md).
 
-**Validation :** afficher des données datées sur quatre lignes sans clignotement excessif.
+**Évaluation :** 8/10 minimum au quiz et compréhension des deux TP. Les exercices sont réalisés **hors des 14 minutes vidéo**.
 
-## Documents de référence
+## Maquette affichée
 
-[Plan complet de la formation 4 h](../../../docs/formation/PLAN_FORMATION_4H.md) · [Guide pédagogique](../../GUIDE_PEDAGOGIQUE.md)
+```text
+DATE: 27/10/2026
+TENSION: 230.5 V
+JOUR:    4.250 kWh
+MOIS:  125.480 kWh
+```
 
-> Les fiches vidéo reprennent le plan validé. Les scripts, slides, quiz corrigés et programmes ne sont pas présentés comme terminés tant qu'ils n'ont pas été effectivement produits et vérifiés.
+Cette illustration contient **des valeurs fictives**. Le programme final de ce module remplace la première ligne par la date lue sur le DS3231 **uniquement si elle est fiable**. L'énergie du jour et du mois ne sera calculée qu'en M08.
+
+## Sécurité
+
+- Raccordements en **basse tension uniquement**, aucun secteur 230 V, aucun PZEM alimenté.
+- Contrôler la référence et la tension de chaque carte. Une carte DS3231 avec circuit de charge ne doit pas recevoir de pile primaire incompatible.
+- Débrancher l'USB avant tout changement de fils.
+- La compilation Arduino réelle et les essais sur DS3231/LCD n'ont pas encore été confirmés.
+
+[Guide pédagogique général](../../GUIDE_PEDAGOGIQUE.md) · [Plan validé 4 h](../../../docs/formation/PLAN_FORMATION_4H.md)
