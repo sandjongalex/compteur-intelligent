@@ -27,6 +27,8 @@ Le **SIM800L sera piloté par l'UART matériel** (`Serial`) de l'ATmega328P auto
 
 [Décision permanente — attribution des interfaces](../../../docs/formation/REGLE_EVOLUTION_CONTINUE.md#attribution-des-interfaces-matérielles-à-partir-de-m10)
 
+**Avant d'implémenter M10 :** consulter le [tableau officiel d'affectation des 28 broches ATmega328P-PU](../../../docs/hardware/TABLEAU_AFFECTATION_ATMEGA328P_PDIP28.md) pour confirmer les UART, l'ISP et les interfaces I2C. Les réservations facultatives D3/D4/D5 ne doivent pas être activées sans validation préalable.
+
 ## Objectif et prérequis
 
 Objectif : comprendre le modem et les commandes AT. Prérequis : M05 et M09. Durée : 14 minutes.
