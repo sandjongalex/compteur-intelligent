@@ -1,0 +1,339 @@
+{
+  "module": "M07",
+  "title": "Ajouter l'heure et le LCD I2C 20x4",
+  "format_version": 1,
+  "total": 10,
+  "pass_score": 8,
+  "questions": [
+    {
+      "id": "Q01",
+      "topic": "I2C",
+      "difficulty": "Facile",
+      "type": "single_select",
+      "question": "Sur l'Arduino Uno Rev3, quelles broches portent les signaux I2C SDA et SCL ?",
+      "objective": "Comprendre i2c",
+      "options": [
+        {
+          "value": "A",
+          "label": "D0 et D1",
+          "feedback": "D0/D1 portent l'UART matériel, pas SDA/SCL sur Uno."
+        },
+        {
+          "value": "B",
+          "label": "A4 et A5",
+          "feedback": "SDA = A4 et SCL = A5 sur Uno Rev3."
+        },
+        {
+          "value": "C",
+          "label": "D8 et D9",
+          "feedback": "D8/D9 ne sont pas les broches du bus I2C matériel de la Uno."
+        },
+        {
+          "value": "D",
+          "label": "5 V et GND",
+          "feedback": "5 V et GND fournissent l'alimentation, pas les deux signaux I2C."
+        }
+      ],
+      "correctValues": [
+        "B"
+      ]
+    },
+    {
+      "id": "Q02",
+      "topic": "RTC",
+      "difficulty": "Facile",
+      "type": "single_select",
+      "question": "Quel est le rôle principal du DS3231 dans notre compteur ?",
+      "objective": "Comprendre rtc",
+      "options": [
+        {
+          "value": "A",
+          "label": "Mesurer le courant secteur",
+          "feedback": "Le courant viendra du module PZEM."
+        },
+        {
+          "value": "B",
+          "label": "Transmettre les données GSM",
+          "feedback": "La communication mobile sera traitée par le SIM800L."
+        },
+        {
+          "value": "C",
+          "label": "Fournir date et heure",
+          "feedback": "Le DS3231 est une horloge temps réel."
+        },
+        {
+          "value": "D",
+          "label": "Afficher les caractères sur LCD",
+          "feedback": "L'affichage est pris en charge par le LCD 20×4."
+        }
+      ],
+      "correctValues": [
+        "C"
+      ]
+    },
+    {
+      "id": "Q03",
+      "topic": "LCD",
+      "difficulty": "Facile",
+      "type": "single_select",
+      "question": "Que signifie un écran LCD « 20×4 » ?",
+      "objective": "Comprendre lcd",
+      "options": [
+        {
+          "value": "A",
+          "label": "20 caractères par ligne et 4 lignes",
+          "feedback": "C'est bien le nombre de colonnes et de lignes de caractères."
+        },
+        {
+          "value": "B",
+          "label": "20 volts et 4 ampères",
+          "feedback": "Les valeurs ne décrivent pas la tension ni le courant."
+        },
+        {
+          "value": "C",
+          "label": "20 lignes et 4 caractères",
+          "feedback": "Les dimensions sont inversées dans cette réponse."
+        },
+        {
+          "value": "D",
+          "label": "20 adresses I2C et 4 broches",
+          "feedback": "La taille d'un écran n'est pas un nombre d'adresses I2C."
+        }
+      ],
+      "correctValues": [
+        "A"
+      ]
+    },
+    {
+      "id": "Q04",
+      "topic": "RTC",
+      "difficulty": "Facile",
+      "type": "single_select",
+      "question": "Quelle adresse I2C est normalement associée au DS3231 ?",
+      "objective": "Comprendre rtc",
+      "options": [
+        {
+          "value": "A",
+          "label": "0x27",
+          "feedback": "0x27 est fréquente sur certains adaptateurs LCD I2C, pas le DS3231."
+        },
+        {
+          "value": "B",
+          "label": "0x3F",
+          "feedback": "0x3F apparaît sur certaines variantes de backpack LCD."
+        },
+        {
+          "value": "C",
+          "label": "0x57",
+          "feedback": "0x57 peut appartenir à une EEPROM additionnelle sur certains modules RTC."
+        },
+        {
+          "value": "D",
+          "label": "0x68",
+          "feedback": "0x68 est l'adresse I2C du DS3231."
+        }
+      ],
+      "correctValues": [
+        "D"
+      ]
+    },
+    {
+      "id": "Q05",
+      "topic": "RTC",
+      "difficulty": "Intermédiaire",
+      "type": "single_select",
+      "question": "Le programme signale rtc.lostPower() après le branchement. Quelle action est la plus correcte ?",
+      "objective": "Comprendre rtc",
+      "options": [
+        {
+          "value": "A",
+          "label": "Accepter la date comme valide sans vérification",
+          "feedback": "L'arrêt de l'oscillateur peut rendre l'heure invalide."
+        },
+        {
+          "value": "B",
+          "label": "Afficher une date fictive en la présentant comme réelle",
+          "feedback": "Les données inventées ne doivent pas être présentées comme réelles."
+        },
+        {
+          "value": "C",
+          "label": "Signaler une heure non fiable, vérifier le module puis régler volontairement une seule fois",
+          "feedback": "La date doit être vérifiée puis réglée volontairement avant de servir aux calculs."
+        },
+        {
+          "value": "D",
+          "label": "Remettre le PZEM à zéro",
+          "feedback": "La remise à zéro du PZEM n'a aucun rapport avec la fiabilité de l'horloge."
+        }
+      ],
+      "correctValues": [
+        "C"
+      ]
+    },
+    {
+      "id": "Q06",
+      "topic": "I2C",
+      "difficulty": "Intermédiaire",
+      "type": "single_select",
+      "question": "Une carte DS3231 et un LCD avec adaptateur I2C peuvent-ils partager SDA et SCL ?",
+      "objective": "Comprendre i2c",
+      "options": [
+        {
+          "value": "A",
+          "label": "Oui, si leurs adresses et les caractéristiques électriques sont compatibles",
+          "feedback": "I2C est un bus partagé, sous réserve d'adresses et de niveaux compatibles."
+        },
+        {
+          "value": "B",
+          "label": "Non, l'I2C exige un seul appareil",
+          "feedback": "L'I2C permet précisément plusieurs périphériques."
+        },
+        {
+          "value": "C",
+          "label": "Oui, même si leurs niveaux logiques sont incompatibles",
+          "feedback": "Des niveaux incompatibles peuvent endommager les composants."
+        },
+        {
+          "value": "D",
+          "label": "Seulement si la tension secteur est branchée",
+          "feedback": "Un bus I2C fonctionne en basse tension et n'exige pas le secteur."
+        }
+      ],
+      "correctValues": [
+        "A"
+      ]
+    },
+    {
+      "id": "Q07",
+      "topic": "LCD",
+      "difficulty": "Intermédiaire",
+      "type": "single_select",
+      "question": "Que produit lcd.setCursor(0, 2) sur un LCD 20×4 ?",
+      "objective": "Comprendre lcd",
+      "options": [
+        {
+          "value": "A",
+          "label": "Il efface la deuxième ligne",
+          "feedback": "setCursor positionne le curseur, n'efface pas une ligne."
+        },
+        {
+          "value": "B",
+          "label": "Il positionne le curseur à la colonne 0 de la troisième ligne",
+          "feedback": "Le numéro de ligne commence à zéro : 2 désigne la troisième ligne."
+        },
+        {
+          "value": "C",
+          "label": "Il règle automatiquement l'heure de la RTC",
+          "feedback": "Un LCD ne règle pas automatiquement la RTC."
+        },
+        {
+          "value": "D",
+          "label": "Il choisit l'adresse I2C 0x02",
+          "feedback": "Les paramètres sont colonne et ligne, pas adresse I2C."
+        }
+      ],
+      "correctValues": [
+        "B"
+      ]
+    },
+    {
+      "id": "Q08",
+      "topic": "LCD",
+      "difficulty": "Intermédiaire",
+      "type": "single_select",
+      "question": "Pourquoi éviter lcd.clear() à chaque passage de loop() quand une ligne seulement change ?",
+      "objective": "Comprendre lcd",
+      "options": [
+        {
+          "value": "A",
+          "label": "Car cela éteint définitivement le rétroéclairage",
+          "feedback": "Le rétroéclairage et clear() ont des fonctions distinctes."
+        },
+        {
+          "value": "B",
+          "label": "Car cela réinitialise aussi la date du DS3231",
+          "feedback": "Le LCD n'efface pas la RTC via clear()."
+        },
+        {
+          "value": "C",
+          "label": "Car cela efface la mémoire EEPROM",
+          "feedback": "clear() efface l'affichage LCD, pas une EEPROM externe."
+        },
+        {
+          "value": "D",
+          "label": "Car l'effacement fréquent peut créer un scintillement ; mieux vaut modifier la zone utile",
+          "feedback": "Mettre à jour seulement la ligne modifiée réduit l'effacement et le scintillement."
+        }
+      ],
+      "correctValues": [
+        "D"
+      ]
+    },
+    {
+      "id": "Q09",
+      "topic": "RTC",
+      "difficulty": "Difficile",
+      "type": "single_select",
+      "question": "Pourquoi ne faut-il pas appeler rtc.adjust(DateTime(F(__DATE__), F(__TIME__))) à chaque démarrage du compteur ?",
+      "objective": "Comprendre rtc",
+      "options": [
+        {
+          "value": "A",
+          "label": "Cela remplace automatiquement une mesure du PZEM",
+          "feedback": "Une fonction de réglage de la RTC ne remplace pas une lecture PZEM."
+        },
+        {
+          "value": "B",
+          "label": "Cela supprime toutes les adresses I2C",
+          "feedback": "Les adresses I2C ne sont pas effacées par rtc.adjust()."
+        },
+        {
+          "value": "C",
+          "label": "Cela peut reculer l'horloge à une ancienne date de compilation et fausser les périodes",
+          "feedback": "__DATE__ et __TIME__ contiennent le moment de compilation, qui peut être ancien lors d'un redémarrage."
+        },
+        {
+          "value": "D",
+          "label": "Cela convertit la date en tension",
+          "feedback": "Une date et une tension sont des données différentes."
+        }
+      ],
+      "correctValues": [
+        "C"
+      ]
+    },
+    {
+      "id": "Q10",
+      "topic": "Fiabilité",
+      "difficulty": "Difficile",
+      "type": "single_select",
+      "question": "Que doit afficher le compteur si la DS3231 est absente, tandis que les kWh jour et mois restent de simples valeurs d'exemple ?",
+      "objective": "Comprendre fiabilité",
+      "options": [
+        {
+          "value": "A",
+          "label": "Une date aléatoire et les kWh comme mesures réelles",
+          "feedback": "Ce comportement cache un défaut et fait passer une simulation pour du réel."
+        },
+        {
+          "value": "B",
+          "label": "« DATE: A REGLER » (ou erreur), en indiquant que les autres valeurs sont fictives",
+          "feedback": "Il distingue date indisponible et mesures simulées, évitant les données mensongères."
+        },
+        {
+          "value": "C",
+          "label": "La date d'hier systématiquement",
+          "feedback": "La date d'hier n'est pas une donnée fiable par défaut."
+        },
+        {
+          "value": "D",
+          "label": "Un écran vide sans message",
+          "feedback": "Un message explicatif est plus utile qu'un silence complet."
+        }
+      ],
+      "correctValues": [
+        "B"
+      ]
+    }
+  ]
+}

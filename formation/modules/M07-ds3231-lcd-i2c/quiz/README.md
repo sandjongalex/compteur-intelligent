@@ -1,37 +1,9 @@
-# Évaluation — M07
+# Quiz de validation M07
 
-**STATUT : plan de 10 questions défini ; banque QCM corrigée à rédiger et vérifier.**
+- [Questions destinées aux apprenants](QUIZ_M07_APPRENANT.md).
+- [Réponses commentées et remédiation](CORRIGE_M07_FORMATEUR.md).
+- [Version JSON structurée](quiz_m07.json).
 
-## Périmètre extrait du plan pédagogique
+**10 questions : 4 faciles, 4 intermédiaires, 2 difficiles ; seuil 8/10.**
 
-3 DS3231/I2C, 3 LCD, 2 formatage, 2 diagnostic
-
-## Règles d'évaluation
-
-- **10 questions** par module : 4 faciles, 4 intermédiaires, 2 difficiles.
-- **Seuil de validation : 80 %**, soit au moins 8/10.
-- QCM à quatre options, calculs, lecture de schémas/code ou vrai/faux lorsque pertinent.
-- Chaque proposition aura une justification pédagogique ; éviter les questions ambiguës.
-- Prévoir au moins une mise en situation et une question sur les erreurs fréquentes.
-- Les fautes critiques de sécurité doivent être corrigées obligatoirement.
-
-## Modèle d'une question (à compléter et valider)
-
-**Question Q01 — [notion exacte]**
-
-- Objectif : [compétence mesurée]
-- Difficulté : facile / intermédiaire / difficile
-- Énoncé : [question précise avec toutes les données]
-- A. [proposition]
-- B. [proposition]
-- C. [proposition]
-- D. [proposition]
-- Réponse correcte : [une option ou toutes les options valides]
-- Explication : [raison exacte et correction des distracteurs]
-
-## Critères de validation
-
-- [ ] 10 questions rédigées avec les réponses et corrigés.
-- [ ] Les objectifs du module sont effectivement couverts.
-- [ ] Le score et le corrigé sont testés.
-- [ ] Les questions sont compréhensibles sans connaissances ultérieures.
+Compétences : SDA/SCL, partage I2C, adresse DS3231, date fiable, gestion de `rtc.adjust`, taille/curseur LCD, mise à jour d'écran et distinction simulation/mesure réelle.
