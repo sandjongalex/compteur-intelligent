@@ -75,7 +75,7 @@ Dans `loop`, nous appelons d'abord `traiterCommandes()` : nous continuons donc �
 
 Ensuite, nous demandons la valeur actuelle de `millis()`. Nous calculons le temps écoulé en soustrayant `dernierEnvoiMs` à cette valeur. Si au moins mille millisecondes se sont écoulées, nous affichons une nouvelle ligne et mémorisons le nouvel instant.
 
-Le fait d'utiliser un `unsigned long` et de calculer une différence entre les deux instants est également la bonne manière de gérer le retour à zéro de `millis()) sur cette carte.
+Le fait d'utiliser un `unsigned long` et de calculer une différence entre les deux instants est également la bonne manière de gérer le retour à zéro de `millis()` sur cette carte.
 
 Regardez la différence : il n'y a **pas de `delay` dans cette boucle**. Nous pouvons donc demander un état de la LED entre deux affichages de notre tension fictive.
 

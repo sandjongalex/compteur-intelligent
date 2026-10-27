@@ -1,33 +1,29 @@
-# M05-V02 — Comprendre l'UART et les temporisations non bloquantes (9 min)
+# M05-V02 — UART et périodicité non bloquante avec millis (9 minutes)
 
-> **État : plan pédagogique détaillé disponible**. Script intégral et ressources de tournage à finaliser.
+**État : script complet et 3 sketches progressifs rédigés. Essais matériels et tournage non encore effectués.**
 
+## Objectif observable
 
-- Introduction : « Le microcontrôleur doit communiquer avec plusieurs modules. Nous allons découvrir comment les appareils échangent des caractères et des données. »
-- Plan :
-  1. Communication série et transmission bit par bit.
-  2. TX, RX, débit en bauds et format des trames.
-  3. Serial.begin(), Serial.print() et Serial.available().
-  4. Lecture progressive des caractères.
-  5. Limites de delay() et principe de millis().
-  6. Gestion du temps et des tâches périodiques.
-- Démonstration : envoyer une valeur simulée et la lire sur le moniteur série.
-- Erreurs : TX/RX inversés, débits différents, attente bloquante.
-- Exercice : afficher une mesure toutes les secondes sans bloquer le programme.
-- Transition : remplacer la mesure fictive par une mesure du PZEM.
+Recevoir `1`, `0`, `?` depuis le moniteur série à **9600 bauds**, commander la LED et émettre **230,5 V SIMULÉS** environ une fois par seconde **sans `delay()`**.
 
-## Préparation et fichiers liés
+## Progression minute par minute
 
-- [Texte du formateur](../scripts/V02-script.md)
-- [Storyboard des diapositives](../slides/V02-storyboard.md)
-- [Travaux pratiques](../tp/README.md)
-- [Quiz](../quiz/README.md)
+| Temps | Ce que le formateur montre | Fichier |
+|---|---|---|
+| 00:00–00:55 | Résultat final : relevés périodiques + commandes réactives | [V02-03](../code/V02_03_millis_et_uart/V02_03_millis_et_uart.ino) |
+| 00:55–02:05 | TX/RX, trame UART, USB de l'Uno, 9600 bauds | [Mémo](../ressources/MEMO_M05.md) |
+| 02:05–03:15 | `Serial.available()`, `Serial.read()`, écho d'un caractère | [V02-01](../code/V02_01_uart_echo/V02_01_uart_echo.ino) |
+| 03:15–04:30 | Commandes `1` ON, `0` OFF, `?` aide | [V02-02](../code/V02_02_commandes_uart/V02_02_commandes_uart.ino) |
+| 04:30–05:25 | Pourquoi `delay()` gêne les commandes | [Mémo](../ressources/MEMO_M05.md) |
+| 05:25–07:35 | `millis`, `unsigned long`, calcul du temps écoulé ; tâche toutes les ~1 000 ms | [V02-03](../code/V02_03_millis_et_uart/V02_03_millis_et_uart.ino) |
+| 07:35–08:25 | Dépanner une mauvaise vitesse série, une commande inconnue, une attente bloquante | [Dépannage](../ressources/DEPANNAGE.md) |
+| 08:25–09:00 | Mini-défi : période ~500 ms, UART toujours disponible | [TP02](../tp/TP_M05_APPRENANT.md) |
 
-## Critères de qualité
+[Lire le script intégral du formateur](../scripts/V02-script.md). Les durées sont des **cibles de montage**.
 
-- [ ] La vidéo tient dans le créneau prévu du module.
-- [ ] Chaque terme technique nouveau est expliqué.
-- [ ] Les captures, illustrations et démonstrations correspondent au plan.
-- [ ] Le résultat attendu et une erreur fréquente sont montrés.
-- [ ] L'exercice est faisable avec les ressources fournies.
-- [ ] La sécurité est validée avant les manipulations matérielles.
+## Précautions
+
+- La tension est une **valeur simulée**, pas une mesure du secteur.
+- Ne pas brancher d'équipement externe sur D0/D1 quand on utilise le port matériel/USB de la Uno dans cette démonstration.
+- [ ] Les trois sketches compilent, puis les messages sont observés sur la véritable carte.
+- [ ] Le formateur teste réellement les commandes et la fréquence d'affichage.
