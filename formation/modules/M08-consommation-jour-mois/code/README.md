@@ -9,7 +9,11 @@
 3. [V02-01 — passer de janvier à février](V02_01_passer_au_mois/V02_01_passer_au_mois.ino) : date fictive + état journalier/mensuel + base prise à minuit.
 4. [V02-02 — simuler un redémarrage et des erreurs](V02_02_reprise_et_erreurs/V02_02_reprise_et_erreurs.ino) : copier/restaurer **un état conservé uniquement en RAM pendant la démonstration**, ignorer doublons, détecter retour du compteur ou date incohérente.
 
-Chaque projet `.ino` est dans son dossier **homonyme**, compilable sur **Arduino Uno Rev3**. Les deux programmes avancés contiennent **leur propre copie du moteur `EnergieM08.h`** afin d'éviter les chemins de compilation ambigus dans Arduino IDE. Les deux copies sont identiques ; les changements au moteur doivent être reportés dans les deux et dans la suite de tests.
+Chaque projet `.ino` est dans son dossier **homonyme**, compilable sur **Arduino Uno Rev3**. Les trois programmes avancés contiennent **leur propre copie du moteur `EnergieM08.h`** afin d'éviter les chemins de compilation ambigus dans Arduino IDE. Les trois copies sont identiques ; les changements au moteur doivent être reportés dans les deux et dans la suite de tests.
+
+5. [V02-03 — DS3231 + LCD, index fictif](V02_03_ds3231_lcd_fictif/V02_03_ds3231_lcd_fictif.ino) : date d'une RTC réelle (si fiable), tension/index simulés, cumuls LCD avec `~` pour « partiel ».
+
+[Guide de jonction M06 / M07 / M08](INTEGRATION_M06_M07_M08.md).
 
 ## En-tête `EnergieM08.h` : règles de base
 

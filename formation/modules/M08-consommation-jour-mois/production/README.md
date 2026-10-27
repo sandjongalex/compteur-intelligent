@@ -1,27 +1,36 @@
-# Suivi de production — M08
+# M08 — Suivi de production
 
-**Durée maximale des vidéos du module : 16 min.**
+**Durée vidéo cible : 16 min (deux leçons de 8 min).** Enregistrement et publication gérés par le formateur. **Aucun PowerPoint.**
 
-## Fiches vidéo
+## Réalisé
 
-- [ ] M08-V01 — Calculer l'énergie et comprendre les index (8 min) : script, slides, tournage, montage, vérification
-- [ ] M08-V02 — Gérer minuit, les mois, les années et les redémarrages (8 min) : script, slides, tournage, montage, vérification
+- [x] Deux scripts oraux complets avec étapes de programmation chronologiques.
+- [x] Cinq sketches de cours : deux V01, trois V02 (dont RTC+LCD avec index fictif).
+- [x] Moteur C++11 autonome `EnergieM08.h`, partagé sous forme de copies identiques dans les projets avancés.
+- [x] 32 assertions de scénarios dans `code/tests/test_m08.cpp` (non exécutées par l'IDE).
+- [x] Deux TP apprenant et corrigés formateur séparés.
+- [x] Quiz de 10 QCM corrigés avec explication de chaque choix et données JSON.
+- [x] Mémo des index, calculs, doublons et périodes partielles.
+- [x] Dépannage, consignes de sécurité et plan de tests.
+- [x] Documentation d'intégration des modules M06/M07/M08 et limites des `float` AVR.
 
-## Checklist avant publication
+## À vérifier avant tournage
 
-- [ ] Script clair pour débutant et conforme au plan.
-- [ ] Slides, images et captures préparées.
-- [ ] Matériel et montage basse tension testés.
-- [ ] Exemples de code et fichiers réellement reproductibles.
-- [ ] Exercices et solutions disponibles.
-- [ ] 10 questions de quiz corrigées et validées.
-- [ ] Durée cumulée vidéo dans les 16 minutes.
-- [ ] Audio, titres et sous-titres vérifiés.
-- [ ] Sécurité, niveau de tension et brochages contrôlés.
-- [ ] Vidéos et ressources intégrées dans la plateforme.
+- [ ] **Exécuter** les tests C++ : `g++ -std=c++11 -Wall -Wextra -pedantic test_m08.cpp -o test_m08 && ./test_m08`.
+- [ ] Compiler et téléverser les cinq sketches sur Arduino Uno Rev3 avec les bibliothèques nécessaires au LCD/RTC.
+- [ ] Vérifier les sorties **250/0/250/200 Wh**, total **700 Wh**.
+- [ ] Vérifier passage janvier/février et **80 Wh** au 01/02 00:06.
+- [ ] Tester rejets de doublon, RTC rétrograde, index qui diminue.
+- [ ] Vérifier la **simulation** du redémarrage en RAM sans la confondre avec une vraie coupure.
+- [ ] Tester l'affichage DS3231/LCD, date réelle versus valeurs fictives, symbole `~` pour partiel.
+- [ ] Marquer les résultats dans le [plan de tests](../ressources/PLAN_TESTS.md).
+- [ ] Répéter et chronométrer chaque vidéo pour huit minutes.
 
-## Statuts de production
+## Travaux assurés par le formateur
 
-Utiliser **À produire → En rédaction → À tester → Prêt à filmer → Monté → Validé → Publié**.
+- [ ] Filmer les résultats réels du moniteur et du LCD **basse tension**.
+- [ ] Enregistrer et monter les deux vidéos.
+- [ ] Ajouter les sous-titres et publier sur AlexTech Academy.
+- [ ] Distribuer le quiz apprenant sans diffuser immédiatement le corrigé.
 
-Ne pas cocher un statut avant d'avoir effectivement réalisé le travail.
+**Statut : supports prêts pour validation technique. Ni compilation officielle Arduino, ni exécution attestée des tests C++, ni fonctionnement matériel ne sont déclarés acquis.**

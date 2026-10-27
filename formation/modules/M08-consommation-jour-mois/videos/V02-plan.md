@@ -1,33 +1,18 @@
-# M08-V02 — Gérer minuit, les mois, les années et les redémarrages (8 min)
+# M08-V02 — Minuit, mois, erreurs et reprise (8 minutes)
 
-> **État : plan pédagogique détaillé disponible**. Script intégral et ressources de tournage à finaliser.
+**Statut : script et code rédigés ; essais Arduino et chronométrage encore à faire.** Aucun PowerPoint.
 
+| Minute | Résultat montré / code construit |
+|---|---|
+| 00:00–00:55 | Frontière **31/01 à 23:59 → 01/02 à 00:00** |
+| 00:55–02:10 | Relevé daté : date fiable + index cumulatif valide |
+| 02:10–03:20 | Moteur [V02-01, janvier/février](../code/V02_01_passer_au_mois/V02_01_passer_au_mois.ino) |
+| 03:20–04:30 | Expliquer indicateurs **complet/partiel**, différence jour/mois |
+| 04:30–05:55 | [V02-02](../code/V02_02_reprise_et_erreurs/V02_02_reprise_et_erreurs.ino) : reprise d'état **conservé en RAM**, doublon, reset |
+| 05:55–06:55 | Horloge rétrograde, remise à zéro de l'index, mesure invalide |
+| 06:55–07:35 | [V02-03](../code/V02_03_ds3231_lcd_fictif/V02_03_ds3231_lcd_fictif.ino) : date RTC réelle + valeurs simulées LCD |
+| 07:35–08:00 | Exercice d'attribution des deltas et transition M09/M11 |
 
-- Introduction : « Un compteur fiable doit continuer à calculer correctement après une coupure de courant ou un changement de mois. »
-- Plan :
-  1. Associer chaque relevé à un horodatage.
-  2. Détecter le changement de jour et de mois.
-  3. Clôturer une période sans effacer l'index global du PZEM.
-  4. Sauvegarder les derniers index et les cumuls.
-  5. Traiter une coupure où aucune mesure n'est disponible.
-  6. Repartir d'un état sauvegardé après redémarrage.
-- Démonstration : simulation du passage du 31 janvier au 1er février.
-- Erreurs : remise à zéro de l'index total, confusion entre absence de mesure et consommation nulle.
-- Exercice : compléter une table de consommation quotidienne.
-- Transition : conserver cette logique sur un microcontrôleur autonome.
+[**Script oral intégral V02**](../scripts/V02-script.md) · [TP02 apprenant](../tp/TP_M08_APPRENANT.md).
 
-## Préparation et fichiers liés
-
-- [Texte du formateur](../scripts/V02-script.md)
-- [Storyboard des diapositives](../slides/V02-storyboard.md)
-- [Travaux pratiques](../tp/README.md)
-- [Quiz](../quiz/README.md)
-
-## Critères de qualité
-
-- [ ] La vidéo tient dans le créneau prévu du module.
-- [ ] Chaque terme technique nouveau est expliqué.
-- [ ] Les captures, illustrations et démonstrations correspondent au plan.
-- [ ] Le résultat attendu et une erreur fréquente sont montrés.
-- [ ] L'exercice est faisable avec les ressources fournies.
-- [ ] La sécurité est validée avant les manipulations matérielles.
+**Points de prudence :** une reprise en RAM ne survit pas à une vraie coupure, et le LCD indique les périodes **partielles**.

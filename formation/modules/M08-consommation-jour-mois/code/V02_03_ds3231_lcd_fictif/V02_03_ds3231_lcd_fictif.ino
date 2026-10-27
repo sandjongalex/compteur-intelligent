@@ -75,8 +75,15 @@ void loop(){
   ReleveM08 r={{dt.year(),dt.month(),dt.day(),
                 dt.hour(),dt.minute(),dt.second()},indexFictifWh,true};
   ResultatM08 code=suivi.ajouter(r);
-  if(code==M08_TEMPS_INCOHERENT || code==M08_INDEX_REINITIALISE){
-    Serial.println(F("ANOMALIE : heure ou index, cumuls non fiables"));
+  if(code==M08_TEMPS_INCOHERENT || code==M08_INVALIDE){
+    ligne(0,"DATE: INCOHERENTE");
+    ligne(2,"JOUR: INDISPONIBLE");
+    ligne(3,"MOIS: INDISPONIBLE");
+    Serial.println(F("ANOMALIE RTC : resultat rejete; verifier l'horloge"));
+    return;
+  }
+  if(code==M08_INDEX_REINITIALISE){
+    Serial.println(F("INDEX REPARTI : nouvelle base, cumuls partiels"));
   }
   char date[21];
   snprintf(date,sizeof(date),"DATE: %02u/%02u/%04u",
