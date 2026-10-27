@@ -34,7 +34,7 @@ Règles obligatoires pour M10–M16, y compris scripts, schéma KiCad et PCB :
 - D11 est aussi MOSI/ISP : assurer l'isolation du PZEM pendant programmation/maintenance ISP. D0/D1 doivent pouvoir être isolées du modem pour le diagnostic et toute programmation qui les utilise.
 - Ne pas changer silencieusement ce brochage ; toute nécessité de réaffectation exige une décision documentée, une mise à jour simultanée du firmware, des tests et du schéma/PCB.
 
-Référence normative et tableau de câblage : [règle de progression continue](docs/formation/REGLE_EVOLUTION_CONTINUE.md#attribution-des-interfaces-materielles-a-partir-de-m10).
+Référence normative et tableau de câblage : [règle de progression continue](docs/formation/REGLE_EVOLUTION_CONTINUE.md#attribution-des-interfaces-matérielles-à-partir-de-m10).
 
 ### Invariants
 
