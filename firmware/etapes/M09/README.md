@@ -25,3 +25,24 @@ Le snapshot M09 `Compteur_M09.ino` et `EnergieM08.h` sont identiques au dossier 
 ### Vérifier la configuration autonome
 
 L'option peut être activée dans le sketch (0 vers 1) ou en compilation par `-DALEXTECH_ATMEGA_AUTONOME=1`, le mode simulé restant le défaut. La CI contrôle les deux compilations, pas le fonctionnement matériel ni les fuses de la cible.
+
+## Erratum correctif P1/P2 — maintenance M09
+
+La version M09 n'avait pas été validée physiquement : ce correctif contrôlé
+synchronise M09 et le dossier courant, sans toucher aux snapshots M03–M08.
+Toute formation filmée sur l'ancienne version doit signaler cette correction.
+
+- **P1 simulation :** les Wh simulés suivent 92,2 W (1 Wh toutes ~39,05 s),
+  au lieu d'un index accéléré de 1 Wh / 200 ms non indiqué.
+- **P1 horodatage :** provenance `DATE_SIMULEE` / `DATE_DS3231` / `DATE_INDISPONIBLE` ;
+  compiler un PZEM réel sans DS3231 réel devient une erreur.
+- **P2 période :** le relevé suivant minuit sans observation à 00:00:00 reste
+  partiel ; aucun partage artificiel de l'énergie à cheval sur deux jours.
+  Refus d'une saturation silencieuse des sommes `uint32_t`.
+- **P2 UART :** le PZEM reste sur `SoftwareSerial` D10/D11, `Serial` reste
+  la console M09 *uniquement* ; le firmware M10 migrera D0/D1 au SIM800L.
+- **P2 tests :** les compilations avec les bibliothèques réelles sont requises
+  en complément des tests de simulation, mais ne prouvent pas le matériel.
+
+Les périodes restent en RAM jusqu'à M11 FRAM. Le présent correctif ne contient
+ni pilotage GSM ni validation électrique réelle.

@@ -15,6 +15,7 @@
 #include <Arduino.h>
 #include <math.h>
 #include "EnergieM08.h"
+#include "SimulationM09.h"
 // 0 = Uno USB ; 1 = ATmega328P DIP-28 autonome 16 MHz / ISP.
 // Le mode autonome ne change PAS les fonctions de comptage M08.
 #ifndef ALEXTECH_ATMEGA_AUTONOME
@@ -28,10 +29,18 @@
     #error "M09 autonome : choisir le profil 16 MHz ET fournir une horloge compatible"
   #endif
 #endif
-#define ALEXTECH_PZEM_REEL 0
+#ifndef ALEXTECH_PZEM_REEL
+  #define ALEXTECH_PZEM_REEL 0
+#endif
 // 0 : comportement demonstration Arduino Uno USB seule.
 // 1 : DS3231 et LCD compatible, en BASSE TENSION et apres validation.
-#define ALEXTECH_RTC_LCD_REELS 0
+#ifndef ALEXTECH_RTC_LCD_REELS
+  #define ALEXTECH_RTC_LCD_REELS 0
+#endif
+// Refuser un PZEM reel accompagne d'une horloge seulement fictive.
+#if ALEXTECH_PZEM_REEL && !ALEXTECH_RTC_LCD_REELS
+  #error "PZEM REEL exige un DS3231 REEL (ALEXTECH_RTC_LCD_REELS=1)"
+#endif
 #if ALEXTECH_RTC_LCD_REELS
   #include <Wire.h>
   #include <RTClib.h>
@@ -57,7 +66,9 @@ bool ledAllumee = false;
 int derniereLecture = HIGH, boutonStable = HIGH;
 unsigned long dernierChangement = 0, dernierAffichage = 0;
 SuiviEnergieM08 suivi;
+SimulateurEnergieM09 simulation(12345UL); // puissance fictive 92,2 W
 uint32_t dernierIndexSimuleWh = 12345UL; // source fictive seulement
+enum OrigineDateM09 { DATE_INDISPONIBLE, DATE_SIMULEE, DATE_DS3231 };
 
 
 struct Mesures {
@@ -117,7 +128,8 @@ bool lireMesures(Mesures &m) {
   m.facteurPuissance = pzem.pf();
 #else
   // Ces chiffres viennent UNIQUEMENT du programme, pas d'un capteur.
-  dernierIndexSimuleWh = 12345UL + millis() / 200UL;
+  // Index fictif = integral de la puissance simulee (sans acceleration).
+  dernierIndexSimuleWh = simulation.indexWh(millis());
   m = {230.5f, 0.500f, 92.2f, dernierIndexSimuleWh / 1000.0f, 50.0f, 0.80f};
 #endif
   return isfinite(m.tensionV) && isfinite(m.courantA) &&
@@ -186,18 +198,18 @@ DateM08 horlogeDemo(unsigned long tempsMs) {
   d.seconde=(uint8_t)(reste%60UL);
   return d;
 }
-bool lireDate(DateM08 &d, unsigned long tempsMs) {
+OrigineDateM09 lireDate(DateM08 &d, unsigned long tempsMs) {
 #if ALEXTECH_RTC_LCD_REELS
   (void)tempsMs;
-  if (!rtcFiable || rtc.lostPower()) return false;
+  if (!rtcFiable || rtc.lostPower()) return DATE_INDISPONIBLE;
   DateTime t=rtc.now();
-  if (!t.isValid()) return false;
+  if (!t.isValid()) return DATE_INDISPONIBLE;
   d=DateM08{(uint16_t)t.year(), (uint8_t)t.month(),(uint8_t)t.day(),
     (uint8_t)t.hour(),(uint8_t)t.minute(),(uint8_t)t.second()};
-  return true;
+  return DATE_DS3231;
 #else
   d=horlogeDemo(tempsMs);
-  return true; // date de simulation, PAS une heure physique
+  return DATE_SIMULEE; // l'heure fictive n'est jamais qualifiee de fiable
 #endif
 }
 bool lireIndexWh(const Mesures &m, uint32_t &wh) {
@@ -245,7 +257,7 @@ void setup() {
 #endif
   Serial.println(F("Bouton D2-GND, commandes 1/0/?"));
 #if !ALEXTECH_RTC_LCD_REELS
-  Serial.println(F("Date 27/10/2026 + millis = SIMULEE; JOUR/MOIS PARTIELS"));
+  Serial.println(F("Date 27/10/2026 + millis = SIMULEE NON FIABLE; JOUR/MOIS PARTIELS"));
 #endif 
 #if !ALEXTECH_RTC_LCD_REELS
   Serial.println(F("RTC et LCD desactives : demo USB seule"));
@@ -271,7 +283,8 @@ void loop() {
   afficherMesures(m); // six grandeurs conservees depuis M06
 
   DateM08 date;
-  if (!lireDate(date,maintenant)) {
+  const OrigineDateM09 origineDate=lireDate(date,maintenant);
+  if (origineDate==DATE_INDISPONIBLE) {
     Serial.println(F("RTC ABSENTE/HEURE NON FIABLE : pas de calcul"));
 #if ALEXTECH_RTC_LCD_REELS
     ligneLCD(0,"DATE: A REGLER");
@@ -280,6 +293,12 @@ void loop() {
 #endif
     return;
   }
+#if ALEXTECH_PZEM_REEL
+  if (origineDate != DATE_DS3231) {
+    Serial.println(F("MESURE REELLE REFUSEE : date DS3231 non fiable"));
+    return;
+  }
+#endif
   uint32_t wh;
   if (!lireIndexWh(m,wh)) {
     Serial.println(F("INDEX NON CONVERTIBLE EN Wh : pas de calcul"));
@@ -302,8 +321,11 @@ void loop() {
   }
   if(resultat==M08_INDEX_REINITIALISE)
     Serial.println(F("INDEX REINITIALISE : periodes marquees PARTIELLES"));
+  if(resultat==M08_CUMUL_SATURE)
+    Serial.println(F("CUMUL DEPASSE : nouvel ancrage, periodes PARTIELLES"));
 
-  Serial.print(F("Date : "));
+  Serial.print(origineDate==DATE_SIMULEE ?
+    F("DATE SIMULEE/NON FIABLE : ") : F("Date DS3231 : "));
   Serial.print(date.jour);Serial.print('/');Serial.print(date.mois);
   Serial.print('/');Serial.println(date.annee);
   Serial.print(F("Jour Wh="));Serial.print(suivi.etat().jourWh);

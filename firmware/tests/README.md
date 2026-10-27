@@ -42,3 +42,22 @@ arduino-cli compile --fqbn arduino:avr:uno firmware/courant/CompteurIntelligent
 ## Nouveau contrôle M09
 
 La version `M09` du firmware est compilée pour Arduino Uno 16 MHz afin d'être ensuite programmée sur une puce ATmega328P autonome **avec le même brochage et une horloge/fuses réellement compatibles**. Le drapeau `ALEXTECH_ATMEGA_AUTONOME` vaut **0** dans les sources distribuées pour préserver la simulation sans matériel. Un essai sur cible autonome avec le drapeau à `1` doit être validé séparément ; la CI ne prouve pas le câblage, les fuses ni le succès ISP.
+
+## Tests complémentaires de fiabilité M09
+
+```bash
+python3 firmware/tests/test_m09_safety.py
+g++ -std=c++11 -Wall -Wextra -pedantic firmware/tests/test_m09.cpp -o /tmp/test_m09
+/tmp/test_m09
+```
+
+Les tests valident notamment 92,2 Wh après 1 h à 92,2 W, le rebouclage de
+`millis()`, la date simulée différente d'une RTC fiable, les ancrages
+partiels à minuit et à la frontière de mois et la non-régression.
+La CI installe `PZEM004Tv30@1.2.1`, `RTClib` et `hd44780`, puis compile
+les variantes M09 RTC/LCD réels et PZEM+RTC/LCD réels sur Uno 16 MHz.
+Elle confirme également qu'activer le PZEM réel sans RTC réel est refusé.
+
+**Mesure CI (27/10/2026) :** mode PZEM+RTC+LCD = 19 456 octets Flash
+et 918 octets de RAM statique, sans modem GSM. Cette occupation ne constitue
+pas une preuve de marge de pile suffisante à l'exécution.
