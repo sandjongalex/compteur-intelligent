@@ -72,3 +72,24 @@ Il est recommandé de **regarder d'abord la vidéo et de réaliser le petit TP**
 **Aucun de ces ajouts futurs n'est déclaré développé dans ce dossier tant que le code correspondant n'existe pas.**
 
 **Principe retenu :** M01/M02 préparent l'électricité et la sécurité sans firmware ; **M03 est la première version du projet réel**. M04, M05, M06, M07 et M08 font tous évoluer cette même base. Le changement de mode LED en M05 (clignotement → commande) est une évolution explicite, non une suppression accidentelle.
+
+## Maintenance P1/P2 du firmware M09 (avant M10)
+
+La dernière étape M09 a reçu une maintenance corrective documentée :
+la simulation des kWh correspond désormais à 92,2 W, la provenance de l'heure
+est explicite (DS3231 ou démo), et un PZEM réel sans DS3231 activé est interdit.
+Les périodes traversant minuit restent partielles si aucun relevé n'est fait
+exactement à la frontière. Les tests C++ M09 et les compilations des bibliothèques
+matérielles ont été ajoutés à la CI.
+
+**Validation du matériel encore en attente :** les compilations AVR des modes
+PZEM/RTC/LCD n'attestent ni un câblage correct, ni les fuses/ISP, ni une
+lecture réelle de la tension secteur. Le stockage FRAM viendra en M11.
+Les sketches M03–M08 ne sont pas modifiés ; l'erratum M09 synchronise
+son snapshot avec le firmware de travail.
+
+**Ressources M09 :** la compilation avec `PZEM+RTC+LCD` demande actuellement
+19 456 octets de Flash (60 %) et 918 octets de RAM globale (44 %), soit 1 130
+octets restant pour pile et allocations sur ATmega328P 2 Kio RAM.
+L'ajout du SIM800L en M10 exigera une nouvelle mesure d'occupation mémoire
+et des tests des pertes de liaison.
