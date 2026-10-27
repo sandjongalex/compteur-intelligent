@@ -1,24 +1,14 @@
-# Ressources pédagogiques — M09
+# Ressources M09 : ATmega328P autonome et ArduinoISP
 
-**STATUT : inventaire des livrables, à produire et à contrôler.**
+- [Tableau des broches ATmega328P PDIP28 et six connexions ISP](BROCHAGE_ISP_PU28.md).
+- [Séquence ArduinoISP, fuses/horloge, Upload Using Programmer](PROGRAMMATION_ISP.md).
+- [Guide de dépannage matériel/ISP](DEPANNAGE.md).
+- [Plan de test et journal d'essais](PLAN_TESTS.md).
+- [Deux programmes de diagnostic et guide du code](../code/README.md).
+- [Firmware M09 conservant toutes les fonctions de M08](../../../../firmware/etapes/M09/README.md).
+- [TP apprenant](../tp/TP_M09_APPRENANT.md) · [Corrigés formateur](../tp/CORRIGE_M09_FORMATEUR.md).
+- [Quiz de 10 QCM](../quiz/QUIZ_M09_APPRENANT.md) · [Corrigé quiz](../quiz/CORRIGE_M09_FORMATEUR.md).
 
-## Livrables prévus par le plan
+**Sources de référence :** [guide officiel ArduinoISP](https://docs.arduino.cc/retired/getting-started-guides/ArduinoISP), [documentation du programmeur Arduino IDE](https://support.arduino.cc/hc/en-us/articles/6125080065820-Select-programmer-in-Arduino-IDE), [fiche ATmega328P](https://content.arduino.cc/assets/ATmega328P_Datasheet.pdf).
 
-**Ressources :** brochage exact du boîtier, schéma ISP, checklist de programmation et firmware de test.
-
-## Organisation
-
-- Les diapositives et storyboards sont dans [slides](../slides/).
-- Les scripts sont dans [scripts](../scripts/).
-- Les programmes et fichiers techniques sont dans [code](../code/).
-- Les fiches d'exercices sont dans [tp](../tp/).
-- Les quiz sont dans [quiz](../quiz/).
-
-## Contrôle des ressources
-
-- [ ] Version des composants et des bibliothèques documentée.
-- [ ] Schémas et captures lisibles sur téléphone.
-- [ ] Fichiers ouverts/testés dans le logiciel annoncé.
-- [ ] Aucun secret, numéro de téléphone ou identifiant réel publié.
-- [ ] Licences des images et ressources respectées.
-- [ ] Fichiers validés avant publication auprès des apprenants.
+Aucun PowerPoint. Aucun transfert ISP physique prétendument confirmé.
