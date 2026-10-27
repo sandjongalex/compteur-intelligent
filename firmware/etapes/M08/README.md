@@ -20,4 +20,4 @@ Pour utiliser DS3231 et LCD avec des cartes électriquement compatibles et véri
 - `horlogeDemo()` est un calendrier fictif lié à `millis()`, limité à des démonstrations courtes ; **pas une RTC de remplacement**.
 - Le code affiche les six grandeurs M06 mais ne prétend pas encore communiquer par GSM, sauvegarder durablement ou faire de la facturation certifiée.
 
-[Sketch M08](Compteur_M08.ino) · [Version courante](../../../courant/CompteurIntelligent/CompteurIntelligent.ino) · [Plan du fil rouge](../../../README.md)
+[Sketch M08](Compteur_M08.ino) · [Version courante](../../courant/CompteurIntelligent/CompteurIntelligent.ino) · [Plan du fil rouge](../../../README.md)

@@ -49,3 +49,14 @@
 - La remise à zéro quotidienne via `pzem.resetEnergy()` est **interdite par la logique retenue** ; conserver l'index cumulatif.
 
 [Guide pédagogique](../../GUIDE_PEDAGOGIQUE.md) · [Plan de formation 4 h](../../../docs/formation/PLAN_FORMATION_4H.md)
+
+
+## Continuité : programme fil rouge
+
+Cette leçon est aussi intégrée à un **firmware cumulatif unique**, où les fonctions des modules précédents restent présentes.
+
+- [**Version M08 du firmware fil rouge**](../../../firmware/etapes/M08/Compteur_M08/Compteur_M08.ino) : retrouver et tester les fonctions conservées et ajoutées.
+- [Matrice de progression de M05 à M08](../../../firmware/PROGRESSION.md) : voir les différences pédagogiques et les tests.
+- [Programme principal actuel](../../../firmware/courant/CompteurIntelligent/CompteurIntelligent.ino) : base qui sera enrichie en M09.
+
+Les petits exercices `.ino` du module restent **inchangés** et utiles pour les débutants ; ne pas commencer par la totalité du firmware final.

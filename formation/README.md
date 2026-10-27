@@ -50,6 +50,10 @@ Mxx-theme/
 └── production/README.md      # Checklist et statuts de production
 ```
 
+## Projet fil rouge de la programmation
+
+Le code intégré se construit étape par étape dans [**firmware/**](../firmware/README.md), de M05 à M08, tout en préservant les TP indépendants. La [matrice de progression](../firmware/PROGRESSION.md) précise ce qui est ajouté, ce qui reste identique et ce qu'il faut tester.
+
 ## Ressources transversales
 
 - [Guide pédagogique et statut des livrables](GUIDE_PEDAGOGIQUE.md)
@@ -59,4 +63,4 @@ Mxx-theme/
 - [Modèle de TP](modeles/TP.md)
 - [Plan original complet et détaillé](../docs/formation/PLAN_FORMATION_4H.md)
 
-**Important :** les dossiers sont créés et les **plans des 32 vidéos** ont été repris du programme validé. Les scripts intégralement rédigés, présentations PPTX, quiz corrigés, schémas et programmes finalisés nécessitent encore une production et une validation par module.
+**Important :** les supports M01–M08 ont été préparés ; les modules suivants, les tests matériels, l'enregistrement et la publication restent à réaliser. Le firmware actuel intègre M05–M08 en mode simulé par défaut, sans prétendre disposer du GSM, de la FRAM ou du serveur.

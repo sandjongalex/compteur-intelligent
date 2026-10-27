@@ -95,3 +95,10 @@ Le [plan complet 4 h](../docs/formation/PLAN_FORMATION_4H.md) fixe les objectifs
 Chaque module technique doit comporter un script oral minuté, du **code de départ**, les **étapes de construction**, le **code final**, des **résultats attendus**, des **tests reproductibles**, un **guide de dépannage**, des **TP corrigés** et un **quiz de dix questions** avec explications. Les sections `slides/` préexistantes peuvent rester en archives ; aucun nouveau PPTX n'est exigé.
 
 **Priorité : pédagogie et reproductibilité plutôt que quantité de diapositives.** Préserver le plafond global de **4 heures de vidéo** et mettre les longues pratiques à part. Pour les parties secteur, réserver tout essai sur 230 V à du personnel qualifié ; les novices travaillent en simulation ou basse tension.
+
+
+## Projet fil rouge cumulatif (décision complémentaire)
+
+En plus des petits sketches de chaque leçon, un **programme Arduino commun** progresse de M05 jusqu'au compteur final : [firmware/README.md](../firmware/README.md). Le formateur commence par la démonstration minimale, puis ouvre le snapshot du module, montre les fonctions ajoutées et reteste celles des modules précédents. Il conserve les versions historiques à disposition. Le programme `firmware/courant/` sert de base au module suivant. Les TP et corrigés de chaque module ne sont pas supprimés.
+
+Les mesures et dates simulées doivent être étiquetées comme telles. Les connexions au secteur n'ont pas leur place dans les séances débutants. La sauvegarde FRAM, le GSM/GPRS et la partie serveur ne seront marqués « réalisés » que lorsque du code vérifié aura été ajouté.

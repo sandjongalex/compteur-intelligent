@@ -41,3 +41,14 @@ Le débutant doit reconnaître et interpréter les **six grandeurs** du PZEM, ex
 - Le code est rédigé, **les compilations réelles Arduino et les essais sur banc ne sont pas encore attestés**.
 
 [Plan général 4 h](../../../docs/formation/PLAN_FORMATION_4H.md) · [Guide pédagogique](../../GUIDE_PEDAGOGIQUE.md)
+
+
+## Continuité : programme fil rouge
+
+Cette leçon est aussi intégrée à un **firmware cumulatif unique**, où les fonctions des modules précédents restent présentes.
+
+- [**Version M06 du firmware fil rouge**](../../../firmware/etapes/M06/Compteur_M06/Compteur_M06.ino) : retrouver et tester les fonctions conservées et ajoutées.
+- [Matrice de progression de M05 à M08](../../../firmware/PROGRESSION.md) : voir les différences pédagogiques et les tests.
+- [Programme principal actuel](../../../firmware/courant/CompteurIntelligent/CompteurIntelligent.ino) : base qui sera enrichie en M09.
+
+Les petits exercices `.ino` du module restent **inchangés** et utiles pour les débutants ; ne pas commencer par la totalité du firmware final.

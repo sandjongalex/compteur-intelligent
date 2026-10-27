@@ -46,3 +46,14 @@ Pas de PowerPoint dans ce module. Chaque vidéo démarre par un **résultat visi
 Les seules connexions matérielles de ce module sont un **bouton D2–GND**, la LED intégrée et le PC par USB. Ne connecter **ni PZEM, ni SIM800L, ni secteur 230 V**. Les valeurs 230,5 V affichées par les sketches sont **SIMULÉES**.
 
 [Plan général de formation](../../../docs/formation/PLAN_FORMATION_4H.md) · [Guide pédagogique](../../GUIDE_PEDAGOGIQUE.md)
+
+
+## Continuité : programme fil rouge
+
+Cette leçon est aussi intégrée à un **firmware cumulatif unique**, où les fonctions des modules précédents restent présentes.
+
+- [**Version M05 du firmware fil rouge**](../../../firmware/etapes/M05/Compteur_M05/Compteur_M05.ino) : retrouver et tester les fonctions conservées et ajoutées.
+- [Matrice de progression de M05 à M08](../../../firmware/PROGRESSION.md) : voir les différences pédagogiques et les tests.
+- [Programme principal actuel](../../../firmware/courant/CompteurIntelligent/CompteurIntelligent.ino) : base qui sera enrichie en M09.
+
+Les petits exercices `.ino` du module restent **inchangés** et utiles pour les débutants ; ne pas commencer par la totalité du firmware final.

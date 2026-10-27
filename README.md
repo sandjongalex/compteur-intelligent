@@ -58,7 +58,7 @@ Le projet est un **système de suivi énergétique**, pas un compteur certifié 
 
 ## Statut
 
-La documentation et le plan de formation constituent le point de départ du dépôt. Les scripts vidéo, quiz complets, programmes Arduino, fichiers KiCad et application Flask seront ajoutés progressivement, après validation technique.
+Les modules pédagogiques **M01–M08** disposent de supports de cours préparés. Les essais sur Arduino, l'enregistrement des vidéos, ainsi que les modules M09–M16 restent à réaliser ou à compléter.
 
 
 ---
@@ -69,4 +69,11 @@ L'ensemble des **16 dossiers pédagogiques** est organisé dans [`formation/`](f
 
 **[Ouvrir l'index des 16 modules](formation/README.md)** · [Lire le guide pédagogique](formation/GUIDE_PEDAGOGIQUE.md)
 
-> Les plans vidéo sont renseignés ; les scripts, PowerPoint, quiz corrigés et programmes finalisés restent à produire et tester. Le programme général original reste conservé sans modification.
+> Depuis M05, les modules de programmation privilégient scripts de démonstration, code par étapes et TP **sans PowerPoint**. Les essais physiques et vidéos doivent encore être validés.
+
+
+## Firmware fil rouge (nouveau)
+
+Pour construire **un seul compteur qui évolue d'une vidéo à l'autre**, utiliser le [firmware évolutif M05 → M08](firmware/README.md) : snapshots M05/M06/M07/M08, [programme Arduino actuel](firmware/courant/CompteurIntelligent/CompteurIntelligent.ino), [journal de progression](firmware/PROGRESSION.md) et [tests](firmware/tests/README.md).
+
+Les petits sketches pédagogiques **restent disponibles** ; le firmware fil rouge les complète. Par défaut, le code fonctionne en simulation sur Uno USB sans secteur. **Les versions futures M09–M16 ne sont pas encore implémentées dans ce programme.**
