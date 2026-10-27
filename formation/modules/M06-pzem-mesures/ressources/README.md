@@ -1,24 +1,14 @@
-# Ressources pédagogiques — M06
+# Ressources M06
 
-**STATUT : inventaire des livrables, à produire et à contrôler.**
+- [PZEM V3 — six mesures, Modbus et registres](MEMO_PZEM_V3.md)
+- [Diagnostic et problèmes fréquents](DEPANNAGE.md)
+- [Plan de tests, simulations et banc qualifié](PLAN_TESTS.md)
+- [Sketches Arduino commentés](../code/README.md)
+- [Deux TP apprenant](../tp/TP_M06_APPRENANT.md)
+- [Corrigés formateur](../tp/CORRIGE_M06_FORMATEUR.md)
+- [Quiz de 10 questions](../quiz/QUIZ_M06_APPRENANT.md)
+- [Corrigé des 10 QCM](../quiz/CORRIGE_M06_FORMATEUR.md)
 
-## Livrables prévus par le plan
+Documentation de référence : https://github.com/mandulaj/PZEM-004T-v30 et https://github.com/mandulaj/PZEM-004T-v30/blob/master/src/PZEM004Tv30.cpp
 
-**Ressources :** fiche PZEM, extrait de documentation constructeur, exemple de lecture, jeu de mesures simulées.
-
-## Organisation
-
-- Les diapositives et storyboards sont dans [slides](../slides/).
-- Les scripts sont dans [scripts](../scripts/).
-- Les programmes et fichiers techniques sont dans [code](../code/).
-- Les fiches d'exercices sont dans [tp](../tp/).
-- Les quiz sont dans [quiz](../quiz/).
-
-## Contrôle des ressources
-
-- [ ] Version des composants et des bibliothèques documentée.
-- [ ] Schémas et captures lisibles sur téléphone.
-- [ ] Fichiers ouverts/testés dans le logiciel annoncé.
-- [ ] Aucun secret, numéro de téléphone ou identifiant réel publié.
-- [ ] Licences des images et ressources respectées.
-- [ ] Fichiers validés avant publication auprès des apprenants.
+**Pas de PowerPoint.** Le matériel utilisé par les débutants est uniquement la Uno via USB ; le secteur est réservé à une démonstration sur banc qualifié.

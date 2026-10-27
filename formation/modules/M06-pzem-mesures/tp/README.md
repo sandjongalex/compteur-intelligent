@@ -1,33 +1,8 @@
-# Exercices et travaux pratiques — M06
+# TP M06
 
-**STATUT : consignes de référence identifiées ; fiches de TP détaillées et corrigés à finaliser.**
+Les travaux pratiques sont réalisés **hors des 16 minutes de vidéo et sans secteur**.
 
-## Exercices prévus dans les vidéos
-
-### M06-V01 — Comprendre le PZEM et Modbus RTU (8 min)
-
-- Démonstration : lecture d'une trame simulée.
-
-- Exercice : associer chaque registre documenté à sa grandeur.
-
-**Livrable à fournir :** consigne détaillée, résultat attendu, correction et critère de réussite.
-
-### M06-V02 — Lire et vérifier les mesures avec Arduino IDE (8 min)
-
-- Démonstration : utiliser d'abord un jeu de données simulées, puis une lecture réelle sur un banc approprié.
-
-- Exercice : détecter une valeur de mesure manquante.
-
-**Livrable à fournir :** consigne détaillée, résultat attendu, correction et critère de réussite.
-
-
-## Fiche obligatoire pour chaque TP
-
-1. Objectif vérifiable et prérequis.
-2. Matériel ou simulation requis.
-3. Préparation et précautions de sécurité.
-4. Étapes numérotées, reproductibles.
-5. Résultat attendu et preuve (capture, photo, valeur).
-6. Dépannage guidé et correction commentée.
-
-> Les manipulations 230 V ne sont pas des TP autonomes pour les débutants ; utiliser simulation, montage basse tension et démonstration qualifiée.
+- [Énoncés apprenant : décodage et panne fictive](TP_M06_APPRENANT.md)
+- [Corrigés et barèmes formateur](CORRIGE_M06_FORMATEUR.md)
+- [Code de correction TP01](../code/TP01_corrige_registres/TP01_corrige_registres.ino)
+- [Code de correction TP02](../code/TP02_corrige_panne/TP02_corrige_panne.ino)
