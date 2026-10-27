@@ -6,6 +6,8 @@
 
 - [x] Scripts oraux M03-V01 et M03-V02 rédigés.
 - [x] Storyboards 16:9 préparés.
+- [x] **Deux PowerPoint 16:9 créés (8 slides chacun), avec notes du formateur.**
+- [x] **Rendu des deux PPTX vérifié : aucun débordement signalé.**
 - [x] Sketches minimal, LED interne, LED externe et correction rédigés.
 - [x] Guide d'installation, schéma LED, dépannage.
 - [x] TP apprenant et corrigés formateur.
@@ -18,7 +20,7 @@
 - [ ] Filmer une vraie LED intégrée puis externe clignotant.
 - [ ] Vérifier le schéma D8 → résistance 330 Ω → LED → GND.
 - [ ] Répéter et chronométrer les scripts avant vidéo, 7 minutes chacun.
-- [ ] Vérifier la lisibilité du rendu PowerPoint sur smartphone.
+- [ ] Faire vérifier la lisibilité et les captures réelles Arduino IDE sur smartphone.
 
 ## À faire par le formateur
 

@@ -29,9 +29,13 @@
 - [QCM JSON](quiz/quiz_m03.json).
 - [Suivi de production](production/README.md).
 
+## Présentations PowerPoint
+
+- [Suivi des deux PowerPoint réalisés](slides/PRESENTATIONS_MODULE03.md) : 8 diapositives par vidéo, binaires fournis séparément dans la conversation.
+
 ## Statut réel
 
-Scripts, exercices, quiz et code pédagogique **rédigés** ; les programmes et les présentations devront être vérifiés sur une vraie carte et lors d'un test de rendu. **Tu assures l'enregistrement et la publication**.
+Scripts, exercices, quiz et code pédagogique **rédigés** ; les PowerPoint ont été contrôlés au rendu ; les programmes doivent encore être compilés et téléversés sur une vraie carte. **Tu assures l'enregistrement et la publication**.
 
 La LED externe est un montage **basse tension uniquement**, sans secteur, PZEM ni SIM800L.
 

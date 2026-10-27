@@ -1,6 +1,6 @@
 # M03-V02 — Storyboard : Première LED clignotante
 
-**Cible : 7 minutes, 8 diapositives 16:9 + plans macro du montage.** PowerPoint natif modifiable à produire et vérifier.
+**Cible : 7 minutes, 8 diapositives 16:9 + plans macro du montage.** **PowerPoint natif modifiable créé et contrôlé au rendu ; PPTX téléchargeable dans la conversation et pas encore ajouté sur GitHub.**
 
 | Diapo | Temps | Affichage minimal | Action vidéo |
 |---|---|---|---|

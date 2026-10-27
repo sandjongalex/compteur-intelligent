@@ -10,7 +10,7 @@ Ce dossier est l'espace de production pédagogique du cours. Chaque module poss�
 |---|---:|---:|---|
 | [M01 — Découvrir le compteur et comprendre l'électricité](modules/M01-decouverte-electricite/) | 10 min | 2 | Scripts + storyboards + quiz + TP rédigés, tournage à faire |
 | [M02 — Identifier les composants et travailler en sécurité](modules/M02-composants-securite/) | 10 min | 2 | Scripts, slides, TP et quiz produits ; tournage à faire |
-| [M03 — Installer Arduino IDE et programmer sa première LED](modules/M03-arduino-ide-premier-programme/) | 14 min | 2 | Plans présents, production à faire |
+| [M03 — Installer Arduino IDE et programmer sa première LED](modules/M03-arduino-ide-premier-programme/) | 14 min | 2 | Scripts, PowerPoint, codes Arduino, TP et quiz prêts ; tests matériels et tournage à faire |
 | [M04 — Comprendre les bases du C/C++ embarqué](modules/M04-bases-cpp/) | 14 min | 2 | Plans présents, production à faire |
 | [M05 — Entrées, sorties et communications série](modules/M05-entrees-sorties-uart/) | 18 min | 2 | Plans présents, production à faire |
 | [M06 — Lire les mesures du PZEM-004T V3.0](modules/M06-pzem-mesures/) | 16 min | 2 | Plans présents, production à faire |
