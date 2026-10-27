@@ -9,7 +9,7 @@ Il faut donc distinguer deux objectifs :
 - Formation vidéo de 4 heures : apprendre les principes essentiels, suivre les démonstrations et reproduire une architecture fonctionnelle guidée.
 - Maîtrise autonome du projet : réaliser, tester, sécuriser et dépanner chaque partie sans aide. Cela demandera du travail pratique supplémentaire en dehors des vidéos.
 Je recommande de conserver les technologies que tu as imposées, de ne supprimer aucune étape technique essentielle et de limiter la durée vidéo en séparant les explications des exercices autonomes.
-Fiche de conception pédagogique
+## Fiche de conception pédagogique
 Durée maximale
 4 h
 240 minutes de vidéo
@@ -146,14 +146,14 @@ flowchart TD
 Important : ce parcours enseigne une architecture complète, mais le cours accéléré ne remplace pas les séances de validation physique. La version finale du compteur doit être testée par étapes, particulièrement pour le secteur, les alimentations et les communications.
 
 ## Partie C — Programme complet et détaillé
-Module M01 — Découvrir le compteur et comprendre l'électricité
+### Module M01 — Découvrir le compteur et comprendre l'électricité
 
 Objectif : comprendre ce que le système mesure et comment les grandeurs électriques sont liées.
 
 Prérequis : aucun. Durée : 10 minutes. Support : présentation illustrée et simulation numérique.
 
 
-Vidéo M01-V01 — Du réseau électrique au tableau de bord IoT (5 min)
+#### Vidéo M01-V01 — Du réseau électrique au tableau de bord IoT (5 min)
 - Objectif pédagogique : comprendre le trajet d'une mesure depuis le circuit électrique jusqu'au navigateur.
 - Introduction à prononcer : « Imaginez que vous puissiez consulter à distance la consommation électrique d'une installation, connaître son historique et détecter une anomalie. Nous allons construire un système qui rend cela possible. »
 - Plan détaillé :
@@ -168,7 +168,7 @@ Vidéo M01-V01 — Du réseau électrique au tableau de bord IoT (5 min)
 - Résultat attendu : l'apprenant peut expliquer le rôle de chaque bloc.
 - Mini-exercice : remettre les cinq blocs du système dans le bon ordre.
 - Transition : avant de mesurer, il faut comprendre ce que signifient les valeurs électriques.
-Vidéo M01-V02 — Comprendre volts, ampères, watts et kilowattheures (5 min)
+#### Vidéo M01-V02 — Comprendre volts, ampères, watts et kilowattheures (5 min)
 - Objectif : distinguer tension, courant, puissance et énergie.
 - Niveau : débutant absolu.
 - Introduction : « Un appareil peut consommer beaucoup de puissance pendant quelques minutes ou peu de puissance pendant plusieurs heures. Pour comprendre sa consommation, nous devons distinguer puissance et énergie. »
@@ -185,13 +185,13 @@ Vidéo M01-V02 — Comprendre volts, ampères, watts et kilowattheures (5 min)
 - Résultat : calculer une énergie simple.
 - Mini-exercice : calculer l'énergie consommée par un appareil de 200 W pendant 5 h.
 - Transition : découvrons maintenant les composants qui effectueront ces opérations.
-Ressources du module : glossaire électrique, fiche des unités, synoptique du projet et quiz M01.
+**Ressources du module :** glossaire électrique, fiche des unités, synoptique du projet et quiz M01.
 
-Validation : score de quiz d'au moins 80 %, avec correction des erreurs avant de poursuivre.
+**Validation :** score de quiz d'au moins 80 %, avec correction des erreurs avant de poursuivre.
 
-Module M02 — Identifier les composants et travailler en sécurité
+### Module M02 — Identifier les composants et travailler en sécurité
 Objectif : reconnaître les éléments du projet, leur rôle et les limites de manipulation. Prérequis : M01. Durée : 10 minutes.
-Vidéo M02-V01 — Reconnaître les composants du compteur intelligent (5 min)
+#### Vidéo M02-V01 — Reconnaître les composants du compteur intelligent (5 min)
 - Introduction : « Avant de construire un circuit, nous devons savoir à quoi sert chaque composant et pourquoi il est présent. »
 - Plan :
   1. ATmega328P : exécuter le programme.
@@ -206,7 +206,7 @@ Vidéo M02-V01 — Reconnaître les composants du compteur intelligent (5 min)
 - À souligner : une référence de module ne suffit pas à garantir le brochage ou les caractéristiques de toutes ses variantes.
 - Exercice : associer chaque composant à sa fonction.
 - Transition : voyons comment alimenter et protéger ces composants.
-Vidéo M02-V02 — Alimentations, protections et sécurité du 230 V (5 min)
+#### Vidéo M02-V02 — Alimentations, protections et sécurité du 230 V (5 min)
 - Introduction : « Le secteur peut provoquer une électrocution ou un incendie. Nous allons apprendre à séparer les essais basse tension des opérations réservées aux personnes qualifiées. »
 - Plan :
   1. Expliquer l'alimentation et la différence entre alternatif et continu.
@@ -220,15 +220,15 @@ Vidéo M02-V02 — Alimentations, protections et sécurité du 230 V (5 min)
 - Résultat : savoir reconnaître une situation dangereuse.
 - Exercice : repérer trois erreurs sur un schéma de principe.
 - Transition : commencer le développement avec une carte Arduino et une LED.
-Ressources : BOM préliminaire, fiches composants, checklist de sécurité.
+**Ressources :** BOM préliminaire, fiches composants, checklist de sécurité.
 
-Quiz M02 : symboles, fonctions, tensions d'alimentation, découplage, isolation et procédures de sécurité.
+**Quiz M02 :** symboles, fonctions, tensions d'alimentation, découplage, isolation et procédures de sécurité.
 
-Validation : 80 % et aucune erreur critique non corrigée sur les règles de sécurité.
+**Validation :** 80 % et aucune erreur critique non corrigée sur les règles de sécurité.
 
-Module M03 — Installer Arduino IDE et programmer sa première LED
+### Module M03 — Installer Arduino IDE et programmer sa première LED
 Objectif : compiler et téléverser un premier programme. Prérequis : M01-M02. Durée : 14 minutes.
-Vidéo M03-V01 — Installer Arduino IDE et comprendre la compilation (7 min)
+#### Vidéo M03-V01 — Installer Arduino IDE et comprendre la compilation (7 min)
 - Introduction : « Un microcontrôleur ne comprend pas directement nos instructions écrites en C++. Arduino IDE nous aide à transformer le programme en instructions exécutables. »
 - Plan :
   1. Installer Arduino IDE.
@@ -242,7 +242,7 @@ Vidéo M03-V01 — Installer Arduino IDE et comprendre la compilation (7 min)
 - Erreurs : mauvais port, câble USB de charge uniquement, carte mal sélectionnée.
 - Exercice : compiler un programme fourni.
 - Transition : créer un programme qui produit un résultat visible.
-Vidéo M03-V02 — Faire clignoter une LED avec Arduino Uno (7 min)
+#### Vidéo M03-V02 — Faire clignoter une LED avec Arduino Uno (7 min)
 - Introduction : « Notre première application va allumer et éteindre une LED. Nous allons ainsi vérifier le lien entre le code et le circuit réel. »
 - Plan :
   1. Définir une sortie numérique.
@@ -255,15 +255,15 @@ Vidéo M03-V02 — Faire clignoter une LED avec Arduino Uno (7 min)
 - Résultat : LED clignotante.
 - Exercice : modifier la durée d'allumage.
 - Transition : apprendre à organiser et modifier le programme.
-Ressources : installation Arduino IDE, code LED, schéma et guide de dépannage.
+**Ressources :** installation Arduino IDE, code LED, schéma et guide de dépannage.
 
-Quiz M03 : environnement, compilation, téléversement, LED et fonctions principales.
+**Quiz M03 :** environnement, compilation, téléversement, LED et fonctions principales.
 
-Validation : compiler et modifier un programme sans erreur.
+**Validation :** compiler et modifier un programme sans erreur.
 
-Module M04 — Comprendre les bases du C/C++ embarqué
+### Module M04 — Comprendre les bases du C/C++ embarqué
 Objectif : lire et modifier un programme simple. Prérequis : M03. Durée : 14 minutes.
-Vidéo M04-V01 — Variables, types et calculs en C++ (7 min)
+#### Vidéo M04-V01 — Variables, types et calculs en C++ (7 min)
 - Introduction : « Pour afficher une tension ou mémoriser une consommation, le microcontrôleur doit conserver des valeurs. C'est le rôle des variables. »
 - Plan : variable, déclaration, affectation, int, float, bool, constantes, opérateurs et conversion d'unités.
 - Analogie : une variable est une boîte étiquetée qui contient une valeur.
@@ -271,7 +271,7 @@ Vidéo M04-V01 — Variables, types et calculs en C++ (7 min)
 - Erreurs : division entière involontaire, dépassement de capacité, précision insuffisante.
 - Exercice : calculer une énergie à partir d'une puissance et d'une durée.
 - Transition : rendre le programme capable de choisir entre plusieurs actions.
-Vidéo M04-V02 — Conditions, boucles et fonctions (7 min)
+#### Vidéo M04-V02 — Conditions, boucles et fonctions (7 min)
 - Introduction : « Un programme utile doit prendre des décisions, répéter certaines tâches et réutiliser du code. »
 - Plan :
   1. if, else et comparaisons.
@@ -283,22 +283,22 @@ Vidéo M04-V02 — Conditions, boucles et fonctions (7 min)
 - Erreurs : confusion entre = et ==, boucle infinie, fonction appelée au mauvais endroit.
 - Exercice : créer une fonction de conversion watts vers kilowatts.
 - Transition : appliquer ces bases aux entrées et aux communications.
-Ressources : mémo C++, exercices corrigés et code commenté.
+**Ressources :** mémo C++, exercices corrigés et code commenté.
 
-Quiz M04 : types, variables, conditions, boucles, fonctions et lecture de code.
+**Quiz M04 :** types, variables, conditions, boucles, fonctions et lecture de code.
 
-Validation : modifier un programme fourni et expliquer son fonctionnement.
+**Validation :** modifier un programme fourni et expliquer son fonctionnement.
 
-Module M05 — Entrées, sorties et communications série
+### Module M05 — Entrées, sorties et communications série
 Objectif : comprendre les interactions entre microcontrôleur et périphériques. Prérequis : M04. Durée : 18 minutes.
-Vidéo M05-V01 — Lire un bouton et commander une sortie (9 min)
+#### Vidéo M05-V01 — Lire un bouton et commander une sortie (9 min)
 - Introduction : « Un compteur ne doit pas seulement mesurer. Il doit aussi réagir à une action de l'utilisateur, par exemple pour changer de page sur l'écran. »
 - Plan : entrée numérique, résistance de rappel, INPUT_PULLUP, logique inversée, rebond mécanique et anti-rebond.
 - Démonstration : bouton qui change l'état d'une LED.
 - Erreurs : entrée flottante, câblage incorrect, détection multiple d'un seul appui.
 - Exercice : faire alterner deux états à chaque appui.
 - Transition : apprendre à échanger des données avec un autre appareil.
-Vidéo M05-V02 — Comprendre l'UART et les temporisations non bloquantes (9 min)
+#### Vidéo M05-V02 — Comprendre l'UART et les temporisations non bloquantes (9 min)
 - Introduction : « Le microcontrôleur doit communiquer avec plusieurs modules. Nous allons découvrir comment les appareils échangent des caractères et des données. »
 - Plan :
   1. Communication série et transmission bit par bit.
@@ -311,15 +311,15 @@ Vidéo M05-V02 — Comprendre l'UART et les temporisations non bloquantes (9 min
 - Erreurs : TX/RX inversés, débits différents, attente bloquante.
 - Exercice : afficher une mesure toutes les secondes sans bloquer le programme.
 - Transition : remplacer la mesure fictive par une mesure du PZEM.
-Ressources : tableau des broches, code bouton, code UART et fiche des temporisations.
+**Ressources :** tableau des broches, code bouton, code UART et fiche des temporisations.
 
-Quiz M05 : GPIO, anti-rebond, UART, débit, TX/RX et millis().
+**Quiz M05 :** GPIO, anti-rebond, UART, débit, TX/RX et millis().
 
-Validation : réussir un test d'entrée/sortie et expliquer une communication série.
+**Validation :** réussir un test d'entrée/sortie et expliquer une communication série.
 
-Module M06 — Lire les mesures du PZEM-004T V3.0
+### Module M06 — Lire les mesures du PZEM-004T V3.0
 Objectif : récupérer et interpréter les mesures électriques. Prérequis : M05. Durée : 16 minutes.
-Vidéo M06-V01 — Comprendre le PZEM et Modbus RTU (8 min)
+#### Vidéo M06-V01 — Comprendre le PZEM et Modbus RTU (8 min)
 - Introduction : « Plutôt que de construire nous-mêmes un circuit de mesure du secteur, nous utilisons un module spécialisé qui fournit des valeurs numériques. »
 - Plan :
   1. Présenter le PZEM-004T V3.0 et son transformateur de courant compatible.
@@ -332,7 +332,7 @@ Vidéo M06-V01 — Comprendre le PZEM et Modbus RTU (8 min)
 - Erreurs : utiliser la documentation d'une autre version du PZEM, confondre données brutes et unités.
 - Exercice : associer chaque registre documenté à sa grandeur.
 - Transition : lire les valeurs avec le firmware.
-Vidéo M06-V02 — Lire et vérifier les mesures avec Arduino IDE (8 min)
+#### Vidéo M06-V02 — Lire et vérifier les mesures avec Arduino IDE (8 min)
 - Introduction : « Nous allons maintenant afficher les valeurs reçues et apprendre à reconnaître une mesure valide ou une erreur de communication. »
 - Plan : installation de la bibliothèque adaptée à la version, raccordement logique documenté, lecture des grandeurs, validation, valeurs absentes et erreurs de communication.
 - Démonstration : utiliser d'abord un jeu de données simulées, puis une lecture réelle sur un banc approprié.
@@ -340,22 +340,22 @@ Vidéo M06-V02 — Lire et vérifier les mesures avec Arduino IDE (8 min)
 - Erreurs : incompatibilité de bibliothèque, alimentation incorrecte, absence de réponse.
 - Exercice : détecter une valeur de mesure manquante.
 - Transition : ajouter la date et l'affichage local.
-Ressources : fiche PZEM, extrait de documentation constructeur, exemple de lecture, jeu de mesures simulées.
+**Ressources :** fiche PZEM, extrait de documentation constructeur, exemple de lecture, jeu de mesures simulées.
 
-Quiz M06 : registres, Modbus, unités, lecture des mesures et diagnostic.
+**Quiz M06 :** registres, Modbus, unités, lecture des mesures et diagnostic.
 
-Validation : lire ou simuler correctement les six grandeurs et identifier une erreur de communication.
+**Validation :** lire ou simuler correctement les six grandeurs et identifier une erreur de communication.
 
-Module M07 — Ajouter l'heure et l'écran LCD I2C
+### Module M07 — Ajouter l'heure et l'écran LCD I2C
 Objectif : afficher des données lisibles et datées. Prérequis : M05-M06. Durée : 14 minutes.
-Vidéo M07-V01 — Comprendre et utiliser le DS3231 (7 min)
+#### Vidéo M07-V01 — Comprendre et utiliser le DS3231 (7 min)
 - Introduction : « Pour calculer la consommation de chaque jour, le compteur doit connaître la date, même lorsqu'il est redémarré. »
 - Plan : rôle d'une horloge temps réel, bus I2C, SDA/SCL, alimentation, pile de sauvegarde et lecture de la date.
 - Démonstration : lire une date de test et régler l'horloge.
 - Erreurs : date initiale incorrecte, pile absente ou épuisée, mauvaise adresse I2C.
 - Exercice : afficher la date au format JJ/MM/AAAA.
 - Transition : rendre cette information visible sur un écran.
-Vidéo M07-V02 — Afficher les mesures sur un LCD 20×4 I2C (7 min)
+#### Vidéo M07-V02 — Afficher les mesures sur un LCD 20×4 I2C (7 min)
 - Introduction : « Un écran permet de consulter l'état du compteur sans ordinateur ni téléphone. »
 - Plan : principe du LCD, adaptateur I2C, bibliothèque, adresse, positionnement du curseur et formatage des nombres.
 - Démonstration : afficher une date, une tension et les consommations journalières et mensuelles simulées.
@@ -363,15 +363,15 @@ Vidéo M07-V02 — Afficher les mesures sur un LCD 20×4 I2C (7 min)
 - Erreurs : adresse incorrecte, écran vide, débordement de ligne et rafraîchissement excessif.
 - Exercice : ajouter une page affichant courant et puissance.
 - Transition : calculer correctement les consommations cumulées.
-Ressources : schéma I2C, code DS3231, code LCD et maquette des écrans.
+**Ressources :** schéma I2C, code DS3231, code LCD et maquette des écrans.
 
-Quiz M07 : I2C, DS3231, LCD, adresses et formatage.
+**Quiz M07 :** I2C, DS3231, LCD, adresses et formatage.
 
-Validation : afficher des données datées sur quatre lignes sans clignotement excessif.
+**Validation :** afficher des données datées sur quatre lignes sans clignotement excessif.
 
-Module M08 — Calculer les consommations journalières et mensuelles
+### Module M08 — Calculer les consommations journalières et mensuelles
 Objectif : élaborer une logique de calcul fiable et résistante aux redémarrages. Prérequis : M06-M07. Durée : 16 minutes.
-Vidéo M08-V01 — Calculer l'énergie et comprendre les index (8 min)
+#### Vidéo M08-V01 — Calculer l'énergie et comprendre les index (8 min)
 - Introduction : « Une mesure instantanée ne suffit pas pour connaître l'énergie consommée pendant une journée. Il faut exploiter un index énergétique et ses variations. »
 - Plan :
   1. Différence entre puissance instantanée et énergie cumulée.
@@ -385,7 +385,7 @@ Vidéo M08-V01 — Calculer l'énergie et comprendre les index (8 min)
 - Erreurs : additionner plusieurs fois l'index total, accepter aveuglément un index qui diminue.
 - Exercice : calculer les deltas sur cinq relevés.
 - Transition : traiter les changements de date et les interruptions.
-Vidéo M08-V02 — Gérer minuit, les mois, les années et les redémarrages (8 min)
+#### Vidéo M08-V02 — Gérer minuit, les mois, les années et les redémarrages (8 min)
 - Introduction : « Un compteur fiable doit continuer à calculer correctement après une coupure de courant ou un changement de mois. »
 - Plan :
   1. Associer chaque relevé à un horodatage.
@@ -398,15 +398,15 @@ Vidéo M08-V02 — Gérer minuit, les mois, les années et les redémarrages (8 
 - Erreurs : remise à zéro de l'index total, confusion entre absence de mesure et consommation nulle.
 - Exercice : compléter une table de consommation quotidienne.
 - Transition : conserver cette logique sur un microcontrôleur autonome.
-Ressources : algorithme de cumul, jeux de données, exercices corrigés et scénarios de panne.
+**Ressources :** algorithme de cumul, jeux de données, exercices corrigés et scénarios de panne.
 
-Quiz M08 : delta énergétique, changements de période, persistance, réinitialisation et doublons.
+**Quiz M08 :** delta énergétique, changements de période, persistance, réinitialisation et doublons.
 
-Validation : calculer un cumul exact sur une série de relevés comprenant un redémarrage et un changement de mois.
+**Validation :** calculer un cumul exact sur une série de relevés comprenant un redémarrage et un changement de mois.
 
-Module M09 — Programmer l'ATmega328P autonome par ISP
+### Module M09 — Programmer l'ATmega328P autonome par ISP
 Objectif : comprendre le passage de l'Arduino Uno au microcontrôleur autonome. Prérequis : M03-M08. Durée : 16 minutes.
-Vidéo M09-V01 — Construire le circuit minimal de l'ATmega328P (8 min)
+#### Vidéo M09-V01 — Construire le circuit minimal de l'ATmega328P (8 min)
 - Introduction : « La carte Arduino Uno simplifie le développement, mais notre produit final peut utiliser directement le microcontrôleur. »
 - Plan :
   1. Différence entre carte de développement et microcontrôleur.
@@ -418,7 +418,7 @@ Vidéo M09-V01 — Construire le circuit minimal de l'ATmega328P (8 min)
 - Erreurs : orientation du boîtier, alimentation oubliée, RESET mal câblé.
 - Exercice : annoter le schéma minimal.
 - Transition : utiliser l'Arduino Uno pour programmer cette puce.
-Vidéo M09-V02 — Charger ArduinoISP et téléverser le firmware par ISP (8 min)
+#### Vidéo M09-V02 — Charger ArduinoISP et téléverser le firmware par ISP (8 min)
 - Introduction : « Nous allons utiliser une Arduino Uno comme programmateur pour envoyer un programme à un ATmega328P externe. »
 - Plan :
   1. Charger l'exemple ArduinoISP sur la carte programmateur.
@@ -433,15 +433,15 @@ Vidéo M09-V02 — Charger ArduinoISP et téléverser le firmware par ISP (8 min
 - Erreurs : mauvais RESET, configuration d'horloge incorrecte, mauvaise sélection du programmateur.
 - Exercice : diagnostiquer un échec ISP.
 - Transition : ajouter la communication distante.
-Ressources : brochage exact du boîtier, schéma ISP, checklist de programmation et firmware de test.
+**Ressources :** brochage exact du boîtier, schéma ISP, checklist de programmation et firmware de test.
 
-Quiz M09 : rôle des broches, ArduinoISP, fusibles, horloge et bootloader.
+**Quiz M09 :** rôle des broches, ArduinoISP, fusibles, horloge et bootloader.
 
-Validation : programmer et tester la puce externe sans supposer que toutes les cartes Uno ont une puce amovible.
+**Validation :** programmer et tester la puce externe sans supposer que toutes les cartes Uno ont une puce amovible.
 
-Module M10 — Communiquer avec le SIM800L par GSM/GPRS
+### Module M10 — Communiquer avec le SIM800L par GSM/GPRS
 Objectif : comprendre le modem et les commandes AT. Prérequis : M05 et M09. Durée : 14 minutes.
-Vidéo M10-V01 — Tester le SIM800L et comprendre les commandes AT (7 min)
+#### Vidéo M10-V01 — Tester le SIM800L et comprendre les commandes AT (7 min)
 - Introduction : « Le SIM800L est un modem : il reçoit des commandes, communique avec le réseau mobile et retourne des réponses. »
 - Plan : GSM, GPRS, carte SIM, antenne, UART, commandes AT, réponses et états du modem.
 - Démonstration : simulation de AT, AT+CPIN?, AT+CSQ et AT+CREG?.
@@ -449,7 +449,7 @@ Vidéo M10-V01 — Tester le SIM800L et comprendre les commandes AT (7 min)
 - Erreurs : alimentation 5 V directe non autorisée, mauvais débit série, SIM verrouillée.
 - Exercice : interpréter une réponse réseau.
 - Transition : préparer l'envoi de données au serveur.
-Vidéo M10-V02 — Transmettre une mesure par GPRS et traiter les erreurs (7 min)
+#### Vidéo M10-V02 — Transmettre une mesure par GPRS et traiter les erreurs (7 min)
 - Introduction : « Une connexion mobile peut échouer ou disparaître. Nous allons organiser la transmission pour que l'application détecte les erreurs. »
 - Plan : APN, session GPRS, requête HTTP de laboratoire, code de réponse, délai d'attente, nouvelle tentative et fermeture de session.
 - Démonstration : requête vers un serveur de test et lecture de la réponse.
@@ -457,15 +457,15 @@ Vidéo M10-V02 — Transmettre une mesure par GPRS et traiter les erreurs (7 min
 - Limites : le SIM800L est un modem 2G ancien ; la disponibilité du réseau dépend de l'opérateur. Ses capacités TLS sont limitées et doivent être vérifiées.
 - Exercice : interpréter un échec de connexion.
 - Transition : préparer une transmission qui ne perde pas les relevés.
-Ressources : catalogue de commandes AT, fiche d'alimentation, APN fictif de test et scripts de simulation.
+**Ressources :** catalogue de commandes AT, fiche d'alimentation, APN fictif de test et scripts de simulation.
 
-Quiz M10 : UART, SIM, APN, réponses AT, GPRS et sécurité.
+**Quiz M10 :** UART, SIM, APN, réponses AT, GPRS et sécurité.
 
-Validation : expliquer le cycle de connexion et identifier une panne sans mettre le modem en danger.
+**Validation :** expliquer le cycle de connexion et identifier une panne sans mettre le modem en danger.
 
-Module M11 — Sauvegarder les relevés et synchroniser après une panne
+### Module M11 — Sauvegarder les relevés et synchroniser après une panne
 Objectif : assurer la continuité des données. Prérequis : M08-M10. Durée : 16 minutes.
-Vidéo M11-V01 — Utiliser une FRAM pour conserver les relevés (8 min)
+#### Vidéo M11-V01 — Utiliser une FRAM pour conserver les relevés (8 min)
 - Introduction : « Si le réseau disparaît, le compteur doit continuer à enregistrer les relevés au lieu de les perdre. »
 - Plan :
   1. Différence entre RAM et mémoire non volatile.
@@ -477,7 +477,7 @@ Vidéo M11-V01 — Utiliser une FRAM pour conserver les relevés (8 min)
 - Erreurs : débordement de mémoire, format de données instable, écrasement d'enregistrements non envoyés.
 - Exercice : estimer l'espace nécessaire pour une journée de relevés.
 - Transition : retransmettre les enregistrements en attente.
-Vidéo M11-V02 — Reprendre les envois sans doublons (8 min)
+#### Vidéo M11-V02 — Reprendre les envois sans doublons (8 min)
 - Introduction : « Une réponse du serveur peut être perdue alors que la mesure a bien été enregistrée. Il faut donc rendre les envois répétables sans créer de doublons. »
 - Plan :
   1. Créer une file d'attente locale.
@@ -490,44 +490,44 @@ Vidéo M11-V02 — Reprendre les envois sans doublons (8 min)
 - Erreurs : effacer un relevé avant l'accusé de réception, confondre succès HTTP et insertion effective.
 - Exercice : prévoir le résultat de trois tentatives de transmission.
 - Transition : développer le serveur qui reçoit ces données.
-Ressources : format d'enregistrement, simulateur réseau, diagramme de synchronisation et scénarios de panne.
+**Ressources :** format d'enregistrement, simulateur réseau, diagramme de synchronisation et scénarios de panne.
 
-Quiz M11 : FRAM, identifiants uniques, file d'attente, confirmation et idempotence.
+**Quiz M11 :** FRAM, identifiants uniques, file d'attente, confirmation et idempotence.
 
-Validation : réussir une simulation de perte réseau puis de synchronisation sans doublon.
+**Validation :** réussir une simulation de perte réseau puis de synchronisation sans doublon.
 
-Module M12 — Apprendre les bases de Python
+### Module M12 — Apprendre les bases de Python
 Objectif : comprendre le langage nécessaire au backend. Prérequis : notions générales de programmation. Durée : 14 minutes.
-Vidéo M12-V01 — Variables, types, conditions et fonctions Python (7 min)
+#### Vidéo M12-V01 — Variables, types, conditions et fonctions Python (7 min)
 - Introduction : « Le microcontrôleur collecte les mesures, mais un programme Python peut les recevoir, les vérifier et les organiser. »
 - Plan : interpréteur, variables, chaînes, nombres, listes, dictionnaires, conditions et fonctions.
 - Démonstration : traiter un dictionnaire représentant une mesure.
 - Erreurs : indentation, types incompatibles et clés absentes.
 - Exercice : extraire la tension d'un objet de mesure.
 - Transition : manipuler des données structurées.
-Vidéo M12-V02 — JSON, dates, erreurs et fichiers Python (7 min)
+#### Vidéo M12-V02 — JSON, dates, erreurs et fichiers Python (7 min)
 - Introduction : « Les données échangées entre le compteur et le serveur doivent suivre un format convenu. Nous allons utiliser JSON. »
 - Plan : objets et tableaux JSON, sérialisation, dates ISO 8601, exceptions, fichiers et journaux.
 - Démonstration : lire un exemple JSON et rejeter une mesure mal formée.
 - Erreurs : JSON invalide, date ambiguë, valeur manquante.
 - Exercice : corriger un objet JSON incorrect.
 - Transition : construire une application web avec Flask.
-Ressources : aide-mémoire Python, exercices et exemples JSON.
+**Ressources :** aide-mémoire Python, exercices et exemples JSON.
 
-Quiz M12 : types, dictionnaires, fonctions, JSON et exceptions.
+**Quiz M12 :** types, dictionnaires, fonctions, JSON et exceptions.
 
-Validation : lire et valider un petit objet de mesure.
+**Validation :** lire et valider un petit objet de mesure.
 
-Module M13 — Construire le backend Flask et la base SQLite
+### Module M13 — Construire le backend Flask et la base SQLite
 Objectif : créer une API de réception et enregistrer les mesures. Prérequis : M12. Durée : 16 minutes.
-Vidéo M13-V01 — Créer une application Flask et comprendre HTTP (8 min)
+#### Vidéo M13-V01 — Créer une application Flask et comprendre HTTP (8 min)
 - Introduction : « Un serveur web attend des requêtes, exécute un traitement et renvoie une réponse. Flask nous permet de construire ce mécanisme. »
 - Plan : client/serveur, URL, requête, réponse, GET, POST, codes HTTP, routes Flask et JSON.
 - Démonstration : créer une route de test et envoyer une requête.
 - Erreurs : route incorrecte, méthode HTTP non autorisée, serveur de développement exposé publiquement.
 - Exercice : créer une route de statut.
 - Transition : enregistrer les mesures dans SQLite.
-Vidéo M13-V02 — Créer SQLite et sécuriser l'API de réception (8 min)
+#### Vidéo M13-V02 — Créer SQLite et sécuriser l'API de réception (8 min)
 - Introduction : « Pour conserver l'historique, nous avons besoin d'une base de données. Nous allons stocker chaque mesure de manière structurée. »
 - Plan :
   1. Tables, colonnes, clés primaires et index.
@@ -541,59 +541,59 @@ Vidéo M13-V02 — Créer SQLite et sécuriser l'API de réception (8 min)
 - Erreurs : insertion de données non validées, SQL construit par concaténation, clé d'appareil exposée.
 - Exercice : rejeter une mesure invalide et une répétition de la même mesure.
 - Transition : afficher ces données sur le tableau de bord.
-Ressources : squelette Flask, script SQL, exemple JSON, guide d'authentification.
+**Ressources :** squelette Flask, script SQL, exemple JSON, guide d'authentification.
 
-Quiz M13 : routes, HTTP, schéma SQL, validation, authentification et idempotence.
+**Quiz M13 :** routes, HTTP, schéma SQL, validation, authentification et idempotence.
 
-Validation : recevoir et stocker une mesure, puis traiter correctement une requête répétée.
+**Validation :** recevoir et stocker une mesure, puis traiter correctement une requête répétée.
 
-Module M14 — Créer le tableau de bord web
+### Module M14 — Créer le tableau de bord web
 Objectif : consulter les données sans recharger inutilement la page. Prérequis : M13. Durée : 16 minutes.
-Vidéo M14-V01 — Créer une interface avec Jinja2, HTML et CSS (8 min)
+#### Vidéo M14-V01 — Créer une interface avec Jinja2, HTML et CSS (8 min)
 - Introduction : « Une base de données est utile seulement si l'utilisateur peut comprendre les informations qu'elle contient. »
 - Plan : HTML, structure de page, CSS, responsive design, templates Jinja2, variables, boucles et conditions.
 - Démonstration : afficher la dernière mesure dans une page.
 - Erreurs : mélanger traitement métier et présentation, afficher directement du contenu non échappé.
 - Exercice : afficher une liste de relevés.
 - Transition : actualiser les mesures et dessiner les graphiques.
-Vidéo M14-V02 — Utiliser Fetch API et Chart.js pour les historiques (8 min)
+#### Vidéo M14-V02 — Utiliser Fetch API et Chart.js pour les historiques (8 min)
 - Introduction : « Nous allons créer un tableau de bord qui récupère les nouvelles données et présente les consommations sous forme graphique. »
 - Plan : requête Fetch, réponse JSON, traitement d'erreur, actualisation périodique, Chart.js, filtres journaliers et mensuels.
 - Démonstration : courbe de consommation simulée et sélection d'une période.
 - Erreurs : actualisations trop fréquentes, graphiques incohérents avec les données, absence de gestion d'erreur.
 - Exercice : afficher les données d'une journée choisie.
 - Transition : préparer le circuit électronique documenté.
-Ressources : templates HTML, CSS responsive, JavaScript, données d'exemple et tableau de bord.
+**Ressources :** templates HTML, CSS responsive, JavaScript, données d'exemple et tableau de bord.
 
-Quiz M14 : Jinja2, HTML, CSS, Fetch, JSON et Chart.js.
+**Quiz M14 :** Jinja2, HTML, CSS, Fetch, JSON et Chart.js.
 
-Validation : afficher des mesures et un graphique sur ordinateur et smartphone.
+**Validation :** afficher des mesures et un graphique sur ordinateur et smartphone.
 
-Module M15 — Concevoir le schéma électronique avec KiCad
+### Module M15 — Concevoir le schéma électronique avec KiCad
 Objectif : produire une documentation électronique cohérente. Prérequis : M02-M09. Durée : 12 minutes.
-Vidéo M15-V01 — Créer le schéma et choisir les empreintes (6 min)
+#### Vidéo M15-V01 — Créer le schéma et choisir les empreintes (6 min)
 - Introduction : « Un montage qui fonctionne sur breadboard doit ensuite être documenté pour pouvoir être reproduit et maintenu. »
 - Plan : projet KiCad, symboles, références, alimentation, connecteurs, annotations, vérification électrique et empreintes.
 - Démonstration : créer le schéma basse tension autour de l'ATmega328P et des interfaces.
 - Erreurs : symbole mal choisi, broche non connectée, empreinte incompatible.
 - Exercice : compléter un schéma fourni.
 - Transition : préparer le circuit imprimé.
-Vidéo M15-V02 — Préparer un PCB et vérifier les contraintes de sécurité (6 min)
+#### Vidéo M15-V02 — Préparer un PCB et vérifier les contraintes de sécurité (6 min)
 - Introduction : « Le circuit imprimé doit être fabriqué selon les caractéristiques des composants et les contraintes de sécurité de l'installation. »
 - Plan : implantation, pistes, règles de conception, connecteurs, découplage et contrôle du PCB.
 - Démonstration : routage d'une partie basse tension et export des fichiers.
 - Limite : la section secteur n'est pas à reproduire par un débutant ; son dessin et sa validation nécessitent une conception professionnelle adaptée aux normes applicables.
 - Exercice : vérifier une liste de contrôle PCB.
 - Transition : assembler les sous-systèmes et valider le projet.
-Ressources : projet KiCad, symboles, empreintes, schéma annoté et checklist de conception.
+**Ressources :** projet KiCad, symboles, empreintes, schéma annoté et checklist de conception.
 
-Quiz M15 : symboles, empreintes, vérification électrique, routage et sécurité.
+**Quiz M15 :** symboles, empreintes, vérification électrique, routage et sécurité.
 
-Validation : produire un schéma basse tension vérifié et documenté.
+**Validation :** produire un schéma basse tension vérifié et documenté.
 
-Module M16 — Intégration, tests et déploiement
+### Module M16 — Intégration, tests et déploiement
 Objectif : valider le fonctionnement de bout en bout. Prérequis : modules précédents. Durée : 14 minutes.
-Vidéo M16-V01 — Intégrer le firmware et tester les scénarios de panne (7 min)
+#### Vidéo M16-V01 — Intégrer le firmware et tester les scénarios de panne (7 min)
 - Introduction : « Un projet complet ne se valide pas uniquement parce que chaque module fonctionne séparément. Nous allons tester leurs interactions. »
 - Plan :
   1. Vérifier les mesures.
@@ -607,7 +607,7 @@ Vidéo M16-V01 — Intégrer le firmware et tester les scénarios de panne (7 mi
 - Erreurs : tests uniquement en fonctionnement normal, absence de journal d'erreurs.
 - Exercice : établir un rapport de test.
 - Transition : publier le backend et présenter le résultat final.
-Vidéo M16-V02 — Déployer Flask sur PythonAnywhere et valider le projet (7 min)
+#### Vidéo M16-V02 — Déployer Flask sur PythonAnywhere et valider le projet (7 min)
 - Introduction : « Nous allons rendre le tableau de bord accessible en ligne et vérifier les conditions de son exploitation. »
 - Plan : préparer l'application, configurer l'environnement, déployer Flask, configurer les variables secrètes, vérifier les journaux, tester SQLite et les requêtes.
 - Démonstration : déploiement d'une application de test et consultation du tableau de bord.
@@ -615,11 +615,11 @@ Vidéo M16-V02 — Déployer Flask sur PythonAnywhere et valider le projet (7 mi
 - Erreurs : dépendance manquante, mauvais chemin WSGI, secrets dans le code source, base de données inaccessible.
 - Exercice : remplir une checklist de mise en production.
 - Résultat final : architecture comprise, serveur de test accessible et plan de validation documenté.
-Ressources : guide PythonAnywhere, checklist de déploiement, scripts de test, grille de projet final.
+**Ressources :** guide PythonAnywhere, checklist de déploiement, scripts de test, grille de projet final.
 
-Quiz M16 : intégration, tests, déploiement, journaux, sécurité et diagnostic.
+**Quiz M16 :** intégration, tests, déploiement, journaux, sécurité et diagnostic.
 
-Validation : réussir les tests fonctionnels et expliquer les limites restantes du prototype.
+**Validation :** réussir les tests fonctionnels et expliquer les limites restantes du prototype.
 ## Partie D — Parcours des réalisations pratiques
 Le parcours pratique doit éviter de commencer directement par le compteur complet. L'apprenant construit progressivement des sous-systèmes indépendants, puis les assemble.
 D1. Ordre exact des réalisations
