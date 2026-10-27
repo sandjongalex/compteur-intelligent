@@ -1,0 +1,8 @@
+{
+  "commentaire": "DONNEES DE DEMONSTRATION FICTIVES — pas de mesure reelle",
+  "device_id": "COMPTEUR-DEMO",
+  "date": "2026-10-27",
+  "voltage_v": 230.5,
+  "energy_today_kwh": 4.25,
+  "energy_month_kwh": 125.48
+}

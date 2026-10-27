@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>AlexTech Academy — Démonstration fictive M01</title>
+  <style>
+    :root{font-family:system-ui,-apple-system,Segoe UI,sans-serif;color:#14263b;background:#eef3f7}
+    *{box-sizing:border-box}body{margin:0;padding:24px}main{max-width:890px;margin:auto}
+    header{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+    h1{font-size:clamp(1.5rem,4vw,2.2rem);margin-bottom:8px}p{color:#516276}
+    .tag{background:#fff1d3;color:#784300;border-radius:999px;padding:8px 12px;font-weight:700;font-size:.9rem}
+    .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:24px}
+    .card{background:white;border-radius:16px;padding:23px;box-shadow:0 6px 22px #15283a12}
+    .value{font-size:clamp(1.6rem,5vw,2.3rem);font-weight:750;margin:12px 0 2px}
+    .label{color:#516276;font-size:.9rem}
+    .lcd{margin-top:22px;padding:16px;border-radius:14px;background:#162d21;color:#b9e7aa;font-family:ui-monospace,Consolas,monospace;line-height:1.75}
+    .lcd pre{margin:0;white-space:pre-wrap;font-size:clamp(.8rem,2.8vw,1.1rem)}
+    footer{margin-top:18px;font-size:.85rem;color:#56687c}
+    @media(max-width:500px){body{padding:14px}.grid{gap:10px}.card{padding:15px}}
+  </style>
+</head>
+<body>
+<main>
+  <header><div><strong>AlexTech Academy</strong><h1>Compteur intelligent IoT</h1></div><span class="tag">Données fictives — hors ligne</span></header>
+  <p>Maquette pédagogique du module 01. Les valeurs sont fixes : aucune connexion GSM, aucune mesure secteur et aucune base de données réelle.</p>
+  <section class="grid" aria-label="Mesures fictives">
+    <div class="card"><div class="label">Date du relevé</div><div class="value">27/10/2026</div></div>
+    <div class="card"><div class="label">Tension secteur simulée</div><div class="value">230,5 V</div></div>
+    <div class="card"><div class="label">Énergie du jour</div><div class="value">4,250 kWh</div></div>
+    <div class="card"><div class="label">Énergie du mois</div><div class="value">125,480 kWh</div></div>
+  </section>
+  <section class="lcd" aria-label="Exemple d'affichage LCD vingt colonnes quatre lignes"><pre>DATE:    27/10/2026
+TENSION:    230.5 V
+JOUR:      4.250 kWh
+MOIS:    125.480 kWh</pre></section>
+  <footer>Module M01-V01 • Illustration statique et totalement hors ligne • Les modules Flask, SQLite et GSM seront abordés plus tard.</footer>
+</main>
+</body></html>

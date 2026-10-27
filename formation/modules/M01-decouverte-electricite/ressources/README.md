@@ -1,24 +1,28 @@
-# Ressources pédagogiques — M01
+# Ressources disponibles — Module 01
 
-**STATUT : inventaire des livrables, à produire et à contrôler.**
+**Statut : les ressources textuelles, le synoptique et une maquette HTML hors ligne sont publiés. Les PPTX, photos, animations et vidéos ne sont pas encore créés.**
 
-## Livrables prévus par le plan
+## Documents à remettre à l'apprenant
 
-**Ressources du module :** glossaire électrique, fiche des unités, synoptique du projet et quiz M01.
+- [Fiche des unités et calculs](FICHE_UNITES.md).
+- [Glossaire des termes pour débutants](GLOSSAIRE.md).
+- [Synoptique fonctionnel du compteur](SYNOPTIQUE.md).
+- [Maquette HTML hors ligne avec des relevés fictifs](demo_dashboard_fictif.html).
+- [Exemple JSON de données fictives](mesures_fictives.json).
+- [Exercices corrigés](../tp/README.md).
+- [Quiz de validation M01](../quiz/QUIZ_M01.md).
 
-## Organisation
+## Ressources de tournage
 
-- Les diapositives et storyboards sont dans [slides](../slides/).
-- Les scripts sont dans [scripts](../scripts/).
-- Les programmes et fichiers techniques sont dans [code](../code/).
-- Les fiches d'exercices sont dans [tp](../tp/).
-- Les quiz sont dans [quiz](../quiz/).
+- [Script M01-V01](../scripts/V01-script.md) et [storyboard associé](../slides/V01-storyboard.md).
+- [Script M01-V02](../scripts/V02-script.md) et [storyboard associé](../slides/V02-storyboard.md).
 
-## Contrôle des ressources
+## Éléments à créer avant publication de la vidéo
 
-- [ ] Version des composants et des bibliothèques documentée.
-- [ ] Schémas et captures lisibles sur téléphone.
-- [ ] Fichiers ouverts/testés dans le logiciel annoncé.
-- [ ] Aucun secret, numéro de téléphone ou identifiant réel publié.
-- [ ] Licences des images et ressources respectées.
-- [ ] Fichiers validés avant publication auprès des apprenants.
+- [ ] Diapositives PowerPoint au format 16:9 à partir des deux storyboards.
+- [ ] Photos de modules hors tension avec les droits de diffusion.
+- [ ] Animation du trajet des données et captures de la page fictive.
+- [ ] Captation et montage des deux vidéos.
+- [ ] Contrôle final audio, clarté et durée.
+
+**Attention :** la maquette HTML est un document **statique** pour débutants. Elle ne doit pas être présentée comme la version finale de l'application Flask/Jinja2.

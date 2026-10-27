@@ -1,0 +1,329 @@
+{
+  "module": "M01",
+  "title": "Découvrir le compteur et comprendre l'électricité",
+  "format_version": 1,
+  "pass_score": 8,
+  "total": 10,
+  "questions": [
+    {
+      "id": "Q01",
+      "type": "single_select",
+      "difficulty": "Facile",
+      "objective": "Reconnaître l'unité de tension",
+      "question": "Quelle grandeur électrique s'exprime en volts ?",
+      "options": [
+        {
+          "value": "A",
+          "label": "La puissance",
+          "feedback": "La puissance s'exprime en watts (W), pas en volts."
+        },
+        {
+          "value": "B",
+          "label": "La tension",
+          "feedback": "Le volt (V) mesure la tension, c'est-à-dire une différence de potentiel électrique."
+        },
+        {
+          "value": "C",
+          "label": "L'énergie",
+          "feedback": "L'énergie s'exprime notamment en wattheures (Wh) ou kilowattheures (kWh)."
+        },
+        {
+          "value": "D",
+          "label": "La fréquence",
+          "feedback": "La fréquence s'exprime en hertz (Hz)."
+        }
+      ],
+      "correctValues": [
+        "B"
+      ]
+    },
+    {
+      "id": "Q02",
+      "type": "single_select",
+      "difficulty": "Facile",
+      "objective": "Reconnaître l'unité du courant",
+      "question": "Quelle unité mesure le courant électrique ?",
+      "options": [
+        {
+          "value": "A",
+          "label": "Le watt",
+          "feedback": "Le watt mesure la puissance active."
+        },
+        {
+          "value": "B",
+          "label": "Le volt",
+          "feedback": "Le volt mesure la tension électrique."
+        },
+        {
+          "value": "C",
+          "label": "L'ampère",
+          "feedback": "L'ampère (A) est l'unité du courant électrique."
+        },
+        {
+          "value": "D",
+          "label": "Le kilowattheure",
+          "feedback": "Le kilowattheure est une unité d'énergie, pas de courant."
+        }
+      ],
+      "correctValues": [
+        "C"
+      ]
+    },
+    {
+      "id": "Q03",
+      "type": "single_select",
+      "difficulty": "Facile",
+      "objective": "Convertir W en kW",
+      "question": "Une puissance de 1 000 W correspond à :",
+      "options": [
+        {
+          "value": "A",
+          "label": "1 kW",
+          "feedback": "Mille watts constituent un kilowatt : 1 000 W = 1 kW."
+        },
+        {
+          "value": "B",
+          "label": "1 kWh",
+          "feedback": "Le kWh exprime une énergie ; il manque une durée pour passer de la puissance à l'énergie."
+        },
+        {
+          "value": "C",
+          "label": "1 kV",
+          "feedback": "Le kilovolt est une unité de tension, pas de puissance."
+        },
+        {
+          "value": "D",
+          "label": "1 Wh",
+          "feedback": "Le Wh est une unité d'énergie et ne correspond pas à une puissance de 1 000 W."
+        }
+      ],
+      "correctValues": [
+        "A"
+      ]
+    },
+    {
+      "id": "Q04",
+      "type": "single_select",
+      "difficulty": "Intermédiaire",
+      "objective": "Calculer une énergie sur deux heures",
+      "question": "Un appareil utilise une puissance active constante de 500 W pendant 2 heures. Quelle énergie consomme-t-il ?",
+      "options": [
+        {
+          "value": "A",
+          "label": "0,25 kWh",
+          "feedback": "0,25 kWh correspondrait à 500 W pendant 0,5 heure, pas 2 heures."
+        },
+        {
+          "value": "B",
+          "label": "2 kWh",
+          "feedback": "2 kWh correspondrait à 1 kW pendant 2 heures."
+        },
+        {
+          "value": "C",
+          "label": "0,5 kWh",
+          "feedback": "0,5 kWh correspond à 500 W pendant 1 heure."
+        },
+        {
+          "value": "D",
+          "label": "1 kWh",
+          "feedback": "500 W = 0,5 kW ; 0,5 kW × 2 h = 1 kWh."
+        }
+      ],
+      "correctValues": [
+        "D"
+      ]
+    },
+    {
+      "id": "Q05",
+      "type": "single_select",
+      "difficulty": "Facile",
+      "objective": "Identifier le module d'acquisition",
+      "question": "Quel est le rôle principal du PZEM-004T dans notre projet ?",
+      "options": [
+        {
+          "value": "A",
+          "label": "Afficher le tableau de bord web",
+          "feedback": "Le tableau de bord est produit par l'application web et son navigateur."
+        },
+        {
+          "value": "B",
+          "label": "Mesurer les grandeurs électriques",
+          "feedback": "Le PZEM-004T fournit notamment tension, courant, puissance et énergie électrique."
+        },
+        {
+          "value": "C",
+          "label": "Stocker les utilisateurs dans SQLite",
+          "feedback": "Le stockage SQLite s'effectue du côté du serveur Flask."
+        },
+        {
+          "value": "D",
+          "label": "Conserver la date lors d'une coupure",
+          "feedback": "La date est fournie par l'horloge RTC DS3231, pas par le PZEM."
+        }
+      ],
+      "correctValues": [
+        "B"
+      ]
+    },
+    {
+      "id": "Q06",
+      "type": "single_select",
+      "difficulty": "Intermédiaire",
+      "objective": "Identifier l'unité de traitement embarqué",
+      "question": "Quel composant exécute le programme de traitement des mesures dans le compteur ?",
+      "options": [
+        {
+          "value": "A",
+          "label": "Le SIM800L",
+          "feedback": "Le SIM800L assure la communication GSM/GPRS."
+        },
+        {
+          "value": "B",
+          "label": "Le LCD I2C",
+          "feedback": "Le LCD affiche des caractères à l'utilisateur."
+        },
+        {
+          "value": "C",
+          "label": "Le PZEM-004T",
+          "feedback": "Le PZEM effectue les mesures, mais le firmware du compteur tourne sur le microcontrôleur."
+        },
+        {
+          "value": "D",
+          "label": "L'ATmega328P",
+          "feedback": "L'ATmega328P exécute le firmware et calcule les consommations journalières et mensuelles."
+        }
+      ],
+      "correctValues": [
+        "D"
+      ]
+    },
+    {
+      "id": "Q07",
+      "type": "single_select",
+      "difficulty": "Intermédiaire",
+      "objective": "Comprendre la fonction du backend",
+      "question": "Dans notre architecture, à quoi sert principalement le serveur Python Flask ?",
+      "options": [
+        {
+          "value": "A",
+          "label": "Recevoir et traiter les relevés envoyés",
+          "feedback": "Flask fournit l'API de réception, vérifie les données puis permet leur stockage et leur consultation."
+        },
+        {
+          "value": "B",
+          "label": "Alimenter le SIM800L en 4 V",
+          "feedback": "L'alimentation du SIM800L relève du circuit d'alimentation, pas du serveur."
+        },
+        {
+          "value": "C",
+          "label": "Mesurer la tension secteur directement",
+          "feedback": "La tension secteur est mesurée au niveau du PZEM."
+        },
+        {
+          "value": "D",
+          "label": "Remplacer le microcontrôleur ATmega328P",
+          "feedback": "L'ATmega328P reste nécessaire pour traiter localement les mesures et piloter les périphériques."
+        }
+      ],
+      "correctValues": [
+        "A"
+      ]
+    },
+    {
+      "id": "Q08",
+      "type": "single_select",
+      "difficulty": "Intermédiaire",
+      "objective": "Différencier les unités d'énergie et de puissance",
+      "question": "Quelle affirmation décrit correctement le kilowattheure (kWh) ?",
+      "options": [
+        {
+          "value": "A",
+          "label": "C'est une unité de courant électrique",
+          "feedback": "Le courant se mesure en ampères (A)."
+        },
+        {
+          "value": "B",
+          "label": "C'est une unité de tension",
+          "feedback": "La tension se mesure en volts (V)."
+        },
+        {
+          "value": "C",
+          "label": "C'est une unité d'énergie électrique",
+          "feedback": "Le kWh exprime une quantité d'énergie, par exemple 1 kW utilisé pendant 1 h."
+        },
+        {
+          "value": "D",
+          "label": "C'est une unité de fréquence",
+          "feedback": "La fréquence se mesure en hertz (Hz)."
+        }
+      ],
+      "correctValues": [
+        "C"
+      ]
+    },
+    {
+      "id": "Q09",
+      "type": "single_select",
+      "difficulty": "Difficile",
+      "objective": "Calculer avec conversion des minutes en heures",
+      "question": "Un appareil utilise une puissance active constante de 2 kW pendant 30 minutes. Quelle énergie consomme-t-il ?",
+      "options": [
+        {
+          "value": "A",
+          "label": "0,5 kWh",
+          "feedback": "0,5 kWh correspondrait à 1 kW pendant 30 minutes."
+        },
+        {
+          "value": "B",
+          "label": "2 kWh",
+          "feedback": "2 kWh correspondrait à une heure entière d'utilisation à 2 kW."
+        },
+        {
+          "value": "C",
+          "label": "1 kWh",
+          "feedback": "30 min = 0,5 h ; 2 kW × 0,5 h = 1 kWh."
+        },
+        {
+          "value": "D",
+          "label": "4 kWh",
+          "feedback": "4 kWh correspondrait à deux heures d'utilisation à 2 kW."
+        }
+      ],
+      "correctValues": [
+        "C"
+      ]
+    },
+    {
+      "id": "Q10",
+      "type": "single_select",
+      "difficulty": "Difficile",
+      "objective": "Ordonner le parcours de la donnée",
+      "question": "Quel trajet décrit correctement une mesure, depuis son acquisition jusqu'à sa consultation sur le web ?",
+      "options": [
+        {
+          "value": "A",
+          "label": "SQLite → ATmega328P → PZEM → navigateur",
+          "feedback": "SQLite est du côté serveur et ne commande pas directement le PZEM par l'ATmega."
+        },
+        {
+          "value": "B",
+          "label": "PZEM → navigateur → SIM800L → SQLite",
+          "feedback": "Le navigateur ne reçoit pas directement les mesures brutes avant le modem et le serveur."
+        },
+        {
+          "value": "C",
+          "label": "LCD → SIM800L → PZEM → navigateur",
+          "feedback": "Le LCD est un écran local, pas la source de la mesure."
+        },
+        {
+          "value": "D",
+          "label": "PZEM → ATmega328P → SIM800L → Flask/SQLite → navigateur",
+          "feedback": "Le PZEM mesure ; l'ATmega traite ; le SIM800L transmet ; Flask/SQLite stocke ; le navigateur affiche."
+        }
+      ],
+      "correctValues": [
+        "D"
+      ]
+    }
+  ]
+}
