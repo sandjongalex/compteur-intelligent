@@ -44,6 +44,8 @@ Le programme de travail actuel est [**courant/CompteurIntelligent/CompteurIntell
 
 **Attention :** le firmware courant est encore M09 et conserve volontairement sa console série pédagogique. Le brochage GSM est une **décision pour la future implémentation M10**, pas une fonctionnalité déjà développée ni un résultat matériel validé.
 
+**Tableau physique pour KiCad et l'intégration M10–M16 :** [toutes les broches de l'ATmega328P-PU DIP-28](../docs/hardware/TABLEAU_AFFECTATION_ATMEGA328P_PDIP28.md), avec câblage UART GSM, PZEM logiciel, bus I2C et connecteur ISP.
+
 ## Deux chemins pour apprendre
 
 **1. Petits projets d'une leçon** : dans `formation/modules/Mxx.../code`, une seule notion à la fois, avec exercices et corrections.
