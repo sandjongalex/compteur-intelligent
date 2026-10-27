@@ -13,7 +13,7 @@ Ce dossier est l'espace de production pédagogique du cours. Chaque module poss�
 | [M03 — Installer Arduino IDE et programmer sa première LED](modules/M03-arduino-ide-premier-programme/) | 14 min | 2 | Scripts, PowerPoint, codes Arduino, TP et quiz prêts ; tests matériels et tournage à faire |
 | [M04 — Comprendre les bases du C/C++ embarqué](modules/M04-bases-cpp/) | 14 min | 2 | Scripts, PPTX, 5 sketches, TP et quiz préparés ; tests Uno et tournage à faire |
 | [M05 — Entrées, sorties et communications série](modules/M05-entrees-sorties-uart/) | 18 min | 2 | Scripts, 8 sketches, TP, quiz, tests documentés ; essais Uno et tournage à faire |
-| [M06 — Lire les mesures du PZEM-004T V3.0](modules/M06-pzem-mesures/) | 16 min | 2 | Plans présents, production à faire |
+| [M06 — Lire les mesures du PZEM-004T V3.0](modules/M06-pzem-mesures/) | 16 min | 2 | Scripts, 7 sketches, deux TP, quiz, mémo et tests prêts ; validation réelle et tournage à faire |
 | [M07 — Ajouter l'heure et l'écran LCD I2C](modules/M07-ds3231-lcd-i2c/) | 14 min | 2 | Plans présents, production à faire |
 | [M08 — Calculer les consommations journalières et mensuelles](modules/M08-consommation-jour-mois/) | 16 min | 2 | Plans présents, production à faire |
 | [M09 — Programmer l'ATmega328P autonome par ISP](modules/M09-atmega328p-isp/) | 16 min | 2 | Plans présents, production à faire |

@@ -37,6 +37,6 @@
 - **Compilation IDE et essais réels non réalisés dans ce dépôt à ce stade**.
 
 Bibliothèque et exemples : https://github.com/mandulaj/PZEM-004T-v30  
-Manuel et carte des registres : https://manualzz.com/doc/59563974/innovatorsguru-ac-communication-module-pzem-004t-v3.0-use...
+Registres et conversions dans la bibliothèque : https://github.com/mandulaj/PZEM-004T-v30/blob/master/src/PZEM004Tv30.cpp
 
 [Scripts](../scripts/) · [Ressources et protocoles](../ressources/README.md) · [Plan de tests](../ressources/PLAN_TESTS.md)

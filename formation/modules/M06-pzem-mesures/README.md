@@ -1,34 +1,43 @@
 # M06 — Lire les mesures du PZEM-004T V3.0
 
-**Durée vidéo : 16 minutes** · **2 leçons** · **État : organisation prête, production à réaliser**
+**AlexTech Academy · 16 minutes de vidéo (deux leçons de 8 min) · Prérequis : M01–M05.**  
+**Pas de PowerPoint.** Démonstrations par captures Arduino IDE, sorties série, progression du code et matériels **hors tension**.
 
-## Objectif et prérequis
+## Objectif pédagogique
 
-Objectif : récupérer et interpréter les mesures électriques. Prérequis : M05. Durée : 16 minutes.
+Le débutant doit reconnaître et interpréter les **six grandeurs** du PZEM, expliquer un échange **UART/Modbus RTU**, convertir des **registres fictifs**, puis écrire une routine qui **signale un échec** au lieu de publier des données inventées.
 
-## Vidéos du module
+## Les deux leçons
 
-- [M06-V01 — Comprendre le PZEM et Modbus RTU (8 min)](videos/V01-plan.md) · [Script](scripts/V01-script.md) · [Diapositives](slides/V01-storyboard.md)
-- [M06-V02 — Lire et vérifier les mesures avec Arduino IDE (8 min)](videos/V02-plan.md) · [Script](scripts/V02-script.md) · [Diapositives](slides/V02-storyboard.md)
+| Vidéo | Durée | Script du formateur | Code à ouvrir dans cet ordre |
+|---|---:|---|---|
+| [M06-V01 — Comprendre PZEM et Modbus RTU](videos/V01-plan.md) | 8 min | [Script intégral](scripts/V01-script.md) | [V01-01 simulation](code/V01_01_six_grandeurs_simulees/V01_01_six_grandeurs_simulees.ino) → [V01-02 registres](code/V01_02_registres_decodes/V01_02_registres_decodes.ino) |
+| [M06-V02 — Lire et valider des mesures](videos/V02-plan.md) | 8 min | [Script intégral](scripts/V02-script.md) | [V02-01 relevés fictifs](code/V02_01_lecture_simulee/V02_01_lecture_simulee.ino) → [V02-02 panne fictive](code/V02_02_detection_panne_simulee/V02_02_detection_panne_simulee.ino) → [V02-03 bibliothèque V3, banc qualifié seulement](code/V02_03_pzem_reel_qualifie/V02_03_pzem_reel_qualifie.ino) |
 
-## Préparer et évaluer
+## Documents pour l'apprenant
 
-- [Travaux pratiques et exercices](tp/README.md)
-- [Banque de quiz et objectifs de validation](quiz/README.md)
-- [Supports et ressources téléchargeables](ressources/README.md)
-- [Code et fichiers techniques](code/README.md)
-- [Suivi de production](production/README.md)
+- [Guide complet des 7 sketches](code/README.md) (cinq étapes de code, deux corrigés).
+- [Mémo PZEM V3, registres et unités](ressources/MEMO_PZEM_V3.md).
+- [Deux travaux pratiques, sans réponses](tp/TP_M06_APPRENANT.md).
+- [Quiz de dix questions, sans réponses](quiz/QUIZ_M06_APPRENANT.md).
+- [Guide de dépannage](ressources/DEPANNAGE.md).
 
-## Indications du plan initial
+## Documents pour le formateur
 
-**Ressources :** fiche PZEM, extrait de documentation constructeur, exemple de lecture, jeu de mesures simulées.
+- [Corrigés des TP et barèmes](tp/CORRIGE_M06_FORMATEUR.md).
+- [Corrigé expliqué du quiz](quiz/CORRIGE_M06_FORMATEUR.md).
+- [Banque JSON du quiz](quiz/quiz_m06.json).
+- [Plan de tests et relevé des vérifications](ressources/PLAN_TESTS.md).
+- [Suivi de conception et de tournage](production/README.md).
 
-**Quiz M06 :** registres, Modbus, unités, lecture des mesures et diagnostic.
+**Validation :** 8/10 au quiz, compréhension des six unités, réussite des deux TP. Les exercices sont **hors durée vidéo**.
 
-**Validation :** lire ou simuler correctement les six grandeurs et identifier une erreur de communication.
+## Sécurité et périmètre
 
-## Documents de référence
+- Les débutants ne réalisent **aucune manipulation du secteur 230 V** ; les simulations fonctionnent sur **Uno USB seule**.
+- Un PZEM réel et l'interface associée ne doivent être utilisés que sur un banc protégé, préalablement installé et exploité par **une personne qualifiée**.
+- **L'énergie est un index cumulatif**, pas une consommation quotidienne. Ne pas remettre l'index à zéro à chaque changement de date.
+- Une lecture invalide doit rester invalide ; ne pas la remplacer par zéro.
+- Le code est rédigé, **les compilations réelles Arduino et les essais sur banc ne sont pas encore attestés**.
 
-[Plan complet de la formation 4 h](../../../docs/formation/PLAN_FORMATION_4H.md) · [Guide pédagogique](../../GUIDE_PEDAGOGIQUE.md)
-
-> Les fiches vidéo reprennent le plan validé. Les scripts, slides, quiz corrigés et programmes ne sont pas présentés comme terminés tant qu'ils n'ont pas été effectivement produits et vérifiés.
+[Plan général 4 h](../../../docs/formation/PLAN_FORMATION_4H.md) · [Guide pédagogique](../../GUIDE_PEDAGOGIQUE.md)

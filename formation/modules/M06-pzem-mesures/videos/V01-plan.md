@@ -1,33 +1,19 @@
-# M06-V01 — Comprendre le PZEM et Modbus RTU (8 min)
+# M06-V01 — Comprendre le PZEM et Modbus RTU (8 minutes)
 
-> **État : plan pédagogique détaillé disponible**. Script intégral et ressources de tournage à finaliser.
+**Statut : script complet, deux programmes de simulation et mémo de registres rédigés ; essais Uno et enregistrement à réaliser.**
 
+## Progression : résultat → comprendre → décoder → vérifier
 
-- Introduction : « Plutôt que de construire nous-mêmes un circuit de mesure du secteur, nous utilisons un module spécialisé qui fournit des valeurs numériques. »
-- Plan :
-  1. Présenter le PZEM-004T V3.0 et son transformateur de courant compatible.
-  2. Expliquer mesure de tension, courant, puissance, fréquence, facteur de puissance et énergie.
-  3. Présenter UART et Modbus RTU.
-  4. Expliquer requête, adresse, registre et réponse.
-  5. Distinguer la mesure physique de son interprétation logicielle.
-- Visuels : architecture Modbus et exemple de trame.
-- Démonstration : lecture d'une trame simulée.
-- Erreurs : utiliser la documentation d'une autre version du PZEM, confondre données brutes et unités.
-- Exercice : associer chaque registre documenté à sa grandeur.
-- Transition : lire les valeurs avec le firmware.
+| Moment | Action à l'écran | Ressource |
+|---|---|---|
+| 00:00–00:55 | Ouvrir la console : six valeurs **SIMULÉES** | [V01-01](../code/V01_01_six_grandeurs_simulees/V01_01_six_grandeurs_simulees.ino) |
+| 00:55–02:05 | Montrer hors tension le PZEM, six grandeurs et unités | [Mémo V3](../ressources/MEMO_PZEM_V3.md) |
+| 02:05–03:15 | Schéma fonctionnel UART / Modbus, requête et réponse | [Protocole](../ressources/MEMO_PZEM_V3.md) |
+| 03:15–04:35 | Registres 0x0000 à 0x0009, conversions d'échelle | [Mémo V3](../ressources/MEMO_PZEM_V3.md) |
+| 04:35–05:55 | Ouvrir et expliquer les structures puis les registres fictifs | [V01-01](../code/V01_01_six_grandeurs_simulees/V01_01_six_grandeurs_simulees.ino), [V01-02](../code/V01_02_registres_decodes/V01_02_registres_decodes.ino) |
+| 05:55–06:55 | Prédire la sortie, compiler sur Uno et observer la console | [Plan de tests](../ressources/PLAN_TESTS.md) |
+| 06:55–08:00 | Mini-défi : 2305 → 2312, expliquer la conversion | [TP01](../tp/TP_M06_APPRENANT.md) |
 
-## Préparation et fichiers liés
+**[Lire le script oral intégral](../scripts/V01-script.md).** Le temps est une cible de montage et doit être chronométré.
 
-- [Texte du formateur](../scripts/V01-script.md)
-- [Storyboard des diapositives](../slides/V01-storyboard.md)
-- [Travaux pratiques](../tp/README.md)
-- [Quiz](../quiz/README.md)
-
-## Critères de qualité
-
-- [ ] La vidéo tient dans le créneau prévu du module.
-- [ ] Chaque terme technique nouveau est expliqué.
-- [ ] Les captures, illustrations et démonstrations correspondent au plan.
-- [ ] Le résultat attendu et une erreur fréquente sont montrés.
-- [ ] L'exercice est faisable avec les ressources fournies.
-- [ ] La sécurité est validée avant les manipulations matérielles.
+**Compétence attendue :** l'apprenant explique pourquoi 2305 devient **230,5 V**, pourquoi 12345 Wh deviennent **12,345 kWh**, et pourquoi deux registres peuvent former un entier 32 bits. Le PZEM n'est **pas branché** durant cette leçon.
