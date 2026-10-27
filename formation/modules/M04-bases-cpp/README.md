@@ -41,3 +41,8 @@ Les deux fichiers PPTX modifiables ont été générés et sont disponibles en t
 **Statut :** scripts, PowerPoint, code, activités et quiz rédigés ou créés ; les tests matériels, l'enregistrement et la publication relèvent du formateur. Les valeurs de tension, de puissance et d'énergie présentées sont fictives.
 
 [Plan général](../../../docs/formation/PLAN_FORMATION_4H.md)
+
+
+## Développement continu du même compteur
+
+[**Ouvrir le firmware fil rouge**](../../../firmware/etapes/M04/Compteur_M04/Compteur_M04.ino) : le programme du M03 continue à faire clignoter sa LED, mais on ajoute des **variables**, des **fonctions** et un **calcul d'énergie fictif** visible en série. Au M05, cette LED deviendra un voyant contrôlé sans `delay()`.

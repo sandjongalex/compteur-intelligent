@@ -52,7 +52,7 @@ Mxx-theme/
 
 ## Projet fil rouge de la programmation
 
-Le code intégré se construit étape par étape dans [**firmware/**](../firmware/README.md), de M05 à M08, tout en préservant les TP indépendants. La [matrice de progression](../firmware/PROGRESSION.md) précise ce qui est ajouté, ce qui reste identique et ce qu'il faut tester.
+Le code intégré se construit étape par étape dans [**firmware/**](../firmware/README.md), de **M03 à M08**, tout en préservant les TP indépendants. La [matrice de progression](../firmware/PROGRESSION.md) précise ce qui est ajouté, ce qui reste identique et ce qu'il faut tester.
 
 ## Ressources transversales
 

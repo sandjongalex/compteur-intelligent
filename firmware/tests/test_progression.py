@@ -9,16 +9,36 @@ def lire(p):
     return path.read_text(encoding="utf-8")
 
 stages = {
+    3: lire("etapes/M03/Compteur_M03/Compteur_M03.ino"),
+    4: lire("etapes/M04/Compteur_M04/Compteur_M04.ino"),
     5: lire("etapes/M05/Compteur_M05/Compteur_M05.ino"),
     6: lire("etapes/M06/Compteur_M06/Compteur_M06.ino"),
     7: lire("etapes/M07/Compteur_M07/Compteur_M07.ino"),
     8: lire("etapes/M08/Compteur_M08/Compteur_M08.ino"),
 }
 for number, source in stages.items():
-    for token in ("void setup()", "void loop()", "traiterBouton(", "traiterCommandes(",
-                  "LED_BUILTIN", "PIN_BOUTON = 2", "millis()", "Serial.begin(9600)"):
-        assert token in source, f"M{number:02} : fonction precedente perdue : {token}"
-    assert source.count("{") >= source.count("}"), f"M{number}: accolades suspectes"
+    for token in ("void setup()", "void loop()", "LED_BUILTIN",
+                  "pinMode(", "digitalWrite("):
+        assert token in source, f"M{number:02} : fonction de base perdue : {token}"
+    assert source.count("{") == source.count("}"), f"M{number}: accolades suspectes"
+
+for token in ("delay(1000)", "digitalWrite(LED_BUILTIN, HIGH)",
+              "digitalWrite(LED_BUILTIN, LOW)"):
+    assert token in stages[3], f"M03 : demo LED incomplete : {token}"
+
+for token in ("float calculerEnergieKWh(", "void commanderLED(",
+              "Serial.begin(9600)", "PUISSANCE_SIMULEE_W",
+              "delay(TEMPS_ALLUME_MS)"):
+    assert token in stages[4], f"M04 : acquisition C++ incomplete : {token}"
+
+for number in range(5, 9):
+    source = stages[number]
+    for token in ("traiterBouton(", "traiterCommandes(", "PIN_BOUTON = 2",
+                  "millis()", "Serial.begin(9600)"):
+        assert token in source, f"M{number:02} : regression bouton/UART : {token}"
+    assert "delay(" not in source.split("void loop() {")[-1], (
+        f"M{number:02} : loop() est a nouveau bloquee par delay()"
+    )
 
 for n in (6, 7, 8):
     source = stages[n]
@@ -43,4 +63,4 @@ h = lire("courant/CompteurIntelligent/EnergieM08.h")
 assert h == lire("etapes/M08/Compteur_M08/EnergieM08.h"), "Moteurs non identiques"
 assert h == lire("tests/EnergieM08.h"), "Moteur tests different"
 assert lire("tests/test_m08.cpp").count("assert(") >= 20, "Suite C++ incomplete"
-print("PASS : 4 etapes, fonctions conservees, sources M08 synchronisees")
+print("PASS : 6 etapes M03-M08, transitions verifiees, M08 courant synchronise")

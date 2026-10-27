@@ -6,6 +6,8 @@ Ce dossier contient le **même projet Arduino qui gagne des fonctions à chaque 
 
 | Étape | Programme autonome à ouvrir dans Arduino IDE | Acquisition | Acquisition date / écran | Calcul de période |
 |---|---|---|---|---|
+| [M03](etapes/M03/Compteur_M03/Compteur_M03.ino) | **Début du projet :** LED intégrée, `setup()`, `loop()`, clignotement avec `delay()` | Aucun module de mesure | Non | Non |
+| [M04](etapes/M04/Compteur_M04/Compteur_M04.ino) | **M03 structuré :** constantes, fonctions et calcul énergétique fictif, moniteur série | Valeurs purement fictives | Non | Non |
 | [M05](etapes/M05/Compteur_M05/Compteur_M05.ino) | Bouton D2, LED, UART USB `1/0/?`, `millis()` | Tension fictive | Non | Non |
 | [M06](etapes/M06/Compteur_M06/Compteur_M06.ino) | **Tout M05** + six valeurs et échec explicite | Simulation (défaut), option PZEM V3 qualifiée | Non | Non |
 | [M07](etapes/M07/Compteur_M07/Compteur_M07.ino) | **Tout M06** + DS3231 et LCD 20×4 | Identique à M06 | Simulation USB par défaut, RTC + LCD optionnels | **Non calculé** |
@@ -16,11 +18,11 @@ Le programme de travail actuel est [**courant/CompteurIntelligent/CompteurIntell
 ## Installation (mode débutant, sans matériel de mesure)
 
 1. Installer Arduino IDE 2 et sélectionner **Arduino Uno Rev3** et le port USB.
-2. Ouvrir **le fichier `.ino` directement dans son dossier homonyme**, par exemple `firmware/etapes/M05/Compteur_M05/Compteur_M05.ino`.
-3. Garder les options `ALEXTECH_PZEM_REEL 0` (M06+) et `ALEXTECH_RTC_LCD_REELS 0` (M07+).
-4. **Vérifier**, puis **Téléverser**, ouvrir le moniteur série à **9600 bauds**.
+2. Ouvrir **le fichier `.ino` directement dans son dossier homonyme**, par exemple `firmware/etapes/M03/Compteur_M03/Compteur_M03.ino`.
+3. À partir de M04, le moniteur série affiche des explications ; à partir de M05, la LED se commande par bouton/UART au lieu de clignoter automatiquement. Garder les options `ALEXTECH_PZEM_REEL 0` (M06+) et `ALEXTECH_RTC_LCD_REELS 0` (M07+).
+4. **Vérifier**, puis **Téléverser**. La version M03 se vérifie en regardant la LED ; à partir de M04, ouvrir le moniteur série à **9600 bauds**.
 5. Brancher éventuellement un bouton entre **D2 et GND**, hors tension, pour essayer un changement d'état de la LED intégrée. Le bouton n'est pas obligatoire pour voir les sorties série.
-6. Envoyer un caractère `1` (LED ON), `0` (LED OFF) ou `?` (aide). Vérifier que les relevés simulés continuent.
+6. **À partir de M05**, envoyer un caractère `1` (LED ON), `0` (LED OFF) ou `?` (aide). Vérifier que les relevés simulés continuent.
 7. À l'étape M08, observer la date fictive, les kWh **partiels**, ainsi que l'évolution de l'index Wh.
 
 **En simulation, une Arduino Uno USB seule suffit. Aucun PZEM, secteur, modem GSM, RTC ou LCD n'est requis par défaut.**
@@ -59,3 +61,5 @@ Il est recommandé de **regarder d'abord la vidéo et de réaliser le petit TP**
 - **M15–M16** : schéma/PCB KiCad, tests d'intégration et déploiement.
 
 **Aucun de ces ajouts futurs n'est déclaré développé dans ce dossier tant que le code correspondant n'existe pas.**
+
+**Principe retenu :** M01/M02 préparent l'électricité et la sécurité sans firmware ; **M03 est la première version du projet réel**. M04, M05, M06, M07 et M08 font tous évoluer cette même base. Le changement de mode LED en M05 (clignotement → commande) est une évolution explicite, non une suppression accidentelle.

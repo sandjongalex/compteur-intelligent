@@ -40,3 +40,8 @@ Scripts, exercices, quiz et code pédagogique **rédigés** ; les PowerPoint ont
 La LED externe est un montage **basse tension uniquement**, sans secteur, PZEM ni SIM800L.
 
 [Retour à la formation](../../README.md) · [Plan global](../../../docs/formation/PLAN_FORMATION_4H.md)
+
+
+## Développement continu du même compteur
+
+[**Ouvrir le firmware fil rouge**](../../../firmware/etapes/M03/Compteur_M03/Compteur_M03.ino) : cette **première version du projet principal** fait clignoter la LED intégrée. C'est ce même programme qui sera ensuite structuré en M04, puis enrichi à chaque module. Les petits sketches restent disponibles comme exercices complémentaires.

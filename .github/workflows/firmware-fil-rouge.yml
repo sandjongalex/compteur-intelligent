@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Controle de la continuite M05 - M08
+      - name: Controle de la continuite M03 - M08
         run: python3 firmware/tests/test_progression.py
       - name: Compiler et executer les tests C++ du moteur M08
         run: |
@@ -35,6 +35,8 @@ jobs:
           arduino-cli core install arduino:avr
       - name: Compiler toutes les versions sur Uno (simulation)
         run: |
+          arduino-cli compile --fqbn arduino:avr:uno firmware/etapes/M03/Compteur_M03
+          arduino-cli compile --fqbn arduino:avr:uno firmware/etapes/M04/Compteur_M04
           arduino-cli compile --fqbn arduino:avr:uno firmware/etapes/M05/Compteur_M05
           arduino-cli compile --fqbn arduino:avr:uno firmware/etapes/M06/Compteur_M06
           arduino-cli compile --fqbn arduino:avr:uno firmware/etapes/M07/Compteur_M07

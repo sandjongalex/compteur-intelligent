@@ -2,12 +2,14 @@
 
 ## Tests de régression disponibles
 
-1. **Statique** : `python3 firmware/tests/test_progression.py`. Vérifie l'existence des quatre versions, les nouvelles capacités à chaque étape, le maintien de l'UART et du bouton, le mode sans secteur par défaut et l'identité du snapshot M08 avec le firmware courant.
+1. **Statique** : `python3 firmware/tests/test_progression.py`. Vérifie l'existence des six versions, les nouvelles capacités à chaque étape, le maintien de l'UART et du bouton, le mode sans secteur par défaut et l'identité du snapshot M08 avec le firmware courant.
 2. **Algorithme énergie** : `g++ -std=c++11 -Wall -Wextra -pedantic firmware/tests/test_m08.cpp -o /tmp/test_m08 && /tmp/test_m08`. Copie des assertions de M08 : delta d'énergie, date, changement de mois, reprise RAM fictive, doublons et index descendu.
-3. **Arduino Uno (à valider)** : les quatre projets doivent être compilés avec le cœur `arduino:avr:uno`. On peut les compiler par Arduino IDE 2 ou Arduino CLI.
+3. **Arduino Uno (à valider)** : les six projets doivent être compilés avec le cœur `arduino:avr:uno`. On peut les compiler par Arduino IDE 2 ou Arduino CLI.
 
 ```bash
 arduino-cli core install arduino:avr
+arduino-cli compile --fqbn arduino:avr:uno firmware/etapes/M03/Compteur_M03
+arduino-cli compile --fqbn arduino:avr:uno firmware/etapes/M04/Compteur_M04
 arduino-cli compile --fqbn arduino:avr:uno firmware/etapes/M05/Compteur_M05
 arduino-cli compile --fqbn arduino:avr:uno firmware/etapes/M06/Compteur_M06
 arduino-cli compile --fqbn arduino:avr:uno firmware/etapes/M07/Compteur_M07
@@ -15,13 +17,15 @@ arduino-cli compile --fqbn arduino:avr:uno firmware/etapes/M08/Compteur_M08
 arduino-cli compile --fqbn arduino:avr:uno firmware/courant/CompteurIntelligent
 ```
 
-**Important :** les cinq commandes ci-dessus concernent le mode simulé (options matérielles = 0) et ne nécessitent pas les bibliothèques PZEM/RTC/LCD. Les versions avec matériel actif devront être compilées et testées **séparément** après installation des bibliothèques et câblage autorisé.
+**Important :** les sept commandes ci-dessus concernent le mode simulé (options matérielles = 0) et ne nécessitent pas les bibliothèques PZEM/RTC/LCD. Les versions avec matériel actif devront être compilées et testées **séparément** après installation des bibliothèques et câblage autorisé.
 
 ## Tests manuels sur une vraie Uno USB
 
 | Action | Résultat attendu |
 |---|---|
-| Envoyer `1`, puis `0`, puis `?` | LED ON, LED OFF, aide |
+| M03 : téléverser le premier programme | La LED intégrée clignote toutes les ~1 s |
+| M04 : téléverser le projet refactorisé | La LED clignote toujours ; calcul fictif **1,000 kWh** dans la console |
+| M05+ : envoyer `1`, puis `0`, puis `?` | LED ON, LED OFF, aide |
 | Brancher bouton entre D2 et GND hors USB et appuyer cinq fois | Cinq bascules après validation anti-rebond |
 | Laisser passer 2 secondes | Affichage de la tension simulée (M05) ou des six mesures (M06–M08) |
 | En M07, mode matériel à 0 | Aucun LCD requis ; console encore disponible |
