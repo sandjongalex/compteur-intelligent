@@ -4,7 +4,7 @@
 
 1. [Diagnostic LED avec `millis()`](V01_01_diagnostic_led/V01_01_diagnostic_led.ino) : reconnaissance du brochage D13/PB5 et vérification de l'horloge quand le téléversement a réussi.
 2. [Diagnostic UART cible](V02_01_uart_cible/V02_01_uart_cible.ino) : reconnaître la différence entre Uno programmateur et port série de l'ATmega328P autonome.
-3. [**Firmware cumulatif M09**](../../../firmware/etapes/M09/Compteur_M09/Compteur_M09.ino) : reprendre **tous** les acquis M03–M08, activer la cible externe avec `ALEXTECH_ATMEGA_AUTONOME 1` lorsque le banc est prêt, puis programmer avec ISP.
+3. [**Firmware cumulatif M09**](../../../../firmware/etapes/M09/Compteur_M09/Compteur_M09.ino) : reprendre **tous** les acquis M03–M08, activer la cible externe avec `ALEXTECH_ATMEGA_AUTONOME 1` lorsque le banc est prêt, puis programmer avec ISP.
 
 ## Compilation sur Arduino Uno
 

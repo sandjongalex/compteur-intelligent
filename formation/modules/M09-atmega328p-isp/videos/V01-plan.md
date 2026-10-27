@@ -1,32 +1,18 @@
-# M09-V01 — Construire le circuit minimal de l'ATmega328P (8 min)
+# M09-V01 — Construire le circuit minimal ATmega328P (8 min)
 
-> **État : plan pédagogique détaillé disponible**. Script intégral et ressources de tournage à finaliser.
+**Méthode pratique sans PowerPoint : résultat → comparaison Uno/puce nue → identification DIP28 → alimentation/horloge → correspondance firmware → contrôle.**
 
+| Temps | Démonstration | Ressource |
+|---|---|---|
+| 00:00–00:55 | Montrer l'ancien firmware M08 sur Uno et la cible M09 | [Firmware M08](../../../../firmware/etapes/M08/Compteur_M08/Compteur_M08.ino) |
+| 00:55–02:05 | Distinguer carte Uno et ATmega328P PDIP28 autonome | [Brochage](../ressources/BROCHAGE_ISP_PU28.md) |
+| 02:05–03:15 | Encoche, VCC 7, AVCC 20, GND 8/22, RESET 1 | [Table DIP28](../ressources/BROCHAGE_ISP_PU28.md) |
+| 03:15–04:35 | Découplage, quartz 16 MHz broches 9/10, relation fuses/F_CPU | [Montage minimal](../ressources/BROCHAGE_ISP_PU28.md) |
+| 04:35–05:45 | D2=PD2 broche4, D13=PB5 broche19 ; LED externe + résistance | [Exercice TP01](../tp/TP_M09_APPRENANT.md) |
+| 05:45–06:55 | Montrer changements minimes dans M09 ; préserver M08 | [Firmware M09](../../../../firmware/etapes/M09/Compteur_M09/Compteur_M09.ino) |
+| 06:55–07:35 | Détecter mauvais câblage, alimentation ou horloge | [Dépannage](../ressources/DEPANNAGE.md) |
+| 07:35–08:00 | Défi : annoter boîtier et expliquer le rôle du quartz | [TP01](../tp/TP_M09_APPRENANT.md) |
 
-- Introduction : « La carte Arduino Uno simplifie le développement, mais notre produit final peut utiliser directement le microcontrôleur. »
-- Plan :
-  1. Différence entre carte de développement et microcontrôleur.
-  2. Identifier le boîtier et la référence exacte.
-  3. Expliquer VCC, AVCC, GND et RESET.
-  4. Présenter quartz 16 MHz et condensateurs adaptés.
-  5. Présenter les condensateurs de découplage et le connecteur ISP.
-- Démonstration : circuit basse tension sur schéma et breadboard.
-- Erreurs : orientation du boîtier, alimentation oubliée, RESET mal câblé.
-- Exercice : annoter le schéma minimal.
-- Transition : utiliser l'Arduino Uno pour programmer cette puce.
+[**Lire le script oral complet M09-V01**](../scripts/V01-script.md).
 
-## Préparation et fichiers liés
-
-- [Texte du formateur](../scripts/V01-script.md)
-- [Storyboard des diapositives](../slides/V01-storyboard.md)
-- [Travaux pratiques](../tp/README.md)
-- [Quiz](../quiz/README.md)
-
-## Critères de qualité
-
-- [ ] La vidéo tient dans le créneau prévu du module.
-- [ ] Chaque terme technique nouveau est expliqué.
-- [ ] Les captures, illustrations et démonstrations correspondent au plan.
-- [ ] Le résultat attendu et une erreur fréquente sont montrés.
-- [ ] L'exercice est faisable avec les ressources fournies.
-- [ ] La sécurité est validée avant les manipulations matérielles.
+Le montage physique est **hors tension pendant les modifications**, puis testé uniquement à 5 V régulé sur un banc vérifié. Chronométrage et validations réelles à renseigner dans la fiche de production.

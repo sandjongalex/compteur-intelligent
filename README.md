@@ -58,7 +58,7 @@ Le projet est un **système de suivi énergétique**, pas un compteur certifié 
 
 ## Statut
 
-Les modules pédagogiques **M01–M08** disposent de supports de cours préparés. Les essais sur Arduino, l'enregistrement des vidéos, ainsi que les modules M09–M16 restent à réaliser ou à compléter.
+Les modules pédagogiques **M01–M09** disposent de supports de cours préparés. Les essais sur Arduino, l'enregistrement des vidéos, ainsi que les modules M10–M16 restent à réaliser ou à compléter.
 
 
 ---
@@ -74,9 +74,9 @@ L'ensemble des **16 dossiers pédagogiques** est organisé dans [`formation/`](f
 
 ## Firmware fil rouge (nouveau)
 
-Pour construire **un seul compteur qui évolue d'une vidéo à l'autre**, utiliser le [firmware évolutif M03 → M08](firmware/README.md) : snapshots M03/M04/M05/M06/M07/M08, [programme Arduino actuel](firmware/courant/CompteurIntelligent/CompteurIntelligent.ino), [journal de progression](firmware/PROGRESSION.md) et [tests](firmware/tests/README.md).
+Pour construire **un seul compteur qui évolue d'une vidéo à l'autre**, utiliser le [firmware évolutif M03 → M09](firmware/README.md) : snapshots M03/M04/M05/M06/M07/M08/M09, [programme Arduino actuel](firmware/courant/CompteurIntelligent/CompteurIntelligent.ino), [journal de progression](firmware/PROGRESSION.md) et [tests](firmware/tests/README.md).
 
-Les petits sketches pédagogiques **restent disponibles** ; le firmware fil rouge les complète. Par défaut, le code fonctionne en simulation sur Uno USB sans secteur. **Les versions futures M09–M16 ne sont pas encore implémentées dans ce programme.**
+Les petits sketches pédagogiques **restent disponibles** ; le firmware fil rouge les complète. Par défaut, le code fonctionne en simulation sur Uno USB sans secteur. **Les versions futures M10–M16 ne sont pas encore implémentées dans ce programme.**
 
 
 ## Principe obligatoire de progression continue

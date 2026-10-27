@@ -10,6 +10,7 @@ Ces fichiers constituent le **fil rouge** de la formation, distinct des micro-ex
 | [M06](M06/Compteur_M06/Compteur_M06.ino) | **Toutes les fonctions M05**, plus les 6 mesures PZEM et un statut d'échec | Uno USB par défaut ; banc qualifié pour PZEM réel |
 | [M07](M07/Compteur_M07/Compteur_M07.ino) | Conservation M06, ajout date DS3231 et affichage LCD 20×4 | RTC/LCD optionnels |
 | [M08](M08/Compteur_M08/Compteur_M08.ino) | Conservation M07, calcul des kWh jour/mois, statut partiel et anomalies | Moteur `EnergieM08.h` |
+| [M09](M09/Compteur_M09/Compteur_M09.ino) | Même firmware M08 adapté ATmega328P DIP28 / ISP, diagnostic cible, aucune régression logicielle | Uno USB en mode simulé, puis montage autonome 5 V validé |
 
 M05 transforme volontairement la LED clignotante de M04 en voyant commandé via bouton et UART : il s'agit d'une **évolution expliquée**.
 

@@ -16,7 +16,7 @@ Ce dossier est l'espace de production pédagogique du cours. Chaque module poss�
 | [M06 — Lire les mesures du PZEM-004T V3.0](modules/M06-pzem-mesures/) | 16 min | 2 | Scripts, 7 sketches, deux TP, quiz, mémo et tests prêts ; validation réelle et tournage à faire |
 | [M07 — Ajouter l'heure et l'écran LCD I2C](modules/M07-ds3231-lcd-i2c/) | 14 min | 2 | Scripts, 8 sketches, TP, quiz et tests documentés ; essais physiques et tournage à faire |
 | [M08 — Calculer les consommations journalières et mensuelles](modules/M08-consommation-jour-mois/) | 16 min | 2 | Scripts, 5 sketches, TP, quiz, moteur C++ et tests disponibles ; validation et tournage à faire |
-| [M09 — Programmer l'ATmega328P autonome par ISP](modules/M09-atmega328p-isp/) | 16 min | 2 | Plans présents, production à faire |
+| [M09 — Programmer l'ATmega328P autonome par ISP](modules/M09-atmega328p-isp/) | 16 min | 2 | Scripts, firmware fil rouge, ISP, TP, quiz et tests préparés ; essai physique à faire |
 | [M10 — Communiquer avec le SIM800L par GSM/GPRS](modules/M10-sim800l-gsm-gprs/) | 14 min | 2 | Plans présents, production à faire |
 | [M11 — Sauvegarder les relevés et synchroniser après une panne](modules/M11-fram-synchronisation/) | 16 min | 2 | Plans présents, production à faire |
 | [M12 — Apprendre les bases de Python](modules/M12-bases-python/) | 14 min | 2 | Plans présents, production à faire |

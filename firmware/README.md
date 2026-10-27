@@ -14,8 +14,9 @@ Ce dossier contient le **même projet Arduino qui gagne des fonctions à chaque 
 | [M06](etapes/M06/Compteur_M06/Compteur_M06.ino) | **Tout M05** + six valeurs et échec explicite | Simulation (défaut), option PZEM V3 qualifiée | Non | Non |
 | [M07](etapes/M07/Compteur_M07/Compteur_M07.ino) | **Tout M06** + DS3231 et LCD 20×4 | Identique à M06 | Simulation USB par défaut, RTC + LCD optionnels | **Non calculé** |
 | [M08](etapes/M08/Compteur_M08/Compteur_M08.ino) | **Tout M07** + `SuiviEnergieM08` | Index simulé en Wh entiers (ou lecture qualifiée) | Date simulée par défaut ; option vraie RTC/LCD | Jour et mois **partiels ou complets** |
+| [M09](etapes/M09/Compteur_M09/Compteur_M09.ino) | **Tout M08** + option de cible ATmega328P PDIP28 autonome, diagnostic des broches, horloge 16 MHz et programmation ISP | Source inchangée (simulation par défaut, option PZEM qualifiée) | RTC/LCD optionnels comme M08 | Cumuls jour/mois préservés |
 
-Le programme de travail actuel est [**courant/CompteurIntelligent/CompteurIntelligent.ino**](courant/CompteurIntelligent/CompteurIntelligent.ino). Il est la **même source que le snapshot M08** au moment de la création de cette base et deviendra progressivement M09, M10, M11, etc. **Les snapshots déjà publiés restent figés** pour que chaque vidéo renvoie au bon code.
+Le programme de travail actuel est [**courant/CompteurIntelligent/CompteurIntelligent.ino**](courant/CompteurIntelligent/CompteurIntelligent.ino). Il est désormais **la même source que le snapshot M09**, le M08 restant archivé pour les apprenants. Il continuera d'évoluer aux M10 et M11. **Les snapshots déjà publiés restent figés** pour que chaque vidéo renvoie au bon code.
 
 ## Installation (mode débutant, sans matériel de mesure)
 
@@ -25,7 +26,7 @@ Le programme de travail actuel est [**courant/CompteurIntelligent/CompteurIntell
 4. **Vérifier**, puis **Téléverser**. La version M03 se vérifie en regardant la LED ; à partir de M04, ouvrir le moniteur série à **9600 bauds**.
 5. Brancher éventuellement un bouton entre **D2 et GND**, hors tension, pour essayer un changement d'état de la LED intégrée. Le bouton n'est pas obligatoire pour voir les sorties série.
 6. **À partir de M05**, envoyer un caractère `1` (LED ON), `0` (LED OFF) ou `?` (aide). Vérifier que les relevés simulés continuent.
-7. À l'étape M08, observer la date fictive, les kWh **partiels**, ainsi que l'évolution de l'index Wh.
+7. À partir de l'étape M08, observer la date fictive, les kWh **partiels**, ainsi que l'évolution de l'index Wh.
 
 **En simulation, une Arduino Uno USB seule suffit. Aucun PZEM, secteur, modem GSM, RTC ou LCD n'est requis par défaut.**
 
@@ -56,7 +57,7 @@ Il est recommandé de **regarder d'abord la vidéo et de réaliser le petit TP**
 
 ## Suite prévue
 
-- **M09** : déploiement de ce même firmware sur un ATmega328P autonome via ISP, après vérification des broches, horloge et protections.
+- **M09 : préparé** pour le déploiement du même firmware sur ATmega328P autonome via ISP ; essais réels sur cible à effectuer et documenter.
 - **M10** : pilote SIM800L / commandes AT, avec alimentation correcte et interface de transmission.
 - **M11** : FRAM, persistance, journal des mesures et synchronisation après interruption.
 - **M12–M14** : programme Python, API Flask/SQLite et tableau de bord, branchés progressivement sur les données envoyées.
