@@ -47,6 +47,8 @@
 | Bouton | GPIO | **D2 = PD2 broche 4** | Conserver la commande locale. |
 | LED de diagnostic | GPIO | **D13 = PB5 broche 19** | Conserver la LED avec résistance ; attention au SCK pendant l'ISP. |
 
+**Référence détaillée de toutes les 28 broches PDIP28 :** [tableau d'affectation composants ↔ ATmega328P](../hardware/TABLEAU_AFFECTATION_ATMEGA328P_PDIP28.md). Les fonctions facultatives buzzer D3, PWRKEY D4 et STATUS D5 restent proposées, non obligatoires. Les broches physiques, connecteurs ISP, alimentations, niveaux et périphériques I2C sont documentés dans ce tableau.
+
 ### Contraintes obligatoires de mise en œuvre
 
 1. **Réserver `Serial` au SIM800L lorsque la transmission réelle est activée** : aucune trace `Serial.print` non protocolaire, ni console `1/0/?`, ni USB–TTL connecté au modem simultanément. La version M09 utilise actuellement `Serial` pour le diagnostic : en M10, fournir un mode de simulation/maintenance séparé et une migration explicite, expliquée et testée de ces acquis ; ne pas les supprimer silencieusement.
