@@ -1,0 +1,42 @@
+name: Firmware fil rouge - non regression
+
+on:
+  push:
+    paths:
+      - "firmware/**"
+      - ".github/workflows/firmware-fil-rouge.yml"
+  pull_request:
+    paths:
+      - "firmware/**"
+      - ".github/workflows/firmware-fil-rouge.yml"
+  workflow_dispatch:
+
+jobs:
+  tests-moteur-et-progression:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Controle de la continuite M05 - M08
+        run: python3 firmware/tests/test_progression.py
+      - name: Compiler et executer les tests C++ du moteur M08
+        run: |
+          g++ -std=c++11 -Wall -Wextra -pedantic \
+            firmware/tests/test_m08.cpp -o /tmp/test_m08
+          /tmp/test_m08
+
+  compilation-uno-simulation:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: arduino/setup-arduino-cli@v2
+      - name: Installer le coeur AVR Uno
+        run: |
+          arduino-cli core update-index
+          arduino-cli core install arduino:avr
+      - name: Compiler toutes les versions sur Uno (simulation)
+        run: |
+          arduino-cli compile --fqbn arduino:avr:uno firmware/etapes/M05/Compteur_M05
+          arduino-cli compile --fqbn arduino:avr:uno firmware/etapes/M06/Compteur_M06
+          arduino-cli compile --fqbn arduino:avr:uno firmware/etapes/M07/Compteur_M07
+          arduino-cli compile --fqbn arduino:avr:uno firmware/etapes/M08/Compteur_M08
+          arduino-cli compile --fqbn arduino:avr:uno firmware/courant/CompteurIntelligent
