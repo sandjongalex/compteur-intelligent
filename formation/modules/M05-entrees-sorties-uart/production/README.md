@@ -1,27 +1,31 @@
-# Suivi de production — M05
+# M05 — Liste de production (méthode programmation)
 
-**Durée maximale des vidéos du module : 18 min.**
+**18 minutes maximum : M05-V01 9 min + M05-V02 9 min.**
+**PowerPoint : non requis, ne pas en créer.** Enregistrement et publication : formateur.
 
-## Fiches vidéo
+## Contenus à préparer
 
-- [ ] M05-V01 — Lire un bouton et commander une sortie (9 min) : script, slides, tournage, montage, vérification
-- [ ] M05-V02 — Comprendre l'UART et les temporisations non bloquantes (9 min) : script, slides, tournage, montage, vérification
+- [ ] Texte oral intégral V01 avec gestes/captures en face de chaque explication.
+- [ ] Texte oral intégral V02 avec fichier et ligne montrés à chaque étape.
+- [ ] Exemples Arduino isolés, commentés et reproductibles.
+- [ ] Montage uniquement basse tension et guides de câblage.
+- [ ] Fiches d'exercices progressifs et corrigés formateur séparés.
+- [ ] Quiz 10 QCM (4 faciles, 4 intermédiaires, 2 difficiles), explications des erreurs.
+- [ ] Mini-défi par vidéo, lié aux fichiers du dépôt.
+- [ ] Liste des erreurs de compilation, câblage et logique fréquentes.
 
-## Checklist avant publication
+## Tests réels indispensables avant tournage
 
-- [ ] Script clair pour débutant et conforme au plan.
-- [ ] Slides, images et captures préparées.
-- [ ] Matériel et montage basse tension testés.
-- [ ] Exemples de code et fichiers réellement reproductibles.
-- [ ] Exercices et solutions disponibles.
-- [ ] 10 questions de quiz corrigées et validées.
-- [ ] Durée cumulée vidéo dans les 18 minutes.
-- [ ] Audio, titres et sous-titres vérifiés.
-- [ ] Sécurité, niveau de tension et brochages contrôlés.
-- [ ] Vidéos et ressources intégrées dans la plateforme.
+- [ ] Compiler et téléverser les exemples sur Arduino Uno Rev3.
+- [ ] Contrôler le bouton, l'anti-rebond et les effets sur la LED.
+- [ ] Tester moniteur série et périodicité `millis()`.
+- [ ] Noter l'environnement exact, les entrées et sorties attendues.
+- [ ] Répéter les deux scripts et vérifier les durées.
 
-## Statuts de production
+## Réservé au formateur
 
-Utiliser **À produire → En rédaction → À tester → Prêt à filmer → Monté → Validé → Publié**.
+- [ ] Enregistrer les manipulations et les explications.
+- [ ] Contrôler lisibilité du code à l'écran et qualité audio.
+- [ ] Publier les vidéos et rendre accessibles les TP/quiz.
 
-Ne pas cocher un statut avant d'avoir effectivement réalisé le travail.
+Ce module n'utilise pas de périphériques secteur ou GSM dans les démonstrations de base.

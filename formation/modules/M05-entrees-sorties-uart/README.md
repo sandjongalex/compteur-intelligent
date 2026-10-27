@@ -1,34 +1,36 @@
-# M05 — Entrées, sorties et communications série
+# Module M05 — Entrées, sorties et communications série
 
-**Durée vidéo : 18 minutes** · **2 leçons** · **État : organisation prête, production à réaliser**
+**18 minutes de vidéo : deux démonstrations pratiques de 9 minutes.** Prérequis : M03–M04.
 
-## Objectif et prérequis
+## Nouvelle méthode : apprendre en programmant, sans PowerPoint
 
-Objectif : comprendre les interactions entre microcontrôleur et périphériques. Prérequis : M04. Durée : 18 minutes.
+Le module commence par un **résultat visible**, puis construit le code par étapes. À chaque étape, l'apprenant doit comprendre la ligne, prédire la sortie, tester et diagnostiquer les erreurs fréquentes.
 
-## Vidéos du module
+| Vidéo | Durée | Démonstration pratique |
+|---|---:|---|
+| [M05-V01](videos/V01-plan.md) — Lire un bouton et commander une sortie | 9 min | Bouton sur D2, LED intégrée, résistance de rappel et anti-rebond |
+| [M05-V02](videos/V02-plan.md) — UART et temporisation non bloquante | 9 min | Moniteur série, commandes et affichage périodique avec `millis()` |
 
-- [M05-V01 — Lire un bouton et commander une sortie (9 min)](videos/V01-plan.md) · [Script](scripts/V01-script.md) · [Diapositives](slides/V01-storyboard.md)
-- [M05-V02 — Comprendre l'UART et les temporisations non bloquantes (9 min)](videos/V02-plan.md) · [Script](scripts/V02-script.md) · [Diapositives](slides/V02-storyboard.md)
+## Livrables prioritaires
 
-## Préparer et évaluer
+1. [Scripts synchronisés avec la démonstration](../../modeles/SCRIPT_DEMONSTRATION_CODE.md) : paroles, gestes à l'écran, extraits du code.
+2. [Code Arduino](code/) : petits projets séparés et commentés, résultats attendus, tests sur Uno.
+3. [Exercices et défis](tp/) : énoncés apprenant et corrigés formateur séparés.
+4. [Quiz](quiz/) : dix questions incluant lecture de code et diagnostic, corrigé argumenté.
+5. [Ressources](ressources/) : câblage basse tension, tableaux de broches, aide au dépannage.
+6. [Suivi des tests et tournage](production/) : preuve des validations réelles.
 
-- [Travaux pratiques et exercices](tp/README.md)
-- [Banque de quiz et objectifs de validation](quiz/README.md)
-- [Supports et ressources téléchargeables](ressources/README.md)
-- [Code et fichiers techniques](code/README.md)
-- [Suivi de production](production/README.md)
+**Aucun nouveau diaporama n'est prévu.** Les sous-dossiers `slides/` existants restent archivés pour ne pas supprimer de documents antérieurs.
 
-## Indications du plan initial
+## Critères de validation pédagogique
 
-**Ressources :** tableau des broches, code bouton, code UART et fiche des temporisations.
+- Réaliser un appui bouton sûr sur Uno et expliquer `INPUT_PULLUP`.
+- Comprendre qu'une entrée peut commander une sortie.
+- Comprendre le principe RX/TX et le moniteur série.
+- Utiliser une temporisation avec `millis()` sans bloquer les commandes.
+- Modifier un programme et expliquer le résultat.
+- Réussir le quiz avec **8/10** et les TP.
 
-**Quiz M05 :** GPIO, anti-rebond, UART, débit, TX/RX et millis().
+**Sécurité :** les démonstrations utilisent uniquement l'USB/basse tension. Aucun essai secteur pour les débutants.
 
-**Validation :** réussir un test d'entrée/sortie et expliquer une communication série.
-
-## Documents de référence
-
-[Plan complet de la formation 4 h](../../../docs/formation/PLAN_FORMATION_4H.md) · [Guide pédagogique](../../GUIDE_PEDAGOGIQUE.md)
-
-> Les fiches vidéo reprennent le plan validé. Les scripts, slides, quiz corrigés et programmes ne sont pas présentés comme terminés tant qu'ils n'ont pas été effectivement produits et vérifiés.
+[Guide pédagogique actualisé](../../GUIDE_PEDAGOGIQUE.md) · [Programme général](../../../docs/formation/PLAN_FORMATION_4H.md)
