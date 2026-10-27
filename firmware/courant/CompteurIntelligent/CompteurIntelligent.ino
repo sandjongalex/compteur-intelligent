@@ -252,6 +252,10 @@ void loop() {
   uint32_t wh;
   if (!lireIndexWh(m,wh)) {
     Serial.println(F("INDEX NON CONVERTIBLE EN Wh : pas de calcul"));
+#if ALEXTECH_RTC_LCD_REELS
+    ligneLCD(2,"JOUR: INDISPONIBLE");
+    ligneLCD(3,"MOIS: INDISPONIBLE");
+#endif
     return;
   }
   ReleveM08 r={date,wh,true};
@@ -272,7 +276,7 @@ void loop() {
   Serial.print(date.jour);Serial.print('/');Serial.print(date.mois);
   Serial.print('/');Serial.println(date.annee);
   Serial.print(F("Jour Wh="));Serial.print(suivi.etat().jourWh);
-  Serial.print(F(suivi.etat().jourComplet?" COMPLET":" PARTIEL"));
+  Serial.print(suivi.etat().jourComplet ? F(" COMPLET") : F(" PARTIEL"));
   Serial.print(F(" | Mois Wh="));Serial.print(suivi.etat().moisWh);
   Serial.println(suivi.etat().moisComplet?F(" COMPLET"):F(" PARTIEL"));
 #if ALEXTECH_RTC_LCD_REELS
