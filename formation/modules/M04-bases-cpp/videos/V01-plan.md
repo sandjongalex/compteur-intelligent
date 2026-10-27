@@ -1,6 +1,6 @@
 # M04-V01 — Variables, types et calculs en C++ (7 min)
 
-> **État : plan pédagogique détaillé disponible**. Script intégral et ressources de tournage à finaliser.
+> **État : script complet et PowerPoint produits ; vérification réelle dans Arduino IDE et tournage à faire.**
 
 
 - Introduction : « Pour afficher une tension ou mémoriser une consommation, le microcontrôleur doit conserver des valeurs. C'est le rôle des variables. »

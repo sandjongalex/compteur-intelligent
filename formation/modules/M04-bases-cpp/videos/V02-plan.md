@@ -1,6 +1,6 @@
 # M04-V02 — Conditions, boucles et fonctions (7 min)
 
-> **État : plan pédagogique détaillé disponible**. Script intégral et ressources de tournage à finaliser.
+> **État : script complet et PowerPoint produits ; vérification réelle dans Arduino IDE et tournage à faire.**
 
 
 - Introduction : « Un programme utile doit prendre des décisions, répéter certaines tâches et réutiliser du code. »

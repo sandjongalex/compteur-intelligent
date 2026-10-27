@@ -19,6 +19,12 @@
 | [M04-V01 — Variables, types et calculs](videos/V01-plan.md) | 7 min | [Script](scripts/V01-script.md) | [Storyboard](slides/V01-storyboard.md) |
 | [M04-V02 — Conditions, boucles et fonctions](videos/V02-plan.md) | 7 min | [Script](scripts/V02-script.md) | [Storyboard](slides/V02-storyboard.md) |
 
+## Présentations PowerPoint
+
+- [Suivi des PowerPoint M04 — fichiers et vérifications](slides/PRESENTATIONS_MODULE04.md)
+
+Les deux fichiers PPTX modifiables ont été générés et sont disponibles en téléchargement dans la conversation. Ils ne sont pas encore téléversés dans le dépôt GitHub.
+
 ## Travaux pratiques et évaluation
 
 - [Cinq projets Arduino C/C++ commentés](code/README.md)
@@ -32,6 +38,6 @@
 
 **Quiz :** au moins 8/10 ; TP et évaluations **hors durée vidéo**.
 
-**Statut :** scripts, code, activités et quiz rédigés ; les tests matériels, l'enregistrement et la publication relèvent du formateur. Les valeurs de tension, de puissance et d'énergie présentées sont fictives.
+**Statut :** scripts, PowerPoint, code, activités et quiz rédigés ou créés ; les tests matériels, l'enregistrement et la publication relèvent du formateur. Les valeurs de tension, de puissance et d'énergie présentées sont fictives.
 
 [Plan général](../../../docs/formation/PLAN_FORMATION_4H.md)

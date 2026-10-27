@@ -7,6 +7,9 @@
 - [x] Plans de deux leçons pédagogiques.
 - [x] Scripts oraux complets et découpés par séquences.
 - [x] Storyboards des 2 présentations.
+- [x] 2 PowerPoint modifiables de 8 diapositives produits, avec notes de narration.
+- [x] Contrôle visuel du rendu et des débordements : réussi.
+- [x] Syntaxe des exemples examinée avec un compilateur C++ et des interfaces Arduino simulées (ne remplace pas une validation Uno).
 - [x] 5 sketches `.ino` avec données fictives.
 - [x] Mémo C/C++ pour débutants.
 - [x] TP apprenant et corrigés des 2 exercices.
@@ -17,7 +20,7 @@
 - [ ] Compiler réellement les cinq sketches pour **Arduino Uno Rev3** dans Arduino IDE 2.
 - [ ] Téléverser et vérifier les sorties moniteur série à 9600 bauds.
 - [ ] Chronométrer les deux scripts à voix haute.
-- [ ] Contrôler la lisibilité mobile et les mises en page des présentations PowerPoint.
+- [ ] Vérifier les captures finales réelles dans Arduino IDE et leur lisibilité sur mobile ; disposition PowerPoint contrôlée automatiquement.
 - [ ] Contrôler la syntaxe des exemples projetés avec les fichiers `.ino`.
 
 ## Responsabilités du formateur
