@@ -1,34 +1,47 @@
 # M02 — Identifier les composants et travailler en sécurité
 
-**Durée vidéo : 10 minutes** · **2 leçons** · **État : organisation prête, production à réaliser**
+**AlexTech Academy** · **10 minutes de vidéo** · **2 vidéos de 5 min** · Niveau : débutant après M01.
 
-## Objectif et prérequis
+**État : contenus pédagogiques rédigés, PowerPoint produits et vérifiés hors GitHub ; l'enregistrement et la publication restent à la charge du formateur.**
 
-Objectif : reconnaître les éléments du projet, leur rôle et les limites de manipulation. Prérequis : M01. Durée : 10 minutes.
+## Objectifs
 
-## Vidéos du module
+À la fin du module, l'apprenant pourra :
 
-- [M02-V01 — Reconnaître les composants du compteur intelligent (5 min)](videos/V01-plan.md) · [Script](scripts/V01-script.md) · [Diapositives](slides/V01-storyboard.md)
-- [M02-V02 — Alimentations, protections et sécurité du 230 V (5 min)](videos/V02-plan.md) · [Script](scripts/V02-script.md) · [Diapositives](slides/V02-storyboard.md)
+1. Identifier les composants principaux du compteur.
+2. Associer leurs noms à leur rôle.
+3. Comprendre la différence entre alimentation logique 5 V et modem SIM800L nu à environ 4 V.
+4. Expliquer pourquoi l'isolation, le découplage et les protections sont importants.
+5. Reconnaître une manipulation secteur dangereuse et choisir un exercice basse tension adapté.
 
-## Préparer et évaluer
+## Deux vidéos
 
-- [Travaux pratiques et exercices](tp/README.md)
-- [Banque de quiz et objectifs de validation](quiz/README.md)
-- [Supports et ressources téléchargeables](ressources/README.md)
-- [Code et fichiers techniques](code/README.md)
-- [Suivi de production](production/README.md)
+| Vidéo | Durée cible | Script oral | Storyboard |
+|---|---:|---|---|
+| M02-V01 — Reconnaître les composants | 5 min | [Lire le script](scripts/V01-script.md) | [Voir les 7 diapositives prévues](slides/V01-storyboard.md) |
+| M02-V02 — Alimentations et sécurité | 5 min | [Lire le script](scripts/V02-script.md) | [Voir les 7 diapositives prévues](slides/V02-storyboard.md) |
 
-## Indications du plan initial
+## Pack ressources
 
-**Ressources :** BOM préliminaire, fiches composants, checklist de sécurité.
+- [Liste préliminaire des composants](ressources/BOM_PRELIMINAIRE.md)
+- [Fiches pédagogiques des composants](ressources/FICHES_COMPOSANTS.md)
+- [Checklist de sécurité](ressources/CHECKLIST_SECURITE.md)
+- [Ressources et présentation des PowerPoint](ressources/README.md)
+- [Exercices apprenant](tp/TP_M02_APPRENANT.md)
+- [Corrigés formateur](tp/CORRIGE_M02_FORMATEUR.md)
+- [Quiz apprenant : 10 QCM](quiz/QUIZ_M02_APPRENANT.md)
+- [Corrigé formateur du quiz](quiz/CORRIGE_M02_FORMATEUR.md)
+- [Banque QCM JSON](quiz/quiz_m02.json)
+- [Suivi des étapes de production](production/README.md)
 
-**Quiz M02 :** symboles, fonctions, tensions d'alimentation, découplage, isolation et procédures de sécurité.
+## Validation
 
-**Validation :** 80 % et aucune erreur critique non corrigée sur les règles de sécurité.
+**Seuil 8/10 au quiz**, avec correction et compréhension obligatoires des erreurs critiques de sécurité, même en cas de score global suffisant. Les TP/quiz sont **hors des 10 minutes de vidéo**.
 
-## Documents de référence
+## Sécurité
 
-[Plan complet de la formation 4 h](../../../docs/formation/PLAN_FORMATION_4H.md) · [Guide pédagogique](../../GUIDE_PEDAGOGIQUE.md)
+Ce module propose uniquement des prises de vue hors tension, des schémas de principe et des exercices sans secteur. La validation du PZEM et des alimentations secteur requiert une personne qualifiée.
 
-> Les fiches vidéo reprennent le plan validé. Les scripts, slides, quiz corrigés et programmes ne sont pas présentés comme terminés tant qu'ils n'ont pas été effectivement produits et vérifiés.
+## Références
+
+[Plan général complet](../../../docs/formation/PLAN_FORMATION_4H.md) · [Guide pédagogique](../../GUIDE_PEDAGOGIQUE.md)

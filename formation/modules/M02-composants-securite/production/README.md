@@ -1,27 +1,38 @@
-# Suivi de production — M02
+# M02 — Suivi de production et de validation
 
-**Durée maximale des vidéos du module : 10 min.**
+**Durée vidéo cible : 10 minutes (2 × 5 min).**
 
-## Fiches vidéo
+| Livrable | État |
+|---|---|
+| Plan vidéo M02-V01 et M02-V02 | Disponible dans `videos/` |
+| Scripts oraux complets | Rédigés, minutage à vérifier à voix haute |
+| Diapositives M02-V01 | 7 slides PPTX modifiables créés ; téléchargement ChatGPT, non encore dans GitHub |
+| Diapositives M02-V02 | 7 slides PPTX modifiables créés ; téléchargement ChatGPT, non encore dans GitHub |
+| Contrôle automatique des débordements | Passé pour les deux présentations |
+| Fiches composants et nomenclature | Rédigées |
+| Checklist de sécurité | Rédigée |
+| TP apprenant et corrigé | Rédigés |
+| Quiz 10 QCM, feedback et JSON | Rédigés et cohérents |
+| Photos réelles des modules | À filmer |
+| Enregistrement et publication | Gérés par le formateur |
 
-- [ ] M02-V01 — Reconnaître les composants du compteur intelligent (5 min) : script, slides, tournage, montage, vérification
-- [ ] M02-V02 — Alimentations, protections et sécurité du 230 V (5 min) : script, slides, tournage, montage, vérification
+## Checklist avant le tournage
 
-## Checklist avant publication
+- [x] Plans et scripts pédagogiques structurés autour de deux sujets.
+- [x] PowerPoint 16:9 produits avec notes d'animation et du formateur.
+- [x] Les calculs / données techniques du modem ont des références à vérifier.
+- [x] Les TP excluent la manipulation 230 V par le public débutant.
+- [x] Quiz de 10 questions, corrigés expliqués, barème de 80 %.
+- [ ] Refaire une **lecture complète chronométrée** pour respecter le quota.
+- [ ] Vérifier la compatibilité des références réellement photographiées avec les fiches.
+- [ ] Ajouter les binaires PowerPoint dans `slides/` si nécessaire.
+- [ ] Confirmer les cadrages vidéo, éclairage, microphone et supports hors tension.
 
-- [ ] Script clair pour débutant et conforme au plan.
-- [ ] Slides, images et captures préparées.
-- [ ] Matériel et montage basse tension testés.
-- [ ] Exemples de code et fichiers réellement reproductibles.
-- [ ] Exercices et solutions disponibles.
-- [ ] 10 questions de quiz corrigées et validées.
-- [ ] Durée cumulée vidéo dans les 10 minutes.
-- [ ] Audio, titres et sous-titres vérifiés.
-- [ ] Sécurité, niveau de tension et brochages contrôlés.
-- [ ] Vidéos et ressources intégrées dans la plateforme.
+## Étapes réservées au formateur
 
-## Statuts de production
+- [ ] Enregistrer les deux vidéos.
+- [ ] Effectuer le montage, ajouter les captures des composants réels.
+- [ ] Vérifier les sous-titres, la lisibilité mobile et la durée.
+- [ ] Publier les vidéos et rendre disponibles les fichiers réservés aux apprenants.
 
-Utiliser **À produire → En rédaction → À tester → Prêt à filmer → Monté → Validé → Publié**.
-
-Ne pas cocher un statut avant d'avoir effectivement réalisé le travail.
+**Important :** le kit est prêt pour la préparation du tournage. La sécurité du matériel et la validité de sa référence exacte doivent encore être confirmées avant toute manipulation réelle.
