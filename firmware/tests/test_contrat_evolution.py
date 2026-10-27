@@ -75,7 +75,7 @@ assert "REGLE_EVOLUTION_CONTINUE.md" in matrix, "La progression ne pointe plus v
 
 # Chaque module futur doit porter ce contrat jusque dans son README.
 for document in (REPO / "formation/modules").glob("M*/README.md"):
-    match = re.match(r"M(\\d{2})-", document.parent.name)
+    match = re.match(r"M(\d{2})-", document.parent.name)
     if match and int(match.group(1)) >= 9:
         assert "REGLE_EVOLUTION_CONTINUE.md" in document.read_text(encoding="utf-8"), (
             f"Regle fil rouge absente de {document.parent.name}"
