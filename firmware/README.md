@@ -40,7 +40,7 @@ Le programme de travail actuel est [**courant/CompteurIntelligent/CompteurIntell
 
 ## Décision de brochage pour la prochaine étape M10
 
-À partir de M10, **SIM800L = UART matériel `Serial` D0/RX et D1/TX** sur ATmega328P ; **PZEM-004T = `SoftwareSerial` D10/RX et D11/TX** ; **RTC DS3231, LCD I2C et future FRAM I2C = SDA A4 / SCL A5**. D2 reste le bouton et D13 la LED. Les changements de débogage nécessaires pour libérer `Serial`, les protections d'alimentation/logic levels et l'isolation pendant l'ISP sont définis dans la [règle obligatoire](../docs/formation/REGLE_EVOLUTION_CONTINUE.md#attribution-des-interfaces-materielles-a-partir-de-m10).
+À partir de M10, **SIM800L = UART matériel `Serial` D0/RX et D1/TX** sur ATmega328P ; **PZEM-004T = `SoftwareSerial` D10/RX et D11/TX** ; **RTC DS3231, LCD I2C et future FRAM I2C = SDA A4 / SCL A5**. D2 reste le bouton et D13 la LED. Les changements de débogage nécessaires pour libérer `Serial`, les protections d'alimentation/logic levels et l'isolation pendant l'ISP sont définis dans la [règle obligatoire](../docs/formation/REGLE_EVOLUTION_CONTINUE.md#attribution-des-interfaces-matérielles-à-partir-de-m10).
 
 **Attention :** le firmware courant est encore M09 et conserve volontairement sa console série pédagogique. Le brochage GSM est une **décision pour la future implémentation M10**, pas une fonctionnalité déjà développée ni un résultat matériel validé.
 
