@@ -1,0 +1,339 @@
+{
+  "module": "M06",
+  "title": "Lire les mesures du PZEM-004T V3.0",
+  "format_version": 1,
+  "total": 10,
+  "pass_score": 8,
+  "questions": [
+    {
+      "id": "Q01",
+      "topic": "Grandeurs",
+      "difficulty": "Facile",
+      "objective": "Tension",
+      "question": "Quelle unité doit accompagner la tension renvoyée par le PZEM-004T V3 ?",
+      "type": "single_select",
+      "options": [
+        {
+          "value": "A",
+          "label": "Le kilowattheure (kWh)",
+          "feedback": "Le kWh mesure l'énergie cumulée."
+        },
+        {
+          "value": "B",
+          "label": "L'ampère (A)",
+          "feedback": "L'ampère mesure le courant."
+        },
+        {
+          "value": "C",
+          "label": "Le volt (V)",
+          "feedback": "Le volt est l'unité de tension."
+        },
+        {
+          "value": "D",
+          "label": "Le hertz (Hz)",
+          "feedback": "Le hertz mesure la fréquence."
+        }
+      ],
+      "correctValues": [
+        "C"
+      ]
+    },
+    {
+      "id": "Q02",
+      "topic": "Grandeurs",
+      "difficulty": "Facile",
+      "objective": "Puissance",
+      "question": "Quelle fonction décrit le mieux la grandeur lue par pzem.power() ?",
+      "type": "single_select",
+      "options": [
+        {
+          "value": "A",
+          "label": "La puissance active exprimée en watts",
+          "feedback": "La bibliothèque retourne la puissance active en watts."
+        },
+        {
+          "value": "B",
+          "label": "La date du relevé",
+          "feedback": "La date viendra plus tard de la RTC DS3231."
+        },
+        {
+          "value": "C",
+          "label": "Le courant exprimé en ampères",
+          "feedback": "pzem.current() correspond au courant."
+        },
+        {
+          "value": "D",
+          "label": "L'index cumulatif d'énergie",
+          "feedback": "pzem.energy() renvoie l'index cumulatif."
+        }
+      ],
+      "correctValues": [
+        "A"
+      ]
+    },
+    {
+      "id": "Q03",
+      "topic": "Modbus",
+      "difficulty": "Facile",
+      "objective": "Rôle d'un registre",
+      "question": "Dans la communication PZEM V3, à quoi sert un registre de mesure ?",
+      "type": "single_select",
+      "options": [
+        {
+          "value": "A",
+          "label": "À alimenter le SIM800L",
+          "feedback": "Le registre ne fournit pas d'alimentation au modem."
+        },
+        {
+          "value": "B",
+          "label": "À représenter une donnée numérique identifiée par une adresse",
+          "feedback": "Un registre numéroté contient un mot de données qu'il faut interpréter."
+        },
+        {
+          "value": "C",
+          "label": "À stocker des vidéos PowerPoint",
+          "feedback": "Les registres de mesure ne stockent pas de documents."
+        },
+        {
+          "value": "D",
+          "label": "À réinitialiser le microcontrôleur à chaque seconde",
+          "feedback": "Lire un registre ne commande pas un redémarrage."
+        }
+      ],
+      "correctValues": [
+        "B"
+      ]
+    },
+    {
+      "id": "Q04",
+      "topic": "Simulation",
+      "difficulty": "Facile",
+      "objective": "Identifier une démonstration",
+      "question": "Le moniteur affiche 230,5 V, mais aucune mesure secteur n'est branchée. Quelle phrase est exacte ?",
+      "type": "single_select",
+      "options": [
+        {
+          "value": "A",
+          "label": "Le résultat prouve la précision du PZEM réel.",
+          "feedback": "Une constante fictive ne valide pas la métrologie."
+        },
+        {
+          "value": "B",
+          "label": "Le secteur est nécessaire pour compiler ce code.",
+          "feedback": "Le sketch de simulation fonctionne par USB uniquement."
+        },
+        {
+          "value": "C",
+          "label": "La lecture est forcément un défaut matériel.",
+          "feedback": "L'absence de capteur est voulue dans la simulation."
+        },
+        {
+          "value": "D",
+          "label": "Les valeurs sont simulées et ne prouvent pas une mesure physique.",
+          "feedback": "Le nombre imprimé est tiré du programme et étiqueté fictif."
+        }
+      ],
+      "correctValues": [
+        "D"
+      ]
+    },
+    {
+      "id": "Q05",
+      "topic": "Registres",
+      "difficulty": "Intermédiaire",
+      "objective": "Convertir une tension brute",
+      "question": "Le registre 0x0000 du PZEM V3 contient la valeur brute 2305, avec un pas de 0,1 V. Quel est le résultat ?",
+      "type": "single_select",
+      "options": [
+        {
+          "value": "A",
+          "label": "2305 V",
+          "feedback": "2305 est la valeur brute, pas les volts."
+        },
+        {
+          "value": "B",
+          "label": "230,5 V",
+          "feedback": "2305 multiplié par 0,1 vaut 230,5 V."
+        },
+        {
+          "value": "C",
+          "label": "23,05 V",
+          "feedback": "Il faudrait un facteur 0,01 pour obtenir cette valeur."
+        },
+        {
+          "value": "D",
+          "label": "2,305 V",
+          "feedback": "Il faudrait un facteur 0,001 pour obtenir cette valeur."
+        }
+      ],
+      "correctValues": [
+        "B"
+      ]
+    },
+    {
+      "id": "Q06",
+      "topic": "Registres",
+      "difficulty": "Intermédiaire",
+      "objective": "Convertir un index énergie",
+      "question": "Le compteur fournit une énergie brute de 12 345 Wh. Quelle énergie cumulée en kWh faut-il afficher ?",
+      "type": "single_select",
+      "options": [
+        {
+          "value": "A",
+          "label": "12 345 kWh",
+          "feedback": "Ce serait oublier la conversion Wh vers kWh."
+        },
+        {
+          "value": "B",
+          "label": "123,45 kWh",
+          "feedback": "123,45 est obtenu avec un diviseur de 100."
+        },
+        {
+          "value": "C",
+          "label": "12,345 kWh",
+          "feedback": "12 345 Wh / 1 000 = 12,345 kWh."
+        },
+        {
+          "value": "D",
+          "label": "1,2345 kWh",
+          "feedback": "Le diviseur 10 000 ne convient pas à l'unité donnée."
+        }
+      ],
+      "correctValues": [
+        "C"
+      ]
+    },
+    {
+      "id": "Q07",
+      "topic": "Communication",
+      "difficulty": "Intermédiaire",
+      "objective": "Lire Modbus RTU",
+      "question": "Que représentent TX/RX et Modbus RTU dans notre projet ?",
+      "type": "single_select",
+      "options": [
+        {
+          "value": "A",
+          "label": "UART échange des octets ; Modbus définit les requêtes, adresses, réponses et contrôles.",
+          "feedback": "Le transport série et le protocole applicatif ont des rôles complémentaires."
+        },
+        {
+          "value": "B",
+          "label": "Modbus fournit directement l'énergie du mois sans horloge.",
+          "feedback": "La consommation du mois sera calculée à partir de l'index avec une RTC."
+        },
+        {
+          "value": "C",
+          "label": "UART mesure la tension secteur, tandis que Modbus allume la LED.",
+          "feedback": "Aucun des deux ne mesure physiquement la tension."
+        },
+        {
+          "value": "D",
+          "label": "Les deux termes désignent uniquement le câble d'alimentation du PZEM.",
+          "feedback": "Ils concernent la communication, pas l'alimentation seule."
+        }
+      ],
+      "correctValues": [
+        "A"
+      ]
+    },
+    {
+      "id": "Q08",
+      "topic": "Diagnostic",
+      "difficulty": "Intermédiaire",
+      "objective": "Valeur indisponible",
+      "question": "La fonction de lecture renvoie false. Quel comportement est correct ?",
+      "type": "single_select",
+      "options": [
+        {
+          "value": "A",
+          "label": "Afficher 0,0 kWh comme nouveau relevé réel.",
+          "feedback": "Zéro peut être une vraie valeur physique et ne doit pas désigner une erreur."
+        },
+        {
+          "value": "B",
+          "label": "Réutiliser l'ancien index sans indiquer son ancienneté.",
+          "feedback": "Une valeur ancienne ne peut pas être présentée comme une nouvelle mesure."
+        },
+        {
+          "value": "C",
+          "label": "Réinitialiser l'index PZEM par resetEnergy().",
+          "feedback": "ResetEnergy détruit l'index cumulatif ; ce n'est pas une solution aux pannes."
+        },
+        {
+          "value": "D",
+          "label": "Afficher une erreur et ne pas publier de nouvelle mesure comme si elle était valide.",
+          "feedback": "L'état d'erreur est séparé des valeurs, qui ne sont pas actualisées."
+        }
+      ],
+      "correctValues": [
+        "D"
+      ]
+    },
+    {
+      "id": "Q09",
+      "topic": "Registres",
+      "difficulty": "Difficile",
+      "objective": "Assembler 32 bits",
+      "question": "Un registre bas contient 0x0001 et le registre haut 0x0001. Quelle valeur entière obtient-on avec (haut << 16) | bas ?",
+      "type": "single_select",
+      "options": [
+        {
+          "value": "A",
+          "label": "2",
+          "feedback": "Les mots haut et bas ne s'additionnent pas simplement en 1+1."
+        },
+        {
+          "value": "B",
+          "label": "65 537",
+          "feedback": "0x0001 << 16 = 65 536 ; puis OR 1 donne 65 537."
+        },
+        {
+          "value": "C",
+          "label": "1 001",
+          "feedback": "Cette valeur ne provient pas de l'assemblage 32 bits."
+        },
+        {
+          "value": "D",
+          "label": "4 096",
+          "feedback": "Cette valeur ne correspond pas au décalage de 16 bits."
+        }
+      ],
+      "correctValues": [
+        "B"
+      ]
+    },
+    {
+      "id": "Q10",
+      "topic": "Fiabilité",
+      "difficulty": "Difficile",
+      "objective": "Index cumulatif et périodes",
+      "question": "Pourquoi ne faut-il pas remettre automatiquement l'index énergie PZEM à zéro chaque nuit pour calculer les kWh du jour ?",
+      "type": "single_select",
+      "options": [
+        {
+          "value": "A",
+          "label": "Parce que la puissance est toujours égale à la tension.",
+          "feedback": "Ce n'est pas une égalité générale en AC."
+        },
+        {
+          "value": "B",
+          "label": "Parce que l'index total doit rester croissant comme référence, et les kWh/jour seront calculés par différence d'index sauvegardés.",
+          "feedback": "La consommation par période se calcule à partir d'un index cumulatif de référence ; la remise à zéro casse ce repère."
+        },
+        {
+          "value": "C",
+          "label": "Parce que le facteur de puissance doit toujours être zéro.",
+          "feedback": "Le facteur de puissance dépend de la charge et ne doit pas forcément être zéro."
+        },
+        {
+          "value": "D",
+          "label": "Parce que le modem GSM compte les secondes.",
+          "feedback": "Le modem ne remplace pas l'index énergétique ni la RTC."
+        }
+      ],
+      "correctValues": [
+        "B"
+      ]
+    }
+  ]
+}
