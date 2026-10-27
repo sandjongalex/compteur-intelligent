@@ -17,7 +17,9 @@
 #include "EnergieM08.h"
 // 0 = Uno USB ; 1 = ATmega328P DIP-28 autonome 16 MHz / ISP.
 // Le mode autonome ne change PAS les fonctions de comptage M08.
-#define ALEXTECH_ATMEGA_AUTONOME 0
+#ifndef ALEXTECH_ATMEGA_AUTONOME
+  #define ALEXTECH_ATMEGA_AUTONOME 0
+#endif
 #if ALEXTECH_ATMEGA_AUTONOME
   #if !defined(__AVR_ATmega328P__)
     #error "Selectionner une cible ATmega328P compatible avec le firmware M09"

@@ -20,3 +20,8 @@ Le snapshot M09 `Compteur_M09.ino` et `EnergieM08.h` sont identiques au dossier 
 **Une compilation réussie ne prouve pas que le microcontrôleur externe a été programmé.** Seul un vrai essai ISP, sur cible adéquatement préparée, peut le confirmer.
 
 [Plan de câblage ISP M09](../../../formation/modules/M09-atmega328p-isp/ressources/BROCHAGE_ISP_PU28.md) · [Tests de production M09](../../../formation/modules/M09-atmega328p-isp/ressources/PLAN_TESTS.md)
+
+
+### Vérifier la configuration autonome
+
+L'option peut être activée dans le sketch (0 vers 1) ou en compilation par `-DALEXTECH_ATMEGA_AUTONOME=1`, le mode simulé restant le défaut. La CI contrôle les deux compilations, pas le fonctionnement matériel ni les fuses de la cible.

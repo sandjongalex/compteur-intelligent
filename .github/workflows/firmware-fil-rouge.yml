@@ -45,3 +45,8 @@ jobs:
             fi
           done
           arduino-cli compile --fqbn arduino:avr:uno firmware/courant/CompteurIntelligent
+      - name: Compiler explicitement le mode ATmega328P autonome M09
+        run: |
+          arduino-cli compile --fqbn arduino:avr:uno \
+            --build-property compiler.cpp.extra_flags="-DALEXTECH_ATMEGA_AUTONOME=1" \
+            firmware/etapes/M09/Compteur_M09

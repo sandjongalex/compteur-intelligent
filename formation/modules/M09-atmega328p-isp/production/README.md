@@ -21,7 +21,7 @@
 
 - [ ] Tests sur GitHub Actions : contrat de progression et compilations M03–M09 ; reporter le lien/état après exécution.
 - [ ] Taille Flash/RAM du firmware M09 en mode simulation sur `arduino:avr:uno`.
-- [ ] Vérifier compilation `ALEXTECH_ATMEGA_AUTONOME 1` sur le profil Uno/16 MHz (séparément du mode défaut).
+- [ ] Vérifier sur GitHub Actions que l'option autonome `1` compile pour Uno / 16 MHz (sans en déduire un test physique).
 - [ ] Vérifier les programmes de diagnostic sur Uno.
 - [ ] Contrôle des chemins/liens et cohérence quiz.
 
