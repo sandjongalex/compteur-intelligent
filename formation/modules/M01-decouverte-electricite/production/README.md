@@ -8,8 +8,8 @@
 |---|---|---|
 | Script M01-V01 | Rédigé, non enregistré | [Script V01](../scripts/V01-script.md) |
 | Script M01-V02 | Rédigé, non enregistré | [Script V02](../scripts/V02-script.md) |
-| Diapositives V01 | Texte et storyboard complets ; PPTX non produit | [Storyboard V01](../slides/V01-storyboard.md) |
-| Diapositives V02 | Texte et storyboard complets ; PPTX non produit | [Storyboard V02](../slides/V02-storyboard.md) |
+| Diapositives V01 | **PPTX produit et vérifié localement ; import GitHub à faire** | [Manifeste PowerPoint](../slides/PRESENTATIONS_MODULE01.md) |
+| Diapositives V02 | **PPTX produit et vérifié localement ; import GitHub à faire** | [Manifeste PowerPoint](../slides/PRESENTATIONS_MODULE01.md) |
 | TP 01 et TP 02 | Énoncés + corrigés rédigés | [TP](../tp/README.md) |
 | Quiz 10 questions | Rédigé et corrigé, JSON disponible | [Quiz](../quiz/README.md) |
 | Documents de référence | Glossaire, unités, synoptique, page fictive publiés | [Ressources](../ressources/README.md) |
@@ -23,7 +23,8 @@
 - [x] Quiz 10 questions, 4 options par question, réponses et feedback rédigés.
 - [x] Modèle de résultat web hors ligne créé avec données fictives.
 - [ ] Lire et **chronométrer à voix haute** les deux scripts (cible 5 minutes chacun).
-- [ ] Créer les **PPTX réels**, schémas graphiques et illustrations originales.
+- [x] Créer les **PPTX éditables**, les schémas et exemples pédagogiques ; test du rendu effectué.
+- [ ] Importer les deux présentations PowerPoint dans le dossier `slides/` du dépôt GitHub.
 - [ ] Vérifier les photos et les droits d'utilisation des visuels.
 - [ ] Faire contrôler les contenus de technique et sécurité avant tournage.
 - [ ] Faire tester les TP par un novice et noter les confusions.
