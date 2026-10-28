@@ -43,7 +43,8 @@ Les références aux sources GitHub **sont autorisées dans les documents intern
 9. À chaque endroit où une image est indispensable ou pédagogiquement pertinente, insérer une **fiche d'illustration sous forme de commentaire Markdown** (`<!-- ILLUSTRATION À PRODUIRE — FIGURE X.Y ... -->`) et lui associer sa légende et son texte alternatif.
 10. Inscrire chaque illustration dans le [registre interne](ILLUSTRATIONS_A_PRODUIRE.md), actualiser son statut `À PRODUIRE → EN COURS → VALIDÉE` et conserver la preuve des droits et de la validation technique.
 11. **Bloquer l'export commercial tant qu'une figure nécessaire reste au statut À PRODUIRE**. Les figures textuelles/Mermaid ne dispensent pas de leur préparation graphique finale.
-12. Les commentaires de production ne doivent pas devenir du texte visible pour le lecteur ; ils sont retirés ou remplacés par les figures approuvées au moment de composer le livre.
+12. Sous chaque commentaire, un **repère visible `[ILLUSTRATION À INSÉRER — Figure X.Y]`** signale en clair l'emplacement dans l'aperçu GitHub. Ce repère de brouillon est **retiré obligatoirement** lorsque l'image validée est insérée.
+13. Les commentaires et repères de production ne doivent pas apparaître dans le livre publié ; ils sont retirés ou remplacés par les figures approuvées au moment de composer le livre.
 
 ## Contrôle avant export
 
@@ -52,7 +53,7 @@ Les références aux sources GitHub **sont autorisées dans les documents intern
 - [ ] Aucun lien vers `github.com`, `raw.githubusercontent.com`, fichier Markdown relatif, branche ou script de tournage dans les pages composées.
 - [ ] Les figures, codes et tableaux sont lisibles en PDF et en impression.
 - [ ] Toutes les figures identifiées dans le texte figurent au registre et leur numérotation/citation est cohérente.
-- [ ] Aucun marqueur `ILLUSTRATION À PRODUIRE`, commentaire de maquettage ou figure obligatoire manquante ne subsiste dans les pages publiées.
+- [ ] Aucun marqueur `ILLUSTRATION À PRODUIRE` ni **`ILLUSTRATION À INSÉRER`**, commentaire de maquettage ou figure obligatoire manquante ne subsiste dans les pages publiées.
 - [ ] Photos et captures originales ou sous licence adaptée, légendes exactes, texte alternatif renseigné, versions logicielles vérifiées.
 - [ ] Les éléments secteur, mesures fictives et résultats d'essais sont présentés sans risque ni confusion.
 - [ ] Les exemples fictifs et les mesures réellement vérifiées sont distingués.
