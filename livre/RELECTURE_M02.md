@@ -60,3 +60,15 @@ Leurs renvois sont éditoriaux et pérennes (« chapitre 3 », « annexe B », �
 Le chapitre 3 devra introduire Arduino IDE, \`setup()\`, \`loop()\` et le clignotement d'une LED **en basse tension**, sans supposer que le modem, la FRAM ou le PZEM sont nécessaires au premier programme.
 
 **Aucun test sur matériel ni essai secteur n'a été réalisé pour cette relecture.**
+
+## Nouvelle règle de production graphique — ajoutée après retour de l'auteur
+
+**Chapitre 2 : 8 illustrations pédagogiques nécessaires ont désormais été repérées à leur emplacement exact**, chacune avec un commentaire de production indiquant type, contenu, légende, texte alternatif, contraintes et statut **À PRODUIRE**. Les figures sont référencées dans le [registre des illustrations](ILLUSTRATIONS_A_PRODUIRE.md), qui est strictement interne.
+
+- [x] Emplacements repérés et figures numérotées dans l'ordre.
+- [x] Description pédagogique, légende et texte alternatif rédigés.
+- [ ] Figures effectivement dessinées, photographiées ou capturées.
+- [ ] Origine et droits commerciaux contrôlés.
+- [ ] Lisibilité A4/PDF et validation technique et éditoriale obtenues.
+
+**Conséquence :** le chapitre reste au statut *texte rédigé et première relecture documentaire effectuée*. Il n'est **pas bon à composer ni à publier** avant ces validations graphiques.
