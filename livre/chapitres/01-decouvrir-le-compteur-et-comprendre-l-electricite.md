@@ -1,7 +1,7 @@
 # Chapitre 1 — Découvrir le compteur et comprendre l'électricité
 
 > **Correspondance exacte avec les vidéos :** M01-V01 « Du réseau électrique au tableau de bord IoT » (5 min), puis M01-V02 « Comprendre volts, ampères, watts et kilowattheures » (5 min).  
-> **Niveau :** débutant absolu. **État du manuscrit :** première rédaction, à relire et à mettre en page.  
+> **Niveau :** débutant absolu. **État du manuscrit :** première relecture technique, pédagogique et éditoriale effectuée ; validation finale de l'auteur et mise en page à réaliser.  
 > **Activités :** 25 à 40 minutes de travail personnel, indépendamment des dix minutes de vidéos.  
 > **Sécurité :** aucune manipulation du secteur ni aucun câblage 230 V.
 
@@ -19,9 +19,9 @@ Aucun bagage préalable en programmation n'est nécessaire. Une feuille, un cray
 
 ---
 
-# Partie A — Vidéo M01-V01 : du réseau électrique au tableau de bord IoT
+## Partie A — Vidéo M01-V01 : du réseau électrique au tableau de bord IoT
 
-## 1.1. Pourquoi surveiller sa consommation d'énergie ?
+### 1.1. Pourquoi surveiller sa consommation d'énergie ?
 
 Imaginez une maison dans laquelle plusieurs appareils électriques fonctionnent : éclairage, téléviseur, réfrigérateur ou ventilateur. Une mesure de la consommation peut répondre à des questions pratiques :
 
@@ -36,16 +36,16 @@ C'est le but pédagogique de notre projet : réaliser un **prototype de suivi é
 
 **Limite importante.** Un prototype qui calcule et affiche des kWh n'est pas automatiquement un compteur réglementaire certifié. Ce livre n'enseigne pas la fabrication d'un instrument de facturation homologué.
 
-## 1.2. Une lecture fictive de notre futur compteur
+### 1.2. Une lecture fictive de notre futur compteur
 
 Considérons l'affichage d'exemple suivant :
 
 ~~~text
 +--------------------+
-| DATE : JJ/MM/AAAA   |
-| TENSION : 230,5 V   |
-| JOUR : 4,25 kWh     |
-| MOIS : 125,48 kWh   |
+| DATE : JJ/MM/AAAA  |
+| TENSION : 230,5 V  |
+| JOUR : 4,25 kWh    |
+| MOIS : 125,48 kWh  |
 +--------------------+
 ~~~
 
@@ -61,7 +61,7 @@ Les deux dernières valeurs sont des **cumuls sur des périodes**. Elles ne sont
 
 Le module M08 expliquera le calcul de ces cumuls à partir d'un index d'énergie et de dates suffisamment fiables. Dans le prototype réel, lorsqu'une frontière de période n'est pas connue précisément, une consommation partielle ne doit pas être présentée comme une mesure complète.
 
-## 1.3. L'architecture du compteur : suivre un relevé
+### 1.3. L'architecture du compteur : suivre un relevé
 
 Voici le **synoptique fonctionnel** de l'architecture visée :
 
@@ -77,7 +77,7 @@ flowchart TD
   B --> W["Jinja2 / HTML / CSS / JavaScript : tableau de bord"]
 ~~~
 
-**Figure 1.1 — Trajet des données prévu pour le compteur intelligent.** Ce dessin montre des échanges d'informations ; **ce n'est pas un schéma de raccordement électrique**. Les alimentations, interfaces, protections et éventuelles barrières d'isolation ne sont pas représentées.
+**Figure 1.1 — Trajet des données prévu pour le compteur intelligent.** Ce dessin montre des échanges d'informations ; **ce n'est pas un schéma de raccordement électrique**. Les alimentations, interfaces, protections et éventuelles barrières d'isolation ne sont pas représentées. Les flèches indiquent des fonctions prévues, et non la validation d'une chaîne GSM–serveur déjà opérationnelle.
 
 Nous pouvons lire le synoptique comme une petite histoire :
 
@@ -89,9 +89,9 @@ Nous pouvons lire le synoptique comme une petite histoire :
 
 **Étape 4 — Afficher sur place.** Le LCD 20×4 présente quatre lignes de vingt caractères. L'utilisateur peut lire les données essentielles sans ouvrir de page web.
 
-**Étape 5 — Conserver en local.** Une mémoire **FRAM** est prévue pour stocker durablement des informations et des relevés en attente de transmission. Une donnée conservée ne doit pas disparaître simplement parce que le courant est coupé.
+**Étape 5 — Conserver en local.** Une mémoire **FRAM** est prévue pour stocker durablement des informations et des relevés en attente de transmission. Contrairement à une mémoire vive ordinaire, elle peut conserver ses données sans alimentation ; il faudra néanmoins vérifier que le programme les y écrit effectivement et gère correctement les interruptions d'alimentation.
 
-**Étape 6 — Transmettre.** Le SIM800L est le modem GSM/GPRS retenu. Lorsque le réseau, la carte SIM, l'alimentation et le service de données sont compatibles et disponibles, il doit permettre l'envoi des relevés.
+**Étape 6 — Transmettre.** Le SIM800L est le modem GSM/GPRS retenu. Lorsque le réseau, la carte SIM, l'alimentation et le service de données sont compatibles et disponibles, il doit permettre l'envoi des relevés. **La disponibilité du GPRS ne garantit pas à elle seule la confidentialité ni l'authenticité des messages** : une solution de transport protégée, compatible avec le modem et le serveur (au besoin avec passerelle), devra être vérifiée avant l'envoi de données réelles.
 
 **Étape 7 — Enregistrer sur le serveur.** Une application Python construite avec **Flask** doit recevoir et contrôler les messages, puis utiliser **SQLite** pour conserver les informations dans une base de données.
 
@@ -103,7 +103,7 @@ En résumé, le trajet principal est :
 
 Le DS3231, la FRAM et le LCD sont des branches utiles du système, pas des étapes obligatoires dans le trajet d'un paquet GSM.
 
-### Tableau 1.1 — Rôles sans confusion
+#### Tableau 1.1 — Rôles sans confusion
 
 | Élément | Son rôle | Ce qu'il ne fait pas à lui seul |
 |---|---|---|
@@ -117,7 +117,7 @@ Le DS3231, la FRAM et le LCD sont des branches utiles du système, pas des étap
 | SQLite | Organiser les relevés sauvegardés | Piloter directement le PZEM |
 | Navigateur | Afficher les informations à l'utilisateur | Remplacer le serveur et la chaîne d'acquisition |
 
-## 1.4. Qu'arrive-t-il si Internet ou le réseau mobile n'est plus disponible ?
+### 1.4. Qu'arrive-t-il si Internet ou le réseau mobile n'est plus disponible ?
 
 Un compteur de suivi énergétique doit continuer à remplir ses fonctions locales autant que son architecture le permet. Le **LCD** n'a pas besoin d'une connexion Internet pour afficher une mesure locale disponible.
 
@@ -130,7 +130,7 @@ Pour l'envoi distant, le projet prévoit la stratégie suivante :
 
 C'est une **architecture prévue**, pas une fonction déjà démontrée par le prototype actuel. La FRAM et la synchronisation seront développées dans **M11** ; les échanges GSM/GPRS dans **M10**. Une coupure de courant ou une absence de date fiable présente des difficultés supplémentaires, étudiées dans les chapitres correspondants.
 
-## 1.5. Ce qui existe dans le dépôt aujourd'hui
+### 1.5. Ce qui existe dans le dépôt aujourd'hui
 
 Le projet logiciel suit une progression cumulative. Au moment de cette première rédaction :
 
@@ -142,7 +142,7 @@ Le projet logiciel suit une progression cumulative. Au moment de cette première
 
 Le matériel de référence documente déjà les choix de communication : **SIM800L sur UART matériel D0/D1**, **PZEM sur D10/D11 par SoftwareSerial**, **DS3231/LCD/FRAM sur I2C A4/A5** à partir de M10. Nous ne les câblons pas dans ce chapitre introductif.
 
-### Pause de compréhension
+#### Pause de compréhension
 
 Sans regarder le schéma, répondez oralement :
 
@@ -156,13 +156,13 @@ Si l'une de ces réponses vous échappe, relisez les étapes 1 à 8. Le but n'es
 
 ---
 
-# Partie B — Vidéo M01-V02 : volts, ampères, watts et kilowattheures
+## Partie B — Vidéo M01-V02 : volts, ampères, watts et kilowattheures
 
-## 1.6. Quatre mots pour comprendre un relevé électrique
+### 1.6. Quatre mots pour comprendre un relevé électrique
 
 Un compteur reçoit des nombres. Mais un nombre isolé, par exemple « 230 », ne nous apprend presque rien. Il faut savoir **ce que l'on mesure** et **avec quelle unité**.
 
-### La tension électrique : U, en volts (V)
+#### La tension électrique : U, en volts (V)
 
 La tension entre deux points est une **différence de potentiel électrique**. Pour débuter, on peut l'imaginer comme une différence de pression qui aide à faire circuler un fluide dans un tuyau. Cette image facilite l'intuition, sans décrire complètement le comportement de l'électricité.
 
@@ -170,13 +170,13 @@ Une indication de **5 V** sur un circuit électronique et une indication de **23
 
 Le symbole de grandeur utilisé dans ce livre est **U** ; celui de l'unité est **V**.
 
-### Le courant électrique : I, en ampères (A)
+#### Le courant électrique : I, en ampères (A)
 
 Le courant représente le **débit de charges électriques** traversant une section d'un conducteur. Son symbole de grandeur est **I** et son unité est l'**ampère (A)**.
 
 Dans l'analogie du circuit d'eau, le courant ressemble au débit : combien passe pendant une durée donnée. Une tension n'est donc pas un courant, tout comme une pression n'est pas un débit.
 
-### La puissance active : P, en watts (W)
+#### La puissance active : P, en watts (W)
 
 La puissance décrit un **rythme de transfert ou d'utilisation de l'énergie**. Pour nos calculs de consommation, nous nous intéressons à la puissance **active**, notée **P**, mesurée en **watts (W)**.
 
@@ -188,7 +188,7 @@ La puissance décrit un **rythme de transfert ou d'utilisation de l'énergie**. 
 
 Le module PZEM-004T fournit directement une mesure de puissance active, sous réserve de son exactitude, de son câblage correct et des vérifications nécessaires.
 
-### L'énergie : E, en wattheures ou kilowattheures
+#### L'énergie : E, en wattheures ou kilowattheures
 
 L'énergie répond à une question différente : **quelle quantité a été consommée pendant une durée ?**
 
@@ -198,7 +198,7 @@ L'énergie peut s'exprimer en **Wh** ou en **kWh** :
 - **1 kWh** correspond, par exemple, à **1 kW de puissance active constante pendant 1 heure** ;
 - deux appareils de puissances différentes peuvent consommer la même énergie s'ils fonctionnent pendant des durées différentes.
 
-### Tableau 1.2 — La fiche à mémoriser
+#### Tableau 1.2 — La fiche à mémoriser
 
 | Grandeur | Symbole | Unité | Symbole de l'unité | Question à se poser |
 |---|---|---|---|---|
@@ -207,7 +207,7 @@ L'énergie peut s'exprimer en **Wh** ou en **kWh** :
 | Puissance active | P | Watt | W | À quel rythme l'énergie est-elle utilisée ? |
 | Énergie | E | Wattheure, kilowattheure | Wh, kWh | Quelle quantité sur une durée ? |
 
-## 1.7. Calculer l'énergie d'un appareil à puissance constante
+### 1.7. Calculer l'énergie d'un appareil à puissance constante
 
 Lorsque la **puissance active reste constante** pendant l'intervalle étudié :
 
@@ -225,7 +225,7 @@ Avant de calculer, appliquez toujours cette méthode :
 4. Multipliez puissance en kW × durée en h.
 5. Vérifiez que la réponse est bien exprimée en **kWh**.
 
-### Exemple 1 — Une charge de 500 W pendant 4 heures
+#### Exemple 1 — Une charge de 500 W pendant 4 heures
 
 La charge utilise une puissance active constante de **500 W**.
 
@@ -235,7 +235,7 @@ La charge utilise une puissance active constante de **500 W**.
 
 **Résultat : 2 kWh.** Le nombre de kilowattheures est ici différent du nombre de kilowatts.
 
-### Exemple 2 — Une charge de 2 000 W pendant 30 minutes
+#### Exemple 2 — Une charge de 2 000 W pendant 30 minutes
 
 - Puissance : 2 000 W = **2 kW**.
 - Durée : 30 ÷ 60 = **0,5 h**.
@@ -245,14 +245,14 @@ La charge utilise une puissance active constante de **500 W**.
 
 Cet exemple montre pourquoi la conversion des minutes est indispensable : utiliser « 30 » au lieu de « 0,5 » serait une erreur majeure.
 
-### Exemple 3 — Une charge de 200 W pendant 5 heures
+#### Exemple 3 — Une charge de 200 W pendant 5 heures
 
 - 200 W = **0,2 kW**.
 - E = 0,2 × 5 = **1 kWh**.
 
 Une petite puissance utilisée longtemps peut donc conduire à la même énergie qu'une puissance élevée utilisée brièvement.
 
-### Exemple 4 — Une charge de 100 W pendant 15 minutes
+#### Exemple 4 — Une charge de 100 W pendant 15 minutes
 
 - 100 W = **0,1 kW**.
 - 15 minutes = **0,25 h**.
@@ -260,13 +260,13 @@ Une petite puissance utilisée longtemps peut donc conduire à la même énergie
 
 Les deux dernières valeurs expriment la même énergie avec deux unités différentes.
 
-## 1.8. Et si la puissance varie pendant l'utilisation ?
+### 1.8. Et si la puissance varie pendant l'utilisation ?
 
 La formule précédente suppose **une puissance active constante** pendant toute la durée. Dans une maison, les appareils s'allument, s'arrêtent et changent parfois de régime : la puissance n'est donc pas toujours constante.
 
 Si elle varie, l'énergie totale correspond à l'accumulation de l'énergie sur toute la période. On peut approximer cette énergie en additionnant de petits intervalles successifs, ou exploiter un **index cumulatif** mesuré par un module approprié.
 
-### Exemple fictif : suivre un index d'énergie
+#### Exemple fictif : suivre un index d'énergie
 
 Imaginons les valeurs d'index suivantes, **entièrement simulées** :
 
@@ -285,7 +285,7 @@ Nous retrouvons volontairement les valeurs de notre exemple d'écran LCD. Cette 
 
 Dans le chapitre 8, nous traiterons précisément les passages à minuit, les changements de mois, les redémarrages et la distinction entre **période complète** et **période partielle**.
 
-## 1.9. Les erreurs fréquentes que nous devons éviter
+### 1.9. Les erreurs fréquentes que nous devons éviter
 
 **Erreur 1 — « 1 kW est égal à 1 kWh ».** Non : le premier exprime une puissance, le second une énergie. Il faut une durée pour passer de l'une à l'autre dans notre exemple à puissance constante.
 
@@ -301,9 +301,9 @@ Dans le chapitre 8, nous traiterons précisément les passages à minuit, les ch
 
 ---
 
-# Partie C — Mettre ses connaissances en pratique
+## Partie C — Mettre ses connaissances en pratique
 
-## 1.10. Activité 1 — Reconstituer le trajet d'un relevé
+### 1.10. Activité 1 — Reconstituer le trajet d'un relevé
 
 **Durée indicative :** 10 minutes. **Matériel :** papier et crayon. **Aucun équipement sous tension.**
 
@@ -323,7 +323,7 @@ Les cinq cartes suivantes sont présentées dans le désordre :
 
 **Critère de réussite :** vous savez expliquer votre dessin à une personne qui n'a jamais utilisé Arduino.
 
-## 1.11. Activité 2 — Calculer quatre consommations
+### 1.11. Activité 2 — Calculer quatre consommations
 
 **Durée indicative :** 15 minutes. **Matériel :** feuille et calculatrice facultative.
 
@@ -344,7 +344,7 @@ Pour chaque ligne, écrivez les conversions et le calcul. Ne vous contentez pas 
 - Pourquoi « 500 W » et « 500 Wh » ne désignent-ils pas la même chose ?
 - Dans le tableau, quel cas présente la plus faible énergie ?
 
-## 1.12. Autoévaluation — Six questions essentielles
+### 1.12. Autoévaluation — Six questions essentielles
 
 Répondez sans revenir aux sections précédentes :
 
@@ -357,30 +357,14 @@ Répondez sans revenir aux sections précédentes :
 
 Pour le **quiz officiel de dix questions du module M01**, consulter la [version apprenant](../../formation/modules/M01-decouverte-electricite/quiz/QUIZ_M01_APPRENANT.md). Le seuil de réussite fixé par la formation est de **8 bonnes réponses sur 10**.
 
-<details>
-<summary>Solutions des activités — à consulter après votre tentative</summary>
+Les **corrigés détaillés des activités et de l'autoévaluation** sont fournis dans une [annexe de correction distincte](../annexes/CORRIGE_M01.md) : consultez-la seulement après avoir effectué les exercices. Les [TP et quiz officiels pour les apprenants](../../formation/modules/M01-decouverte-electricite/README.md#documents-pour-les-apprenants) restent les références du module.
 
-**Activité 1 :** PZEM → ATmega328P → SIM800L → Flask / SQLite → navigateur. Fonctions respectives : mesurer → traiter → transmettre → enregistrer → consulter. DS3231 = date/heure ; LCD = affichage local ; FRAM = conservation locale prévue.
-
-**Activité 2 :**
-- A : 0,2 kW × 5 h = **1 kWh**.
-- B : 0,5 kW × 4 h = **2 kWh**.
-- C : 2 kW × 0,5 h = **1 kWh**.
-- D : 0,1 kW × 0,25 h = **0,025 kWh**.
-
-Le plus faible résultat est celui du **cas D**.
-
-**Autoévaluation 4 :** 400 W = 0,4 kW ; 2 h 30 = 2,5 h ; donc **1 kWh**.
-
-Pour des corrections détaillées, le dépôt de formation conserve un [corrigé formateur séparé](../../formation/modules/M01-decouverte-electricite/tp/CORRIGE_M01_FORMATEUR.md).
-
-</details>
 
 ---
 
-# Partie D — Retenir l'essentiel et poursuivre
+## Partie D — Retenir l'essentiel et poursuivre
 
-## 1.13. La synthèse du chapitre en cinq phrases
+### 1.13. La synthèse du chapitre en cinq phrases
 
 1. Notre compteur intelligent est une **chaîne fonctionnelle**, pas un seul capteur.
 2. Le PZEM mesure, l'ATmega328P traite et le LCD affiche localement.
@@ -388,7 +372,7 @@ Pour des corrections détaillées, le dépôt de formation conserve un [corrigé
 4. Le **watt (W)** mesure une puissance ; le **kilowattheure (kWh)** mesure une quantité d'énergie.
 5. Les consommations d'une journée ou d'un mois nécessitent des **informations temporelles et énergétiques cohérentes** ; une simulation ne vaut jamais preuve de mesure réelle.
 
-## 1.14. Petit lexique de fin de chapitre
+### 1.14. Petit lexique de fin de chapitre
 
 | Terme | Définition rapide |
 |---|---|
@@ -401,7 +385,7 @@ Pour des corrections détaillées, le dépôt de formation conserve un [corrigé
 | **API** | Interface de communication entre programmes |
 | **SQLite** | Base de données utilisable dans une application serveur |
 
-## 1.15. Pour aller plus loin
+### 1.15. Pour aller plus loin
 
 Les documents techniques et pédagogiques suivants sont les **références vivantes du projet** :
 
