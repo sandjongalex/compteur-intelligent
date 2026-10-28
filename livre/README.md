@@ -16,7 +16,7 @@
 5. [Annexe A — corrigés du chapitre 1](annexes/CORRIGE_M01.md)
 6. [Annexe B — corrigés du chapitre 2](annexes/CORRIGE_M02.md)
 
-**Gestion interne uniquement :** [Charte éditoriale](PLAN_EDITORIAL.md) · [Relecture M01](RELECTURE_M01.md) · [Règles d'export](PRODUCTION_INTERNE.md).
+**Gestion interne uniquement :** [Charte éditoriale](PLAN_EDITORIAL.md) · [Relecture M01](RELECTURE_M01.md) · [Relecture M02](RELECTURE_M02.md) · [Règles d'export](PRODUCTION_INTERNE.md).
 
 ## Sommaire contractuel : 16 chapitres ↔ 16 modules ↔ 32 vidéos
 
