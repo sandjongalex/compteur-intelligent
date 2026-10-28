@@ -53,3 +53,5 @@ Pourquoi apprendre l'électronique, l'informatique embarquée et l'Internet des 
 **Annexe C.** Corrigés des travaux pratiques et du quiz du chapitre 3
 
 **Annexe D.** Corrigés des travaux pratiques et du quiz du chapitre 4
+
+**Annexe E.** Corrigés des travaux pratiques et du quiz du chapitre 5
