@@ -39,6 +39,16 @@ Référence normative et tableau de câblage : [règle de progression continue](
 
 **Tableau de brochage officiel M10–M16 (ATmega328P-PU DIP-28) :** [docs/hardware/TABLEAU_AFFECTATION_ATMEGA328P_PDIP28.md](docs/hardware/TABLEAU_AFFECTATION_ATMEGA328P_PDIP28.md). Consulter la carte complète des 28 broches **avant toute modification** des pilotes, connecteurs ou schémas KiCad. D3 (buzzer), D4 (PWRKEY) et D5 (STATUS) ne sont que des **réservations proposées**, non des connexions définitivement approuvées.
 
+### Livre pédagogique (règle permanente)
+
+Toute rédaction ou révision sous `livre/chapitres/` doit d'abord consulter `livre/PLAN_EDITORIAL.md`, `livre/PRODUCTION_INTERNE.md` et `livre/ILLUSTRATIONS_A_PRODUIRE.md` (registre interne).
+
+**Illustrations obligatoires dans les 16 chapitres :** repérer chaque notion qui nécessite un visuel, ajouter le commentaire de production `<!-- ILLUSTRATION À PRODUIRE — FIGURE X.Y ... -->` à l'emplacement concerné, avec type, contenu, légende, texte alternatif, contraintes et statut ; ajouter sous ce commentaire un **repère visible `[ILLUSTRATION À INSÉRER — Figure X.Y]`** pour l'aperçu du manuscrit, puis enregistrer le visuel dans le registre. Ne pas qualifier de « prêt à publier » un chapitre dont des illustrations obligatoires ne sont pas réalisées et validées.
+
+**Avant publication, remplacer chaque repère visible et chaque commentaire par l'image validée : aucun marqueur d'image manquante dans le livre final.**
+
+Le livre final reste autonome, **sans références GitHub**, ni renvois aux dossiers internes, commits ou scripts vidéo. Les rapports de relecture, la charte et le registre des figures ne sont jamais exportés.
+
 ### Invariants
 
 - Simulation sans secteur disponible par défaut ; secteur 230 V réservé au personnel qualifié.
