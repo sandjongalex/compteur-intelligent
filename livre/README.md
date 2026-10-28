@@ -18,6 +18,8 @@
 7. [Annexe B — corrigés du chapitre 2](annexes/CORRIGE_M02.md)
 8. [Annexe C — corrigés du chapitre 3](annexes/CORRIGE_M03.md)
 
+**Illustrations — production interne :** [Registre des figures 1.1 à 3.10](ILLUSTRATIONS_A_PRODUIRE.md) · [Gabarit obligatoire pour les nouveaux chapitres](MODELE_CHAPITRE.md). **23 figures pédagogiques identifiées, 0 figure finale validée : les trois chapitres ne sont pas prêts à être illustrés/imprimés.**
+
 **Gestion interne uniquement :** [Charte éditoriale](PLAN_EDITORIAL.md) · [Relecture M01](RELECTURE_M01.md) · [Relecture M02](RELECTURE_M02.md) · [Relecture M03](RELECTURE_M03.md) · [Règles d'export](PRODUCTION_INTERNE.md).
 
 ## Sommaire contractuel : 16 chapitres ↔ 16 modules ↔ 32 vidéos
@@ -77,6 +79,10 @@ Le **firmware fil rouge est actuellement au stade M09**, en simulation par défa
 Cet ouvrage traite d'un **prototype pédagogique de suivi énergétique** : il ne remplace pas un compteur électrique homologué destiné à la facturation. Aucun chapitre ne doit inviter un novice à intervenir sur une installation sous tension. La conception, les protections, l'isolation, les essais et les connexions au réseau 230 V exigent un cadre qualifié et les réglementations locales applicables.
 
 Le manuscrit Markdown est conservé ici comme **source éditoriale versionnée**. Les futurs PDF et formats imprimables pourront être générés à partir de cette source après relecture et validation.
+
+## Règle des illustrations obligatoires
+
+Chaque chapitre M01–M16 signale **à son emplacement pédagogique** les photos, captures et schémas nécessaires via un commentaire `ILLUSTRATION À PRODUIRE`. Le registre interne note le numéro, la légende, la description et le statut de chaque figure. Une première relecture du texte **ne vaut pas validation graphique** ; l'impression et la publication sont bloquées tant que les illustrations requises ne sont pas réalisées, contrôlées et correctement intégrées.
 
 ## Composition et diffusion
 
