@@ -29,7 +29,7 @@ Les exemples chiffrés et les écrans d'illustration porteront la mention **« d
 
 La formation AlexTech Academy est organisée en **16 modules** et **32 vidéos techniques**, pour un total de **230 minutes**, auxquels s'ajoutent 10 minutes d'accueil et de conclusion. Les vidéos montrent les étapes essentielles dans un format volontairement court.
 
-Le présent ouvrage suit exactement ces 16 modules, dans le même ordre. Chaque chapitre reprend deux vidéos, puis approfondit leur contenu : définitions, exemples résolus, schémas de principe, points de vigilance, applications pratiques, exercices, questions d'autoévaluation et renvois aux ressources. Les TP et les quiz ne sont pas comptés dans le temps vidéo.
+Le présent ouvrage suit exactement ces 16 modules, dans le même ordre. Chaque chapitre approfondit les sujets de deux vidéos : définitions, exemples résolus, schémas de principe, points de vigilance, applications pratiques et questions d'autoévaluation. **Le livre peut être étudié seul** : les explications, les exercices et leurs solutions sont conçus pour être consultés dans l'ouvrage, sans dépendre d'une plateforme ou d'un hébergement des vidéos. Les TP et les quiz supplémentaires de la formation sont proposés à part.
 
 **Un projet fil rouge, pas seize projets différents :** les programmes des premières leçons sont des exercices d'apprentissage ; le firmware principal évolue d'un module au suivant. Lorsque nous aborderons le serveur et la carte électronique, nous continuerons à enrichir le *même* compteur.
 
@@ -43,7 +43,7 @@ Le présent ouvrage suit exactement ces 16 modules, dans le même ordre. Chaque 
 - conserver les relevés en attente puis les transmettre, sous réserve de l'implémentation et des essais requis ;
 - recevoir, archiver et présenter ces données dans une application web.
 
-Cette liste décrit **l'objectif pédagogique final**. Elle ne signifie pas que tous les sous-systèmes sont déjà implémentés, testés sur matériel ou certifiés.
+Cette liste décrit **les fonctions que nous chercherons à construire et à valider** tout au long de l'ouvrage. Chaque étape sera étudiée selon ses exigences propres, et les exemples fictifs ne seront jamais présentés comme des essais réels.
 
 La mesure électrique réelle, la fiabilité des relevés, la disponibilité de la connectivité mobile, la sécurité des transmissions et la conformité d'un appareil demandent des vérifications spécifiques. Un prototype pédagogique ne doit pas être utilisé comme un instrument homologué pour facturer l'électricité.
 
@@ -72,4 +72,4 @@ C'est ainsi que se construit un projet reproductible. Ne cherchons pas seulement
 
 ---
 
-**Pour commencer :** [Chapitre 1 — Découvrir le compteur et comprendre l'électricité](chapitres/01-decouvrir-le-compteur-et-comprendre-l-electricite.md).
+**Pour commencer :** rendez-vous au **chapitre 1 — Découvrir le compteur et comprendre l'électricité**.
