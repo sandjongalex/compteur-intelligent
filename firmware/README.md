@@ -40,9 +40,9 @@ Le programme de travail actuel est [**courant/CompteurIntelligent/CompteurIntell
 
 ## Décision de brochage pour la prochaine étape M10
 
-À partir de M10, **SIM800L = UART matériel `Serial` D0/RX et D1/TX** sur ATmega328P ; **PZEM-004T = `SoftwareSerial` D10/RX et D11/TX** ; **RTC DS3231, LCD I2C et future FRAM I2C = SDA A4 / SCL A5**. D2 reste le bouton et D13 la LED. Les changements de débogage nécessaires pour libérer `Serial`, les protections d'alimentation/logic levels et l'isolation pendant l'ISP sont définis dans la [règle obligatoire](../docs/formation/REGLE_EVOLUTION_CONTINUE.md#attribution-des-interfaces-matérielles-à-partir-de-m10).
+À partir de M10, **SIM800L = UART matériel `Serial` D0/RX et D1/TX** sur ATmega328P ; **PZEM-004T = `SoftwareSerial` D6/RX et D7/TX (nouvelle affectation à implémenter en M10)** ; **RTC DS3231, LCD I2C et future FRAM I2C = SDA A4 / SCL A5**. D2 reste le bouton et D13 la LED. Les changements de débogage nécessaires pour libérer `Serial`, les protections d'alimentation/logic levels et le maintien d'un connecteur ISP accessible sont définis dans la [règle obligatoire](../docs/formation/REGLE_EVOLUTION_CONTINUE.md#attribution-des-interfaces-matérielles-à-partir-de-m10).
 
-**Attention :** le firmware courant est encore M09 et conserve volontairement sa console série pédagogique. Le brochage GSM est une **décision pour la future implémentation M10**, pas une fonctionnalité déjà développée ni un résultat matériel validé.
+**Attention :** le firmware courant est encore M09, conserve volontairement sa console série pédagogique **et utilise toujours `SoftwareSerial(10, 11)` pour le PZEM**. Ne pas recâbler ce sketch M09 sur D6/D7 sans modifier le code ; le changement officiel sera réalisé dans le firmware M10, sans retoucher les snapshots historiques. Le brochage GSM est une **décision pour la future implémentation M10**, pas une fonctionnalité déjà développée ni un résultat matériel validé.
 
 **Tableau physique pour KiCad et l'intégration M10–M16 :** [toutes les broches de l'ATmega328P-PU DIP-28](../docs/hardware/TABLEAU_AFFECTATION_ATMEGA328P_PDIP28.md), avec câblage UART GSM, PZEM logiciel, bus I2C et connecteur ISP.
 

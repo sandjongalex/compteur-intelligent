@@ -35,12 +35,12 @@
 
 ## Attribution des interfaces matérielles à partir de M10
 
-**Décision actée : réserver l'UART matériel de l'ATmega328P au SIM800L (M10 et suivants).** Cette attribution concerne le firmware, l'architecture électronique, les démonstrations, les tests et la conception KiCad. Le M09 et ses snapshots antérieurs restent inchangés tant que le firmware M10 n'est pas implémenté.
+**Décision actée : réserver l'UART matériel de l'ATmega328P au SIM800L (M10 et suivants).** Cette attribution concerne le firmware, l'architecture électronique, les démonstrations, les tests et la conception KiCad. **Décision complémentaire approuvée : PZEM déplacé de D10/D11 vers D6/D7 à partir de M10.** Le firmware M09 et les snapshots M03–M09 restent inchangés ; expliquer et tester cette migration dans M10.
 
 | Élément | Interface retenue | Broches Arduino / ATmega328P PDIP28 | Règle |
 |---|---|---|---|
 | SIM800L GSM/GPRS | **UART matériel** `Serial` | **D0/RX = PD0 broche 2**, **D1/TX = PD1 broche 3** | Réserver cet UART au modem en mode réel ; liaison RX/TX croisée avec adaptation des niveaux logiques validée. |
-| PZEM-004T V3 | **`SoftwareSerial`** | **D10/RX = PB2 broche 16**, **D11/TX = PB3 broche 17** | Conserver le dialogue PZEM sur ces broches ; D11/MOSI impose une isolation pendant l'ISP. |
+| PZEM-004T V3 | **`SoftwareSerial`** | **D6/RX = PD6 broche 12**, **D7/TX = PD7 broche 13** | Migration depuis D10/D11 du M09 ; garder le PZEM hors du câblage MOSI/ISP. |
 | RTC I2C DS3231 | I2C `Wire` | **A4/SDA = PC4 broche 27**, **A5/SCL = PC5 broche 28** | Horodatage par horloge RTC ; ne pas le remplacer par l'UART. |
 | LCD I2C 20×4 | I2C `Wire` | **A4/SDA, A5/SCL** | Partage du bus I2C, adresse et tension à vérifier. |
 | FRAM I2C (M11) | I2C `Wire` | **A4/SDA, A5/SCL** | Variante I2C retenue ; vérifier adresse, tension, pull-ups, capacité du bus. |
@@ -54,9 +54,10 @@
 1. **Réserver `Serial` au SIM800L lorsque la transmission réelle est activée** : aucune trace `Serial.print` non protocolaire, ni console `1/0/?`, ni USB–TTL connecté au modem simultanément. La version M09 utilise actuellement `Serial` pour le diagnostic : en M10, fournir un mode de simulation/maintenance séparé et une migration explicite, expliquée et testée de ces acquis ; ne pas les supprimer silencieusement.
 2. **Câbler les voies UART en croisé :** TXD du SIM800L → D0/RX ATmega et D1/TX ATmega → RXD du SIM800L, **avec adaptation des niveaux dans les deux sens selon les seuils du module exact**. Le SIM800L nu utilise une logique différente du 5 V ATmega ; ne pas supposer une compatibilité directe, y compris dans le sens modem → AVR. Vérifier les références exactes avant KiCad.
 3. **Alimenter le modem correctement :** alimentation dédiée adaptée à la version SIM800L (pour un module nu, VBAT typiquement ~4,0 V avec pointes proches de 2 A), condensateurs de proximité, masse commune et mesures de tension pendant l'émission. Ne jamais appliquer directement 5 V à VBAT d'un SIM800L nu. Ne pas généraliser cette règle d'entrée d'alimentation aux cartes intégrant un régulateur sans vérifier leur documentation.
-4. **Préserver la programmabilité ISP et le diagnostic :** D11 partage MOSI/ISP avec la liaison PZEM ; prévoir connectique/isolation pour éviter la contention lors de la programmation. Réserver un moyen sûr de déconnecter le modem de D0/D1 pour les essais et les éventuels chargements par UART ; privilégier ISP pour la puce autonome.
-5. **Garder acquisition et communications non bloquantes autant que possible :** temporisations, réponses AT, erreurs réseau, absence de données, réessais bornés et reprise de mesure doivent être couverts par des tests. Le PZEM reste sur un seul `SoftwareSerial` ; la RTC, le LCD et la FRAM ne consomment pas de liaison série virtuelle.
-6. **Conserver le mode simulation sans GSM, PZEM ni secteur.** Démontrer la compilation et les régressions sur ATmega328P avant de déclarer un essai matériel réussi. Toute réaffectation de broche doit être justifiée et synchronisée entre documentation, firmware, tests, connecteurs et PCB.
+4. **Préserver la programmabilité ISP et le diagnostic :** avec le PZEM sur D6/D7 à partir de M10, D11 reste réservé à MOSI/ISP et ne doit pas être relié au PZEM. En M09 historique, isoler l'ancien PZEM D11 lors d'une programmation ISP. Réserver un moyen sûr de déconnecter le modem de D0/D1 pour les essais et les éventuels chargements par UART ; privilégier ISP pour la puce autonome.
+5. **Migration explicite M09 → M10 :** remplacer `SoftwareSerial portPzem(10, 11)` par `SoftwareSerial portPzem(6, 7)` dans le **nouveau** firmware M10 et son snapshot, adapter les schémas et tests, vérifier le RX/TX croisé et ne pas réécrire les snapshots M03–M09.
+6. **Garder acquisition et communications non bloquantes autant que possible :** temporisations, réponses AT, erreurs réseau, absence de données, réessais bornés et reprise de mesure doivent être couverts par des tests. Le PZEM reste sur un seul `SoftwareSerial` ; la RTC, le LCD et la FRAM ne consomment pas de liaison série virtuelle.
+7. **Conserver le mode simulation sans GSM, PZEM ni secteur.** Démontrer la compilation et les régressions sur ATmega328P avant de déclarer un essai matériel réussi. Toute réaffectation de broche doit être justifiée et synchronisée entre documentation, firmware, tests, connecteurs et PCB.
 
 [Instructions agents](../../AGENTS.md) · [Module M10](../../formation/modules/M10-sim800l-gsm-gprs/README.md)
 

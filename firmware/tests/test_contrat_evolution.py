@@ -92,6 +92,23 @@ if numbers[-1] >= 9:
         "La progression indique encore que le module est a realiser"
     )
 
+
+# Contrat du brochage cible M10-M16 : PZEM sur D6/D7, GSM sur D0/D1.
+# Les sketches pedagogiques M09 conservent leur ancien brochage D10/D11.
+pinmap = (REPO / "docs/hardware/TABLEAU_AFFECTATION_ATMEGA328P_PDIP28.md").read_text(encoding="utf-8")
+policy_content = policy.read_text(encoding="utf-8")
+m10_guide = (REPO / "formation/modules/M10-sim800l-gsm-gprs/README.md").read_text(encoding="utf-8")
+firmware_guide = (ROOT / "README.md").read_text(encoding="utf-8")
+assert "SoftwareSerial(6, 7)" in pinmap, "Brochage PZEM cible non mis a jour"
+assert "D6/RX = PD6 broche 12" in policy_content, "Broche PZEM RX M10 incoherente"
+assert "D7/TX = PD7 broche 13" in policy_content, "Broche PZEM TX M10 incoherente"
+assert "D6/RX (PD6, pin 12), D7/TX (PD7, pin 13)" in m10_guide, "M10 incoherent"
+assert "SoftwareSerial(6, 7)" in firmware_guide, "Guide firmware non synchronise"
+if manifest["latest_firmware_stage"] == 9:
+    assert "SoftwareSerial portPzem(10, 11)" in current.read_text(encoding="utf-8"), (
+        "M09 historique modifie avant migration pedagogique M10"
+    )
+
 print(
     f"PASS : regle de progression, {len(stages)} versions, "
     f"snapshot {latest['module']} = firmware courant et fichiers associes"

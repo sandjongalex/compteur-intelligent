@@ -24,14 +24,15 @@ Faire évoluer les **mêmes composants du système** et conserver la compatibili
 
 ### Architecture matérielle imposée à partir de M10
 
-**Décision du projet : le SIM800L utilise l'UART matériel de l'ATmega328P (D0/RX et D1/TX), et non une seconde liaison `SoftwareSerial`.** Le PZEM-004T conserve `SoftwareSerial` sur D10/RX et D11/TX ; l'horloge RTC DS3231, le LCD I2C 20×4 et la future FRAM I2C partagent SDA=A4 et SCL=A5, avec adresses et niveaux électriques compatibles. Bouton D2 et LED D13 sont conservés.
+**Décision du projet : le SIM800L utilise l'UART matériel de l'ATmega328P (D0/RX et D1/TX), et non une seconde liaison `SoftwareSerial`.** À partir de M10, le PZEM-004T est déplacé vers `SoftwareSerial` sur D6/RX et D7/TX (ancien M09 : D10/D11) ; l'horloge RTC DS3231, le LCD I2C 20×4 et la future FRAM I2C partagent SDA=A4 et SCL=A5, avec adresses et niveaux électriques compatibles. Bouton D2 et LED D13 sont conservés.
 
 Règles obligatoires pour M10–M16, y compris scripts, schéma KiCad et PCB :
 
 - `Serial` (UART0) appartient **exclusivement au SIM800L en mode GSM réel** : aucun diagnostic `Serial.print`, commandes console `1/0/?` ou adaptateur USB–TTL partagé pendant les échanges modem. Prévoir un mode de simulation/débogage séparé, et documenter/tester la migration des commandes existantes.
 - Câblage croisé via **adaptation bidirectionnelle de niveaux logiques validée** : SIM800L TXD vers ATmega D0/RX, ATmega D1/TX vers SIM800L RXD. Vérifier les seuils électriques de la variante exacte ; ne pas supposer qu'une liaison directe 2,8 V ↔ 5 V est sûre ou fiable.
 - SIM800L : alimentation dédiée conforme à la variante (module nu typiquement autour de 4,0 V, pointes proches de 2 A), découplage local et masse commune ; **jamais le 5 V direct sur le VBAT d'un SIM800L nu**.
-- D11 est aussi MOSI/ISP : assurer l'isolation du PZEM pendant programmation/maintenance ISP. D0/D1 doivent pouvoir être isolées du modem pour le diagnostic et toute programmation qui les utilise.
+- À partir de M10, D11 est réservé à MOSI/ISP : **ne pas connecter le PZEM sur D11**. D6/PD6 broche physique 12 = RX PZEM ; D7/PD7 broche physique 13 = TX PZEM. Le M09 historique garde D10/D11 : déconnecter l'ancien montage PZEM de MOSI lors de l'ISP. D0/D1 doivent pouvoir être isolées du modem pour le diagnostic et toute programmation qui les utilise.
+- Dans M10, remplacer `SoftwareSerial portPzem(10, 11)` par `SoftwareSerial portPzem(6, 7)` et documenter/tester la migration sans retoucher les anciens snapshots.
 - Ne pas changer silencieusement ce brochage ; toute nécessité de réaffectation exige une décision documentée, une mise à jour simultanée du firmware, des tests et du schéma/PCB.
 
 Référence normative et tableau de câblage : [règle de progression continue](docs/formation/REGLE_EVOLUTION_CONTINUE.md#attribution-des-interfaces-matérielles-à-partir-de-m10).

@@ -47,3 +47,6 @@ Si des copies de M09 antérieures sont distribuées, fournir cet erratum.
 
 **UART :** ne pas attribuer `Serial` au GSM dans M09 ; la migration de la console vers
 le pilote SIM800L sur D0/D1 a lieu en M10, comme établi dans les règles permanentes.
+**Brochage PZEM M10 validé :** migrer `SoftwareSerial(10, 11)` de M09 vers
+`SoftwareSerial(6, 7)` (D6/PD6 broche 12 = RX, D7/PD7 broche 13 = TX).
+Les snapshots M03–M09 restent historiques ; vérifier la migration dans les tests M10.

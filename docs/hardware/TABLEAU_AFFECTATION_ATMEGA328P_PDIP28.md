@@ -2,7 +2,7 @@
 
 **Statut : référence d'architecture pour M10–M16 (préparation du PCB KiCad).**
 **Cible : ATmega328P-PU, boîtier PDIP à 28 broches, horloge externe 16 MHz, logique microcontrôleur 5 V.**
-Les broches physiques ne correspondent pas à la numérotation Arduino. Le firmware actuellement publié est M09 ; le modem GSM et la FRAM ne sont pas encore implémentés. **Ne pas confondre un choix de brochage avec un essai matériel réussi.**
+Les broches physiques ne correspondent pas à la numérotation Arduino. Le firmware actuellement publié est M09 ; le modem GSM et la FRAM ne sont pas encore implémentés. **Migration approuvée pour M10 : le PZEM passe de D10/D11 (code historique M09) à D6/D7 (câblage cible M10–M16).** Les snapshots M03–M09 restent inchangés. **Ne pas confondre un choix de brochage avec un essai matériel réussi.**
 
 Références : [règles permanentes](../formation/REGLE_EVOLUTION_CONTINUE.md#attribution-des-interfaces-matérielles-à-partir-de-m10), [brochage et ISP M09](../../formation/modules/M09-atmega328p-isp/ressources/BROCHAGE_ISP_PU28.md), [module M10](../../formation/modules/M10-sim800l-gsm-gprs/README.md).
 
@@ -13,8 +13,8 @@ Références : [règles permanentes](../formation/REGLE_EVOLUTION_CONTINUE.md#at
 | **SIM800L** | **TXD** | **D0 / RX** | PD0 / RXD | **2** | Sortie modem vers entrée AVR, adaptation des niveaux à vérifier dans ce sens. UART matériel réservé au modem en mode GSM réel. |
 | **SIM800L** | **RXD** | **D1 / TX** | PD1 / TXD | **3** | Sortie AVR vers entrée modem, adaptation de niveaux obligatoire selon la carte exacte. |
 | **Bouton** | Signal, vers GND à l'appui | **D2** | PD2 | **4** | `INPUT_PULLUP`, conserver le comportement M09. |
-| **PZEM-004T V3** | **TXD** | **D10 / RX logiciel** | PB2 | **16** | Vers RX de `SoftwareSerial(10, 11)`. Niveaux et isolation du module exact à vérifier. |
-| **PZEM-004T V3** | **RXD** | **D11 / TX logiciel** | PB3 / MOSI | **17** | Depuis TX de `SoftwareSerial(10, 11)`. Partage MOSI : isoler le PZEM pendant ISP. |
+| **PZEM-004T V3** | **TXD** | **D6 / RX logiciel** | PD6 | **12** | Vers RX de `SoftwareSerial(6, 7)`. Niveaux et isolation du module exact à vérifier. |
+| **PZEM-004T V3** | **RXD** | **D7 / TX logiciel** | PD7 | **13** | Depuis TX de `SoftwareSerial(6, 7)`. Aucun partage de MOSI/ISP. |
 | **LED témoin** | Anode via résistance | **D13** | PB5 / SCK | **19** | LED externe + résistance de limitation, ne pas perturber SCK/ISP. |
 | **RTC DS3231** | SDA | **A4 / SDA** | PC4 | **27** | Bus I2C partagé. |
 | **RTC DS3231** | SCL | **A5 / SCL** | PC5 | **28** | Bus I2C partagé. |
@@ -44,12 +44,12 @@ Références : [règles permanentes](../formation/REGLE_EVOLUTION_CONTINUE.md#at
 | **9** | PB6 / XTAL1 | — | Quartz externe 16 MHz |
 | **10** | PB7 / XTAL2 | — | Quartz externe 16 MHz |
 | **11** | PD5 / OC0B | D5 | Réservation proposée : modem STATUS |
-| **12** | PD6 | D6 | Libre |
-| **13** | PD7 | D7 | Libre |
+| **12** | PD6 | D6 | RX logiciel depuis PZEM TXD (à partir de M10) |
+| **13** | PD7 | D7 | TX logiciel vers PZEM RXD (à partir de M10) |
 | **14** | PB0 | D8 | Libre |
 | **15** | PB1 | D9 | Libre |
-| **16** | PB2 / SS | D10 | RX logiciel depuis PZEM TXD |
-| **17** | PB3 / MOSI | D11 | TX logiciel vers PZEM RXD + connecteur MOSI ISP (isolation nécessaire) |
+| **16** | PB2 / SS | D10 | Libre pour extension ; usage SPI SS à préserver si SPI utilisé |
+| **17** | PB3 / MOSI | D11 | MOSI du connecteur ISP, sans liaison PZEM à partir de M10 |
 | **18** | PB4 / MISO | D12 | MISO ISP, réservé à la programmation/maintenance |
 | **19** | PB5 / SCK | D13 | LED avec résistance + SCK ISP, limiter la charge |
 | **20** | AVCC | — | +5 V régulé et découplage |
@@ -65,8 +65,8 @@ Références : [règles permanentes](../formation/REGLE_EVOLUTION_CONTINUE.md#at
 ## 3. Interfaces et câblage de maintenance
 
 - **UART0 :** SIM800L TXD → ATmega PD0/D0/RX et ATmega PD1/D1/TX → SIM800L RXD. En mode GSM réel, `Serial` est **exclusivement** réservé au modem : déplacer/supprimer les logs et anciennes commandes de diagnostic du M09 après une migration testée ; prévoir un mode maintenance ou simulation distinct. Une liaison USB–TTL et le SIM800L ne doivent pas piloter simultanément D0/D1.
-- **UART logiciel :** un seul `SoftwareSerial(10, 11)` pour le PZEM. Le partage D11/MOSI avec l'ISP **nécessite une isolation ou un connecteur de service**, pas seulement une note dans le code. Réserves D10/D11 maintenues comme décidées précédemment ; ne pas changer sans révision du contrat.
-- **ISP sur cible PDIP28 :** D10 du **programmateur Arduino Uno** → RESET cible broche 1 ; D11 programmateur → MOSI cible 17 ; D12 → MISO 18 ; D13 → SCK 19 ; GND commun et alimentation cible contrôlée. La broche D10 du programmateur n'est **pas** la broche D10 de la cible.
+- **UART logiciel :** un seul `SoftwareSerial(6, 7)` pour le PZEM **à partir de M10** ; D6 reçoit TXD du PZEM, D7 transmet vers RXD du PZEM. Les broches D10/D11 ne sont plus câblées au PZEM ; D11 demeure MOSI pour l'ISP. Le firmware et les snapshots historiques M09 conservent `SoftwareSerial(10, 11)` jusqu'à la migration explicite M10. Respecter l'isolation électrique de l'interface PZEM et garder le connecteur ISP accessible.
+- **ISP sur cible PDIP28 :** D10 du **programmateur Arduino Uno** → RESET cible broche 1 ; D11 programmateur → MOSI cible 17 ; D12 → MISO 18 ; D13 → SCK 19 ; GND commun et alimentation cible contrôlée. La broche D10 du programmateur n'est **pas** la broche D10 de la cible. Le PZEM étant déplacé sur D6/D7 à partir de M10, il ne partage plus MOSI.
 - **Bus I2C :** A4 et A5 partagés : RTC DS3231 (adresse normalement 0x68), LCD I2C (souvent 0x27 ou 0x3F) et FRAM (adresse selon référence/câblage). Faire un scan I2C sur matériel avant de figer les adresses, vérifier les pull-ups cumulées et la tension de fonctionnement de chaque composant. Les modules 3,3 V ne doivent pas subir des pull-ups I2C vers 5 V s'ils ne sont pas tolérants.
 - **Horloge :** quartz 16 MHz broches 9/10 et condensateurs correspondant aux spécifications du quartz et aux fuses, pas une capacité universelle.
 - **Alimentation logique :** VCC broche 7 et AVCC broche 20 alimentés à 5 V régulé, GND broches 8 et 22 reliés ; découplage 100 nF près des alimentations ; RESET broche 1 avec 10 kΩ vers VCC, connecteur ISP accessible.
@@ -78,7 +78,7 @@ Références : [règles permanentes](../formation/REGLE_EVOLUTION_CONTINUE.md#at
 
 - [ ] ATmega328P **PDIP28** et boîtier final confirmés ; fuses/16 MHz cohérents.
 - [ ] D0/D1 pour SIM800L, niveaux et alimentation validés sur la **référence exacte**.
-- [ ] D10/D11 pour PZEM, isolables pendant l'ISP.
+- [ ] D6/D7 pour PZEM en M10–M16 ; vérifier RX/TX croisés, interface et absence de conflit avec l'ISP. En M09 historique, D10/D11 restent documentés comme anciens choix.
 - [ ] SDA A4 / SCL A5 compatibles entre RTC, LCD, FRAM ; scan I2C et pull-ups contrôlés.
 - [ ] Aucune sortie GSM reliée simultanément à l'USB–TTL sur D0/D1.
 - [ ] LED D13 et connecteur ISP ne se perturbent pas.
