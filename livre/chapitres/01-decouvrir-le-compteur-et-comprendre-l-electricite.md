@@ -50,6 +50,17 @@ Considérons l'affichage d'exemple suivant :
 +--------------------+
 ~~~
 
+<!-- ILLUSTRATION À PRODUIRE — FIGURE 1.1
+Type : maquette illustrée de LCD 20×4.
+Contenu et annotations : Reproduire l'écran à quatre lignes (DATE JJ/MM/AAAA ; TENSION 230,5 V ; JOUR 4,25 kWh ; MOIS 125,48 kWh). Respecter vingt caractères utiles par ligne et nommer les grandeurs.
+Légende finale : Figure 1.1 — Exemple fictif d'affichage sur un LCD I2C 20×4.
+Texte alternatif : Écran de quatre lignes montrant une date exemple, 230,5 V, 4,25 kWh pour le jour et 125,48 kWh pour le mois.
+Contraintes : Mention « données fictives » visible ; pas de photographie prétendument issue d'un prototype ; typographie adaptée au format imprimé ; droits à documenter.
+Statut : À PRODUIRE. La figure numérotée est un emplacement éditorial, pas une image déjà réalisée.
+-->
+
+**Figure 1.1 — Exemple fictif d'affichage sur un LCD I2C 20×4.**
+
 **Toutes ces valeurs sont fictives.** Elles servent uniquement à découvrir ce que l'utilisateur pourra lire sur l'écran LCD I2C 20×4. Elles ne proviennent pas d'un montage branché au secteur.
 
 À quoi correspondent les trois nombres ?
@@ -66,6 +77,14 @@ Le module M08 expliquera le calcul de ces cumuls à partir d'un index d'énergie
 
 Voici le **synoptique fonctionnel** de l'architecture visée :
 
+<!-- ILLUSTRATION À PRODUIRE — FIGURE 1.2
+Type : synoptique fonctionnel mis en page.
+Contenu et annotations : Vectoriser le diagramme ci-dessous : PZEM vers ATmega puis SIM800L, Flask, SQLite et navigateur. Représenter RTC, FRAM, écran LCD en branches, avec légende de chaque rôle.
+Légende finale : Figure 1.2 — Trajet prévu des relevés du capteur au tableau de bord.
+Texte alternatif : Diagramme de circulation des données : PZEM mesure, ATmega traite, SIM800L transmet, serveur Flask/SQLite enregistre, navigateur affiche ; RTC, LCD et FRAM sont des branches.
+Contraintes : Figure conceptuelle uniquement ; aucun câblage secteur, ni succès de transmission réel supposé ; privilégier un schéma vectoriel et accessible.
+Statut : À PRODUIRE. La figure numérotée est un emplacement éditorial, pas une image déjà réalisée.
+-->
 ~~~mermaid
 flowchart TD
   P["PZEM-004T V3.0 : mesures et index d'énergie"] --> M["ATmega328P : contrôle et calcul"]
@@ -78,7 +97,7 @@ flowchart TD
   B --> W["Jinja2 / HTML / CSS / JavaScript : tableau de bord"]
 ~~~
 
-**Figure 1.1 — Trajet des données prévu pour le compteur intelligent.** Ce dessin montre des échanges d'informations ; **ce n'est pas un schéma de raccordement électrique**. Les alimentations, interfaces, protections et éventuelles barrières d'isolation ne sont pas représentées. Les flèches indiquent des fonctions prévues, et non la validation d'une chaîne GSM–serveur déjà opérationnelle.
+**Figure 1.2 — Trajet des données prévu pour le compteur intelligent.** Ce dessin montre des échanges d'informations ; **ce n'est pas un schéma de raccordement électrique**. Les alimentations, interfaces, protections et éventuelles barrières d'isolation ne sont pas représentées. Les flèches indiquent des fonctions prévues, et non la validation d'une chaîne GSM–serveur déjà opérationnelle.
 
 Nous pouvons lire le synoptique comme une petite histoire :
 
@@ -208,6 +227,17 @@ L'énergie peut s'exprimer en **Wh** ou en **kWh** :
 | Puissance active | P | Watt | W | À quel rythme l'énergie est-elle utilisée ? |
 | Énergie | E | Wattheure, kilowattheure | Wh, kWh | Quelle quantité sur une durée ? |
 
+<!-- ILLUSTRATION À PRODUIRE — FIGURE 1.3
+Type : infographie comparative.
+Contenu et annotations : Présenter quatre pictogrammes distincts avec les grandeurs U/I/P/E, les unités V/A/W/kWh, leurs définitions courtes et la distinction entre puissance instantanée et énergie cumulée.
+Légende finale : Figure 1.3 — Quatre grandeurs électriques à ne pas confondre.
+Texte alternatif : Quatre encadrés associent tension à volts, courant à ampères, puissance active à watts et énergie à kilowattheures.
+Contraintes : Unités exactes ; ne pas suggérer que U × I donne toujours la puissance active du secteur ; contrastes et symboles lisibles.
+Statut : À PRODUIRE. La figure numérotée est un emplacement éditorial, pas une image déjà réalisée.
+-->
+
+**Figure 1.3 — Quatre grandeurs électriques à ne pas confondre.**
+
 ### 1.7. Calculer l'énergie d'un appareil à puissance constante
 
 Lorsque la **puissance active reste constante** pendant l'intervalle étudié :
@@ -261,6 +291,17 @@ Une petite puissance utilisée longtemps peut donc conduire à la même énergie
 
 Les deux dernières valeurs expriment la même énergie avec deux unités différentes.
 
+<!-- ILLUSTRATION À PRODUIRE — FIGURE 1.4
+Type : graphique pédagogique en deux colonnes.
+Contenu et annotations : Comparer l'exemple de 2 kW pendant 0,5 h et de 0,2 kW pendant 5 h, montrant une même aire/énergie de 1 kWh ; axes puissance et durée correctement libellés.
+Légende finale : Figure 1.4 — Deux puissances différentes peuvent produire la même énergie consommée.
+Texte alternatif : Comparaison entre 2 kW pendant une demi-heure et 0,2 kW pendant cinq heures : les deux représentent un kilowattheure.
+Contraintes : Exemple de puissances actives constantes, graphiques à axes unitaires non trompeurs, valeurs pédagogiques fictives.
+Statut : À PRODUIRE. La figure numérotée est un emplacement éditorial, pas une image déjà réalisée.
+-->
+
+**Figure 1.4 — Deux puissances différentes peuvent produire la même énergie consommée.**
+
 ### 1.8. Et si la puissance varie pendant l'utilisation ?
 
 La formule précédente suppose **une puissance active constante** pendant toute la durée. Dans une maison, les appareils s'allument, s'arrêtent et changent parfois de régime : la puissance n'est donc pas toujours constante.
@@ -281,6 +322,17 @@ Imaginons les valeurs d'index suivantes, **entièrement simulées** :
 Pour le mois, supposons qu'un index **1 129,27 kWh** ait été enregistré au début de la période et que l'index courant soit toujours **1 254,75 kWh** :
 
 **Consommation depuis le début du mois = 1 254,75 − 1 129,27 = 125,48 kWh.**
+
+<!-- ILLUSTRATION À PRODUIRE — FIGURE 1.5
+Type : frise temporelle d'index énergétiques.
+Contenu et annotations : Montrer un relevé initial 1 250,50 kWh, un relevé final 1 254,75 kWh et la différence 4,25 kWh, avec une flèche temporelle jour ; distinguer index total et consommation d'intervalle.
+Légende finale : Figure 1.5 — Le calcul d'une consommation journalière par différence d'index.
+Texte alternatif : Frise présentant l'index 1 250,50 kWh en début de journée et 1 254,75 kWh à la fin, soit 4,25 kWh consommés.
+Contraintes : Données entièrement fictives, aucune date réelle ni garantie de période complète ; notations et unités exactes.
+Statut : À PRODUIRE. La figure numérotée est un emplacement éditorial, pas une image déjà réalisée.
+-->
+
+**Figure 1.5 — Le calcul d'une consommation journalière par différence d'index.**
 
 Nous retrouvons volontairement les valeurs de notre exemple d'écran LCD. Cette démonstration explique **l'idée mathématique**, pas la fiabilité d'un calcul réel en cas de coupure, de remise à zéro de l'index ou de date manquante.
 
