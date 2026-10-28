@@ -1,7 +1,7 @@
 # Chapitre 5 — Entrées, sorties et communication série : un compteur plus réactif
 
 > **Niveau :** débutant, après les chapitres 3 et 4.  
-> **Matériel nécessaire aux essais :** Arduino Uno Rev3, câble USB de données, ordinateur équipé d'Arduino IDE 2, bouton-poussoir momentanément fermé, fils et breadboard réservés à la basse tension. La LED intégrée de l'Uno suffit.  
+> **Matériel nécessaire aux essais :** Arduino Uno Rev3, câble USB de données, ordinateur équipé d'Arduino IDE 2, bouton-poussoir à contact normalement ouvert, fils et breadboard réservés à la basse tension. La LED intégrée de l'Uno suffit.  
 > **Pratique personnelle :** 40 à 60 minutes, hors lecture.  
 > **Sécurité :** ne jamais raccorder le secteur 230 V, le PZEM-004T ou le SIM800L pour ces exercices. Débrancher le câble USB avant de modifier le montage. Les tensions présentées dans le moniteur série sont **fictives**.
 
@@ -54,7 +54,7 @@ Avant de poser les fils, **débranchons l'USB**. Le chemin prévu est le suivant
   Contact fermé :  D2 est reliée à GND
 ~~~
 
-**Figure 5.1 — Principe de connexion du bouton entre D2 et GND.** Il s'agit uniquement d'un montage en basse tension. Aucune alimentation externe ni aucun branchement secteur n'est nécessaire.
+**Ce schéma de principe est exclusivement basse tension.** Aucune alimentation externe ni aucun branchement secteur n'est nécessaire.
 
 <!-- ILLUSTRATION À PRODUIRE — FIGURE 5.1
 Type : schéma électrique et dessin pédagogique basse tension.
@@ -65,6 +65,8 @@ Contraintes : ne montrer ni PZEM ni secteur ; connexions vérifiées ; photo/sch
 Statut : À PRODUIRE.
 -->
 > **[ILLUSTRATION À INSÉRER — Figure 5.1]** Schéma : bouton entre D2 et GND, LED intégrée D13.
+
+**Figure 5.1 — Un bouton commande une entrée D2 par contact avec GND.**
 
 **Attention aux boutons à quatre pattes :** certains contacts sont déjà reliés deux à deux à l'intérieur du composant. Il faut identifier les deux bornes dont la liaison se ferme **seulement pendant l'appui**. Ne pas supposer que deux pattes voisines sont forcément celles à employer. Consulter la documentation ou vérifier hors tension avec un instrument approprié.
 
