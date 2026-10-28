@@ -47,7 +47,6 @@ Pour apprendre à reconnaître le matériel, commencez par examiner les inscript
 
 ### 2.2. L'ATmega328P : le cerveau programmable
 
-<text></text>
 
 L'**ATmega328P** est un microcontrôleur : un circuit intégré capable d'exécuter les instructions d'un programme. Il dispose de mémoire, de broches d'entrée/sortie et de périphériques de communication.
 
