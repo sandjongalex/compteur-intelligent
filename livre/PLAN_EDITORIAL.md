@@ -89,6 +89,8 @@ Au point exact où l'image est nécessaire, placer un **commentaire Markdown non
 5. **Contraintes** : sécurité, données fictives, version logicielle, matériel exact, droits ;
 6. **Statut** : `À PRODUIRE` tant qu'aucun visuel n'est validé.
 
+Sous ce commentaire, afficher également dans le brouillon un **repère visible dans l'aperçu Markdown** : `> **[ILLUSTRATION À INSÉRER — Figure X.Y]** type et description courte`. Ce repère facilite la relecture par l'auteur **mais doit impérativement disparaître au moment de l'insertion de l'image définitive**. Aucun PDF commercial ne doit contenir les mentions « ILLUSTRATION À INSÉRER » ou « ILLUSTRATION À PRODUIRE ».
+
 Les figures sont **numérotées dans leur ordre d'apparition au sein de chaque chapitre**, puis citées de façon cohérente dans les phrases du cours et les annexes. Les schémas textuels ou Mermaid sont **des ébauches de figures**, pas des images finales : demander leur adaptation en un visuel prêt pour PDF/impression. Les légendes utiles et explications pédagogiques restent dans le manuscrit ; les commentaires de production ne doivent **pas** apparaître en version publiée.
 
 Tenir en parallèle le **registre de production des illustrations** dans [ILLUSTRATIONS_A_PRODUIRE.md](ILLUSTRATIONS_A_PRODUIRE.md) : chapitre, figure, type, description, emplacement, statut, fichier source, droits et validation technique. Ce registre est **interne** et ne doit jamais être exporté dans le livre.
@@ -103,7 +105,7 @@ Tenir en parallèle le **registre de production des illustrations** dans [ILLUST
 - [ ] La provenance et les droits d'utilisation ou de reproduction de chaque image sont établis ; éviter tout visuel non autorisé.
 - [ ] Chaque image possède un **texte alternatif** informatif.
 - [ ] La qualité de sortie est suffisante : schémas vectoriels de préférence, photographies nettes et adaptées à l'impression.
-- [ ] Les images approuvées remplacent les commentaires « À PRODUIRE » ; aucun emplacement obligatoire ne reste vide dans le PDF final.
+- [ ] Les images approuvées remplacent **à la fois le commentaire de production et le repère visible « ILLUSTRATION À INSÉRER »** ; aucun emplacement obligatoire ne reste vide dans le PDF final.
 
 **Un chapitre peut être déclaré « texte rédigé et relu », mais jamais « prêt à publier » si ses illustrations nécessaires n'ont pas été produites et contrôlées.**
 
