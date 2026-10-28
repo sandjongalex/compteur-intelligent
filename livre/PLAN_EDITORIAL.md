@@ -1,4 +1,4 @@
-# Charte éditoriale du livre — AlexTech Academy
+# Charte éditoriale du livre — AlexTech Academy (production interne)
 
 **Titre de travail :** *Concevez votre compteur électrique intelligent IoT*  
 **Référence principale :** [plan de formation validé (16 modules / 32 vidéos / 4 h)](../docs/formation/PLAN_FORMATION_4H.md).  
@@ -6,7 +6,9 @@
 
 ## 1. Principe éditorial fondamental
 
-**Un seul compteur, un seul parcours, trois supports cohérents : livre, vidéos et dépôt technique.**
+**Un seul compteur, un seul parcours, trois supports cohérents : livre, vidéos et code de référence.**
+
+**GitHub est exclusivement notre outil de préparation.** Les références aux dossiers, branches, commits, scripts de tournage et états temporaires du projet n'appartiennent pas au livre publié. Le lecteur doit recevoir un ouvrage autonome, sans lien vers le dépôt de développement. Voir [PRODUCTION_INTERNE.md](PRODUCTION_INTERNE.md).
 
 Chaque chapitre du livre correspond à **un module pédagogique** et contient deux grandes sections, une pour chaque vidéo de ce module. Le livre est volontairement plus riche et plus détaillé que les vidéos : approfondissement, schémas, calculs, questions et pratiques réalisables.
 
@@ -47,7 +49,7 @@ Les leçons peuvent recevoir dans le livre des sous-sections supplémentaires, m
 
 ## 3. Gabarit de rédaction pour un chapitre
 
-**En-tête obligatoire :** numéro, titre, deux références vidéo, niveau, statut de relecture, estimation de la pratique autonome, consignes de sécurité pertinentes.
+**En-tête du chapitre destiné au lecteur :** numéro, titre, niveau, estimation de la pratique autonome et consignes de sécurité. Les références vidéo sont facultatives ; les statuts de relecture restent dans les documents internes.
 
 **Corps recommandé :**
 
@@ -57,11 +59,11 @@ Les leçons peuvent recevoir dans le livre des sous-sections supplémentaires, m
 4. **Partie B — Vidéo V02** : explication, exemples et illustration.
 5. Synthèse : ce qui a été appris et ce qui sera réutilisé.
 6. Une ou plusieurs **activités réalisables** sans improviser des manipulations dangereuses.
-7. Quiz, questions de contrôle, lien vers les TP officiels et corrigés séparés.
+7. Quiz et questions de contrôle autonomes, avec corrigés dans une annexe du livre ; TP supplémentaires de formation facultatifs.
 8. Dépannage / erreurs fréquentes, lorsque pertinent.
-9. Renvois vers le module vidéo, ses codes, ses ressources et la suite du projet.
+9. Renvois pérennes aux chapitres, figures et annexes du livre, sans dépendance à GitHub ou à des scripts de production.
 
-**Exigence particulière pour les chapitres de programmation :** donner un résultat attendu, montrer le code précédent, introduire de petites modifications compréhensibles, justifier chaque nouvelle instruction, comparer aux sorties attendues et documenter les essais exécutés ou restant à faire. Les listings intégraux déjà présents dans le dépôt peuvent être référencés plutôt que copiés systématiquement.
+**Exigence particulière pour les chapitres de programmation :** donner un résultat attendu, montrer le code précédent, introduire de petites modifications compréhensibles, justifier chaque nouvelle instruction, comparer aux sorties attendues et documenter les essais exécutés ou restant à faire. Les extraits indispensables figurent dans l'ouvrage. Les programmes complets nécessaires à sa compréhension sont inclus dans les annexes appropriées. Des fichiers téléchargeables complémentaires pourront être proposés par un canal distinct, sans imposer GitHub au lecteur.
 
 ## 4. Langue, notations et exemples
 
@@ -72,7 +74,7 @@ Les leçons peuvent recevoir dans le livre des sous-sections supplémentaires, m
 - Préciser les **hypothèses** : puissance constante, données simulées, date de référence connue, composant réellement alimenté ou non.
 - Dater le **statut de validation** lorsque cela modifie l'interprétation ; ne pas convertir « prévu », « simulé », « compilé » et « testé sur matériel » en synonymes.
 - Prévoir des figures numérotées, des légendes informatives, des textes alternatifs pour les futures images et la provenance/droits des illustrations externes.
-- Les codes sources ne doivent **jamais** contenir de secrets, identifiants ou clés réelles dans le dépôt public.
+- Les codes sources ne doivent **jamais** contenir de secrets, identifiants ou clés réelles. Les exemples du livre n'exposent ni adresses privées ni liens vers notre espace de développement.
 
 ## 5. Règles techniques et de sécurité
 
