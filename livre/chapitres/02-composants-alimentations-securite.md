@@ -50,6 +50,9 @@ Contraintes : Photos réelles de références vérifiées et hors tension ; pas 
 Statut : À PRODUIRE. Aucun visuel final n'est encore ajouté.
 -->
 
+> **[ILLUSTRATION À INSÉRER — Figure 2.1]** *planche photographique annotée.* : Présentation visuelle des principaux composants ATmega328P, Uno Rev3, PZEM V3, DS3231, LCD I2C, FRAM et SIM800L, regroupés par fonction, chaque nom…
+
+
 **Figure 2.1 — Les composants principaux du compteur intelligent, regroupés par fonction.**
 
 Pour apprendre à reconnaître le matériel, commencez par examiner les inscriptions imprimées sur les cartes : nom, référence, révision, fabricant et indications de tension. La photographie d'un composant peut aider, mais elle ne suffit pas à déterminer toutes ses caractéristiques.
@@ -69,6 +72,9 @@ Texte alternatif : Une puce ATmega328P à vingt-huit broches est présentée à 
 Contraintes : Matériel photographié hors tension ; modèle réel identifiable et photo autorisée.
 Statut : À PRODUIRE. Aucun visuel final n'est encore ajouté.
 -->
+
+> **[ILLUSTRATION À INSÉRER — Figure 2.2]** *photo comparative annotée.* : Placer côte à côte un ATmega328P PDIP-28 et une carte Arduino Uno Rev3, indiquer la puce sur la carte et légender les deux objets.
+
 
 **Figure 2.2 — Le microcontrôleur ATmega328P et sa carte d'apprentissage Arduino Uno.**
 
@@ -100,6 +106,9 @@ Texte alternatif : Photographie du PZEM-004T version 3.0 et du capteur de couran
 Contraintes : Aucune phase ou borne 230 V accessible, aucun branchement secteur représenté ; référence du capteur et droits vérifiés.
 Statut : À PRODUIRE. Aucun visuel final n'est encore ajouté.
 -->
+
+> **[ILLUSTRATION À INSÉRER — Figure 2.3]** *photographie annotée de matériel.* : Montrer la carte PZEM-004T V3.0 et son transformateur de courant correspondant, séparés et hors tension ; nommer les pièces sans détailler de racco…
+
 
 **Figure 2.3 — Le module de mesure PZEM-004T et son capteur de courant compatible.**
 
@@ -170,6 +179,9 @@ Contraintes : Modules de variantes réellement identifiées ; pile RTC compatibl
 Statut : À PRODUIRE. Aucun visuel final n'est encore ajouté.
 -->
 
+> **[ILLUSTRATION À INSÉRER — Figure 2.4]** *planche photos et pictogrammes.* : Juxtaposer un module DS3231, un LCD I2C 20×4 et une carte FRAM I2C, avec trois verbes « dater », « afficher », « sauvegarder ». Repérer l'adaptateu…
+
+
 **Figure 2.4 — Trois composants complémentaires : horloge, écran et mémoire.**
 
 ### 2.7. Le SIM800L : la communication à distance
@@ -184,6 +196,9 @@ Texte alternatif : Photo d'une carte SIM800L hors tension, avec antenne et avert
 Contraintes : Ne pas généraliser une entrée 5 V d'une carte commerciale au VBAT d'un modem nu ; photo autorisée et matériel réel identifié.
 Statut : À PRODUIRE. Aucun visuel final n'est encore ajouté.
 -->
+
+> **[ILLUSTRATION À INSÉRER — Figure 2.5]** *photographie annotée du modem.* : Gros plan du SIM800L réellement retenu, antenne et identification des zones d'alimentation sur la carte ; mention « vérifier modèle et entrée d'ali…
+
 
 **Figure 2.5 — Le modem SIM800L, sa variante et ses accessoires de communication.**
 
@@ -261,6 +276,9 @@ Texte alternatif : Diagramme présentant l'arrivée secteur, une barrière isol�
 Contraintes : Schéma conceptuel uniquement, non destiné au câblage ; protection, normes et distances non dimensionnées ; examen technique obligatoire.
 Statut : À PRODUIRE. Aucun visuel final n'est encore ajouté.
 -->
+
+> **[ILLUSTRATION À INSÉRER — Figure 2.6]** *synoptique de sécurité à vectoriser.* : Réinterpréter le dessin ci-après : frontière entre zone secteur dangereuse et électronique basse tension ; alimentation AC/DC isolée et deux domain…
+
 ~~~text
     ZONE SECTEUR DANGEREUSE                 ZONE ÉLECTRONIQUE
     (intervention qualifiée)                  (basse tension)
@@ -310,6 +328,9 @@ Texte alternatif : Comparaison logique ATmega à 5 V et modem SIM800L nu à envi
 Contraintes : Pas un schéma de câblage ; préciser « modem nu » et « selon fiche technique du modèle » ; ne pas montrer 5 V directement sur VBAT.
 Statut : À PRODUIRE. Aucun visuel final n'est encore ajouté.
 -->
+
+> **[ILLUSTRATION À INSÉRER — Figure 2.7]** *infographie comparative des alimentations.* : Deux colonnes : domaine ATmega 5 V à 16 MHz et domaine VBAT SIM800L nu autour de 4,0 V (plage typique 3,4–4,4 V) avec pointes proches de 2 A ; ajou…
+
 
 **Figure 2.7 — Pourquoi le microcontrôleur et le modem nu n'utilisent pas la même alimentation.**
 
@@ -393,6 +414,9 @@ Texte alternatif : Deux colonnes illustrent les activités basse tension autoris
 Contraintes : Prévention uniquement ; ne pas fournir d'étapes pour intervenir sur le 230 V ; pictogrammes avec texte et contrastes accessibles.
 Statut : À PRODUIRE. Aucun visuel final n'est encore ajouté.
 -->
+
+> **[ILLUSTRATION À INSÉRER — Figure 2.8]** *infographie de sécurité pédagogique.* : Panneau comparatif visuel : identification hors tension, Arduino USB, simulation (adaptés au débutant) opposés aux interventions secteur, essais d'…
+
 
 **Figure 2.8 — Les pratiques d'apprentissage sûres et les interventions réservées aux professionnels.**
 
