@@ -1,6 +1,6 @@
 # Registre des illustrations du livre — Production interne
 
-**Document de fabrication — à ne jamais exporter dans le livre commercial.** Tous les visuels ci-dessous sont **À PRODUIRE** au 28 octobre 2026 ; l'existence d'un dessin textuel ou Mermaid dans un chapitre ne signifie pas qu'une image imprimable ou une photo réelle existe.
+**Document de fabrication — à ne jamais exporter dans le livre commercial.** Tous les visuels ci-dessous sont **À PRODUIRE** à la dernière mise à jour du 28 octobre 2026 ; l'existence d'un dessin textuel ou Mermaid dans un chapitre ne signifie pas qu'une image imprimable ou une photo réelle existe.
 
 ## Méthode et statut
 
@@ -50,6 +50,19 @@
 | **3.9** | Schéma basse tension | §3.16 | D8 → résistance 330 Ω → anode/cathode LED → GND, polarité et sécurité visibles | À PRODUIRE |
 | **3.10** | Photo du montage validé | §3.16–3.17 | LED externe sur breadboard, D8 et GND identifiables ; circuit USB débranché pendant câblage | À PRODUIRE |
 
+## Chapitre 4 — Les bases du C/C++ embarqué
+
+| Figure | Type | Emplacement | Contenu attendu | Statut |
+|---|---|---|---|---|
+| **4.1** | Infographie « variable » | §4.1 | Boîtes pour int, float, bool ; nom, type, valeur explicités | À PRODUIRE |
+| **4.2** | Comparaison des types | §4.2 | int 16 bits sur Uno AVR, float 32 bits et bool, avec portée des valeurs | À PRODUIRE |
+| **4.3** | Infographie de calcul | §4.4 | Comparaison 5 / 2 = 2 vs 5.0f / 2.0f = 2.5 | À PRODUIRE |
+| **4.4** | Capture Arduino IDE réelle | §4.6 | Moniteur série réglé sur 9 600 bauds ; énergie fictive 1.000 kWh | À PRODUIRE |
+| **4.5** | Organigramme if/else | §4.8 | Choix de branche pour tensions fictives 245/230 V et seuil fictif 240 V ; = vs == | À PRODUIRE |
+| **4.6** | Organigramme de boucles | §4.10 | Boucles for et while bornées ; repérage d'un cas infini | À PRODUIRE |
+| **4.7** | Flux de fonction | §4.11 | 400 W, 2,5 h → calculerEnergieKWh() → return 1 kWh | À PRODUIRE |
+| **4.8** | Infographie de progression | §4.12 | M03 LED conservée → M04 LED + constantes + fonction de calcul fictif + série | À PRODUIRE |
+
 ## Suivi de production
 
 | Chapitre | Figures nécessaires | À produire | En cours | Validées |
@@ -57,7 +70,8 @@
 | 1 | 5 | 5 | 0 | 0 |
 | 2 | 8 | 8 | 0 | 0 |
 | 3 | 10 | 10 | 0 | 0 |
-| **Total** | **23** | **23** | **0** | **0** |
+| 4 | 8 | 8 | 0 | 0 |
+| **Total** | **31** | **31** | **0** | **0** |
 
 ## Données à compléter quand un visuel existe
 
