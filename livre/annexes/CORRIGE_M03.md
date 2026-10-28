@@ -25,7 +25,7 @@ void loop() {
 8. Rétablir l'accolade et vérifier à nouveau.
 
 **Réponse à la question « Pourquoi le programme minimal ne fait-il rien de visible ? »**  
-Parce que \`setup()\` et \`loop()\` ne contiennent aucune instruction de commande de LED. Une structure de programme valide n'a pas besoin de produire un changement visible.
+Parce que `setup()` et `loop()` ne contiennent aucune instruction de commande de LED. Une structure de programme valide n'a pas besoin de produire un changement visible.
 
 **Différence fondamentale :**
 
@@ -44,7 +44,7 @@ void loop() {
   // Accolade fermante manquante : programme incorrect
 ~~~
 
-La correction consiste à remettre \`}\`, puis à relancer **Vérifier**.
+La correction consiste à remettre `}`, puis à relancer **Vérifier**.
 
 **Barème indicatif sur 10 :** installation et sélection de la carte (2), sélection du port (2), vérification du programme (2), téléversement effectif (2), identification et correction de l'erreur (2). Si la carte n'est pas disponible, l'étape de téléversement reste « non effectuée » plutôt que d'être déclarée réussie.
 
@@ -65,7 +65,7 @@ void loop() {
 }
 ~~~
 
-\`LED_BUILTIN\` désigne la LED intégrée de la Uno Rev3, reliée à **D13**. \`pinMode()\` prépare la sortie ; \`digitalWrite()\` commande son état ; \`delay()\` fixe l'attente en **millisecondes**.
+`LED_BUILTIN` désigne la LED intégrée de la Uno Rev3, reliée à **D13**. `pinMode()` prépare la sortie ; `digitalWrite()` commande son état ; `delay()` fixe l'attente en **millisecondes**.
 
 ### Programme modifié : 250 ms allumée / 750 ms éteinte
 
@@ -84,7 +84,7 @@ void loop() {
 
 **Résultat attendu :** clignotement avec un temps allumé plus court que le temps éteint. Un cycle vaut **250 + 750 = 1 000 ms**, soit **1 seconde**.
 
-**Mini-défi du chapitre 3 :** pour **500 ms allumée / 1 500 ms éteinte**, utiliser \`delay(500);\` après \`HIGH\`, puis \`delay(1500);\` après \`LOW\`. Le cycle dure **2 secondes**.
+**Mini-défi du chapitre 3 :** pour **500 ms allumée / 1 500 ms éteinte**, utiliser `delay(500);` après `HIGH`, puis `delay(1500);` après `LOW`. Le cycle dure **2 secondes**.
 
 ## C3. TP 2 — LED externe sur D8
 
@@ -132,7 +132,7 @@ void loop() {
 }
 ~~~
 
-Le code conserve la **même organisation** que le premier programme. La différence principale est l'utilisation de la broche \`D8\` pour la LED externe et les nouvelles durées.
+Le code conserve la **même organisation** que le premier programme. La différence principale est l'utilisation de la broche `D8` pour la LED externe et les nouvelles durées.
 
 **Barème indicatif sur 10 :** polarité et résistance correctes (3 points), connexion D8–GND correcte (2), adaptation du programme (3), capacité à expliquer et observer le comportement (2). Aucun point d'observation réelle ne doit être attribué si l'essai n'a pas eu lieu.
 
@@ -143,13 +143,13 @@ Le code conserve la **même organisation** que le premier programme. La différe
 | 1 | **B** | Arduino IDE sert à écrire, compiler et téléverser des programmes Arduino. |
 | 2 | **D** | Les démonstrations sont conçues pour une Arduino Uno Rev3. |
 | 3 | **A** | Il faut sélectionner le modèle de carte et le port utilisé. |
-| 4 | **C** | \`loop()\` est répétée après l'exécution initiale de \`setup()\`. |
+| 4 | **C** | `loop()` est répétée après l'exécution initiale de `setup()`. |
 | 5 | **B** | Le bouton Vérifier compile le programme ; le transfert n'est pas son objectif. |
 | 6 | **A** | Une accolade manquante est une erreur de syntaxe détectable par le compilateur. |
 | 7 | **D** | Après une compilation réussie, examiner d'abord le câble USB de données, la carte et le port. |
 | 8 | **C** | Les fonctions du sketch minimal sont vides et ne commandent aucun résultat visible. |
 | 9 | **B** | La résistance en série limite le courant de la LED externe et de la sortie numérique. |
-| 10 | **A** | Les attentes \`delay(250)\` et \`delay(750)\` sont placées respectivement après \`HIGH\` et \`LOW\`. |
+| 10 | **A** | Les attentes `delay(250)` et `delay(750)` sont placées respectivement après `HIGH` et `LOW`. |
 
 ### Trois difficultés à comprendre
 
@@ -157,16 +157,16 @@ Le code conserve la **même organisation** que le premier programme. La différe
 
 **Pourquoi une LED externe a-t-elle besoin d'une résistance, même avec une broche 5 V ?** La broche et la diode ne doivent pas être sollicitées au-delà de leurs capacités. La résistance choisie en fonction de la LED et de la sortie contribue à limiter le courant.
 
-**Pourquoi \`delay()\` n'est-il pas une solution universelle ?** Le programme principal attend au lieu d'effectuer librement d'autres opérations. Le compteur devra plus tard lire des mesures et gérer plusieurs tâches : nous apprendrons des temporisations non bloquantes au chapitre 5.
+**Pourquoi `delay()` n'est-il pas une solution universelle ?** Le programme principal attend au lieu d'effectuer librement d'autres opérations. Le compteur devra plus tard lire des mesures et gérer plusieurs tâches : nous apprendrons des temporisations non bloquantes au chapitre 5.
 
 ## C5. Vérifier que vous maîtrisez le chapitre 3
 
 Avant de passer à la suite, vous devez pouvoir expliquer à une autre personne :
 
 - ce qu'est un sketch Arduino ;
-- les rôles respectifs de \`setup()\` et \`loop()\` ;
+- les rôles respectifs de `setup()` et `loop()` ;
 - la différence entre vérifier et téléverser ;
-- les fonctions de \`pinMode()\`, \`digitalWrite()\` et \`delay()\` ;
+- les fonctions de `pinMode()`, `digitalWrite()` et `delay()` ;
 - pourquoi la résistance d'une LED externe est indispensable dans notre exemple ;
 - pourquoi le premier clignotement fait partie du **même programme fil rouge** qui sera amélioré au chapitre 4.
 
