@@ -226,16 +226,37 @@ def assembler(racine: Path, dossier_sortie: Path, mode: str) -> dict:
     if non_referencees:
         raise ErreurAssemblage(f"Figures absentes du registre : {non_referencees}")
 
-    non_validees = [
-        identifiant
-        for identifiant in figures
-        if "VALIDÉE" not in registre[identifiant].upper()
-    ]
-    if mode == "publication" and non_validees:
-        raise ErreurAssemblage(
-            "Publication bloquée : illustrations non validées au registre : "
-            + ", ".join(non_validees)
-        )
+    # Une figure déjà intégrée peut ne plus avoir de commentaire de fabrication ;
+    # le registre reste alors la source de vérité pour l'autorisation de publier.
+    figures_registre = {
+        identifiant: statut
+        for identifiant, statut in registre.items()
+        if identifiant.split(".")[0].isdigit()
+        and int(identifiant.split(".")[0]) in numeros
+    }
+    manquantes_dans_source = set(figures_registre) - set(figures)
+    non_validees = sorted(
+        identifiant for identifiant, statut in figures_registre.items()
+        if statut.upper() != "VALIDÉE"
+    )
+    if mode == "brouillon":
+        non_localisees = sorted(set(non_validees) & manquantes_dans_source)
+        if non_localisees:
+            raise ErreurAssemblage(
+                "Figures à produire non localisées dans les chapitres : "
+                + ", ".join(non_localisees)
+            )
+    else:
+        if non_validees:
+            raise ErreurAssemblage(
+                "Publication bloquée : illustrations non validées au registre : "
+                + ", ".join(non_validees)
+            )
+        if images_reelles < len(figures_registre):
+            raise ErreurAssemblage(
+                "Publication bloquée : nombre d'images intégrées inférieur "
+                f"aux figures du registre ({images_reelles} < {len(figures_registre)})."
+            )
 
     titre = (
         "---\n"
@@ -273,6 +294,7 @@ def assembler(racine: Path, dossier_sortie: Path, mode: str) -> dict:
         "numeros": numeros,
         "annexes": len(corriges),
         "figures_repertoriees_dans_le_manuscrit": len(figures),
+        "figures_repertoriees_dans_le_registre": len(figures_registre),
         "figures_encore_non_validees": len(non_validees),
         "images_locales_copiees": images_reelles,
         "sources_incluses": [str(p.relative_to(racine)) for p in documents],
