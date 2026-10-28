@@ -77,9 +77,29 @@ L'interface d'Arduino IDE comporte plusieurs zones utiles :
 | Sélecteur de port | Choisir la connexion utilisée pour dialoguer avec la carte |
 | Zone de messages | Afficher les informations et les erreurs de compilation ou de téléversement |
 
+<!-- ILLUSTRATION À PRODUIRE — FIGURE 3.1
+Type : capture d'écran réelle annotée.
+Contenu et annotations : Montrer IDE 2 avec zone de code, Vérifier, Téléverser, carte, port, console ; annotations en français.
+Légende finale : Figure 3.1 — Les outils essentiels de l'interface Arduino IDE 2.
+Texte alternatif : L'éditeur Arduino IDE 2 avec ses outils et la zone de messages.
+Contraintes : Capturer un logiciel réel et version vérifiée ; masquer les informations privées, droits à documenter.
+Statut : À PRODUIRE. Aucune image définitive n'a encore été insérée.
+-->
+
+**Figure 3.1 — Les outils essentiels de l'interface Arduino IDE 2.**
+
 La position précise des boutons peut changer suivant la version d'Arduino IDE. Retenez d'abord **leur fonction**, qui importe davantage que leur emplacement exact.
 
-**Figure 3.1 — Parcours d'un programme Arduino**
+<!-- ILLUSTRATION À PRODUIRE — FIGURE 3.2
+Type : infographie de processus.
+Contenu et annotations : Vectoriser l'organigramme écrit ci-dessous : code → compilation, retour en cas d'erreur, téléversement puis LED observée.
+Légende finale : Figure 3.2 — Du code écrit au résultat visible sur Arduino Uno.
+Texte alternatif : Programme compilé, erreur éventuelle corrigée, transfert sur la carte et observation de la LED.
+Contraintes : Une compilation ne prouve pas un fonctionnement matériel ; schéma vectoriel.
+Statut : À PRODUIRE. Aucune image définitive n'a encore été insérée.
+-->
+
+**Figure 3.2 — Parcours d'un programme Arduino**
 
 ~~~text
   Programme écrit dans Arduino IDE
@@ -119,6 +139,17 @@ Pour commencer :
 
 Sous Windows, ce port porte souvent un nom comme **COM3** ou **COM5**. Sous Linux et macOS, les noms peuvent différer. Ces exemples sont des illustrations ; le numéro ou le chemin réel dépend de votre ordinateur.
 
+<!-- ILLUSTRATION À PRODUIRE — FIGURE 3.3
+Type : photo Uno + capture réelle.
+Contenu et annotations : Uno Rev3 connectée par câble USB de données ; sélecteur Arduino Uno et port réellement détecté dans l'IDE 2.
+Légende finale : Figure 3.3 — Connexion USB et sélection correcte de la carte et de son port.
+Texte alternatif : Uno raccordée au port USB de l'ordinateur et Arduino IDE montrant carte et port choisis.
+Contraintes : Aucun câble secteur ni module PZEM ; capture réelle et données personnelles floutées.
+Statut : À PRODUIRE. Aucune image définitive n'a encore été insérée.
+-->
+
+**Figure 3.3 — Connexion USB et sélection correcte de la carte et de son port.**
+
 Si plusieurs ports apparaissent, vous pouvez observer la liste **avant** puis **après** avoir connecté la carte. Le nouveau port affiché peut aider à identifier le bon périphérique. Selon votre matériel et votre système, des pilotes ou des autorisations peuvent également être nécessaires.
 
 **À retenir :** choisir correctement la carte et son port est indispensable pour le téléversement, mais un problème de port n'explique pas nécessairement une erreur de syntaxe du code.
@@ -157,6 +188,14 @@ La deuxième accolade ferme la fonction \`loop()\`. Nous avons donc un programme
 
 La figure suivante aide à comprendre la chronologie :
 
+<!-- ILLUSTRATION À PRODUIRE — FIGURE 3.4
+Type : organigramme pédagogique.
+Contenu et annotations : Tracer démarrage → setup() une fois → loop() répétée, avec flèche de retour ; partir du schéma textuel suivant.
+Légende finale : Figure 3.4 — La fonction setup() précède la répétition de loop().
+Texte alternatif : L'Arduino commence par setup une fois, puis répète loop.
+Contraintes : Schéma simple sans suggestion que les fonctions sont parallèles.
+Statut : À PRODUIRE. Aucune image définitive n'a encore été insérée.
+-->
 ~~~text
        Mise sous tension ou RESET
                   |
@@ -171,7 +210,7 @@ La figure suivante aide à comprendre la chronologie :
              se répète
 ~~~
 
-**Figure 3.2 — Organisation des deux fonctions principales d'un sketch.**
+**Figure 3.4 — Organisation des deux fonctions principales d'un sketch.**
 
 Pour notre apprentissage, retenez : **\`setup()\` sert à préparer le fonctionnement ; \`loop()\` exécute la partie répétitive.**
 
@@ -212,6 +251,17 @@ Lorsque le sketch minimal a bien été téléversé, **il est normal que la LED 
 | Téléverser réussit | Le transfert du programme vers la carte a abouti |
 | Sketch minimal sans action visible | Comportement normal : aucune instruction de commande n'a été écrite |
 | Vérifier échoue | Le code ou sa configuration doit être examiné |
+<!-- ILLUSTRATION À PRODUIRE — FIGURE 3.5
+Type : deux captures réelles de messages.
+Contenu et annotations : Comparer une compilation réussie et un téléversement réussi du même programme, avec messages réellement obtenus.
+Légende finale : Figure 3.5 — Vérifier n'est pas téléverser : deux messages différents.
+Texte alternatif : Deux écrans montrent une compilation valide et le transfert réel à une Uno Rev3.
+Contraintes : Ne pas simuler un succès matériel et le qualifier de réel ; version IDE vérifiée.
+Statut : À PRODUIRE. Aucune image définitive n'a encore été insérée.
+-->
+
+**Figure 3.5 — Vérifier n'est pas téléverser : deux messages différents.**
+
 | Vérifier réussit mais Téléverser échoue | Il faut examiner la connexion, la carte et le port |
 
 ### 3.8. Première erreur volontaire : une accolade manquante
@@ -245,6 +295,17 @@ Relancez **Vérifier**. Le programme est redevenu structurellement valide.
 
 **Méthode de diagnostic :** repérez le premier message d'erreur utile, examinez les lignes proches de l'endroit indiqué, cherchez les parenthèses ou accolades manquantes, corrigez, puis vérifiez à nouveau.
 
+<!-- ILLUSTRATION À PRODUIRE — FIGURE 3.6
+Type : capture contrôlée d'erreur.
+Contenu et annotations : Montrer le sketch avec accolade manquante et le message réel du compilateur, puis la correction de l'accolade.
+Légende finale : Figure 3.6 — Corriger une accolade manquante dans Arduino IDE.
+Texte alternatif : Comparaison du sketch incomplet et du résultat de sa compilation, puis version corrigée.
+Contraintes : Message issu d'une vraie compilation, non inventé ; protéger données personnelles.
+Statut : À PRODUIRE. Aucune image définitive n'a encore été insérée.
+-->
+
+**Figure 3.6 — Corriger une accolade manquante dans Arduino IDE.**
+
 N'accusez pas immédiatement le microcontrôleur : un problème de syntaxe peut empêcher la compilation avant même qu'un programme ne soit envoyé à la carte.
 
 ---
@@ -260,6 +321,17 @@ Elle constitue un excellent premier indicateur pour trois raisons :
 1. son état est **visible** ;
 2. son fonctionnement est simple à décrire : allumée ou éteinte ;
 3. elle nous permet de vérifier une commande numérique sans utiliser le PZEM, le GSM ou le secteur.
+
+<!-- ILLUSTRATION À PRODUIRE — FIGURE 3.7
+Type : photographie annotée de la Uno.
+Contenu et annotations : Photographier la carte Uno Rev3 et repérer la LED L et la broche D13, sans composant externe.
+Légende finale : Figure 3.7 — Repérer la LED intégrée L sur l'Arduino Uno Rev3.
+Texte alternatif : Vue de la carte Uno avec voyant L et broche numérique D13 mis en évidence.
+Contraintes : Photo d'une vraie carte autorisée, sécurité USB.
+Statut : À PRODUIRE. Aucune image définitive n'a encore été insérée.
+-->
+
+**Figure 3.7 — Repérer la LED intégrée L sur l'Arduino Uno Rev3.**
 
 Notre Arduino Uno Rev3 possède déjà une petite LED intégrée, souvent repérée par la lettre **L**. Dans cette configuration, elle est associée à la broche numérique **D13**.
 
@@ -393,6 +465,17 @@ La durée d'un cycle est maintenant :
 
 **250 ms + 750 ms = 1 000 ms**, soit **1 seconde**.
 
+<!-- ILLUSTRATION À PRODUIRE — FIGURE 3.8
+Type : chronogramme.
+Contenu et annotations : Représenter HIGH 250 ms, LOW 750 ms, une période 1 000 ms, répétition de l'état.
+Légende finale : Figure 3.8 — Chronogramme de la LED : 250 ms allumée et 750 ms éteinte.
+Texte alternatif : L'état LED est haut pendant 250 ms puis bas pendant 750 ms pour une période de 1 seconde.
+Contraintes : Respecter les proportions de temps et les unités ; ne pas affirmer une mesure physique.
+Statut : À PRODUIRE. Aucune image définitive n'a encore été insérée.
+-->
+
+**Figure 3.8 — Chronogramme de la LED : 250 ms allumée et 750 ms éteinte.**
+
 Le rythme attendu est donc **une impulsion lumineuse courte suivie d'une extinction plus longue**. Le programme recommence ensuite.
 
 Remarquez ce que nous venons d'apprendre : **la structure du programme reste la même, seuls les paramètres changent**. Nous pouvons faire évoluer une fonction sans reconstruire tout le projet.
@@ -413,7 +496,16 @@ Pour cette partie, vous avez besoin :
 
 **Débranchez toujours l'USB avant de modifier les fils.** N'utilisez ni le PZEM, ni une alimentation ouverte, ni aucun raccordement au secteur.
 
-**Figure 3.3 — Principe du circuit basse tension de la LED externe**
+<!-- ILLUSTRATION À PRODUIRE — FIGURE 3.9
+Type : schéma électrique pédagogique basse tension.
+Contenu et annotations : Vectoriser le schéma texte : D8 → 330 Ω → anode LED → cathode → GND, repères des pôles et résistance.
+Légende finale : Figure 3.9 — Principe du circuit basse tension de la LED externe.
+Texte alternatif : D8 relié en série à une résistance de 330 ohms et une diode LED vers la masse GND.
+Contraintes : Aucun 230 V, polarité correcte, résistance obligatoire, vérifier la carte utilisée.
+Statut : À PRODUIRE. Aucune image définitive n'a encore été insérée.
+-->
+
+**Figure 3.9 — Principe du circuit basse tension de la LED externe**
 
 ~~~text
         Arduino Uno Rev3
@@ -437,6 +529,17 @@ Une LED possède une **anode** et une **cathode**. Sur beaucoup de modèles, la 
 **À ne pas faire :** raccorder une LED standard directement entre D8 et GND sans résistance de limitation de courant.
 
 Avant de rebrancher l'USB, vérifiez hors tension le chemin complet :
+
+<!-- ILLUSTRATION À PRODUIRE — FIGURE 3.10
+Type : photographie du montage validé.
+Contenu et annotations : Vraie photo Uno Rev3, breadboard, LED externe et résistance 330 Ω ; légender D8, anode, cathode, GND ; faire la photo USB débranché.
+Légende finale : Figure 3.10 — Montage pédagogique de la LED externe, contrôlé hors tension.
+Texte alternatif : Une Uno relie D8 à la LED externe au moyen d'une résistance sur breadboard, vers GND.
+Contraintes : Ne pas montrer de 230 V, photographie seulement après vérification du montage et de ses droits.
+Statut : À PRODUIRE. Aucune image définitive n'a encore été insérée.
+-->
+
+**Figure 3.10 — Montage pédagogique de la LED externe, contrôlé hors tension.**
 
 **D8 → résistance de 330 Ω → anode de LED → cathode de LED → GND.**
 
@@ -534,7 +637,7 @@ C'est un excellent exemple de notre démarche : **le programme du chapitre 3 est
 **Étape B — LED externe, si le matériel est disponible :**
 
 1. Débranchez l'USB.
-2. Réalisez, uniquement en basse tension, le montage décrit à la figure 3.3.
+2. Réalisez, uniquement en basse tension, le montage décrit à la figure 3.9.
 3. Contrôlez la présence de la résistance et le sens de la LED.
 4. Rebranchez l'USB.
 5. Utilisez le **programme 3.2** puis adaptez les durées à **250 ms** et **750 ms**.
