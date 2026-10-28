@@ -41,6 +41,17 @@ Un dispositif électronique complet fonctionne rarement avec une seule pièce. N
 
 Le tableau présente des **fonctions**. Il ne constitue ni un schéma de câblage ni une preuve que tous les sous-ensembles sont déjà intégrés et testés.
 
+<!-- ILLUSTRATION À PRODUIRE — FIGURE 2.1
+Type : planche photographique annotée.
+Contenu et annotations : Présentation visuelle des principaux composants ATmega328P, Uno Rev3, PZEM V3, DS3231, LCD I2C, FRAM et SIM800L, regroupés par fonction, chaque nom lisible.
+Légende finale : Figure 2.1 — Les composants principaux du compteur intelligent, regroupés par fonction.
+Texte alternatif : Planche de cartes électroniques et de modules identifiés comme acquisition, traitement, date, affichage, mémoire et transmission.
+Contraintes : Photos réelles de références vérifiées et hors tension ; pas d'illustration de câblage secteur ; droits à documenter.
+Statut : À PRODUIRE. Aucun visuel final n'est encore ajouté.
+-->
+
+**Figure 2.1 — Les composants principaux du compteur intelligent, regroupés par fonction.**
+
 Pour apprendre à reconnaître le matériel, commencez par examiner les inscriptions imprimées sur les cartes : nom, référence, révision, fabricant et indications de tension. La photographie d'un composant peut aider, mais elle ne suffit pas à déterminer toutes ses caractéristiques.
 
 **Réflexe à adopter :** avant de raccorder un module, identifier sa **référence exacte** et trouver une documentation technique correspondant à cette référence. Deux cartes commerciales portant presque le même nom peuvent posséder des régulateurs, des connexions ou des niveaux logiques différents.
@@ -49,6 +60,17 @@ Pour apprendre à reconnaître le matériel, commencez par examiner les inscript
 
 
 L'**ATmega328P** est un microcontrôleur : un circuit intégré capable d'exécuter les instructions d'un programme. Il dispose de mémoire, de broches d'entrée/sortie et de périphériques de communication.
+
+<!-- ILLUSTRATION À PRODUIRE — FIGURE 2.2
+Type : photo comparative annotée.
+Contenu et annotations : Placer côte à côte un ATmega328P PDIP-28 et une carte Arduino Uno Rev3, indiquer la puce sur la carte et légender les deux objets.
+Légende finale : Figure 2.2 — Le microcontrôleur ATmega328P et sa carte d'apprentissage Arduino Uno.
+Texte alternatif : Une puce ATmega328P à vingt-huit broches est présentée à côté d'une carte Arduino Uno Rev3, avec identification de la puce sur la carte.
+Contraintes : Matériel photographié hors tension ; modèle réel identifiable et photo autorisée.
+Statut : À PRODUIRE. Aucun visuel final n'est encore ajouté.
+-->
+
+**Figure 2.2 — Le microcontrôleur ATmega328P et sa carte d'apprentissage Arduino Uno.**
 
 Dans notre projet, il assure notamment les tâches suivantes :
 
@@ -69,6 +91,17 @@ Notre configuration pédagogique du microcontrôleur utilise **5 V et une horlog
 ### 2.3. Le PZEM-004T : acquérir les grandeurs électriques
 
 Le **PZEM-004T V3.0** est le module de mesure retenu pour notre prototype de suivi énergétique. Il permet d'obtenir des informations telles que la tension, le courant, la puissance active et un index d'énergie cumulée. D'autres informations, comme la fréquence et le facteur de puissance, peuvent être disponibles selon la variante et le protocole.
+
+<!-- ILLUSTRATION À PRODUIRE — FIGURE 2.3
+Type : photographie annotée de matériel.
+Contenu et annotations : Montrer la carte PZEM-004T V3.0 et son transformateur de courant correspondant, séparés et hors tension ; nommer les pièces sans détailler de raccordement secteur.
+Légende finale : Figure 2.3 — Le module de mesure PZEM-004T et son capteur de courant compatible.
+Texte alternatif : Photographie du PZEM-004T version 3.0 et du capteur de courant compatible, tous deux non raccordés.
+Contraintes : Aucune phase ou borne 230 V accessible, aucun branchement secteur représenté ; référence du capteur et droits vérifiés.
+Statut : À PRODUIRE. Aucun visuel final n'est encore ajouté.
+-->
+
+**Figure 2.3 — Le module de mesure PZEM-004T et son capteur de courant compatible.**
 
 Pour mesurer le courant, notre solution prévoit un **capteur de courant compatible** avec la variante sélectionnée. La forme exacte du capteur et les modalités de connexion dépendent du module.
 
@@ -128,9 +161,31 @@ Notre projet prévoit une **FRAM à interface I2C**. Son modèle exact, son alim
 
 **Ne confondez pas :** la RTC dit *quand* ; la FRAM conserve *quoi*.
 
+<!-- ILLUSTRATION À PRODUIRE — FIGURE 2.4
+Type : planche photos et pictogrammes.
+Contenu et annotations : Juxtaposer un module DS3231, un LCD I2C 20×4 et une carte FRAM I2C, avec trois verbes « dater », « afficher », « sauvegarder ». Repérer l'adaptateur I2C du LCD.
+Légende finale : Figure 2.4 — Trois composants complémentaires : horloge, écran et mémoire.
+Texte alternatif : DS3231 étiqueté date/heure ; écran LCD étiqueté affichage ; FRAM étiquetée conservation durable des données.
+Contraintes : Modules de variantes réellement identifiées ; pile RTC compatible ; éviter toute suggestion que la FRAM produit l'heure.
+Statut : À PRODUIRE. Aucun visuel final n'est encore ajouté.
+-->
+
+**Figure 2.4 — Trois composants complémentaires : horloge, écran et mémoire.**
+
 ### 2.7. Le SIM800L : la communication à distance
 
 Le **SIM800L** est un modem de communication mobile. Il doit permettre au compteur de transmettre des informations en utilisant les services **GSM/GPRS** d'un réseau 2G compatible.
+
+<!-- ILLUSTRATION À PRODUIRE — FIGURE 2.5
+Type : photographie annotée du modem.
+Contenu et annotations : Gros plan du SIM800L réellement retenu, antenne et identification des zones d'alimentation sur la carte ; mention « vérifier modèle et entrée d'alimentation » sans branchement.
+Légende finale : Figure 2.5 — Le modem SIM800L, sa variante et ses accessoires de communication.
+Texte alternatif : Photo d'une carte SIM800L hors tension, avec antenne et avertissement sur le modèle exact et l'alimentation.
+Contraintes : Ne pas généraliser une entrée 5 V d'une carte commerciale au VBAT d'un modem nu ; photo autorisée et matériel réel identifié.
+Statut : À PRODUIRE. Aucun visuel final n'est encore ajouté.
+-->
+
+**Figure 2.5 — Le modem SIM800L, sa variante et ses accessoires de communication.**
 
 Pour fonctionner réellement, le modem aura besoin de plusieurs conditions réunies : une alimentation adaptée, une carte SIM et un service de données appropriés, une antenne, une couverture radio et un logiciel capable d'établir les échanges.
 
@@ -198,6 +253,14 @@ La plupart des circuits numériques de notre compteur sont alimentés en **coura
 
 Nous pouvons représenter les domaines fonctionnels **sans montrer de câblage dangereux** :
 
+<!-- ILLUSTRATION À PRODUIRE — FIGURE 2.6
+Type : synoptique de sécurité à vectoriser.
+Contenu et annotations : Réinterpréter le dessin ci-après : frontière entre zone secteur dangereuse et électronique basse tension ; alimentation AC/DC isolée et deux domaines régulés logique/modem, sans détails exploitables de branchement.
+Légende finale : Figure 2.6 — Séparation fonctionnelle de la zone secteur et des alimentations basse tension.
+Texte alternatif : Diagramme présentant l'arrivée secteur, une barrière isolée et les branches basse tension vers microcontrôleur et modem.
+Contraintes : Schéma conceptuel uniquement, non destiné au câblage ; protection, normes et distances non dimensionnées ; examen technique obligatoire.
+Statut : À PRODUIRE. Aucun visuel final n'est encore ajouté.
+-->
 ~~~text
     ZONE SECTEUR DANGEREUSE                 ZONE ÉLECTRONIQUE
     (intervention qualifiée)                  (basse tension)
@@ -217,7 +280,7 @@ Nous pouvons représenter les domaines fonctionnels **sans montrer de câblage d
                                          (selon variante)
 ~~~
 
-**Figure 2.1 — Répartition fonctionnelle des alimentations.** Ce dessin n'est **pas** un schéma de branchement du secteur. Les éléments de protection, les barrières d'isolement, les conducteurs, le dimensionnement, la mise à la terre éventuelle et la réalisation physique doivent être déterminés par une personne compétente selon les normes applicables.
+**Figure 2.6 — Répartition fonctionnelle des alimentations.** Ce dessin n'est **pas** un schéma de branchement du secteur. Les éléments de protection, les barrières d'isolement, les conducteurs, le dimensionnement, la mise à la terre éventuelle et la réalisation physique doivent être déterminés par une personne compétente selon les normes applicables.
 
 Une alimentation dite « isolée » comporte une barrière conçue pour séparer électriquement deux domaines. Toutefois, le niveau de sécurité réel dépend de la conception complète : une simple mention « isolé » sur un produit ne remplace pas les vérifications nécessaires.
 
@@ -238,6 +301,17 @@ Voici une différence fondamentale entre les deux domaines d'alimentation de not
 Pour un **SIM800L nu**, la documentation de la famille de modules décrit typiquement une alimentation **VBAT comprise autour de 3,4 à 4,4 V**, avec un fonctionnement visé **près de 4,0 V**. Lorsque le modem émet, il peut solliciter des **pointes de courant proches de 2 A**.
 
 Ces nombres ne doivent pas être utilisés aveuglément pour toutes les cartes commercialisées sous le nom « SIM800L ». Certaines cartes de développement intègrent un régulateur et possèdent une entrée d'alimentation différente. **C'est la référence exacte de la carte qui fait foi.**
+
+<!-- ILLUSTRATION À PRODUIRE — FIGURE 2.7
+Type : infographie comparative des alimentations.
+Contenu et annotations : Deux colonnes : domaine ATmega 5 V à 16 MHz et domaine VBAT SIM800L nu autour de 4,0 V (plage typique 3,4–4,4 V) avec pointes proches de 2 A ; ajouter une annotation sur adaptation UART bidirectionnelle.
+Légende finale : Figure 2.7 — Pourquoi le microcontrôleur et le modem nu n'utilisent pas la même alimentation.
+Texte alternatif : Comparaison logique ATmega à 5 V et modem SIM800L nu à environ 4 V nécessitant une alimentation dimensionnée pour les pointes et une adaptation des signaux.
+Contraintes : Pas un schéma de câblage ; préciser « modem nu » et « selon fiche technique du modèle » ; ne pas montrer 5 V directement sur VBAT.
+Statut : À PRODUIRE. Aucun visuel final n'est encore ajouté.
+-->
+
+**Figure 2.7 — Pourquoi le microcontrôleur et le modem nu n'utilisent pas la même alimentation.**
 
 Conséquences pour la conception :
 
@@ -310,6 +384,17 @@ Le meilleur premier exercice n'est pas le plus impressionnant, mais celui qui pe
 | Faire fonctionner une Arduino Uno par alimentation USB adaptée | Ouvrir ou modifier une alimentation secteur |
 | Programmer une LED, lire un bouton, simuler des données | Vérifier l'isolation électrique d'un montage secteur |
 | Étudier les unités et les conversions | Effectuer les essais de mise en service sur installation réelle |
+
+<!-- ILLUSTRATION À PRODUIRE — FIGURE 2.8
+Type : infographie de sécurité pédagogique.
+Contenu et annotations : Panneau comparatif visuel : identification hors tension, Arduino USB, simulation (adaptés au débutant) opposés aux interventions secteur, essais d'isolement et protections (réservés à un professionnel qualifié).
+Légende finale : Figure 2.8 — Les pratiques d'apprentissage sûres et les interventions réservées aux professionnels.
+Texte alternatif : Deux colonnes illustrent les activités basse tension autorisées et les opérations dangereuses nécessitant une qualification, sans geste de raccordement montré.
+Contraintes : Prévention uniquement ; ne pas fournir d'étapes pour intervenir sur le 230 V ; pictogrammes avec texte et contrastes accessibles.
+Statut : À PRODUIRE. Aucun visuel final n'est encore ajouté.
+-->
+
+**Figure 2.8 — Les pratiques d'apprentissage sûres et les interventions réservées aux professionnels.**
 
 **En cas d'incertitude, ne pas brancher.** Une mesure réelle sur le secteur n'est pas nécessaire pour réussir les exercices de cette partie du livre.
 
