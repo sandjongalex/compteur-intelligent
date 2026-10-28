@@ -11,7 +11,9 @@
 
 ## Livre pédagogique associé
 
-La rédaction du livre **« Concevez votre compteur électrique intelligent IoT »** est commencée, en suivant exactement les 16 modules et les 32 vidéos de cette formation. Lire le [sommaire du manuscrit](livre/README.md), l'[avant-propos](livre/00-avant-propos.md) et le [premier chapitre M01](livre/chapitres/01-decouvrir-le-compteur-et-comprendre-l-electricite.md). Les autres chapitres seront ajoutés progressivement.
+Le livre **« Concevez votre compteur électrique intelligent IoT »** est rédigé chapitre par chapitre, avec un corrigé par module. Les chapitres 1 à 5 sont disponibles dans [l'index de rédaction](livre/README.md). Les documents internes restent séparés du livre destiné au lecteur.
+
+**[Assembler le livre automatiquement](livre/ASSEMBLAGE.md)** : le script génère dès maintenant un manuscrit Markdown unique et le workflow GitHub Actions produit des aperçus PDF et Word à partir des chapitres présents. **Ce sont des brouillons non destinés à la vente** : les 40 illustrations prévues ne sont pas encore finalisées.
 
 
 ## Organisation de la formation
