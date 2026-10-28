@@ -1,6 +1,6 @@
-# Annexe M01 — Corrigés détaillés du chapitre 1
+# Annexe A — Corrigés du chapitre 1
 
-> **À consulter après votre tentative.** Cette annexe contient les réponses aux activités du [chapitre 1](../chapitres/01-decouvrir-le-compteur-et-comprendre-l-electricite.md). Elle est distincte du chapitre afin de favoriser le travail autonome.  
+> **À consulter après votre tentative.** Cette annexe contient les réponses aux activités du **chapitre 1**. Elle est distincte du chapitre afin de favoriser le travail autonome.  
 > **Valeurs entièrement pédagogiques :** aucune mesure réelle du secteur n'est présentée.
 
 ## A1 — Trajet d'un relevé
@@ -21,7 +21,7 @@ Schéma simplifié :
 
 **Erreur typique :** placer le LCD entre le modem et le serveur. L'écran constitue une sortie **locale**, pas une étape de transmission distante.
 
-**État de réalisation :** cette chaîne décrit l'architecture **visée**. Les fonctions GSM, FRAM et serveur ne sont pas à considérer comme déjà validées sur un prototype physique dans l'état M09 du firmware.
+**Précaution de lecture :** cette chaîne décrit l'architecture fonctionnelle du compteur. Un schéma de principe ne constitue pas une preuve de validation du matériel ni de la liaison distante.
 
 ## A2 — Calculs de consommation
 
@@ -55,10 +55,8 @@ Rappel : `E (kWh) = P (kW) × t (h)`.
 5. **Unités :** tension → volt (V), courant → ampère (A), puissance active → watt (W), énergie → wattheure (Wh) ou kilowattheure (kWh).
 6. **Données fictives :** une valeur affichée à l'écran peut provenir du code d'exemple plutôt que d'un capteur. Sans vérification instrumentée, on ne peut pas la présenter comme une mesure réelle.
 
-## A4 — Pour approfondir la correction officielle de la formation
+## A4 — Poursuivre après les exercices
 
-- [TP M01 — corrigé du formateur](../../formation/modules/M01-decouverte-electricite/tp/CORRIGE_M01_FORMATEUR.md)
-- [Quiz M01 — questions et justifications](../../formation/modules/M01-decouverte-electricite/quiz/QUIZ_M01.md)
-- [Fiche des unités et conversions](../../formation/modules/M01-decouverte-electricite/ressources/FICHE_UNITES.md)
+Les rappels sur les unités et les calculs sont intégrés aux sections 1.6 à 1.9 du chapitre 1. Vous pouvez également consulter les ressources pédagogiques complémentaires proposées avec la formation, lorsqu'elles sont disponibles, sans qu'elles soient nécessaires à la compréhension du livre.
 
 **Vérification des acquis :** si vous avez réussi les quatre calculs et savez expliquer l'ordre du synoptique sans lire la solution, passez au chapitre 2. Sinon, relisez les sections 1.3, 1.6, 1.7 et 1.8 du chapitre 1.
