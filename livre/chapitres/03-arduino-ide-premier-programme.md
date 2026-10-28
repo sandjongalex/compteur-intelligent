@@ -86,6 +86,9 @@ Contraintes : Capturer un logiciel réel et version vérifiée ; masquer les inf
 Statut : À PRODUIRE. Aucune image définitive n'a encore été insérée.
 -->
 
+> **[ILLUSTRATION À INSÉRER — Figure 3.1]** *capture d'écran réelle annotée.* : Montrer IDE 2 avec zone de code, Vérifier, Téléverser, carte, port, console ; annotations en français.
+
+
 **Figure 3.1 — Les outils essentiels de l'interface Arduino IDE 2.**
 
 La position précise des boutons peut changer suivant la version d'Arduino IDE. Retenez d'abord **leur fonction**, qui importe davantage que leur emplacement exact.
@@ -98,6 +101,9 @@ Texte alternatif : Programme compilé, erreur éventuelle corrigée, transfert s
 Contraintes : Une compilation ne prouve pas un fonctionnement matériel ; schéma vectoriel.
 Statut : À PRODUIRE. Aucune image définitive n'a encore été insérée.
 -->
+
+> **[ILLUSTRATION À INSÉRER — Figure 3.2]** *infographie de processus.* : Vectoriser l'organigramme écrit ci-dessous : code → compilation, retour en cas d'erreur, téléversement puis LED observée.
+
 
 **Figure 3.2 — Parcours d'un programme Arduino**
 
@@ -148,6 +154,9 @@ Contraintes : Aucun câble secteur ni module PZEM ; capture réelle et données 
 Statut : À PRODUIRE. Aucune image définitive n'a encore été insérée.
 -->
 
+> **[ILLUSTRATION À INSÉRER — Figure 3.3]** *photo Uno + capture réelle.* : Uno Rev3 connectée par câble USB de données ; sélecteur Arduino Uno et port réellement détecté dans l'IDE 2.
+
+
 **Figure 3.3 — Connexion USB et sélection correcte de la carte et de son port.**
 
 Si plusieurs ports apparaissent, vous pouvez observer la liste **avant** puis **après** avoir connecté la carte. Le nouveau port affiché peut aider à identifier le bon périphérique. Selon votre matériel et votre système, des pilotes ou des autorisations peuvent également être nécessaires.
@@ -196,6 +205,9 @@ Texte alternatif : L'Arduino commence par setup une fois, puis répète loop.
 Contraintes : Schéma simple sans suggestion que les fonctions sont parallèles.
 Statut : À PRODUIRE. Aucune image définitive n'a encore été insérée.
 -->
+
+> **[ILLUSTRATION À INSÉRER — Figure 3.4]** *organigramme pédagogique.* : Tracer démarrage → setup() une fois → loop() répétée, avec flèche de retour ; partir du schéma textuel suivant.
+
 ~~~text
        Mise sous tension ou RESET
                   |
@@ -262,6 +274,9 @@ Contraintes : Ne pas simuler un succès matériel et le qualifier de réel ; ver
 Statut : À PRODUIRE. Aucune image définitive n'a encore été insérée.
 -->
 
+> **[ILLUSTRATION À INSÉRER — Figure 3.5]** *deux captures réelles de messages.* : Comparer une compilation réussie et un téléversement réussi du même programme, avec messages réellement obtenus.
+
+
 **Figure 3.5 — Vérifier n'est pas téléverser : deux messages différents.**
 
 ### 3.8. Première erreur volontaire : une accolade manquante
@@ -304,6 +319,9 @@ Contraintes : Message issu d'une vraie compilation, non inventé ; protéger don
 Statut : À PRODUIRE. Aucune image définitive n'a encore été insérée.
 -->
 
+> **[ILLUSTRATION À INSÉRER — Figure 3.6]** *capture contrôlée d'erreur.* : Montrer le sketch avec accolade manquante et le message réel du compilateur, puis la correction de l'accolade.
+
+
 **Figure 3.6 — Corriger une accolade manquante dans Arduino IDE.**
 
 N'accusez pas immédiatement le microcontrôleur : un problème de syntaxe peut empêcher la compilation avant même qu'un programme ne soit envoyé à la carte.
@@ -330,6 +348,9 @@ Texte alternatif : Vue de la carte Uno avec voyant L et broche numérique D13 mi
 Contraintes : Photo d'une vraie carte autorisée, sécurité USB.
 Statut : À PRODUIRE. Aucune image définitive n'a encore été insérée.
 -->
+
+> **[ILLUSTRATION À INSÉRER — Figure 3.7]** *photographie annotée de la Uno.* : Photographier la carte Uno Rev3 et repérer la LED L et la broche D13, sans composant externe.
+
 
 **Figure 3.7 — Repérer la LED intégrée L sur l'Arduino Uno Rev3.**
 
@@ -474,6 +495,9 @@ Contraintes : Respecter les proportions de temps et les unités ; ne pas affirme
 Statut : À PRODUIRE. Aucune image définitive n'a encore été insérée.
 -->
 
+> **[ILLUSTRATION À INSÉRER — Figure 3.8]** *chronogramme.* : Représenter HIGH 250 ms, LOW 750 ms, une période 1 000 ms, répétition de l'état.
+
+
 **Figure 3.8 — Chronogramme de la LED : 250 ms allumée et 750 ms éteinte.**
 
 Le rythme attendu est donc **une impulsion lumineuse courte suivie d'une extinction plus longue**. Le programme recommence ensuite.
@@ -504,6 +528,9 @@ Texte alternatif : D8 relié en série à une résistance de 330 ohms et une dio
 Contraintes : Aucun 230 V, polarité correcte, résistance obligatoire, vérifier la carte utilisée.
 Statut : À PRODUIRE. Aucune image définitive n'a encore été insérée.
 -->
+
+> **[ILLUSTRATION À INSÉRER — Figure 3.9]** *schéma électrique pédagogique basse tension.* : Vectoriser le schéma texte : D8 → 330 Ω → anode LED → cathode → GND, repères des pôles et résistance.
+
 
 **Figure 3.9 — Principe du circuit basse tension de la LED externe**
 
@@ -540,6 +567,9 @@ Texte alternatif : Une Uno relie D8 à la LED externe au moyen d'une résistance
 Contraintes : Ne pas montrer de 230 V, photographie seulement après vérification du montage et de ses droits.
 Statut : À PRODUIRE. Aucune image définitive n'a encore été insérée.
 -->
+
+> **[ILLUSTRATION À INSÉRER — Figure 3.10]** *photographie du montage validé.* : Vraie photo Uno Rev3, breadboard, LED externe et résistance 330 Ω ; légender D8, anode, cathode, GND ; faire la photo USB débranché.
+
 
 **Figure 3.10 — Montage pédagogique de la LED externe, contrôlé hors tension.**
 
