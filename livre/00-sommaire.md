@@ -47,5 +47,3 @@ Pourquoi apprendre l'électronique, l'informatique embarquée et l'Internet des 
 ## Annexes
 
 **Annexe A.** Corrigés et explications des exercices du chapitre 1
-
-*Les numéros de page seront insérés lors de la mise en page définitive de l'ouvrage.*
