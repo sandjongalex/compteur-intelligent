@@ -1,5 +1,6 @@
-# Compte rendu de relecture — Chapitre M01
+# Compte rendu de relecture — Chapitre M01 (production interne)
 
+**Document interne, exclu de la composition du livre**  
 **Date de la première relecture :** 28 octobre 2026  
 **Ouvrage :** *Concevez votre compteur électrique intelligent IoT* — AlexTech Academy  
 **Périmètre :** [chapitre 1](chapitres/01-decouvrir-le-compteur-et-comprendre-l-electricite.md), [annexe des corrigés](annexes/CORRIGE_M01.md) et correspondance avec les ressources M01.
@@ -49,7 +50,11 @@ La FRAM est expliquée comme une mémoire non volatile, mais la conservation cor
 
 ### 5. Navigation et hiérarchie
 
-Les titres ont été normalisés, les renvois vers les ressources vidéo et les TP conservés, et le sommaire du livre renvoie maintenant au corrigé et au présent compte rendu.
+Les titres ont été normalisés. Après retour de l'auteur, les liens de développement et les statuts temporaires ont été retirés des pages destinées au lecteur. Les renvois techniques demeurent uniquement dans les documents de contrôle internes.
+
+## Modification après retour de l'auteur : diffusion hors GitHub
+
+Le dépôt ne sert qu'à la production. Le livre et les vidéos seront distribués ailleurs. L'avant-propos, le chapitre 1 et l'annexe A sont désormais rédigés sans liens GitHub ni références à l'état temporaire du dépôt. Le sommaire du livre et le manifeste de production différencient clairement les pages à publier des documents de travail.
 
 ## Points nécessitant encore une validation
 
