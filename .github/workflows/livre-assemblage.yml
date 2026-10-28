@@ -1,0 +1,81 @@
+name: Livre - assemblage et apercus
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - "livre/**"
+      - ".github/workflows/livre-assemblage.yml"
+  pull_request:
+    branches:
+      - main
+    paths:
+      - "livre/**"
+      - ".github/workflows/livre-assemblage.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  livre-brouillon:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Recuperer le depot
+        uses: actions/checkout@v4
+
+      - name: Installer Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Tester le programme d'assemblage
+        run: python -m unittest discover -s livre/scripts/tests -v
+
+      - name: Assembler le manuscrit brouillon
+        run: python livre/scripts/assembler_livre.py --mode brouillon --output-dir build/livre
+
+      - name: Installer Pandoc et le moteur PDF
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends \
+            pandoc texlive-xetex texlive-latex-recommended \
+            texlive-lang-french fonts-dejavu-core
+
+      - name: Exporter le brouillon Word (.docx)
+        run: |
+          pandoc build/livre/compteur-intelligent-brouillon.md \
+            --from markdown+raw_html \
+            --to docx --standalone --toc --toc-depth=1 \
+            --metadata=lang:fr-FR \
+            -o build/livre/compteur-intelligent-brouillon.docx
+
+      - name: Exporter le brouillon PDF (A4)
+        run: |
+          pandoc build/livre/compteur-intelligent-brouillon.md \
+            --from markdown+raw_html \
+            --standalone --toc --toc-depth=1 \
+            --pdf-engine=xelatex \
+            --metadata=lang:fr-FR \
+            -V documentclass=report \
+            -V papersize=a4 \
+            -V geometry:margin=25mm \
+            -V mainfont="DejaVu Serif" \
+            -V monofont="DejaVu Sans Mono" \
+            -V toc-title="Sommaire" \
+            -o build/livre/compteur-intelligent-brouillon.pdf
+
+      - name: Conserver le brouillon pour relecture (non commercial)
+        uses: actions/upload-artifact@v4
+        with:
+          name: livre-compteur-intelligent-brouillon
+          path: |
+            build/livre/*.md
+            build/livre/*.json
+            build/livre/*.docx
+            build/livre/*.pdf
+            build/livre/assets/**
+          if-no-files-found: error
+          retention-days: 14
