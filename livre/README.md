@@ -14,13 +14,15 @@
 3. [Chapitre 1](chapitres/01-decouvrir-le-compteur-et-comprendre-l-electricite.md)
 4. [Chapitre 2](chapitres/02-composants-alimentations-securite.md)
 5. [Chapitre 3](chapitres/03-arduino-ide-premier-programme.md)
-6. [Annexe A — corrigés du chapitre 1](annexes/CORRIGE_M01.md)
-7. [Annexe B — corrigés du chapitre 2](annexes/CORRIGE_M02.md)
-8. [Annexe C — corrigés du chapitre 3](annexes/CORRIGE_M03.md)
+6. [Chapitre 4](chapitres/04-bases-c-cpp-microcontroleurs.md)
+7. [Annexe A — corrigés du chapitre 1](annexes/CORRIGE_M01.md)
+8. [Annexe B — corrigés du chapitre 2](annexes/CORRIGE_M02.md)
+9. [Annexe C — corrigés du chapitre 3](annexes/CORRIGE_M03.md)
+10. [Annexe D — corrigés du chapitre 4](annexes/CORRIGE_M04.md)
 
-**Illustrations — production interne :** [Registre des figures 1.1 à 3.10](ILLUSTRATIONS_A_PRODUIRE.md) · [Gabarit obligatoire pour les nouveaux chapitres](MODELE_CHAPITRE.md). **23 figures pédagogiques identifiées, 0 figure finale validée : les trois chapitres ne sont pas prêts à être illustrés/imprimés.**
+**Illustrations — production interne :** [Registre des figures 1.1 à 4.8](ILLUSTRATIONS_A_PRODUIRE.md) · [Gabarit obligatoire pour les nouveaux chapitres](MODELE_CHAPITRE.md). **31 figures pédagogiques identifiées, 0 figure finale validée : les quatre premiers chapitres attendent encore leurs illustrations finales.**
 
-**Gestion interne uniquement :** [Charte éditoriale](PLAN_EDITORIAL.md) · [Relecture M01](RELECTURE_M01.md) · [Relecture M02](RELECTURE_M02.md) · [Relecture M03](RELECTURE_M03.md) · [Règles d'export](PRODUCTION_INTERNE.md).
+**Gestion interne uniquement :** [Charte éditoriale](PLAN_EDITORIAL.md) · [Relecture M01](RELECTURE_M01.md) · [Relecture M02](RELECTURE_M02.md) · [Relecture M03](RELECTURE_M03.md) · [Relecture M04](RELECTURE_M04.md) · [Règles d'export](PRODUCTION_INTERNE.md).
 
 ## Sommaire contractuel : 16 chapitres ↔ 16 modules ↔ 32 vidéos
 
@@ -29,7 +31,7 @@
 | 01 | Découvrir le compteur et comprendre l'électricité | M01-V01 / M01-V02 | **Relecture initiale effectuée ; validation auteur et mise en page à faire** |
 | 02 | Composants, alimentations et sécurité électrique | M02-V01 / M02-V02 | **Rédigé, première relecture effectuée ; validation auteur et mise en page à faire** |
 | 03 | Arduino IDE et premier programme | M03-V01 / M03-V02 | **Rédigé et première relecture documentaire effectuée ; essais Arduino et mise en page à faire** |
-| 04 | Bases du C/C++ embarqué | M04-V01 / M04-V02 | À rédiger |
+| 04 | Bases du C/C++ embarqué | M04-V01 / M04-V02 | **Rédigé ; relecture documentaire et illustrations à valider** |
 | 05 | Entrées, sorties et communication série | M05-V01 / M05-V02 | À rédiger |
 | 06 | Mesures électriques avec le PZEM-004T V3.0 | M06-V01 / M06-V02 | À rédiger |
 | 07 | Horloge DS3231 et afficheur LCD I2C 20×4 | M07-V01 / M07-V02 | À rédiger |
