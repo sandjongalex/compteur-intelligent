@@ -26,6 +26,12 @@
 
 **Gestion interne uniquement :** [Charte éditoriale](PLAN_EDITORIAL.md) · [Relecture M01](RELECTURE_M01.md) · [Relecture M02](RELECTURE_M02.md) · [Relecture M03](RELECTURE_M03.md) · [Relecture M04](RELECTURE_M04.md) · [Relecture M05](RELECTURE_M05.md) · [Règles d'export](PRODUCTION_INTERNE.md).
 
+## Assemblage automatique des chapitres
+
+Le programme [`scripts/assembler_livre.py`](scripts/assembler_livre.py) et le [guide de fabrication](ASSEMBLAGE.md) permettent d'obtenir **un seul manuscrit** avec l'avant-propos, les chapitres disponibles dans l'ordre et leurs annexes. Le [workflow d'aperçu](../.github/workflows/livre-assemblage.yml) produit en complément un **PDF A4 et un Word provisoires** ; ces fichiers ne sont pas publiables tant que les images et la relecture finale manquent. Le sommaire des exports est généré à partir des chapitres réellement disponibles, sans introduire les autres chapitres annoncés dans le plan.
+
+Commande locale : `python livre/scripts/assembler_livre.py --mode brouillon --output-dir build/livre`.
+
 ## Sommaire contractuel : 16 chapitres ↔ 16 modules ↔ 32 vidéos
 
 | Chapitre | Intitulé | Vidéos de référence | État du livre |
