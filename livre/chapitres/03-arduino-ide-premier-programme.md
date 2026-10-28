@@ -251,6 +251,8 @@ Lorsque le sketch minimal a bien été téléversé, **il est normal que la LED 
 | Téléverser réussit | Le transfert du programme vers la carte a abouti |
 | Sketch minimal sans action visible | Comportement normal : aucune instruction de commande n'a été écrite |
 | Vérifier échoue | Le code ou sa configuration doit être examiné |
+| Vérifier réussit mais Téléverser échoue | Il faut examiner la connexion, la carte et le port |
+
 <!-- ILLUSTRATION À PRODUIRE — FIGURE 3.5
 Type : deux captures réelles de messages.
 Contenu et annotations : Comparer une compilation réussie et un téléversement réussi du même programme, avec messages réellement obtenus.
@@ -261,8 +263,6 @@ Statut : À PRODUIRE. Aucune image définitive n'a encore été insérée.
 -->
 
 **Figure 3.5 — Vérifier n'est pas téléverser : deux messages différents.**
-
-| Vérifier réussit mais Téléverser échoue | Il faut examiner la connexion, la carte et le port |
 
 ### 3.8. Première erreur volontaire : une accolade manquante
 
@@ -530,6 +530,8 @@ Une LED possède une **anode** et une **cathode**. Sur beaucoup de modèles, la 
 
 Avant de rebrancher l'USB, vérifiez hors tension le chemin complet :
 
+**D8 → résistance de 330 Ω → anode de LED → cathode de LED → GND.**
+
 <!-- ILLUSTRATION À PRODUIRE — FIGURE 3.10
 Type : photographie du montage validé.
 Contenu et annotations : Vraie photo Uno Rev3, breadboard, LED externe et résistance 330 Ω ; légender D8, anode, cathode, GND ; faire la photo USB débranché.
@@ -540,8 +542,6 @@ Statut : À PRODUIRE. Aucune image définitive n'a encore été insérée.
 -->
 
 **Figure 3.10 — Montage pédagogique de la LED externe, contrôlé hors tension.**
-
-**D8 → résistance de 330 Ω → anode de LED → cathode de LED → GND.**
 
 ### 3.17. Programmer la LED externe
 
