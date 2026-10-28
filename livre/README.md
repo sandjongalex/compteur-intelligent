@@ -1,19 +1,20 @@
-# Concevez votre compteur électrique intelligent IoT
+# Manuscrit du livre — tableau de bord interne
 
-**AlexTech Academy — Manuscrit pédagogique en cours de rédaction**  
+**Ouvrage : « Concevez votre compteur électrique intelligent IoT » — AlexTech Academy**  
 **Auteur : Sandjong Tchoungong Alex**  
 **Sous-titre de travail :** *De la mesure électrique à la supervision énergétique sur Internet*  
 **Langue :** français • **Public :** débutants accompagnés, techniciens et passionnés d'électronique
 
-> **État éditorial : manuscrit non finalisé.** Le livre accompagne la formation vidéo de quatre heures, mais peut être lu indépendamment. Les exemples illustratifs ne prouvent ni la conformité métrologique ni le succès d'essais réels. Les chapitres non écrits sont indiqués « à rédiger ».
+> **Document de production, non destiné au lecteur et exclu du PDF final.** GitHub sert seulement à organiser la rédaction, les contrôles, les codes et les vidéos. Les textes remis au public ne doivent contenir aucun lien ou renvoi GitHub. Voir la [procédure de composition du livre](PRODUCTION_INTERNE.md).
 
-## Commencer à lire
+## Parcourir les textes destinés aux lecteurs
 
-1. [Avant-propos — Pourquoi ce livre ?](00-avant-propos.md)
-2. [Chapitre 1 — Découvrir le compteur et comprendre l'électricité](chapitres/01-decouvrir-le-compteur-et-comprendre-l-electricite.md)
-4. [Corrigés du chapitre 1 — à ouvrir après les exercices](annexes/CORRIGE_M01.md)
-5. [Compte rendu de relecture du chapitre 1](RELECTURE_M01.md)
-3. [Règles éditoriales et correspondance livre/vidéos](PLAN_EDITORIAL.md)
+1. [Sommaire du livre](00-sommaire.md)
+2. [Avant-propos](00-avant-propos.md)
+3. [Chapitre 1](chapitres/01-decouvrir-le-compteur-et-comprendre-l-electricite.md)
+4. [Annexe A — corrigés du chapitre 1](annexes/CORRIGE_M01.md)
+
+**Gestion interne uniquement :** [Charte éditoriale](PLAN_EDITORIAL.md) · [Relecture M01](RELECTURE_M01.md) · [Règles d'export](PRODUCTION_INTERNE.md).
 
 ## Sommaire contractuel : 16 chapitres ↔ 16 modules ↔ 32 vidéos
 
@@ -36,7 +37,7 @@
 | 15 | Schéma électronique et PCB avec KiCad | M15-V01 / M15-V02 | À rédiger |
 | 16 | Intégration, tests et déploiement sur PythonAnywhere | M16-V01 / M16-V02 | À rédiger |
 
-Chaque chapitre couvre **les deux vidéos de son module**, conserve leurs objectifs et développe davantage les notions, les exemples, les erreurs fréquentes, les exercices et le diagnostic. Les codes et les procédures techniques doivent rester alignés sur l'état réel du dépôt.
+Chaque chapitre couvre **les deux vidéos de son module**, conserve leurs objectifs et développe davantage les notions, les exemples, les erreurs fréquentes, les exercices et le diagnostic. Les codes et les procédures techniques sont vérifiés dans ce dépôt de travail, mais ces références n'apparaissent pas dans le livre destiné à la diffusion.
 
 ## Le projet technique commun
 
@@ -59,7 +60,7 @@ Le **firmware fil rouge est actuellement au stade M09**, en simulation par défa
 - Pour la programmation, partir du **même projet cumulatif** et comparer les changements d'une étape à l'autre.
 - Ne pas confondre un résultat simulé, une compilation réussie, un essai en laboratoire et un dispositif de mesure certifié.
 
-## Références du dépôt (sources de vérité)
+## Références de production (internes — exclues du livre)
 
 - [Programme officiel de quatre heures](../docs/formation/PLAN_FORMATION_4H.md)
 - [Guide pédagogique](../formation/GUIDE_PEDAGOGIQUE.md)
@@ -72,3 +73,7 @@ Le **firmware fil rouge est actuellement au stade M09**, en simulation par défa
 Cet ouvrage traite d'un **prototype pédagogique de suivi énergétique** : il ne remplace pas un compteur électrique homologué destiné à la facturation. Aucun chapitre ne doit inviter un novice à intervenir sur une installation sous tension. La conception, les protections, l'isolation, les essais et les connexions au réseau 230 V exigent un cadre qualifié et les réglementations locales applicables.
 
 Le manuscrit Markdown est conservé ici comme **source éditoriale versionnée**. Les futurs PDF et formats imprimables pourront être générés à partir de cette source après relecture et validation.
+
+## Composition et diffusion
+
+L'export final inclura **uniquement** le sommaire destiné au lecteur, l'avant-propos, les chapitres et les annexes sélectionnées. Les fichiers de suivi et les liens vers la structure GitHub sont exclus. Les vidéos restent complémentaires ; le livre doit être compris seul.
