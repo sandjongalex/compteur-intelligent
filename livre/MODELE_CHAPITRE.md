@@ -26,6 +26,8 @@ Statut : À PRODUIRE.
 Remplacement : remplacer le repère par le visuel approuvé avant publication ; ne pas imprimer ce commentaire.
 -->
 
+> **[ILLUSTRATION À INSÉRER — Figure X.1]** *type de visuel* : description courte visible dans le brouillon (à retirer après création et validation).
+
 **Figure X.1 — Légende pédagogique de la figure attendue.**
 
 Expliquer dans le texte la conclusion de la figure, même si un lecteur ne peut pas la voir.
@@ -52,6 +54,6 @@ Rappels, lexique et lien conceptuel avec le prochain chapitre.
 - [ ] Les figures sont numérotées dans l'ordre d'apparition et leurs renvois sont exacts.
 - [ ] Les figures techniques sont sûres, cohérentes avec les composants ; captures réelles uniquement.
 - [ ] Les images originales ou sous licence commerciale sont **réellement produites et validées avant publication**.
-- [ ] Les commentaires de production sont exclus des sorties destinées au public.
+- [ ] Les commentaires et les **repères visibles « ILLUSTRATION À INSÉRER »** sont remplacés par les illustrations validées et exclus des sorties destinées au public.
 - [ ] Aucun renvoi à GitHub n'apparaît dans la partie destinée au lecteur.
 - [ ] Les exercices et les codes sont cohérents avec le projet évolutif.
