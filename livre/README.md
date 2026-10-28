@@ -12,7 +12,9 @@
 1. [Sommaire du livre](00-sommaire.md)
 2. [Avant-propos](00-avant-propos.md)
 3. [Chapitre 1](chapitres/01-decouvrir-le-compteur-et-comprendre-l-electricite.md)
-4. [Annexe A — corrigés du chapitre 1](annexes/CORRIGE_M01.md)
+4. [Chapitre 2](chapitres/02-composants-alimentations-securite.md)
+5. [Annexe A — corrigés du chapitre 1](annexes/CORRIGE_M01.md)
+6. [Annexe B — corrigés du chapitre 2](annexes/CORRIGE_M02.md)
 
 **Gestion interne uniquement :** [Charte éditoriale](PLAN_EDITORIAL.md) · [Relecture M01](RELECTURE_M01.md) · [Règles d'export](PRODUCTION_INTERNE.md).
 
@@ -21,7 +23,7 @@
 | Chapitre | Intitulé | Vidéos de référence | État du livre |
 |---|---|---|---|
 | 01 | Découvrir le compteur et comprendre l'électricité | M01-V01 / M01-V02 | **Relecture initiale effectuée ; validation auteur et mise en page à faire** |
-| 02 | Composants, alimentations et sécurité électrique | M02-V01 / M02-V02 | À rédiger |
+| 02 | Composants, alimentations et sécurité électrique | M02-V01 / M02-V02 | **Rédigé, première relecture effectuée ; validation auteur et mise en page à faire** |
 | 03 | Arduino IDE et premier programme | M03-V01 / M03-V02 | À rédiger |
 | 04 | Bases du C/C++ embarqué | M04-V01 / M04-V02 | À rédiger |
 | 05 | Entrées, sorties et communication série | M05-V01 / M05-V02 | À rédiger |
