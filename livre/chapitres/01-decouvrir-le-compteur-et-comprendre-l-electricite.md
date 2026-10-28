@@ -1,9 +1,10 @@
 # Chapitre 1 — Découvrir le compteur et comprendre l'électricité
 
-> **Correspondance exacte avec les vidéos :** M01-V01 « Du réseau électrique au tableau de bord IoT » (5 min), puis M01-V02 « Comprendre volts, ampères, watts et kilowattheures » (5 min).  
-> **Niveau :** débutant absolu. **État du manuscrit :** première relecture technique, pédagogique et éditoriale effectuée ; validation finale de l'auteur et mise en page à réaliser.  
-> **Activités :** 25 à 40 minutes de travail personnel, indépendamment des dix minutes de vidéos.  
+> **Niveau :** débutant absolu.  
+> **Travail personnel conseillé :** 25 à 40 minutes.  
 > **Sécurité :** aucune manipulation du secteur ni aucun câblage 230 V.
+
+Ce chapitre est consacré à deux questions essentielles : **comment fonctionne un compteur énergétique connecté ?** et **comment comprendre les grandeurs électriques qu'il affiche ?** Il peut être étudié indépendamment des vidéos de la formation.
 
 ## Ce que vous saurez faire après ce chapitre
 
@@ -19,7 +20,7 @@ Aucun bagage préalable en programmation n'est nécessaire. Une feuille, un cray
 
 ---
 
-## Partie A — Vidéo M01-V01 : du réseau électrique au tableau de bord IoT
+## Partie A — Du réseau électrique au tableau de bord IoT
 
 ### 1.1. Pourquoi surveiller sa consommation d'énergie ?
 
@@ -128,19 +129,19 @@ Pour l'envoi distant, le projet prévoit la stratégie suivante :
 3. Lors du retour du réseau, les relevés non transmis sont renvoyés.
 4. Le serveur doit reconnaître les duplications éventuelles afin de ne pas compter deux fois la même consommation.
 
-C'est une **architecture prévue**, pas une fonction déjà démontrée par le prototype actuel. La FRAM et la synchronisation seront développées dans **M11** ; les échanges GSM/GPRS dans **M10**. Une coupure de courant ou une absence de date fiable présente des difficultés supplémentaires, étudiées dans les chapitres correspondants.
+Cette description expose les **principes de conception** du système. La communication GSM/GPRS sera étudiée au chapitre 10 et la conservation en FRAM au chapitre 11. Dans chacun de ces chapitres, nous distinguerons l'objectif recherché des résultats effectivement vérifiés. Une coupure de courant ou l'absence d'une date fiable présentent des difficultés supplémentaires qui devront être traitées.
 
-### 1.5. Ce qui existe dans le dépôt aujourd'hui
+### 1.5. Une réalisation progressive : un seul compteur enrichi au fil des chapitres
 
-Le projet logiciel suit une progression cumulative. Au moment de cette première rédaction :
+Pour apprendre efficacement, nous ne chercherons pas à assembler tous les composants dès le premier jour. Nous construirons **un seul système**, enrichi progressivement.
 
-- des étapes du firmware allant de **M03 à M09** sont publiées ;
-- la simulation reste le mode de démonstration par défaut ;
-- des calculs d'énergie, des dates et un affichage optionnel sont introduits au fil des étapes ;
-- l'intégration réelle du **SIM800L**, de la **FRAM** et de l'application web finale n'est pas encore démontrée dans le firmware courant ;
-- les validations sur montage physique ne doivent pas être supposées.
+Nous commencerons par comprendre l'électricité et la sécurité. Ensuite, nous découvrirons Arduino IDE et les bases de la programmation C/C++. Nous apprendrons à lire un bouton, à utiliser les communications série, puis à récupérer les grandeurs d'un module de mesure.
 
-Le matériel de référence documente déjà les choix de communication : **SIM800L sur UART matériel D0/D1**, **PZEM sur D10/D11 par SoftwareSerial**, **DS3231/LCD/FRAM sur I2C A4/A5** à partir de M10. Nous ne les câblons pas dans ce chapitre introductif.
+L'horloge et l'affichage viendront ensuite. À partir des relevés horodatés, nous étudierons les calculs de consommation. Puis nous aborderons la programmation de l'ATmega328P autonome, les échanges GSM/GPRS, la sauvegarde en mémoire non volatile et l'application web.
+
+À chaque étape, nous distinguerons les **exemples simulés**, les **résultats attendus** et les **observations effectivement vérifiées**. Une illustration pédagogique ne constitue pas, à elle seule, la preuve qu'un montage physique fonctionne.
+
+Les détails de connexion des périphériques seront abordés dans les chapitres techniques appropriés. Il n'est pas nécessaire de câbler le modem ou le PZEM pour comprendre ce premier chapitre.
 
 #### Pause de compréhension
 
@@ -156,7 +157,7 @@ Si l'une de ces réponses vous échappe, relisez les étapes 1 à 8. Le but n'es
 
 ---
 
-## Partie B — Vidéo M01-V02 : volts, ampères, watts et kilowattheures
+## Partie B — Volts, ampères, watts et kilowattheures
 
 ### 1.6. Quatre mots pour comprendre un relevé électrique
 
@@ -355,9 +356,9 @@ Répondez sans revenir aux sections précédentes :
 5. Quelles unités sont associées à la tension, au courant, à la puissance active et à l'énergie ?
 6. Pourquoi ne faut-il pas présenter une capture d'écran de données fictives comme une mesure réelle ?
 
-Pour le **quiz officiel de dix questions du module M01**, consulter la [version apprenant](../../formation/modules/M01-decouverte-electricite/quiz/QUIZ_M01_APPRENANT.md). Le seuil de réussite fixé par la formation est de **8 bonnes réponses sur 10**.
+Vous pourrez compléter votre apprentissage avec le **quiz de dix questions du module 1**, proposé dans les ressources complémentaires de la formation. Le seuil de réussite recommandé est de **8 bonnes réponses sur 10**. Les six questions ci-dessus peuvent être traitées directement à partir du présent chapitre.
 
-Les **corrigés détaillés des activités et de l'autoévaluation** sont fournis dans une [annexe de correction distincte](../annexes/CORRIGE_M01.md) : consultez-la seulement après avoir effectué les exercices. Les [TP et quiz officiels pour les apprenants](../../formation/modules/M01-decouverte-electricite/README.md#documents-pour-les-apprenants) restent les références du module.
+Les **corrigés détaillés** de ces activités figurent dans **l'annexe A, en fin d'ouvrage**. Consultez-les seulement après avoir effectué les exercices. Aucun accès à un site Internet n'est nécessaire pour terminer ces activités.
 
 
 ---
@@ -387,16 +388,9 @@ Les **corrigés détaillés des activités et de l'autoévaluation** sont fourni
 
 ### 1.15. Pour aller plus loin
 
-Les documents techniques et pédagogiques suivants sont les **références vivantes du projet** :
+Pour approfondir ce chapitre, vous pouvez refaire les calculs en changeant la puissance et la durée, puis dessiner de mémoire la chaîne complète entre la mesure et l'affichage dans un navigateur.
 
-- [Script de la vidéo M01-V01](../../formation/modules/M01-decouverte-electricite/scripts/V01-script.md)
-- [Script de la vidéo M01-V02](../../formation/modules/M01-decouverte-electricite/scripts/V02-script.md)
-- [Fiche des grandeurs électriques](../../formation/modules/M01-decouverte-electricite/ressources/FICHE_UNITES.md)
-- [Synoptique fonctionnel](../../formation/modules/M01-decouverte-electricite/ressources/SYNOPTIQUE.md)
-- [Démonstration web fictive](../../formation/modules/M01-decouverte-electricite/ressources/demo_dashboard_fictif.html)
-- [Journal d'évolution du firmware](../../firmware/PROGRESSION.md)
-- [Plan officiel des 16 modules](../../docs/formation/PLAN_FORMATION_4H.md)
+Dans les chapitres suivants, vous trouverez les schémas, les explications de programmation et les exercices nécessaires à la construction progressive du compteur. Les ressources numériques éventuellement proposées avec la formation vidéo sont **complémentaires** : elles ne remplacent pas les explications et les exercices du livre.
 
-**Chapitre suivant — M02 :** nous identifierons les composants, les alimentations et les règles de sécurité. Nous ne réaliserons toujours **aucun essai secteur pour débutant**.
+**Chapitre suivant — Chapitre 2 : composants, alimentations et sécurité électrique.** Nous identifierons les éléments matériels et les précautions indispensables avant tout montage.
 
-[← Retour au sommaire](../README.md)
