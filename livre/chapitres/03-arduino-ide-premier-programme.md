@@ -179,21 +179,21 @@ Il ne commande aucun composant. Et c'est volontaire.
 
 Regardons les lignes une par une.
 
-**Ligne 1 — \`void setup() {\`**
+**Ligne 1 — `void setup() {`**
 
-Le mot \`void\` indique ici que la fonction ne renvoie pas de valeur. Le nom \`setup\` est réservé, dans la structure habituelle des sketches Arduino, à l'initialisation du programme. Les parenthèses \`()\` font partie de la déclaration de fonction ; l'accolade ouvrante \`{\` annonce le début de son contenu.
+Le mot `void` indique ici que la fonction ne renvoie pas de valeur. Le nom `setup` est réservé, dans la structure habituelle des sketches Arduino, à l'initialisation du programme. Les parenthèses `()` font partie de la déclaration de fonction ; l'accolade ouvrante `{` annonce le début de son contenu.
 
-**Ligne 2 — \`}\`**
+**Ligne 2 — `}`**
 
-Cette accolade ferme la fonction \`setup()\`. Pour le moment, il n'y a aucune instruction à exécuter au démarrage.
+Cette accolade ferme la fonction `setup()`. Pour le moment, il n'y a aucune instruction à exécuter au démarrage.
 
-**Ligne 4 — \`void loop() {\`**
+**Ligne 4 — `void loop() {`**
 
-La fonction \`loop()\` est appelée de manière répétée après \`setup()\`. Elle accueillera plus tard les instructions de notre programme principal.
+La fonction `loop()` est appelée de manière répétée après `setup()`. Elle accueillera plus tard les instructions de notre programme principal.
 
-**Ligne 5 — \`}\`**
+**Ligne 5 — `}`**
 
-La deuxième accolade ferme la fonction \`loop()\`. Nous avons donc un programme structurellement valide qui ne produit **aucune action visible**.
+La deuxième accolade ferme la fonction `loop()`. Nous avons donc un programme structurellement valide qui ne produit **aucune action visible**.
 
 La figure suivante aide à comprendre la chronologie :
 
@@ -224,7 +224,7 @@ Statut : À PRODUIRE. Aucune image définitive n'a encore été insérée.
 
 **Figure 3.4 — Organisation des deux fonctions principales d'un sketch.**
 
-Pour notre apprentissage, retenez : **\`setup()\` sert à préparer le fonctionnement ; \`loop()\` exécute la partie répétitive.**
+Pour notre apprentissage, retenez : **`setup()` sert à préparer le fonctionnement ; `loop()` exécute la partie répétitive.**
 
 ### 3.6. Vérifier un programme : que signifie « compiler » ?
 
@@ -356,7 +356,7 @@ Statut : À PRODUIRE. Aucune image définitive n'a encore été insérée.
 
 Notre Arduino Uno Rev3 possède déjà une petite LED intégrée, souvent repérée par la lettre **L**. Dans cette configuration, elle est associée à la broche numérique **D13**.
 
-Le nom \`LED_BUILTIN\` permet d'indiquer cette LED de manière lisible dans les programmes Arduino. Pour commencer, nous allons utiliser la LED intégrée : **aucun fil ni composant externe n'est nécessaire**.
+Le nom `LED_BUILTIN` permet d'indiquer cette LED de manière lisible dans les programmes Arduino. Pour commencer, nous allons utiliser la LED intégrée : **aucun fil ni composant externe n'est nécessaire**.
 
 ### 3.10. Comprendre les états numériques HIGH et LOW
 
@@ -365,7 +365,7 @@ Les sorties numériques de l'ATmega328P peuvent être commandées avec des état
 - **HIGH** : demande de placer la sortie à son état logique haut ;
 - **LOW** : demande de placer la sortie à son état logique bas.
 
-Dans le circuit de la LED intégrée à la Uno Rev3 utilisé ici, passer la sortie à \`HIGH\` l'allume et revenir à \`LOW\` l'éteint.
+Dans le circuit de la LED intégrée à la Uno Rev3 utilisé ici, passer la sortie à `HIGH` l'allume et revenir à `LOW` l'éteint.
 
 **Important :** une sortie d'un microcontrôleur n'est pas une source d'alimentation universelle. Elle possède des limites de tension et de courant. On ne lui connecte pas arbitrairement un appareil de forte puissance. Pour notre exercice, nous utilisons uniquement la LED intégrée de la carte.
 
@@ -379,7 +379,7 @@ pinMode(LED_BUILTIN, OUTPUT);
 
 Elle signifie : « Configure la broche associée à la LED intégrée en **sortie**. »
 
-Cette opération se place dans \`setup()\`, car nous voulons préparer la broche au démarrage :
+Cette opération se place dans `setup()`, car nous voulons préparer la broche au démarrage :
 
 ~~~cpp
 void setup() {
@@ -390,13 +390,13 @@ void loop() {
 }
 ~~~
 
-Le point-virgule \`;\` termine l'instruction. Son oubli est une cause fréquente d'erreur de compilation.
+Le point-virgule `;` termine l'instruction. Son oubli est une cause fréquente d'erreur de compilation.
 
 Une fois cette instruction ajoutée, la broche est configurée, mais nous n'avons pas encore décrit la séquence de clignotement.
 
 ### 3.12. Allumer la LED avec digitalWrite()
 
-Nous allons maintenant compléter \`loop()\` :
+Nous allons maintenant compléter `loop()` :
 
 ~~~cpp
 void loop() {
@@ -404,7 +404,7 @@ void loop() {
 }
 ~~~
 
-La fonction \`digitalWrite()\` définit l'état logique de la sortie. Son premier argument précise la broche ; son second indique l'état demandé.
+La fonction `digitalWrite()` définit l'état logique de la sortie. Son premier argument précise la broche ; son second indique l'état demandé.
 
 Dans notre configuration, ce code demande **l'allumage** de la LED intégrée. Cependant, il ne crée pas encore de clignotement : il n'y a aucune instruction pour éteindre la LED après un intervalle.
 
@@ -412,11 +412,11 @@ Nous venons d'introduire un principe essentiel de la programmation : **une instr
 
 ### 3.13. Faire une pause avec delay()
 
-La fonction \`delay()\` permet de demander une attente exprimée en **millisecondes**.
+La fonction `delay()` permet de demander une attente exprimée en **millisecondes**.
 
-- \`delay(1000);\` représente une attente d'environ **1 seconde** ;
-- \`delay(500);\` représente une attente d'environ **0,5 seconde** ;
-- \`delay(250);\` représente une attente d'environ **0,25 seconde**.
+- `delay(1000);` représente une attente d'environ **1 seconde** ;
+- `delay(500);` représente une attente d'environ **0,5 seconde** ;
+- `delay(250);` représente une attente d'environ **0,25 seconde**.
 
 Ajoutons cette attente après l'allumage :
 
@@ -452,13 +452,13 @@ Ce code est volontairement court : nous allons le lire de haut en bas.
 
 | Instruction | Explication |
 |---|---|
-| \`pinMode(LED_BUILTIN, OUTPUT);\` | Préparer la broche comme sortie |
-| \`digitalWrite(LED_BUILTIN, HIGH);\` | Activer la LED |
-| \`delay(1000);\` | Attendre environ 1 seconde |
-| \`digitalWrite(LED_BUILTIN, LOW);\` | Désactiver la LED |
-| \`delay(1000);\` | Attendre environ 1 seconde avant la répétition |
+| `pinMode(LED_BUILTIN, OUTPUT);` | Préparer la broche comme sortie |
+| `digitalWrite(LED_BUILTIN, HIGH);` | Activer la LED |
+| `delay(1000);` | Attendre environ 1 seconde |
+| `digitalWrite(LED_BUILTIN, LOW);` | Désactiver la LED |
+| `delay(1000);` | Attendre environ 1 seconde avant la répétition |
 
-À la fin de la deuxième attente, la fonction \`loop()\` est appelée à nouveau. Le programme recommence la même séquence.
+À la fin de la deuxième attente, la fonction `loop()` est appelée à nouveau. Le programme recommence la même séquence.
 
 **Résultat attendu après compilation, téléversement et fonctionnement correct sur une Uno Rev3 :** la LED intégrée reste allumée environ une seconde, éteinte environ une seconde, puis recommence.
 
@@ -583,7 +583,7 @@ Nous allons utiliser une constante :
 const byte LED_PIN = 8;
 ~~~
 
-Ce code déclare un nom facile à reconnaître, \`LED_PIN\`, associé au numéro **8**. \`const\` indique que nous ne souhaitons pas modifier cette valeur dans le programme ; \`byte\` convient ici pour mémoriser un petit numéro de broche.
+Ce code déclare un nom facile à reconnaître, `LED_PIN`, associé au numéro **8**. `const` indique que nous ne souhaitons pas modifier cette valeur dans le programme ; `byte` convient ici pour mémoriser un petit numéro de broche.
 
 Notre programme devient :
 
@@ -608,7 +608,7 @@ La logique est identique à celle du programme 3.1 : nous avons conservé les m�
 
 Après avoir **vérifié le câblage hors tension**, rebranché l'USB puis réalisé la compilation et le téléversement, le **résultat attendu** est le clignotement de la LED externe avec une seconde d'allumage et une seconde d'extinction.
 
-Nous avons écrit le numéro de broche une seule fois, dans \`LED_PIN\`. Cette pratique simplifiera la maintenance du programme lorsque le compteur accueillera davantage de composants.
+Nous avons écrit le numéro de broche une seule fois, dans `LED_PIN`. Cette pratique simplifiera la maintenance du programme lorsque le compteur accueillera davantage de composants.
 
 ### 3.18. Comprendre la limite de delay()
 
@@ -618,7 +618,7 @@ Notre premier programme fonctionne suivant une succession d'instructions simples
   Allumer → Attendre → Éteindre → Attendre → Recommencer
 ~~~
 
-La fonction \`delay()\` crée une **attente bloquante pour l'exécution normale du sketch**. Pendant cette attente, notre logique principale ne peut pas poursuivre librement ses autres tâches. Certaines opérations matérielles, comme des interruptions, peuvent néanmoins exister ; \`delay()\` ne signifie pas que tous les périphériques de la puce s'arrêtent.
+La fonction `delay()` crée une **attente bloquante pour l'exécution normale du sketch**. Pendant cette attente, notre logique principale ne peut pas poursuivre librement ses autres tâches. Certaines opérations matérielles, comme des interruptions, peuvent néanmoins exister ; `delay()` ne signifie pas que tous les périphériques de la puce s'arrêtent.
 
 Cela ne pose pas de problème pour apprendre le clignotement d'une LED. Mais notre futur compteur devra accomplir plusieurs missions : consulter un capteur, mettre à jour un écran, traiter un bouton et préparer des communications.
 
@@ -641,7 +641,7 @@ C'est un excellent exemple de notre démarche : **le programme du chapitre 3 est
 1. Installez et ouvrez Arduino IDE 2.
 2. Branchez l'Arduino Uno Rev3 avec un câble USB de données.
 3. Sélectionnez **Arduino Uno** et le port détecté.
-4. Créez le sketch minimal contenant uniquement \`setup()\` et \`loop()\`.
+4. Créez le sketch minimal contenant uniquement `setup()` et `loop()`.
 5. Cliquez sur **Vérifier** et notez le résultat.
 6. Cliquez sur **Téléverser** et notez le résultat.
 7. Sur **une copie distincte**, retirez une accolade fermante, puis relancez la vérification.
@@ -685,7 +685,7 @@ C'est un excellent exemple de notre démarche : **le programme du chapitre 3 est
 | Sketch minimal sans effet visible | Aucune action programmée | C'est normal : utiliser ensuite le programme 3.1 |
 | LED intégrée ne clignote pas | Mauvais sketch ou téléversement non confirmé | Vérifier que le programme 3.1 est bien chargé |
 | LED externe éteinte | Polarité, résistance, connexion D8 ou GND incorrectes | Débrancher l'USB et examiner le circuit basse tension |
-| Clignotement trop rapide ou trop lent | Valeurs de \`delay()\` inadaptées | Vérifier que les durées sont exprimées en millisecondes |
+| Clignotement trop rapide ou trop lent | Valeurs de `delay()` inadaptées | Vérifier que les durées sont exprimées en millisecondes |
 
 Pour distinguer les erreurs, posez-vous toujours les questions dans cet ordre : **le code compile-t-il ? Le téléversement aboutit-il ? Le résultat observable correspond-il au programme ?**
 
@@ -703,7 +703,7 @@ A. Arduino Mega — B. ESP32 — C. Raspberry Pi — D. Arduino Uno Rev3
 A. La carte et son port de connexion — B. La couleur de l'éditeur — C. Le navigateur par défaut — D. Le nom de l'ordinateur
 
 **4. Quelle fonction est répétée après l'initialisation du sketch ?**  
-A. \`install()\` — B. \`compile()\` — C. \`loop()\` — D. \`resetBoard()\`
+A. `install()` — B. `compile()` — C. `loop()` — D. `resetBoard()`
 
 **5. Que fait le bouton Vérifier ?**  
 A. Il envoie toujours le programme à la carte — B. Il contrôle et compile le programme sans exiger un téléversement — C. Il active le modem GSM — D. Il mesure le courant de la LED
@@ -715,13 +715,13 @@ A. Une accolade manquante dans le programme — B. Une LED inversée — C. Un f
 A. Le disjoncteur du logement — B. La puissance du PZEM — C. La date de l'horloge RTC — D. Le câble USB de données, le modèle de carte et le port
 
 **8. Pourquoi le programme minimal du début du chapitre ne produit-il rien de visible ?**  
-A. L'Arduino n'accepte pas les programmes courts — B. \`loop()\` est interdite — C. \`setup()\` et \`loop()\` ne contiennent aucune action — D. Le secteur doit être connecté
+A. L'Arduino n'accepte pas les programmes courts — B. `loop()` est interdite — C. `setup()` et `loop()` ne contiennent aucune action — D. Le secteur doit être connecté
 
 **9. Quel est le rôle de la résistance de 330 Ω dans notre expérience avec LED externe ?**  
 A. Créer une connexion GSM — B. Limiter le courant et protéger la LED et la sortie — C. Remplacer un câble USB — D. Ajouter une alimentation secteur
 
 **10. Pour allumer la LED pendant 250 ms, puis l'éteindre pendant 750 ms, quelles instructions conviennent ?**  
-A. \`delay(250)\` après HIGH et \`delay(750)\` après LOW — B. Supprimer la résistance — C. Relier D8 au 230 V — D. Garder \`delay(1000)\` après chaque état
+A. `delay(250)` après HIGH et `delay(750)` après LOW — B. Supprimer la résistance — C. Relier D8 au 230 V — D. Garder `delay(1000)` après chaque état
 
 **Objectif de maîtrise : au moins 8 bonnes réponses sur 10**, en comprenant les précautions de sécurité avant de modifier le montage réel.
 
@@ -734,8 +734,8 @@ A. \`delay(250)\` après HIGH et \`delay(750)\` après LOW — B. Supprimer la r
 1. **Arduino IDE** permet d'écrire, de vérifier et de téléverser un programme vers une carte compatible.
 2. Sur notre Arduino Uno Rev3, nous choisissons le **modèle de carte** et le **port de connexion** avant de téléverser.
 3. **Vérifier** signifie compiler ; **téléverser** signifie transmettre le programme à la carte.
-4. \`setup()\` prépare le fonctionnement ; \`loop()\` répète les instructions.
-5. \`pinMode()\` configure une broche ; \`digitalWrite()\` fixe son état numérique ; \`delay()\` introduit une attente.
+4. `setup()` prépare le fonctionnement ; `loop()` répète les instructions.
+5. `pinMode()` configure une broche ; `digitalWrite()` fixe son état numérique ; `delay()` introduit une attente.
 6. Une LED externe exige une **limitation de courant**, une polarité correcte et un montage **hors tension**.
 7. Le clignotement constitue la **première fonction du même compteur intelligent** que nous enrichirons ensuite.
 
@@ -744,7 +744,7 @@ A. \`delay(250)\` après HIGH et \`delay(750)\` après LOW — B. Supprimer la r
 | Terme | Définition |
 |---|---|
 | **IDE** | Environnement intégré de développement |
-| **Sketch** | Programme Arduino, généralement enregistré dans un fichier \`.ino\` |
+| **Sketch** | Programme Arduino, généralement enregistré dans un fichier `.ino` |
 | **Compiler** | Transformer le programme source en code utilisable par la cible |
 | **Téléverser** | Envoyer le programme vers le microcontrôleur de la carte |
 | **Syntaxe** | Règles d'écriture du langage de programmation |
