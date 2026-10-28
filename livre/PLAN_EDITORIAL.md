@@ -65,7 +65,49 @@ Les leçons peuvent recevoir dans le livre des sous-sections supplémentaires, m
 
 **Exigence particulière pour les chapitres de programmation :** donner un résultat attendu, montrer le code précédent, introduire de petites modifications compréhensibles, justifier chaque nouvelle instruction, comparer aux sorties attendues et documenter les essais exécutés ou restant à faire. Les extraits indispensables figurent dans l'ouvrage. Les programmes complets nécessaires à sa compréhension sont inclus dans les annexes appropriées. Des fichiers téléchargeables complémentaires pourront être proposés par un canal distinct, sans imposer GitHub au lecteur.
 
-## 4. Langue, notations et exemples
+## 4. Règle permanente — illustrations pédagogiques obligatoires
+
+**RÈGLE ÉDITORIALE OBLIGATOIRE POUR LES 16 CHAPITRES :** chaque notion, procédure, composant, interface, montage ou calcul qui gagnerait à être montré visuellement doit bénéficier d'une **illustration explicative au bon endroit dans le texte**. Une image n'est pas décorative : elle doit permettre à un débutant d'identifier, de comprendre, de comparer ou de reproduire correctement une opération **autorisée en sécurité**.
+
+### 4.1. Déclencheurs d'illustration
+
+- **Composant matériel** : photographie nette du modèle exact, légendes et repères ; indiquer les variantes, jamais inventer une référence.
+- **Architecture, flux de données, alimentation** : synoptique annoté, clair et cohérent avec le chapitre, sans transformer un schéma fonctionnel en consigne de câblage secteur.
+- **Logiciel ou plateforme** : capture authentique avec menus, boutons, étapes et version observée ; les captures fictives doivent porter la mention « simulation ».
+- **Montage basse tension** : schéma de connexion lisible et, si cela aide, photographie d'un montage réel validé ; polarités, valeur des résistances et absence de secteur visibles.
+- **Calcul, chronologie ou comparaison** : infographie, chronogramme ou graphique avec unités, légende et hypothèses, sans valeurs faussement présentées comme mesurées.
+- **Pannes et sécurité** : schéma explicatif orienté prévention ; ne jamais illustrer une manipulation dangereuse comme un tutoriel à suivre.
+
+### 4.2. Exigences dans le texte de chaque chapitre
+
+Au point exact où l'image est nécessaire, placer un **commentaire Markdown non rendu** commençant par `<!-- ILLUSTRATION À PRODUIRE — FIGURE X.Y` et contenant obligatoirement :
+
+1. **Type** : photo, capture, schéma, infographie ou graphique ;
+2. **Contenu et annotations** : ce que l'image doit enseigner précisément ;
+3. **Légende finale** : intitulé numéroté « Figure X.Y — … » ;
+4. **Texte alternatif** : description accessible de l'information visuelle ;
+5. **Contraintes** : sécurité, données fictives, version logicielle, matériel exact, droits ;
+6. **Statut** : `À PRODUIRE` tant qu'aucun visuel n'est validé.
+
+Les figures sont **numérotées dans leur ordre d'apparition au sein de chaque chapitre**, puis citées de façon cohérente dans les phrases du cours et les annexes. Les schémas textuels ou Mermaid sont **des ébauches de figures**, pas des images finales : demander leur adaptation en un visuel prêt pour PDF/impression. Les légendes utiles et explications pédagogiques restent dans le manuscrit ; les commentaires de production ne doivent **pas** apparaître en version publiée.
+
+Tenir en parallèle le **registre de production des illustrations** dans [ILLUSTRATIONS_A_PRODUIRE.md](ILLUSTRATIONS_A_PRODUIRE.md) : chapitre, figure, type, description, emplacement, statut, fichier source, droits et validation technique. Ce registre est **interne** et ne doit jamais être exporté dans le livre.
+
+### 4.3. Validation des images avant publication
+
+- [ ] Toutes les figures nécessaires ont été identifiées, placées et inscrites au registre.
+- [ ] Les photos/captures sont vraies ou clairement étiquetées simulations ; aucune mesure ou essai fictif présenté comme réel.
+- [ ] Les légendes et annotations sont exactes, lisibles sur mobile et sur papier, et traduites en français pédagogique.
+- [ ] Pour les captures, version de logiciel, menus et résultats ont été effectivement vérifiés.
+- [ ] Pour les schémas, brochages, tensions, résistances, protections et sécurité ont reçu une revue technique adaptée.
+- [ ] La provenance et les droits d'utilisation ou de reproduction de chaque image sont établis ; éviter tout visuel non autorisé.
+- [ ] Chaque image possède un **texte alternatif** informatif.
+- [ ] La qualité de sortie est suffisante : schémas vectoriels de préférence, photographies nettes et adaptées à l'impression.
+- [ ] Les images approuvées remplacent les commentaires « À PRODUIRE » ; aucun emplacement obligatoire ne reste vide dans le PDF final.
+
+**Un chapitre peut être déclaré « texte rédigé et relu », mais jamais « prêt à publier » si ses illustrations nécessaires n'ont pas été produites et contrôlées.**
+
+## 5. Langue, notations et exemples
 
 - Écrire en **français clair** pour un public débutant, sans supprimer la rigueur des unités et du vocabulaire technique.
 - Introduire chaque acronyme à sa première occurrence : RTC, UART, I2C, ISP, GSM, GPRS, API, etc.
@@ -76,7 +118,7 @@ Les leçons peuvent recevoir dans le livre des sous-sections supplémentaires, m
 - Prévoir des figures numérotées, des légendes informatives, des textes alternatifs pour les futures images et la provenance/droits des illustrations externes.
 - Les codes sources ne doivent **jamais** contenir de secrets, identifiants ou clés réelles. Les exemples du livre n'exposent ni adresses privées ni liens vers notre espace de développement.
 
-## 5. Règles techniques et de sécurité
+## 6. Règles techniques et de sécurité
 
 - **Secteur 230 V :** aucune procédure de câblage sous tension pour les débutants. Les travaux réels sur le secteur sont réservés à un personnel qualifié avec protections adaptées.
 - **SIM800L :** futur UART matériel D0/D1, conversion de niveaux dans les deux sens et alimentation adaptée à la carte réelle ; ne jamais affirmer qu'un modem nu accepte directement 5 V sur VBAT.
@@ -86,7 +128,7 @@ Les leçons peuvent recevoir dans le livre des sous-sections supplémentaires, m
 - **Communication et stockage :** ne pas promettre une reprise sans doublon ni un transfert sécurisé tant que les implémentations et tests correspondants ne sont pas disponibles.
 - **Diffusion :** prototype éducatif de suivi énergétique, pas compteur de facturation homologué.
 
-## 6. Relectures et validation
+## 7. Relectures et validation
 
 Un chapitre doit passer successivement par les états suivants :
 
@@ -109,8 +151,11 @@ Un chapitre doit passer successivement par les états suivants :
 - [ ] Le chapitre respecte la progression du **même compteur**.
 - [ ] Aucune nouveauté future n'est décrite comme matériellement validée.
 - [ ] La navigation et le statut du sommaire ont été actualisés.
+- [ ] Les emplacements d'illustrations obligatoires sont indiqués dans les sections concernées avec type, contenu, légende, texte alternatif et contraintes.
+- [ ] Chaque figure est référencée au registre interne ; les figures existantes sont numérotées dans leur ordre d'apparition.
+- [ ] Les illustrations non encore réalisées sont explicitement signalées comme **non validées** et empêchent le statut « bon à publier ».
 
-## 7. Organisation dans le dépôt
+## 8. Organisation dans le dépôt
 
 ~~~text
 livre/
