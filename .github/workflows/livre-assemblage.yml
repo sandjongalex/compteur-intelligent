@@ -42,7 +42,8 @@ jobs:
           sudo apt-get update -qq
           sudo apt-get install -y --no-install-recommends \
             pandoc texlive-xetex texlive-latex-recommended \
-            texlive-lang-french fonts-dejavu-core lmodern
+            texlive-lang-french texlive-fonts-recommended \
+            fonts-dejavu-core lmodern
 
       - name: Exporter le brouillon Word (.docx)
         run: |
