@@ -10,7 +10,7 @@ On distingue deux catégories de fichiers :
 
 ### A. Contenu éditorial à composer dans le livre
 
-- `livre/00-sommaire.md`
+- `livre/00-sommaire.md` : **plan éditorial des 16 chapitres**, conservé à part durant l'assemblage progressif ;
 - `livre/00-avant-propos.md`
 - `livre/chapitres/01-*.md` puis `02-*.md` … `16-*.md`
 - `livre/annexes/` pour les corrigés, lexiques et annexes retenus.
@@ -25,6 +25,8 @@ Ces fichiers doivent rester **autonomes et lisibles hors connexion**, à l'excep
 - `livre/PRODUCTION_INTERNE.md` : présent document ;
 - `livre/ILLUSTRATIONS_A_PRODUIRE.md` : registre des illustrations à réaliser ;
 - `livre/MODELE_CHAPITRE.md` : gabarit de rédaction, commentaires et figures ;
+- `livre/ASSEMBLAGE.md`, `livre/scripts/` et `.github/workflows/livre-assemblage.yml` : assemblage et contrôles internes ;
+- `build/livre/` : brouillons et rapports générés, qui ne sont jamais des sources du livre ;
 - les fichiers internes situés dans `docs/`, `formation/`, `firmware/`, `.github/` et `AGENTS.md` ;
 - les commits, branches, pull requests, tests de développement et historiques de bugs.
 
@@ -60,4 +62,4 @@ Les références aux sources GitHub **sont autorisées dans les documents intern
 - [ ] Les annexes citées existent dans le contenu livré.
 - [ ] Aucun fichier interne n'est inséré dans le PDF final.
 
-Ce manifeste guide le futur processus d'export. **Aucun PDF de livre complet n'est encore produit à ce stade.**
+L'assemblage du manuscrit est automatisé selon [ASSEMBLAGE.md](ASSEMBLAGE.md). Les exports PDF/DOCX provisoires comportent les repères d'illustrations manquantes et ne constituent **pas** l'édition finale. Le mode de publication est bloqué jusqu'à la présence des 16 chapitres, des annexes et des figures validées. Une relecture visuelle et technique reste impérative.
