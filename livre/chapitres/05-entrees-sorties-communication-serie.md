@@ -17,13 +17,13 @@ Ce chapitre traite les deux sujets fondamentaux suivants : **les entrées et sor
 
 À la fin de ce chapitre, vous pourrez :
 
-1. configurer une entrée en \`INPUT_PULLUP\` et une sortie en \`OUTPUT\` ;
+1. configurer une entrée en `INPUT_PULLUP` et une sortie en `OUTPUT` ;
 2. comprendre pourquoi un bouton relié entre D2 et GND donne **HIGH au repos** et **LOW à l'appui** ;
 3. distinguer une action maintenue d'un **événement de nouvel appui** ;
 4. réduire les doubles déclenchements dus aux **rebonds mécaniques** ;
-5. utiliser \`Serial.begin()\`, \`Serial.available()\`, \`Serial.read()\` et le moniteur série ;
-6. commander la LED avec les caractères \`'1'\`, \`'0'\` et \`'?'\` ;
-7. utiliser \`millis()\` pour effectuer des tâches périodiques sans \`delay()\` ;
+5. utiliser `Serial.begin()`, `Serial.available()`, `Serial.read()` et le moniteur série ;
+6. commander la LED avec les caractères `'1'`, `'0'` et `'?'` ;
+7. utiliser `millis()` pour effectuer des tâches périodiques sans `delay()` ;
 8. expliquer la différence entre les programmes d'exercice et la version intégrée du compteur.
 
 ---
@@ -78,12 +78,12 @@ pinMode(2, INPUT_PULLUP);
 
 Pour notre montage **D2–bouton–GND**, les états attendus sont :
 
-| Position du bouton | Connexion vers GND | \`digitalRead(2)\` |
+| Position du bouton | Connexion vers GND | `digitalRead(2)` |
 |---|---|---|
 | Relâché | Contact ouvert | **HIGH** |
 | Appuyé | Contact fermé | **LOW** |
 
-L'utilisation de \`INPUT_PULLUP\` évite d'ajouter une résistance de rappel externe pour cette démonstration.
+L'utilisation de `INPUT_PULLUP` évite d'ajouter une résistance de rappel externe pour cette démonstration.
 
 Ce résultat surprend parfois : **LOW signifie ici « appuyé »**. Ce n'est pas une règle valable pour tous les circuits, mais une conséquence de **notre montage et de la résistance de rappel**.
 
@@ -125,12 +125,12 @@ void loop() {
 
 Nous retrouvons plusieurs constructions du chapitre précédent :
 
-- \`const byte\` nomme une broche dont le numéro ne change pas ;
-- \`pinMode(..., INPUT_PULLUP)\` prépare l'entrée ;
-- \`digitalRead()\` lit le niveau de D2 ;
-- \`== LOW\` vérifie l'égalité avec l'état bas ;
-- \`bool boutonAppuye\` conserve le résultat vrai/faux ;
-- l'opérateur \`? :\` sélectionne l'état de la LED.
+- `const byte` nomme une broche dont le numéro ne change pas ;
+- `pinMode(..., INPUT_PULLUP)` prépare l'entrée ;
+- `digitalRead()` lit le niveau de D2 ;
+- `== LOW` vérifie l'égalité avec l'état bas ;
+- `bool boutonAppuye` conserve le résultat vrai/faux ;
+- l'opérateur `? :` sélectionne l'état de la LED.
 
 **Résultat attendu :** maintenir le bouton allume la LED ; relâcher le bouton l'éteint.
 
@@ -158,11 +158,11 @@ void loop() {
 }
 ~~~
 
-Il s'agit ici du **corps de la fonction loop() à insérer** dans le sketch précédent, avec les deux variables déclarées globalement. La configuration des broches dans \`setup()\` est conservée.
+Il s'agit ici du **corps de la fonction loop() à insérer** dans le sketch précédent, avec les deux variables déclarées globalement. La configuration des broches dans `setup()` est conservée.
 
-La condition \`appuye && !ancienEtatAppuye\` signifie : « le bouton est appuyé maintenant, mais il ne l'était pas lors de la lecture précédente ».
+La condition `appuye && !ancienEtatAppuye` signifie : « le bouton est appuyé maintenant, mais il ne l'était pas lors de la lecture précédente ».
 
-L'instruction \`ledAllumee = !ledAllumee;\` inverse le booléen : \`true\` devient \`false\`, et inversement. C'est la **bascule**.
+L'instruction `ledAllumee = !ledAllumee;` inverse le booléen : `true` devient `false`, et inversement. C'est la **bascule**.
 
 Ce programme est utile pour comprendre la logique d'événement, mais il comporte une faiblesse : le contact d'un bouton mécanique ne change pas toujours d'état une seule fois, proprement.
 
@@ -213,7 +213,7 @@ Statut : À PRODUIRE.
 
 ### 5.6. Introduire millis() pour confirmer un état stable
 
-La fonction \`millis()\` indique le nombre de millisecondes écoulées depuis le démarrage du programme sur l'Arduino. Elle ne donne ni l'heure civile, ni la date : ces informations proviendront plus tard d'une **horloge DS3231**.
+La fonction `millis()` indique le nombre de millisecondes écoulées depuis le démarrage du programme sur l'Arduino. Elle ne donne ni l'heure civile, ni la date : ces informations proviendront plus tard d'une **horloge DS3231**.
 
 Nous allons retenir une période pédagogique d'anti-rebond :
 
@@ -278,13 +278,13 @@ void loop() {
 
 Prenons le temps de lire les blocs essentiels.
 
-**Détecter un changement brut :** si \`niveauBrut\` diffère de \`dernierNiveauBrut\`, nous mémorisons l'instant actuel. Un nouveau rebond remet donc à zéro notre période d'observation.
+**Détecter un changement brut :** si `niveauBrut` diffère de `dernierNiveauBrut`, nous mémorisons l'instant actuel. Un nouveau rebond remet donc à zéro notre période d'observation.
 
 **Confirmer la stabilité :** nous vérifions qu'au moins 35 ms se sont écoulées depuis le dernier changement brut, et que ce niveau diffère du niveau stable précédemment enregistré.
 
-**Déclencher au bon moment :** le changement de \`ledAllumee\` a lieu uniquement si le nouveau niveau stable vaut **LOW**. Au relâchement, l'état stable redevient HIGH, mais la LED ne rebascule pas.
+**Déclencher au bon moment :** le changement de `ledAllumee` a lieu uniquement si le nouveau niveau stable vaut **LOW**. Au relâchement, l'état stable redevient HIGH, mais la LED ne rebascule pas.
 
-Le type \`unsigned long\` est adapté à \`millis()\` sur notre carte. La formule **\`maintenant - debutChangementMs\`** utilise l'arithmétique non signée et peut rester correcte lors du retour à zéro du compteur de millisecondes, tant que l'intervalle testé demeure dans sa plage.
+Le type `unsigned long` est adapté à `millis()` sur notre carte. La formule **`maintenant - debutChangementMs`** utilise l'arithmétique non signée et peut rester correcte lors du retour à zéro du compteur de millisecondes, tant que l'intervalle testé demeure dans sa plage.
 
 **Résultat attendu :** chaque appui distinct et stabilisé inverse **une fois** la LED. Une pression maintenue ne provoque pas de bascules successives.
 
@@ -316,7 +316,7 @@ byte page = 0;
 page = (byte)(1 - page);  // 0 devient 1 ; 1 devient 0
 ~~~
 
-Le calcul \`1 - page\` est correct ici **parce que page vaut uniquement 0 ou 1**.
+Le calcul `1 - page` est correct ici **parce que page vaut uniquement 0 ou 1**.
 
 Pour le moment, nous ne pilotons pas réellement le LCD. Nous simulons son changement de page avec la LED intégrée et, lors du TP, avec un message envoyé au moniteur série.
 
@@ -335,7 +335,7 @@ Une liaison **UART** (*Universal Asynchronous Receiver/Transmitter*) transporte 
 - une vitesse de communication et un format communs ;
 - une référence électrique et des niveaux logiques compatibles.
 
-Sur notre **Arduino Uno Rev3**, l'interface matérielle \`Serial\` utilise notamment les broches **D0/RX** et **D1/TX** et communique avec l'ordinateur à travers l'interface USB de la carte.
+Sur notre **Arduino Uno Rev3**, l'interface matérielle `Serial` utilise notamment les broches **D0/RX** et **D1/TX** et communique avec l'ordinateur à travers l'interface USB de la carte.
 
 Pour ce chapitre, **nous utilisons exclusivement le câble USB et le moniteur série**. Aucun modem, convertisseur série externe ou PZEM ne doit être branché sur D0/D1.
 
@@ -364,7 +364,7 @@ void setup() {
 }
 ~~~
 
-Dans \`loop()\`, nous allons seulement lire **si un caractère est disponible** :
+Dans `loop()`, nous allons seulement lire **si un caractère est disponible** :
 
 ~~~cpp
 void loop() {
@@ -379,15 +379,15 @@ void loop() {
 }
 ~~~
 
-**Programme 5.3 — Lecture d'un caractère dans le moniteur série.** Utiliser les deux blocs \`setup()\` et \`loop()\` ci-dessus dans le même sketch.
+**Programme 5.3 — Lecture d'un caractère dans le moniteur série.** Utiliser les deux blocs `setup()` et `loop()` ci-dessus dans le même sketch.
 
-\`Serial.available()\` indique combien d'octets attendent dans le tampon de réception. Le test \`> 0\` permet de **ne pas lire dans le vide**.
+`Serial.available()` indique combien d'octets attendent dans le tampon de réception. Le test `> 0` permet de **ne pas lire dans le vide**.
 
-\`Serial.read()\` récupère le prochain octet disponible. Nous le convertissons ici en \`char\` pour l'interpréter comme un caractère.
+`Serial.read()` récupère le prochain octet disponible. Nous le convertissons ici en `char` pour l'interpréter comme un caractère.
 
-Les caractères spéciaux \`'\r'\` et \`'\n'\` correspondent aux fins de ligne que le moniteur série peut ajouter suivant son réglage. Notre exemple les ignore.
+Les caractères spéciaux `'\r'` et `'\n'` correspondent aux fins de ligne que le moniteur série peut ajouter suivant son réglage. Notre exemple les ignore.
 
-Si vous envoyez le caractère \`A\`, la sortie **attendue** est :
+Si vous envoyez le caractère `A`, la sortie **attendue** est :
 
 ~~~text
 Recu : A
@@ -401,11 +401,11 @@ Nous voulons maintenant utiliser les caractères reçus pour commander la LED :
 
 | Caractère reçu | Action |
 |---|---|
-| \`'1'\` | Allumer la LED |
-| \`'0'\` | Éteindre la LED |
-| \`'?'\` | Afficher l'aide |
+| `'1'` | Allumer la LED |
+| `'0'` | Éteindre la LED |
+| `'?'` | Afficher l'aide |
 
-**Différence importante :** \`'1'\` est le **caractère** un, alors que \`1\` est un **nombre entier**. Les deux ne sont pas interchangeables dans une comparaison de caractères.
+**Différence importante :** `'1'` est le **caractère** un, alors que `1` est un **nombre entier**. Les deux ne sont pas interchangeables dans une comparaison de caractères.
 
 Le traitement peut être organisé ainsi :
 
@@ -438,11 +438,11 @@ void traiterCommandes() {
 }
 ~~~
 
-Ce bloc suppose que la variable globale \`bool ledAllumee = false;\` a été déclarée et que la LED a été configurée en sortie dans \`setup()\`.
+Ce bloc suppose que la variable globale `bool ledAllumee = false;` a été déclarée et que la LED a été configurée en sortie dans `setup()`.
 
-La boucle \`while\` ne tourne **que tant qu'il existe des caractères déjà disponibles**. Elle n'attend pas qu'un caractère nouveau arrive. Lorsqu'il n'y a plus rien dans le tampon, le programme peut poursuivre ses autres tâches.
+La boucle `while` ne tourne **que tant qu'il existe des caractères déjà disponibles**. Elle n'attend pas qu'un caractère nouveau arrive. Lorsqu'il n'y a plus rien dans le tampon, le programme peut poursuivre ses autres tâches.
 
-En envoyant \`1\`, la LED doit s'allumer. \`0\` doit l'éteindre. \`?\` doit afficher les commandes disponibles.
+En envoyant `1`, la LED doit s'allumer. `0` doit l'éteindre. `?` doit afficher les commandes disponibles.
 
 <!-- ILLUSTRATION À PRODUIRE — FIGURE 5.7
 Type : capture authentique d'Arduino IDE 2, avec annotations.
@@ -467,9 +467,9 @@ digitalWrite(LED_BUILTIN, LOW);
 delay(1000);
 ~~~
 
-Pendant chaque \`delay(1000)\`, le déroulement normal du code attend environ une seconde. Si une commande arrive alors, son traitement dans la boucle principale est **retardé**.
+Pendant chaque `delay(1000)`, le déroulement normal du code attend environ une seconde. Si une commande arrive alors, son traitement dans la boucle principale est **retardé**.
 
-La fonction \`delay()\` ne signifie pas que tous les périphériques matériels cessent de fonctionner : des interruptions peuvent encore intervenir et des caractères peuvent être reçus dans un tampon. Mais la **logique de notre programme n'avance pas** comme elle le ferait dans une boucle libre.
+La fonction `delay()` ne signifie pas que tous les périphériques matériels cessent de fonctionner : des interruptions peuvent encore intervenir et des caractères peuvent être reçus dans un tampon. Mais la **logique de notre programme n'avance pas** comme elle le ferait dans une boucle libre.
 
 Notre compteur devra lire un bouton, afficher une valeur et gérer des communications. La technique des pauses bloquantes n'est pas adaptée à toutes ces tâches concurrentes.
 
@@ -502,15 +502,15 @@ void loop() {
 
 Les trois éléments sont :
 
-1. **\`PERIODE_MS\`** : durée souhaitée entre deux actions ;
-2. **\`dernierEnvoiMs\`** : instant mémorisé de la dernière action ;
-3. **\`maintenant - dernierEnvoiMs\`** : temps écoulé depuis cette action.
+1. **`PERIODE_MS`** : durée souhaitée entre deux actions ;
+2. **`dernierEnvoiMs`** : instant mémorisé de la dernière action ;
+3. **`maintenant - dernierEnvoiMs`** : temps écoulé depuis cette action.
 
-La comparaison \`>= PERIODE_MS\` déclenche la tâche **quand le temps est atteint**, sans immobiliser la boucle entre deux échéances.
+La comparaison `>= PERIODE_MS` déclenche la tâche **quand le temps est atteint**, sans immobiliser la boucle entre deux échéances.
 
-Le calcul de différence entre valeurs \`unsigned long\` est également la technique appropriée sur Uno lorsque \`millis()\` repasse à zéro, pour des intervalles raisonnablement courts par rapport à la plage du compteur.
+Le calcul de différence entre valeurs `unsigned long` est également la technique appropriée sur Uno lorsque `millis()` repasse à zéro, pour des intervalles raisonnablement courts par rapport à la plage du compteur.
 
-Il s'agit d'un **cadencement approximatif** : si une autre tâche prend du temps, l'exécution peut être légèrement retardée. \`millis()\` n'est pas une horloge calendrier et ne remplace pas le DS3231.
+Il s'agit d'un **cadencement approximatif** : si une autre tâche prend du temps, l'exécution peut être légèrement retardée. `millis()` n'est pas une horloge calendrier et ne remplace pas le DS3231.
 
 <!-- ILLUSTRATION À PRODUIRE — FIGURE 5.8
 Type : diagramme temporel comparatif.
@@ -533,7 +533,7 @@ const unsigned long PERIODE_MS = 1000UL;
 const float TENSION_SIMULEE_V = 230.5f;
 ~~~
 
-La fonction \`loop()\` traite d'abord les commandes \`'1'\`, \`'0'\`, \`'?'\`, puis vérifie le temps écoulé. Si la période est atteinte, elle affiche :
+La fonction `loop()` traite d'abord les commandes `'1'`, `'0'`, `'?'`, puis vérifie le temps écoulé. Si la période est atteinte, elle affiche :
 
 ~~~text
 Tension SIMULEE : 230.5 V
@@ -541,7 +541,7 @@ Tension SIMULEE : 230.5 V
 
 Aucun capteur n'est connecté. La valeur 230,5 est **une constante du programme** ; ce n'est pas une tension mesurée.
 
-En changeant uniquement \`PERIODE_MS\` de \`1000UL\` à \`500UL\`, nous obtenons **environ deux lignes par seconde**, tandis que les commandes demeurent disponibles entre les affichages.
+En changeant uniquement `PERIODE_MS` de `1000UL` à `500UL`, nous obtenons **environ deux lignes par seconde**, tandis que les commandes demeurent disponibles entre les affichages.
 
 Le fait de modifier la **période en millisecondes** ne demande pas de changer le débit de la communication série. Ce sont deux paramètres différents : les **bauds** règlent la transmission des caractères, les **millisecondes** règlent la fréquence des tâches.
 
@@ -549,7 +549,7 @@ Le fait de modifier la **période en millisecondes** ne demande pas de changer l
 
 Nous arrivons maintenant à l'évolution du **même compteur**. Pour ce chapitre, la LED ne clignote plus automatiquement comme au chapitre 4 : elle devient un indicateur **commandable par le bouton ou par le moniteur série**.
 
-Nous conservons l'utilisation d'\`Arduino IDE\`, de \`setup()\`, de \`loop()\`, des variables, des conditions et des fonctions. Nous remplaçons les longues attentes par un traitement continu.
+Nous conservons l'utilisation d'`Arduino IDE`, de `setup()`, de `loop()`, des variables, des conditions et des fonctions. Nous remplaçons les longues attentes par un traitement continu.
 
 La version intégrée étudiée ici utilise **une période d'affichage de 2 000 ms**, et non les 1 000 ms de l'exercice précédent. Cette différence est volontaire et nous devons la lire dans les constantes.
 
@@ -654,9 +654,9 @@ void loop() {
 
 Lisons ses trois tâches distinctes :
 
-**Tâche 1 — Bouton :** \`traiterBouton(maintenant)\` lit D2, confirme la stabilité et change la LED lors d'un nouvel appui valide.
+**Tâche 1 — Bouton :** `traiterBouton(maintenant)` lit D2, confirme la stabilité et change la LED lors d'un nouvel appui valide.
 
-**Tâche 2 — Commandes :** \`traiterCommandes()\` lit uniquement les octets déjà reçus et réagit aux caractères \`'1'\`, \`'0'\` et \`'?'\`.
+**Tâche 2 — Commandes :** `traiterCommandes()` lit uniquement les octets déjà reçus et réagit aux caractères `'1'`, `'0'` et `'?'`.
 
 **Tâche 3 — Affichage :** toutes les **2 secondes environ**, le programme imprime une valeur constante **simulée**, identifiée comme telle.
 
@@ -673,11 +673,11 @@ LED ON
 Tension SIMULEE : 230.5 V
 ~~~
 
-Le message \`LED ON\` n'apparaît que si une commande ou un événement le provoque. Son **placement exact** parmi les relevés dépend du moment où l'utilisateur agit.
+Le message `LED ON` n'apparaît que si une commande ou un événement le provoque. Son **placement exact** parmi les relevés dépend du moment où l'utilisateur agit.
 
 **Précision sur notre progression :** le chapitre 4 avait introduit un calcul d'énergie théorique. Dans le programme intégré ci-dessus, l'affichage de ce calcul n'est **pas repris** : nous consacrons cette étape aux entrées/sorties et à la gestion des tâches. Les principes de calcul appris restent valables et serviront à la suite du projet. Nous ne devons pas prétendre que toutes les fonctions précédentes sont actives alors qu'elles ne figurent pas dans le code montré.
 
-**Précision sur l'interface série :** \`Serial\` sert ici à l'exercice USB sur Uno. Lorsque le SIM800L utilisera l'UART matérielle, les messages de diagnostic USB, les commandes \`1/0/?\` et le modem ne pourront pas se partager librement D0/D1. La conception et le débogage devront être adaptés, sans raccorder directement des niveaux logiques incompatibles.
+**Précision sur l'interface série :** `Serial` sert ici à l'exercice USB sur Uno. Lorsque le SIM800L utilisera l'UART matérielle, les messages de diagnostic USB, les commandes `1/0/?` et le modem ne pourront pas se partager librement D0/D1. La conception et le débogage devront être adaptés, sans raccorder directement des niveaux logiques incompatibles.
 
 <!-- ILLUSTRATION À PRODUIRE — FIGURE 5.9
 Type : synoptique fonctionnel du programme évolutif.
@@ -705,13 +705,13 @@ Statut : À PRODUIRE.
 
 1. Débranchez l'USB et vérifiez les contacts du bouton avant de relier **D2** et **GND**.
 2. Utilisez le programme anti-rebond de la section 5.6.
-3. Déclarez \`byte page = 0;\` : la page 0 symbolise la tension, la page 1 symbolise l'énergie.
-4. À chaque **appui stabilisé LOW**, faites alterner \`page\` de 0 à 1 ou de 1 à 0.
-5. Affichez \`Page : 0\` ou \`Page : 1\` dans le moniteur série.
+3. Déclarez `byte page = 0;` : la page 0 symbolise la tension, la page 1 symbolise l'énergie.
+4. À chaque **appui stabilisé LOW**, faites alterner `page` de 0 à 1 ou de 1 à 0.
+5. Affichez `Page : 0` ou `Page : 1` dans le moniteur série.
 6. Utilisez la LED intégrée : **éteinte pour 0**, **allumée pour 1**.
 7. Vérifiez que **cinq appuis distincts donnent cinq changements**, et qu'un appui maintenu n'en produit qu'un.
 
-Ne remplacez pas l'anti-rebond par un \`delay()\` long. Le but est d'apprendre à reconnaître **un événement fiable**.
+Ne remplacez pas l'anti-rebond par un `delay()` long. Le but est d'apprendre à reconnaître **un événement fiable**.
 
 **Résultats attendus :** état initial page 0 puis pages 1, 0, 1, 0, 1 après cinq appuis successifs. Aucun LCD réel n'est requis pour cette simulation.
 
@@ -726,17 +726,17 @@ Ne remplacez pas l'anti-rebond par un \`delay()\` long. Le but est d'apprendre �
 1. Écrivez le petit programme de la section 5.13 ou adaptez le programme intégré.
 2. Dans la version d'exercice, partez de **1 000 ms**.
 3. Remplacez la période par **500 ms**.
-4. Envoyez successivement \`'1'\`, \`'0'\` et \`'?'\` depuis le moniteur série.
+4. Envoyez successivement `'1'`, `'0'` et `'?'` depuis le moniteur série.
 5. Vérifiez que la LED obéit aux commandes entre les relevés fictifs.
-6. Assurez-vous qu'aucun \`delay()\` n'a été introduit dans la boucle principale.
+6. Assurez-vous qu'aucun `delay()` n'a été introduit dans la boucle principale.
 
-**Attention :** si vous partez du programme intégré 5.4, la constante à modifier est **\`AFFICHAGE_MS = 2000UL\`** ; la passer à \`500UL\` donne aussi une période de 500 ms. Les deux programmes n'ont donc pas la même valeur de départ, mais le même objectif final.
+**Attention :** si vous partez du programme intégré 5.4, la constante à modifier est **`AFFICHAGE_MS = 2000UL`** ; la passer à `500UL` donne aussi une période de 500 ms. Les deux programmes n'ont donc pas la même valeur de départ, mais le même objectif final.
 
 **Résultat attendu :** deux lignes de tension fictive par seconde environ et une LED toujours commandable.
 
 ### 5.17. Défi facultatif — Identifier une attente bloquante
 
-Que se passe-t-il si l'on ajoute \`delay(5000)\` au début de \`loop()\` ?
+Que se passe-t-il si l'on ajoute `delay(5000)` au début de `loop()` ?
 
 Expliquez pourquoi les commandes envoyées pendant cette attente ne sont pas traitées immédiatement, et pourquoi un tampon de réception peut finir par se remplir si les caractères arrivent continuellement.
 
@@ -745,29 +745,29 @@ Expliquez pourquoi les commandes envoyées pendant cette attente ne sont pas tra
 | Symptôme | Cause possible | Première vérification |
 |---|---|---|
 | Le bouton semble toujours appuyé | Mauvaise paire de contacts sur un bouton à quatre pattes | Débrancher l'USB, identifier les contacts hors tension |
-| La LED ne change que pendant l'appui | Programme à lecture de niveau, pas bascule | Vérifier \`ancienEtatAppuye\` ou le front stable |
+| La LED ne change que pendant l'appui | Programme à lecture de niveau, pas bascule | Vérifier `ancienEtatAppuye` ou le front stable |
 | Plusieurs bascules par appui | Rebond mal filtré | Vérifier la fenêtre de 35 ms et le test de niveau stable |
-| Commandes \`1\`/\`0\` sans effet | Mauvais port, mauvais sketch ou caractère non reconnu | Vérifier téléversement, port et commande envoyée |
+| Commandes `1`/`0` sans effet | Mauvais port, mauvais sketch ou caractère non reconnu | Vérifier téléversement, port et commande envoyée |
 | Caractères illisibles | Débit incompatible | Mettre le moniteur à 9 600 bauds |
-| Lignes fictives espacées de 2 s | Utilisation du programme intégré avec \`AFFICHAGE_MS=2000UL\` | C'est le fonctionnement prévu de cette version |
+| Lignes fictives espacées de 2 s | Utilisation du programme intégré avec `AFFICHAGE_MS=2000UL` | C'est le fonctionnement prévu de cette version |
 | Lignes espacées d'environ 0,5 s | Période à 500 ms | Vérifier la constante sans modifier les bauds |
-| Le programme répond lentement | \`delay()\` ou boucle d'attente inutile | Revenir au contrôle avec \`millis()\` |
+| Le programme répond lentement | `delay()` ou boucle d'attente inutile | Revenir au contrôle avec `millis()` |
 | Le logiciel affiche 230,5 V | Constante fictive du code | Ne pas interpréter cette valeur comme mesure réelle |
 
 ### 5.19. Autoévaluation — Dix questions
 
 Choisissez **une réponse** à chaque question. Les solutions détaillées sont dans **l'annexe E**.
 
-**1. Que fait \`pinMode(2, INPUT_PULLUP);\` ?**  
+**1. Que fait `pinMode(2, INPUT_PULLUP);` ?**  
 A. Transforme D2 en sortie analogique — B. Active une entrée et sa résistance interne de rappel — C. Fait clignoter automatiquement la LED — D. Applique le secteur à D2
 
 **2. Dans le montage D2–bouton–GND, quelle valeur indique l'appui ?**  
-A. \`LOW\` — B. \`HIGH\` — C. \`230.5\` — D. \`9600\`
+A. `LOW` — B. `HIGH` — C. `230.5` — D. `9600`
 
 **3. Que fait la première version de lecture du bouton ?**  
 A. Mesure le réseau — B. Bascule définitivement la LED après l'appui — C. Allume la LED uniquement tant que le bouton est pressé — D. Envoie un message GSM
 
-**4. À quoi sert \`Serial.begin(9600)\` ?**  
+**4. À quoi sert `Serial.begin(9600)` ?**  
 A. Régler l'anti-rebond à 9 600 ms — B. Redémarrer la carte — C. Configurer D2 en sortie — D. Initialiser la liaison série à 9 600 bauds
 
 **5. Pourquoi un bouton sans anti-rebond peut-il provoquer plusieurs bascules ?**  
@@ -777,16 +777,16 @@ A. La LED est raccordée au secteur — B. Le contact produit plusieurs transiti
 A. Dès le premier LOW fugitif — B. À chaque tour de boucle pendant LOW — C. Lorsque le niveau confirmé après stabilisation devient LOW — D. À chaque appui et relâchement
 
 **7. Comment lire correctement un caractère série sans attendre indéfiniment ?**  
-A. Tester \`Serial.available()>0\` avant \`Serial.read()\` — B. Attendre dans une boucle vide tant qu'aucun caractère n'arrive — C. Faire \`delay(5000)\` avant toute lecture — D. Lire la LED avec \`digitalRead(13)\`
+A. Tester `Serial.available()>0` avant `Serial.read()` — B. Attendre dans une boucle vide tant qu'aucun caractère n'arrive — C. Faire `delay(5000)` avant toute lecture — D. Lire la LED avec `digitalRead(13)`
 
 **8. Quel caractère éteint la LED dans notre exemple de commandes ?**  
-A. \`'1'\` — B. \`'?'\` — C. \`'L'\` — D. \`'0'\`
+A. `'1'` — B. `'?'` — C. `'L'` — D. `'0'`
 
-**9. Quel est l'intérêt du test \`maintenant - precedentMs >= 1000UL\` avec des valeurs non signées adaptées ?**  
-A. Attendre bloqué une seconde — B. Éliminer tout débordement de toute variable — C. Déclencher périodiquement une action sans attente bloquante et gérer le retour de \`millis()\` à zéro dans ce cadre — D. Convertir les bauds en énergie
+**9. Quel est l'intérêt du test `maintenant - precedentMs >= 1000UL` avec des valeurs non signées adaptées ?**  
+A. Attendre bloqué une seconde — B. Éliminer tout débordement de toute variable — C. Déclencher périodiquement une action sans attente bloquante et gérer le retour de `millis()` à zéro dans ce cadre — D. Convertir les bauds en énergie
 
 **10. Comment recevoir des commandes entre deux relevés fictifs ?**  
-A. Placer \`delay(1000)\` avant chaque lecture — B. Traiter les caractères disponibles à chaque passage de \`loop()\`, puis vérifier le temps avec \`millis()\` — C. Attendre indéfiniment une commande avant chaque relevé — D. Raccorder la broche RX au secteur
+A. Placer `delay(1000)` avant chaque lecture — B. Traiter les caractères disponibles à chaque passage de `loop()`, puis vérifier le temps avec `millis()` — C. Attendre indéfiniment une commande avant chaque relevé — D. Raccorder la broche RX au secteur
 
 **Objectif : 8/10**, avec correction systématique de toute erreur de sécurité.
 
@@ -796,11 +796,11 @@ A. Placer \`delay(1000)\` avant chaque lecture — B. Traiter les caractères di
 
 ### 5.20. Six notions indispensables
 
-1. Une entrée configurée en **\`INPUT_PULLUP\`** et reliée par bouton à GND est **HIGH au repos** et **LOW à l'appui**.
+1. Une entrée configurée en **`INPUT_PULLUP`** et reliée par bouton à GND est **HIGH au repos** et **LOW à l'appui**.
 2. Un **niveau maintenu** est différent d'un **événement d'appui**.
 3. L'anti-rebond logiciel valide un **état stable**, ici après une fenêtre pédagogique de 35 ms.
 4. L'UART permet d'échanger des **caractères**, mais il faut respecter les broches, les débits et les niveaux électriques compatibles.
-5. \`millis()\` aide à déclencher des tâches à intervalles réguliers **sans interrompre inutilement le reste de la boucle**.
+5. `millis()` aide à déclencher des tâches à intervalles réguliers **sans interrompre inutilement le reste de la boucle**.
 6. Notre programme évolue : sa LED devient commandable, il gère plusieurs tâches et affiche toujours **une donnée fictive**, pas une mesure électrique réelle.
 
 ### 5.21. Petit lexique
