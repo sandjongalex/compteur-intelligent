@@ -59,6 +59,9 @@ Contraintes : Mention « données fictives » visible ; pas de photographie pré
 Statut : À PRODUIRE. La figure numérotée est un emplacement éditorial, pas une image déjà réalisée.
 -->
 
+> **[ILLUSTRATION À INSÉRER — Figure 1.1]** *maquette illustrée de LCD 20×4.* : Reproduire l'écran à quatre lignes (DATE JJ/MM/AAAA ; TENSION 230,5 V ; JOUR 4,25 kWh ; MOIS 125,48 kWh). Respecter vingt caractères utiles par lig…
+
+
 **Figure 1.1 — Exemple fictif d'affichage sur un LCD I2C 20×4.**
 
 **Toutes ces valeurs sont fictives.** Elles servent uniquement à découvrir ce que l'utilisateur pourra lire sur l'écran LCD I2C 20×4. Elles ne proviennent pas d'un montage branché au secteur.
@@ -85,6 +88,9 @@ Texte alternatif : Diagramme de circulation des données : PZEM mesure, ATmega t
 Contraintes : Figure conceptuelle uniquement ; aucun câblage secteur, ni succès de transmission réel supposé ; privilégier un schéma vectoriel et accessible.
 Statut : À PRODUIRE. La figure numérotée est un emplacement éditorial, pas une image déjà réalisée.
 -->
+
+> **[ILLUSTRATION À INSÉRER — Figure 1.2]** *synoptique fonctionnel mis en page.* : Vectoriser le diagramme ci-dessous : PZEM vers ATmega puis SIM800L, Flask, SQLite et navigateur. Représenter RTC, FRAM, écran LCD en branches, avec…
+
 ~~~mermaid
 flowchart TD
   P["PZEM-004T V3.0 : mesures et index d'énergie"] --> M["ATmega328P : contrôle et calcul"]
@@ -236,6 +242,9 @@ Contraintes : Unités exactes ; ne pas suggérer que U × I donne toujours la pu
 Statut : À PRODUIRE. La figure numérotée est un emplacement éditorial, pas une image déjà réalisée.
 -->
 
+> **[ILLUSTRATION À INSÉRER — Figure 1.3]** *infographie comparative.* : Présenter quatre pictogrammes distincts avec les grandeurs U/I/P/E, les unités V/A/W/kWh, leurs définitions courtes et la distinction entre puissan…
+
+
 **Figure 1.3 — Quatre grandeurs électriques à ne pas confondre.**
 
 ### 1.7. Calculer l'énergie d'un appareil à puissance constante
@@ -300,6 +309,9 @@ Contraintes : Exemple de puissances actives constantes, graphiques à axes unita
 Statut : À PRODUIRE. La figure numérotée est un emplacement éditorial, pas une image déjà réalisée.
 -->
 
+> **[ILLUSTRATION À INSÉRER — Figure 1.4]** *graphique pédagogique en deux colonnes.* : Comparer l'exemple de 2 kW pendant 0,5 h et de 0,2 kW pendant 5 h, montrant une même aire/énergie de 1 kWh ; axes puissance et durée correctement l…
+
+
 **Figure 1.4 — Deux puissances différentes peuvent produire la même énergie consommée.**
 
 ### 1.8. Et si la puissance varie pendant l'utilisation ?
@@ -331,6 +343,9 @@ Texte alternatif : Frise présentant l'index 1 250,50 kWh en début de journée 
 Contraintes : Données entièrement fictives, aucune date réelle ni garantie de période complète ; notations et unités exactes.
 Statut : À PRODUIRE. La figure numérotée est un emplacement éditorial, pas une image déjà réalisée.
 -->
+
+> **[ILLUSTRATION À INSÉRER — Figure 1.5]** *frise temporelle d'index énergétiques.* : Montrer un relevé initial 1 250,50 kWh, un relevé final 1 254,75 kWh et la différence 4,25 kWh, avec une flèche temporelle jour ; distinguer index…
+
 
 **Figure 1.5 — Le calcul d'une consommation journalière par différence d'index.**
 
