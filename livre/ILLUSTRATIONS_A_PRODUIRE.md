@@ -63,6 +63,20 @@
 | **4.7** | Flux de fonction | §4.11 | 400 W, 2,5 h → calculerEnergieKWh() → return 1 kWh | À PRODUIRE |
 | **4.8** | Infographie de progression | §4.12 | M03 LED conservée → M04 LED + constantes + fonction de calcul fictif + série | À PRODUIRE |
 
+## Chapitre 5 — Entrées, sorties et UART avec temporisations
+
+| Figure | Type | Emplacement | Contenu attendu | Statut |
+|---|---|---|---|---|
+| **5.1** | Schéma de bouton basse tension | §5.1 | Uno Rev3, contact bouton entre D2 et GND ; LED intégrée D13, sans secteur | À PRODUIRE |
+| **5.2** | Deux états INPUT_PULLUP | §5.2 | HIGH au repos et LOW à l'appui avec résistance interne de rappel | À PRODUIRE |
+| **5.3** | Chronogramme comparatif | §5.4 | LED activée pendant le maintien vs bascule après un nouvel appui | À PRODUIRE |
+| **5.4** | Chronogramme de rebond | §5.5 | Oscillations mécaniques HIGH/LOW avant état stable | À PRODUIRE |
+| **5.5** | Schéma anti-rebond | §5.6 | 35 ms depuis le dernier changement brut puis événement stable LOW | À PRODUIRE |
+| **5.6** | Synoptique UART/USB | §5.8 | Uno Rev3, D0/RX D1/TX, moniteur série USB, TX/RX et niveaux compatibles | À PRODUIRE |
+| **5.7** | Capture IDE 2 réelle | §5.10 | Commandes '1', '0', '?' et réponses LED ON/OFF/aide à 9600 bauds | À PRODUIRE |
+| **5.8** | Chronogramme delay/millis | §5.12 | Comparer attente bloquante et traitement des commandes entre échéances | À PRODUIRE |
+| **5.9** | Synoptique évolutif M04–M05 | §5.14 | LED désormais commandée, bouton, UART, affichage périodique 2000 ms ; calcul M04 absent explicitement | À PRODUIRE |
+
 ## Suivi de production
 
 | Chapitre | Figures nécessaires | À produire | En cours | Validées |
@@ -71,7 +85,8 @@
 | 2 | 8 | 8 | 0 | 0 |
 | 3 | 10 | 10 | 0 | 0 |
 | 4 | 8 | 8 | 0 | 0 |
-| **Total** | **31** | **31** | **0** | **0** |
+| 5 | 9 | 9 | 0 | 0 |
+| **Total** | **40** | **40** | **0** | **0** |
 
 ## Données à compléter quand un visuel existe
 
