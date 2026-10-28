@@ -9,6 +9,11 @@
 - [Plan pédagogique complet de la formation](docs/formation/PLAN_FORMATION_4H.md)
 - [Document original de référence (texte intégral)](docs/formation/plan_original.txt)
 
+## Livre pédagogique associé
+
+La rédaction du livre **« Concevez votre compteur électrique intelligent IoT »** est commencée, en suivant exactement les 16 modules et les 32 vidéos de cette formation. Lire le [sommaire du manuscrit](livre/README.md), l'[avant-propos](livre/00-avant-propos.md) et le [premier chapitre M01](livre/chapitres/01-decouvrir-le-compteur-et-comprendre-l-electricite.md). Les autres chapitres seront ajoutés progressivement.
+
+
 ## Organisation de la formation
 
 | Module | Sujet | Vidéos techniques | Durée |
