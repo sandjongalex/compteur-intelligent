@@ -11,13 +11,15 @@
 
 1. [Avant-propos — Pourquoi ce livre ?](00-avant-propos.md)
 2. [Chapitre 1 — Découvrir le compteur et comprendre l'électricité](chapitres/01-decouvrir-le-compteur-et-comprendre-l-electricite.md)
+4. [Corrigés du chapitre 1 — à ouvrir après les exercices](annexes/CORRIGE_M01.md)
+5. [Compte rendu de relecture du chapitre 1](RELECTURE_M01.md)
 3. [Règles éditoriales et correspondance livre/vidéos](PLAN_EDITORIAL.md)
 
 ## Sommaire contractuel : 16 chapitres ↔ 16 modules ↔ 32 vidéos
 
 | Chapitre | Intitulé | Vidéos de référence | État du livre |
 |---|---|---|---|
-| 01 | Découvrir le compteur et comprendre l'électricité | M01-V01 / M01-V02 | **Première rédaction disponible, relecture à faire** |
+| 01 | Découvrir le compteur et comprendre l'électricité | M01-V01 / M01-V02 | **Relecture initiale effectuée ; validation auteur et mise en page à faire** |
 | 02 | Composants, alimentations et sécurité électrique | M02-V01 / M02-V02 | À rédiger |
 | 03 | Arduino IDE et premier programme | M03-V01 / M03-V02 | À rédiger |
 | 04 | Bases du C/C++ embarqué | M04-V01 / M04-V02 | À rédiger |
